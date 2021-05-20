@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>9 Simple linear regression | A Gentle Introduction to Data Science with R</title>
+  <meta name="description" content="9 Simple linear regression | A Gentle Introduction to Data Science with R" />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="9 Simple linear regression | A Gentle Introduction to Data Science with R" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:image" content="assets/youreka-logo.png" />
+  
+  <meta name="github-repo" content="tig3r66/youreka-textbook" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="9 Simple linear regression | A Gentle Introduction to Data Science with R" />
+  
+  
+  <meta name="twitter:image" content="assets/youreka-logo.png" />
+
+<meta name="author" content="Eddie Guo" />
+<meta name="author" content="Youreka Canada Programs Team" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="comparing-multiple-means.html"/>
+<link rel="next" href="data-visualization-basics.html"/>
+<script src="libs/header-attrs-2.7/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="assets/style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="toc-logo"><a href="./"><img src="assets/youreka-logo.png" ></a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Welcome to Youreka Canada</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#how-to-use-this-textbook"><i class="fa fa-check"></i>How to use this textbook</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#contributors"><i class="fa fa-check"></i>Contributors</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#credit"><i class="fa fa-check"></i>Credit</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#license"><i class="fa fa-check"></i>License</a></li>
+</ul></li>
+<li class="part"><span><b>I Prerequisites</b></span></li>
+<li class="chapter" data-level="1" data-path="install.html"><a href="install.html"><i class="fa fa-check"></i><b>1</b> Install R and RStudio</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="install.html"><a href="install.html#installing-r"><i class="fa fa-check"></i><b>1.1</b> Installing R</a></li>
+<li class="chapter" data-level="1.2" data-path="install.html"><a href="install.html#installing-rstudio"><i class="fa fa-check"></i><b>1.2</b> Installing RStudio</a></li>
+<li class="chapter" data-level="1.3" data-path="install.html"><a href="install.html#add-on-packages"><i class="fa fa-check"></i><b>1.3</b> Add-on packages</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="basics-of-r-part-1.html"><a href="basics-of-r-part-1.html"><i class="fa fa-check"></i><b>2</b> Basics of R (Part 1)</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="basics-of-r-part-1.html"><a href="basics-of-r-part-1.html#objects"><i class="fa fa-check"></i><b>2.1</b> Objects</a></li>
+<li class="chapter" data-level="2.2" data-path="basics-of-r-part-1.html"><a href="basics-of-r-part-1.html#function-basics"><i class="fa fa-check"></i><b>2.2</b> Function Basics</a></li>
+<li class="chapter" data-level="2.3" data-path="basics-of-r-part-1.html"><a href="basics-of-r-part-1.html#basic-math-operators"><i class="fa fa-check"></i><b>2.3</b> Basic math operators</a></li>
+<li class="chapter" data-level="2.4" data-path="basics-of-r-part-1.html"><a href="basics-of-r-part-1.html#conditionals"><i class="fa fa-check"></i><b>2.4</b> Conditionals</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="basics-of-r-part-1.html"><a href="basics-of-r-part-1.html#if-statements"><i class="fa fa-check"></i><b>2.4.1</b> If statements</a></li>
+<li class="chapter" data-level="2.4.2" data-path="basics-of-r-part-1.html"><a href="basics-of-r-part-1.html#multiple-ifs-vs-else-if"><i class="fa fa-check"></i><b>2.4.2</b> Multiple “if”s vs “else if”</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="basics-of-r-part-1.html"><a href="basics-of-r-part-1.html#working-directory"><i class="fa fa-check"></i><b>2.5</b> Working directory</a>
+<ul>
+<li class="chapter" data-level="2.5.1" data-path="basics-of-r-part-1.html"><a href="basics-of-r-part-1.html#other-important-things"><i class="fa fa-check"></i><b>2.5.1</b> Other important things</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="basics-of-r-part-2.html"><a href="basics-of-r-part-2.html"><i class="fa fa-check"></i><b>3</b> Basics of R (Part 2)</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="basics-of-r-part-2.html"><a href="basics-of-r-part-2.html#data-structures"><i class="fa fa-check"></i><b>3.1</b> Data structures</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="basics-of-r-part-2.html"><a href="basics-of-r-part-2.html#vectors"><i class="fa fa-check"></i><b>3.1.1</b> Vectors</a></li>
+<li class="chapter" data-level="3.1.2" data-path="basics-of-r-part-2.html"><a href="basics-of-r-part-2.html#missing-values"><i class="fa fa-check"></i><b>3.1.2</b> Missing values</a></li>
+<li class="chapter" data-level="3.1.3" data-path="basics-of-r-part-2.html"><a href="basics-of-r-part-2.html#data-frames"><i class="fa fa-check"></i><b>3.1.3</b> Data frames</a></li>
+<li class="chapter" data-level="3.1.4" data-path="basics-of-r-part-2.html"><a href="basics-of-r-part-2.html#external-data"><i class="fa fa-check"></i><b>3.1.4</b> External data</a></li>
+<li class="chapter" data-level="3.1.5" data-path="basics-of-r-part-2.html"><a href="basics-of-r-part-2.html#factors"><i class="fa fa-check"></i><b>3.1.5</b> Factors</a></li>
+<li class="chapter" data-level="3.1.6" data-path="basics-of-r-part-2.html"><a href="basics-of-r-part-2.html#lists"><i class="fa fa-check"></i><b>3.1.6</b> Lists</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="basics-of-r-part-2.html"><a href="basics-of-r-part-2.html#for-loops"><i class="fa fa-check"></i><b>3.2</b> For loops</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="basics-of-r-part-2.html"><a href="basics-of-r-part-2.html#looping-over-multiple-files"><i class="fa fa-check"></i><b>3.2.1</b> Looping over multiple files</a></li>
+<li class="chapter" data-level="3.2.2" data-path="basics-of-r-part-2.html"><a href="basics-of-r-part-2.html#nested-loops-optional"><i class="fa fa-check"></i><b>3.2.2</b> Nested loops (OPTIONAL)</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="basics-of-r-part-2.html"><a href="basics-of-r-part-2.html#functions"><i class="fa fa-check"></i><b>3.3</b> Functions</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="basics-of-r-part-2.html"><a href="basics-of-r-part-2.html#conditionals-within-functions"><i class="fa fa-check"></i><b>3.3.1</b> Conditionals within functions</a></li>
+<li class="chapter" data-level="3.3.2" data-path="basics-of-r-part-2.html"><a href="basics-of-r-part-2.html#nested-conditionals"><i class="fa fa-check"></i><b>3.3.2</b> Nested conditionals</a></li>
+<li class="chapter" data-level="3.3.3" data-path="basics-of-r-part-2.html"><a href="basics-of-r-part-2.html#function-arguments"><i class="fa fa-check"></i><b>3.3.3</b> Function arguments</a></li>
+<li class="chapter" data-level="3.3.4" data-path="basics-of-r-part-2.html"><a href="basics-of-r-part-2.html#combining-functions"><i class="fa fa-check"></i><b>3.3.4</b> Combining functions</a></li>
+</ul></li>
+</ul></li>
+<li class="part"><span><b>II Data Wrangling</b></span></li>
+<li class="chapter" data-level="4" data-path="more-data-frames.html"><a href="more-data-frames.html"><i class="fa fa-check"></i><b>4</b> More data frames</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="more-data-frames.html"><a href="more-data-frames.html#get-the-gapminder-data"><i class="fa fa-check"></i><b>4.1</b> Get the gapminder data</a></li>
+<li class="chapter" data-level="4.2" data-path="more-data-frames.html"><a href="more-data-frames.html#explore-gapminder"><i class="fa fa-check"></i><b>4.2</b> Explore gapminder</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="more-data-frames.html"><a href="more-data-frames.html#importing-and-exporting-data"><i class="fa fa-check"></i><b>4.2.1</b> Importing and exporting data</a></li>
+<li class="chapter" data-level="4.2.2" data-path="more-data-frames.html"><a href="more-data-frames.html#exploring-variables-in-a-data-frame"><i class="fa fa-check"></i><b>4.2.2</b> Exploring variables in a data frame</a></li>
+<li class="chapter" data-level="4.2.3" data-path="more-data-frames.html"><a href="more-data-frames.html#data-frame-summary"><i class="fa fa-check"></i><b>4.2.3</b> Data frame summary</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="more-data-frames.html"><a href="more-data-frames.html#data-frames-with-dplyr"><i class="fa fa-check"></i><b>4.3</b> Data frames with dplyr</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="more-data-frames.html"><a href="more-data-frames.html#subsetting-data"><i class="fa fa-check"></i><b>4.3.1</b> Subsetting data</a></li>
+<li class="chapter" data-level="4.3.2" data-path="more-data-frames.html"><a href="more-data-frames.html#filter-rows-with-filter"><i class="fa fa-check"></i><b>4.3.2</b> Filter rows with <code>filter()</code></a></li>
+<li class="chapter" data-level="4.3.3" data-path="more-data-frames.html"><a href="more-data-frames.html#pipe-operator"><i class="fa fa-check"></i><b>4.3.3</b> Pipe operator <code>%&gt;%</code></a></li>
+<li class="chapter" data-level="4.3.4" data-path="more-data-frames.html"><a href="more-data-frames.html#select-columns-with-select"><i class="fa fa-check"></i><b>4.3.4</b> Select Columns with <code>select()</code></a></li>
+<li class="chapter" data-level="4.3.5" data-path="more-data-frames.html"><a href="more-data-frames.html#pure-predictable-pipeable-optional"><i class="fa fa-check"></i><b>4.3.5</b> Pure, predictable, pipeable (OPTIONAL)</a></li>
+<li class="chapter" data-level="4.3.6" data-path="more-data-frames.html"><a href="more-data-frames.html#additional-resources"><i class="fa fa-check"></i><b>4.3.6</b> Additional resources</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="more-dplyr.html"><a href="more-dplyr.html"><i class="fa fa-check"></i><b>5</b> More dplyr</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="more-dplyr.html"><a href="more-dplyr.html#review-and-preparation"><i class="fa fa-check"></i><b>5.1</b> Review and preparation</a></li>
+<li class="chapter" data-level="5.2" data-path="more-dplyr.html"><a href="more-dplyr.html#use-mutate-to-add-new-variables"><i class="fa fa-check"></i><b>5.2</b> Use mutate() to add new variables</a></li>
+<li class="chapter" data-level="5.3" data-path="more-dplyr.html"><a href="more-dplyr.html#use-arrange-to-row-order-data"><i class="fa fa-check"></i><b>5.3</b> Use arrange() to row-order data</a></li>
+<li class="chapter" data-level="5.4" data-path="more-dplyr.html"><a href="more-dplyr.html#use-rename-to-rename-variables"><i class="fa fa-check"></i><b>5.4</b> Use rename() to rename variables</a>
+<ul>
+<li class="chapter" data-level="5.4.1" data-path="more-dplyr.html"><a href="more-dplyr.html#use-select-to-rename-and-reposition-variables"><i class="fa fa-check"></i><b>5.4.1</b> Use select() to rename and reposition variables</a></li>
+</ul></li>
+<li class="chapter" data-level="5.5" data-path="more-dplyr.html"><a href="more-dplyr.html#perform-tasks-on-subsets-with-group_by"><i class="fa fa-check"></i><b>5.5</b> Perform tasks on subsets with <code>group_by()</code></a>
+<ul>
+<li class="chapter" data-level="5.5.1" data-path="more-dplyr.html"><a href="more-dplyr.html#counting"><i class="fa fa-check"></i><b>5.5.1</b> Counting</a></li>
+<li class="chapter" data-level="5.5.2" data-path="more-dplyr.html"><a href="more-dplyr.html#general-summarization"><i class="fa fa-check"></i><b>5.5.2</b> General summarization</a></li>
+<li class="chapter" data-level="5.5.3" data-path="more-dplyr.html"><a href="more-dplyr.html#computing-with-group-wise-summaries"><i class="fa fa-check"></i><b>5.5.3</b> Computing with group-wise summaries</a></li>
+<li class="chapter" data-level="5.5.4" data-path="more-dplyr.html"><a href="more-dplyr.html#window-functions-optional"><i class="fa fa-check"></i><b>5.5.4</b> Window functions (OPTIONAL)</a></li>
+</ul></li>
+<li class="chapter" data-level="5.6" data-path="more-dplyr.html"><a href="more-dplyr.html#introduction-to-visualization-optional"><i class="fa fa-check"></i><b>5.6</b> Introduction to visualization (OPTIONAL)</a></li>
+<li class="chapter" data-level="5.7" data-path="more-dplyr.html"><a href="more-dplyr.html#comprehensive-practice"><i class="fa fa-check"></i><b>5.7</b> Comprehensive practice</a></li>
+<li class="chapter" data-level="5.8" data-path="more-dplyr.html"><a href="more-dplyr.html#data-wrangling-summary"><i class="fa fa-check"></i><b>5.8</b> Data wrangling summary</a></li>
+</ul></li>
+<li class="part"><span><b>III Statistics</b></span></li>
+<li class="chapter" data-level="6" data-path="central-limit-theorem.html"><a href="central-limit-theorem.html"><i class="fa fa-check"></i><b>6</b> Central limit theorem</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="central-limit-theorem.html"><a href="central-limit-theorem.html#clt-for-means"><i class="fa fa-check"></i><b>6.1</b> CLT for means</a>
+<ul>
+<li class="chapter" data-level="6.1.1" data-path="central-limit-theorem.html"><a href="central-limit-theorem.html#clt-part-1"><i class="fa fa-check"></i><b>6.1.1</b> CLT Part 1</a></li>
+<li class="chapter" data-level="6.1.2" data-path="central-limit-theorem.html"><a href="central-limit-theorem.html#clt-part-2"><i class="fa fa-check"></i><b>6.1.2</b> CLT Part 2</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="central-limit-theorem.html"><a href="central-limit-theorem.html#clt-for-proportions"><i class="fa fa-check"></i><b>6.2</b> CLT for proportions</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="basic-statistical-tests.html"><a href="basic-statistical-tests.html"><i class="fa fa-check"></i><b>7</b> Basic statistical tests</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="basic-statistical-tests.html"><a href="basic-statistical-tests.html#getting-ready"><i class="fa fa-check"></i><b>7.1</b> Getting ready</a></li>
+<li class="chapter" data-level="7.2" data-path="basic-statistical-tests.html"><a href="basic-statistical-tests.html#students-t-test"><i class="fa fa-check"></i><b>7.2</b> Student’s t-test</a></li>
+<li class="chapter" data-level="7.3" data-path="basic-statistical-tests.html"><a href="basic-statistical-tests.html#chi-squared-test"><i class="fa fa-check"></i><b>7.3</b> Chi-squared test</a>
+<ul>
+<li class="chapter" data-level="7.3.1" data-path="basic-statistical-tests.html"><a href="basic-statistical-tests.html#chi2-test-for-goodness-of-fit"><i class="fa fa-check"></i><b>7.3.1</b> <span class="math inline">\(\chi^2\)</span> test for goodness-of-fit</a></li>
+<li class="chapter" data-level="7.3.2" data-path="basic-statistical-tests.html"><a href="basic-statistical-tests.html#chi2-test-for-independence"><i class="fa fa-check"></i><b>7.3.2</b> <span class="math inline">\(\chi^2\)</span> test for independence</a></li>
+<li class="chapter" data-level="7.3.3" data-path="basic-statistical-tests.html"><a href="basic-statistical-tests.html#chi2-test-for-homogeneity"><i class="fa fa-check"></i><b>7.3.3</b> <span class="math inline">\(\chi^2\)</span> test for homogeneity</a></li>
+<li class="chapter" data-level="7.3.4" data-path="basic-statistical-tests.html"><a href="basic-statistical-tests.html#fishers-exact-test-optional"><i class="fa fa-check"></i><b>7.3.4</b> Fisher’s exact test (OPTIONAL)</a></li>
+<li class="chapter" data-level="7.3.5" data-path="basic-statistical-tests.html"><a href="basic-statistical-tests.html#comparison-of-proportions-optional"><i class="fa fa-check"></i><b>7.3.5</b> Comparison of proportions (OPTIONAL)</a></li>
+<li class="chapter" data-level="7.3.6" data-path="basic-statistical-tests.html"><a href="basic-statistical-tests.html#contingency-tables"><i class="fa fa-check"></i><b>7.3.6</b> Contingency tables</a></li>
+</ul></li>
+<li class="chapter" data-level="7.4" data-path="basic-statistical-tests.html"><a href="basic-statistical-tests.html#visualizing-data-distributions-optional"><i class="fa fa-check"></i><b>7.4</b> Visualizing data distributions (OPTIONAL)</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="comparing-multiple-means.html"><a href="comparing-multiple-means.html"><i class="fa fa-check"></i><b>8</b> Comparing multiple means</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="comparing-multiple-means.html"><a href="comparing-multiple-means.html#loading-packages"><i class="fa fa-check"></i><b>8.1</b> Loading packages</a></li>
+<li class="chapter" data-level="8.2" data-path="comparing-multiple-means.html"><a href="comparing-multiple-means.html#merging-datasets"><i class="fa fa-check"></i><b>8.2</b> Merging datasets</a></li>
+<li class="chapter" data-level="8.3" data-path="comparing-multiple-means.html"><a href="comparing-multiple-means.html#one-way-anova"><i class="fa fa-check"></i><b>8.3</b> One-way ANOVA</a>
+<ul>
+<li class="chapter" data-level="8.3.1" data-path="comparing-multiple-means.html"><a href="comparing-multiple-means.html#the-iris-dataset"><i class="fa fa-check"></i><b>8.3.1</b> The iris dataset</a></li>
+<li class="chapter" data-level="8.3.2" data-path="comparing-multiple-means.html"><a href="comparing-multiple-means.html#non-parametric-alternatives-to-anova"><i class="fa fa-check"></i><b>8.3.2</b> Non-parametric alternatives to ANOVA</a></li>
+<li class="chapter" data-level="8.3.3" data-path="comparing-multiple-means.html"><a href="comparing-multiple-means.html#two-way-anova"><i class="fa fa-check"></i><b>8.3.3</b> Two-way ANOVA</a></li>
+</ul></li>
+<li class="chapter" data-level="8.4" data-path="comparing-multiple-means.html"><a href="comparing-multiple-means.html#linear-regression"><i class="fa fa-check"></i><b>8.4</b> Linear regression</a>
+<ul>
+<li class="chapter" data-level="8.4.1" data-path="comparing-multiple-means.html"><a href="comparing-multiple-means.html#basic-concepts"><i class="fa fa-check"></i><b>8.4.1</b> Basic concepts</a></li>
+<li class="chapter" data-level="8.4.2" data-path="comparing-multiple-means.html"><a href="comparing-multiple-means.html#pearson-correlation"><i class="fa fa-check"></i><b>8.4.2</b> Pearson correlation</a></li>
+<li class="chapter" data-level="8.4.3" data-path="comparing-multiple-means.html"><a href="comparing-multiple-means.html#spearman-correlation"><i class="fa fa-check"></i><b>8.4.3</b> Spearman correlation</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="simple-linear-regression.html"><a href="simple-linear-regression.html"><i class="fa fa-check"></i><b>9</b> Simple linear regression</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="simple-linear-regression.html"><a href="simple-linear-regression.html#introduction"><i class="fa fa-check"></i><b>9.1</b> Introduction</a></li>
+<li class="chapter" data-level="9.2" data-path="simple-linear-regression.html"><a href="simple-linear-regression.html#least-squares-estimation"><i class="fa fa-check"></i><b>9.2</b> Least Squares Estimation</a>
+<ul>
+<li class="chapter" data-level="9.2.1" data-path="simple-linear-regression.html"><a href="simple-linear-regression.html#proposition"><i class="fa fa-check"></i><b>9.2.1</b> Proposition</a></li>
+<li class="chapter" data-level="9.2.2" data-path="simple-linear-regression.html"><a href="simple-linear-regression.html#proof"><i class="fa fa-check"></i><b>9.2.2</b> Proof</a></li>
+</ul></li>
+</ul></li>
+<li class="part"><span><b>IV Data Visualization</b></span></li>
+<li class="chapter" data-level="10" data-path="data-visualization-basics.html"><a href="data-visualization-basics.html"><i class="fa fa-check"></i><b>10</b> Data visualization basics</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="data-visualization-basics.html"><a href="data-visualization-basics.html#a-graphing-template"><i class="fa fa-check"></i><b>10.1</b> A graphing template</a></li>
+<li class="chapter" data-level="10.2" data-path="data-visualization-basics.html"><a href="data-visualization-basics.html#scatter-plot"><i class="fa fa-check"></i><b>10.2</b> Scatter plot</a>
+<ul>
+<li class="chapter" data-level="10.2.1" data-path="data-visualization-basics.html"><a href="data-visualization-basics.html#trend-lines"><i class="fa fa-check"></i><b>10.2.1</b> Trend lines</a></li>
+<li class="chapter" data-level="10.2.2" data-path="data-visualization-basics.html"><a href="data-visualization-basics.html#facets"><i class="fa fa-check"></i><b>10.2.2</b> Facets</a></li>
+</ul></li>
+<li class="chapter" data-level="10.3" data-path="data-visualization-basics.html"><a href="data-visualization-basics.html#aesthetic-mappings"><i class="fa fa-check"></i><b>10.3</b> Aesthetic mappings</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="getting-publication-ready.html"><a href="getting-publication-ready.html"><i class="fa fa-check"></i><b>11</b> Getting publication-ready</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="getting-publication-ready.html"><a href="getting-publication-ready.html#line-plot"><i class="fa fa-check"></i><b>11.1</b> Line plot</a></li>
+<li class="chapter" data-level="11.2" data-path="getting-publication-ready.html"><a href="getting-publication-ready.html#bar-plot"><i class="fa fa-check"></i><b>11.2</b> Bar plot</a>
+<ul>
+<li class="chapter" data-level="11.2.1" data-path="getting-publication-ready.html"><a href="getting-publication-ready.html#basics"><i class="fa fa-check"></i><b>11.2.1</b> Basics</a></li>
+<li class="chapter" data-level="11.2.2" data-path="getting-publication-ready.html"><a href="getting-publication-ready.html#plotting-significance-optional"><i class="fa fa-check"></i><b>11.2.2</b> Plotting significance (OPTIONAL)</a></li>
+</ul></li>
+<li class="chapter" data-level="11.3" data-path="getting-publication-ready.html"><a href="getting-publication-ready.html#box-plot"><i class="fa fa-check"></i><b>11.3</b> Box plot</a></li>
+<li class="chapter" data-level="11.4" data-path="getting-publication-ready.html"><a href="getting-publication-ready.html#histogram-and-density-plot"><i class="fa fa-check"></i><b>11.4</b> Histogram and density plot</a></li>
+<li class="chapter" data-level="11.5" data-path="getting-publication-ready.html"><a href="getting-publication-ready.html#assembly-of-multiple-figures-optional"><i class="fa fa-check"></i><b>11.5</b> Assembly of multiple figures (OPTIONAL)</a></li>
+<li class="chapter" data-level="11.6" data-path="getting-publication-ready.html"><a href="getting-publication-ready.html#extras-optional"><i class="fa fa-check"></i><b>11.6</b> Extras (OPTIONAL)</a>
+<ul>
+<li class="chapter" data-level="11.6.1" data-path="getting-publication-ready.html"><a href="getting-publication-ready.html#choropleth"><i class="fa fa-check"></i><b>11.6.1</b> Choropleth</a></li>
+<li class="chapter" data-level="11.6.2" data-path="getting-publication-ready.html"><a href="getting-publication-ready.html#animations"><i class="fa fa-check"></i><b>11.6.2</b> Animations</a></li>
+</ul></li>
+<li class="chapter" data-level="11.7" data-path="getting-publication-ready.html"><a href="getting-publication-ready.html#additional-resources-1"><i class="fa fa-check"></i><b>11.7</b> Additional resources</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><center>
+  <a rel="license" href="./index.html#license">
+    License: CC-BY-SA<br>
+    <i class = "fab fa-creative-commons fa-2x"></i>
+    <i class = "fab fa-creative-commons-by fa-2x"></i>
+    <i class = "fab fa-creative-commons-sa fa-2x"></i>
+  </a>
+</li></center>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">A Gentle Introduction to Data Science with R</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="simple-linear-regression" class="section level1" number="9">
+<h1><span class="header-section-number">9</span> Simple linear regression</h1>
+<div id="introduction" class="section level2" number="9.1">
+<h2><span class="header-section-number">9.1</span> Introduction</h2>
+<p>Simple linear regression (SLR) is a common statistical technique to determine how one variable <span class="math inline">\(y\)</span> depends on another variable <span class="math inline">\(x\)</span>. The following terms are equivalent:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="center"><span class="math inline">\(x\)</span></th>
+<th align="center"><span class="math inline">\(y\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">Explanatory</td>
+<td align="center">Response</td>
+</tr>
+<tr class="even">
+<td align="center">Independent</td>
+<td align="center">Dependent</td>
+</tr>
+<tr class="odd">
+<td align="center">Predictor</td>
+<td align="center">Predicted</td>
+</tr>
+</tbody>
+</table>
+<p>Given bivariate data <span class="math inline">\((x_1, y_1), (x_2, y_2), ..., (x_n, y_n)\)</span> and errors <span class="math inline">\(\epsilon_1, \epsilon_2, ..., \epsilon_n\)</span>, the SLR model is as follows:
+<span class="math display">\[\begin{equation}
+    y_i = \beta_0 + \beta_1 x_i + \epsilon_i
+\end{equation}\]</span></p>
+<p>where
+<span class="math display">\[\begin{equation}
+    \mathbb{E}(Y_i \:\vert\:x_i) = \beta_0 + \beta_1 x_i \quad i = 1, 2, ..., n
+\end{equation}\]</span></p>
+<p>Here, <span class="math inline">\(\beta_0\)</span> and <span class="math inline">\(\beta_1\)</span> are unknown parameters. The parameter <span class="math inline">\(\beta_0\)</span> is the ``population’’ intercept and <span class="math inline">\(\beta_1\)</span> is the average change in <span class="math inline">\(y\)</span> given a unit increase in <span class="math inline">\(x\)</span>. Further, <span class="math inline">\(\beta_0\)</span>, <span class="math inline">\(\beta_1\)</span>, and <span class="math inline">\(x_i\)</span> are assumed to fixed whereas <span class="math inline">\(y_i\)</span> are random variables. The conditional distribution of <span class="math inline">\(y_i\)</span> given <span class="math inline">\(x_i\)</span> is <span class="math inline">\(N(\beta_0 + \beta_1 x_i, \sigma^2)\)</span>. The expected value of this distribution is
+<span class="math display">\[\begin{align}
+    \mathbb{E}(y \:\vert\:x) &amp;= \mathbb{E}(\beta_0 + \beta_1 x + \epsilon) \\
+    &amp;= \beta_0 + \beta_1 x + \mathbb{E}(\epsilon) \\
+    &amp;= \beta_0 + \beta_1 x
+\end{align}\]</span></p>
+<p>and the variance is
+<span class="math display">\[\begin{align}
+    V(y \:\vert\:x) &amp;= V(\beta_0 + \beta_1 x + \epsilon) \\
+    &amp;= V(\beta_0 + \beta_1 x) + V(\epsilon) \\
+    &amp;= V(\epsilon)
+\end{align}\]</span></p>
+<p>The SLR model assumes that the distribution of <span class="math inline">\(\epsilon\)</span> at any <span class="math inline">\(x\)</span> has a mean of 0 (<span class="math inline">\(\mu_\epsilon = 0\)</span>) and a constant standard deviation. The model also assumes that the distribution of <span class="math inline">\(\epsilon\)</span> at any <span class="math inline">\(x\)</span> is normal and the random deviations <span class="math inline">\(\epsilon_i\)</span> are independent of one another. To fit a regression line, we must estimate <span class="math inline">\(\beta_0\)</span> and <span class="math inline">\(\beta_1\)</span>. That is, we want to choose <span class="math inline">\(\beta_0\)</span> and <span class="math inline">\(\beta_1\)</span> to minimize the sum of squared deviations in <span class="math inline">\(y\)</span>. The deviations in <span class="math inline">\(y\)</span> can be written as follows:
+<span class="math display">\[\begin{equation}
+    f(\beta_0, \beta_1) = \sum_{i=1}^n (y_i - \hat{y})^2 = \sum_{i=1}^n (y_i - \beta_0 - \beta_1 x_i)^2
+\end{equation}\]</span></p>
+</div>
+<div id="least-squares-estimation" class="section level2" number="9.2">
+<h2><span class="header-section-number">9.2</span> Least Squares Estimation</h2>
+<div id="proposition" class="section level3" number="9.2.1">
+<h3><span class="header-section-number">9.2.1</span> Proposition</h3>
+<p>Let <span class="math inline">\(f\)</span> be a function that represents the squared deviations in <span class="math inline">\(y\)</span>.
+<span class="math display">\[\begin{equation}
+    f(\beta_0, \beta_1) = \sum_{i=1}^n (y_i - \hat{y})^2 = \sum_{i=1}^n (y_i - \beta_0 - \beta_1 x_i)^2
+\end{equation}\]</span></p>
+<p>Then
+<span class="math display">\[\begin{align}
+    \beta_1 &amp;= \frac{S_{XY}}{S_{XX}} \\
+    \beta_0 &amp;= \bar{y} - \beta_1 \bar{x}
+\end{align}\]</span></p>
+<p>are the values that minimize equation (10).</p>
+</div>
+<div id="proof" class="section level3" number="9.2.2">
+<h3><span class="header-section-number">9.2.2</span> Proof</h3>
+<p>We first take the partial derivatives of <span class="math inline">\(f\)</span>.
+<span class="math display">\[\begin{align}
+    \frac{\partial f}{\partial \beta_0} &amp;= \sum_{i=1}^n 2 (y_i - \beta_0 - \beta_1 x_i) (-1) = 0 \\
+    0 &amp;= \sum_{i=1}^n (\beta_0 + \beta_1 x_i - y_i) \\
+    &amp;= n \beta_0 + \beta_1 \sum_{i=1}^n x_i - \sum_{i=1}^n y_i \\
+    \beta_0 &amp;= \frac{1}{n} \sum_{i=1}^n y_i - \frac{\beta_1}{n} \sum_{i=1}^n x_i \\
+    &amp;= \bar{y} - \beta_1 \bar{x}
+\end{align}\]</span></p>
+<p>Thus, <span class="math inline">\(\beta_0 = \bar{y} - \beta_1 \bar{x}\)</span>.
+<span class="math display">\[\begin{align}
+    \frac{\partial f}{\partial \beta_1} &amp;= \sum_{i=1}^n 2 (y_i - \beta_0 - \beta_1 x_i) (-x_i) = 0 \\
+    0 &amp;= \sum_{i=1}^n (x_i y_i - \beta_0 x_i - \beta_1 x_i^2)
+    \intertext{Substitute equation (17) into equation (19).}
+    0 &amp;= \sum_{i=1}^n (x_i y_i - (\bar{y} - \beta_1 \bar{x})x_i - \beta_1 x_i^2) \\
+    &amp;= \sum_{i=1}^n (x_i y_i - x_i \bar{y} + \beta_1 x_i \bar{x} - \beta_1 x_i^2) \\
+    &amp;= \sum_{i=1}^n (x_i - x_i \bar{y}) - \beta_1 \sum_{i=1}^n (x_i^2 - x_i \bar{x}) \\
+    \beta_1 &amp;= \frac{\sum_{i=1}^n (x_i y_i - x_i \bar{y})}{\sum_{i=1}^n (x_i^2 - x_i \bar{x})} \\
+    &amp;= \frac{\sum_{i=1}^n (x_i y_i) - n \bar{x} \bar{y}}{\sum_{i=1}^n x_i^2 - n \bar{x}^2}
+    \intertext{We can clean up equation (24) by adding the following: $\sum_{i=1}^n (\bar{x}^2 - x_i \bar{x})$ and $\sum_{i=1}^n (\bar{x}\bar{y} - y_i \bar{x})$. Note that these expressions both evaluate to 0.}
+    \beta_1 &amp;= \frac{\sum_{i=1}^n (x_i y_i - x_i \bar{y}) + \sum_{i=1}^n (\bar{x} \bar{y} - \bar{x} y_i)}{\sum_{i=1}^n (x_i^2 - x_i \bar{x}) + \sum_{i=1}^n (\bar{x}^2 - x_i \bar{x})} \\
+    &amp;= \frac{\sum_{i=1}^n (x_i - \bar{x}) (y_i - \bar{y})}{\sum_{i=1}^n (x_i - \bar{x})^2} \\
+    &amp;= \frac{\frac{1}{n} \sum_{i=1}^n (x_i - \bar{x}) (y_i - \bar{y})}{\frac{1}{n} \sum_{i=1}^n (x_i - \bar{x})^2} \\
+    &amp;= \frac{\text{Cov}(x, y)}{\text{Var}(x)} \\
+    &amp;= \frac{S_{XY}}{S_{XX}}
+\end{align}\]</span></p>
+
+</div>
+</div>
+</div>
+
+
+
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="comparing-multiple-means.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="data-visualization-basics.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": true,
+"facebook": false,
+"twitter": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "section"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

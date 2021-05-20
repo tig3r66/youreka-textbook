@@ -40,7 +40,7 @@ This material was adapted from:
 
 1. Jennifer Bryan STAT 545 at UBC https://stat545.com/
 
-2. Jennifer Bryan (2017). gapminder: Data from Gapminder. R package version 0.3.0. https://CRAN.R-project.org/package=gapminder
+2. Teacups, Giraffes, & Statistics by Hasse Walum and Desirée De Leon https://tinystats.github.io/teacups-giraffes-and-statistics/
 
 
 ## License {-}
@@ -74,4 +74,3 @@ The licensor cannot revoke these freedoms as long as you follow the license term
 You do not have to comply with the license for elements of the material in the public domain or where your use is permitted by an applicable exception or limitation.
 
 No warranties are given. The license may not give you all of the permissions necessary for your intended use. For example, other rights such as publicity, privacy, or moral rights may limit how you use the material.
-

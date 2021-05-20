@@ -1,12 +1,14 @@
 bookdown::gitbook:
   css: [assets/style.css]
+  include:
+    in_header: header.html
   favicon: assets/favicon.ico
   split_by: chapter
   config:
     toc:
       collapse: section
       before: |
-        <li class="toc-logo"><a href="./"><img src="assets/youreka-logo.png" ></a></li>
+        <li class="toc-logo"><a href="./index.html"><img src="assets/youreka-logo.png" ></a></li>
       after: |
         <li><center>
           <a rel="license" href="./index.html#license">

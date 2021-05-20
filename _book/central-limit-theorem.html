@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>6 Central limit theorem | A Gentle Introduction to Data Science with R</title>
-  <meta name="description" content="6 Central limit theorem | A Gentle Introduction to Data Science with R" />
+  <title>7 Central limit theorem | A Gentle Introduction to Data Science with R</title>
+  <meta name="description" content="7 Central limit theorem | A Gentle Introduction to Data Science with R" />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="6 Central limit theorem | A Gentle Introduction to Data Science with R" />
+  <meta property="og:title" content="7 Central limit theorem | A Gentle Introduction to Data Science with R" />
   <meta property="og:type" content="book" />
   
   <meta property="og:image" content="assets/youreka-logo.png" />
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="tig3r66/youreka-textbook" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="6 Central limit theorem | A Gentle Introduction to Data Science with R" />
+  <meta name="twitter:title" content="7 Central limit theorem | A Gentle Introduction to Data Science with R" />
   
   
   <meta name="twitter:image" content="assets/youreka-logo.png" />
@@ -33,7 +33,7 @@
   
 <link rel="prev" href="more-dplyr.html"/>
 <link rel="next" href="basic-statistical-tests.html"/>
-<script src="libs/header-attrs-2.6/header-attrs.js"></script>
+<script src="libs/header-attrs-2.7/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -53,6 +53,28 @@
 
 <link href="libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
 <link href="libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/4.3.1/iframeResizer.min.js">
+</script>
+
+<script type="text/javascript">
+
+// Once page is loaded, override and disable popover "scroll into view"
+  $(document).ready(function() {
+    window.tutorial.scrollIntoView = function() {}
+  })
+
+// Add padding to LearnR body when popover shown
+  $(document).on("shown.bs.popover", function() {
+    var popoverHeight = document.querySelector(".popover").offsetHeight
+    document.body.style.paddingTop = popoverHeight + 10 + "px"
+  })
+
+// Set padding to 0 when popover hidden
+  $(document).on("hide.bs.popover", function() {
+    var popoverHeight = document.querySelector(".popover").offsetHeight
+    document.body.style.paddingTop = "0px"
+  })
+</script>
 
 
 <style type="text/css">
@@ -132,7 +154,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <nav role="navigation">
 
 <ul class="summary">
-<li class="toc-logo"><a href="./"><img src="assets/youreka-logo.png" ></a></li>
+<li class="toc-logo"><a href="./index.html"><img src="assets/youreka-logo.png" ></a></li>
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Welcome to Youreka Canada</a>
@@ -149,155 +171,157 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.2" data-path="install.html"><a href="install.html#installing-rstudio"><i class="fa fa-check"></i><b>1.2</b> Installing RStudio</a></li>
 <li class="chapter" data-level="1.3" data-path="install.html"><a href="install.html#add-on-packages"><i class="fa fa-check"></i><b>1.3</b> Add-on packages</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="basics-of-r-part-1.html"><a href="basics-of-r-part-1.html"><i class="fa fa-check"></i><b>2</b> Basics of R (Part 1)</a>
+<li class="chapter" data-level="2" data-path="intro-to-r.html"><a href="intro-to-r.html"><i class="fa fa-check"></i><b>2</b> Intro to R</a>
 <ul>
-<li class="chapter" data-level="2.1" data-path="basics-of-r-part-1.html"><a href="basics-of-r-part-1.html#objects"><i class="fa fa-check"></i><b>2.1</b> Objects</a></li>
-<li class="chapter" data-level="2.2" data-path="basics-of-r-part-1.html"><a href="basics-of-r-part-1.html#function-basics"><i class="fa fa-check"></i><b>2.2</b> Function Basics</a></li>
-<li class="chapter" data-level="2.3" data-path="basics-of-r-part-1.html"><a href="basics-of-r-part-1.html#basic-math-operators"><i class="fa fa-check"></i><b>2.3</b> Basic math operators</a></li>
-<li class="chapter" data-level="2.4" data-path="basics-of-r-part-1.html"><a href="basics-of-r-part-1.html#conditionals"><i class="fa fa-check"></i><b>2.4</b> Conditionals</a>
+<li class="chapter" data-level="2.1" data-path="intro-to-r.html"><a href="intro-to-r.html#using-interactive-windows"><i class="fa fa-check"></i><b>2.1</b> Using interactive windows</a></li>
+<li class="chapter" data-level="2.2" data-path="intro-to-r.html"><a href="intro-to-r.html#objects"><i class="fa fa-check"></i><b>2.2</b> Objects</a></li>
+<li class="chapter" data-level="2.3" data-path="intro-to-r.html"><a href="intro-to-r.html#functions"><i class="fa fa-check"></i><b>2.3</b> Functions</a></li>
+<li class="chapter" data-level="2.4" data-path="intro-to-r.html"><a href="intro-to-r.html#math-operators"><i class="fa fa-check"></i><b>2.4</b> Math operators</a></li>
+<li class="chapter" data-level="2.5" data-path="intro-to-r.html"><a href="intro-to-r.html#conditionals"><i class="fa fa-check"></i><b>2.5</b> Conditionals</a>
 <ul>
-<li class="chapter" data-level="2.4.1" data-path="basics-of-r-part-1.html"><a href="basics-of-r-part-1.html#if-statements"><i class="fa fa-check"></i><b>2.4.1</b> If statements</a></li>
-<li class="chapter" data-level="2.4.2" data-path="basics-of-r-part-1.html"><a href="basics-of-r-part-1.html#multiple-ifs-vs-else-if"><i class="fa fa-check"></i><b>2.4.2</b> Multiple “if”s vs “else if”</a></li>
+<li class="chapter" data-level="2.5.1" data-path="intro-to-r.html"><a href="intro-to-r.html#if-statements"><i class="fa fa-check"></i><b>2.5.1</b> If statements</a></li>
 </ul></li>
-<li class="chapter" data-level="2.5" data-path="basics-of-r-part-1.html"><a href="basics-of-r-part-1.html#working-directory"><i class="fa fa-check"></i><b>2.5</b> Working directory</a>
+<li class="chapter" data-level="2.6" data-path="intro-to-r.html"><a href="intro-to-r.html#working-directory"><i class="fa fa-check"></i><b>2.6</b> Working directory</a>
 <ul>
-<li class="chapter" data-level="2.5.1" data-path="basics-of-r-part-1.html"><a href="basics-of-r-part-1.html#other-important-things"><i class="fa fa-check"></i><b>2.5.1</b> Other important things</a></li>
+<li class="chapter" data-level="2.6.1" data-path="intro-to-r.html"><a href="intro-to-r.html#other-important-things"><i class="fa fa-check"></i><b>2.6.1</b> Other important things</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="basics-of-r-part-2.html"><a href="basics-of-r-part-2.html"><i class="fa fa-check"></i><b>3</b> Basics of R (Part 2)</a>
+<li class="chapter" data-level="3" data-path="data-structures.html"><a href="data-structures.html"><i class="fa fa-check"></i><b>3</b> Data Structures</a>
 <ul>
-<li class="chapter" data-level="3.1" data-path="basics-of-r-part-2.html"><a href="basics-of-r-part-2.html#data-structures"><i class="fa fa-check"></i><b>3.1</b> Data structures</a>
+<li class="chapter" data-level="3.1" data-path="data-structures.html"><a href="data-structures.html#vectors"><i class="fa fa-check"></i><b>3.1</b> Vectors</a>
 <ul>
-<li class="chapter" data-level="3.1.1" data-path="basics-of-r-part-2.html"><a href="basics-of-r-part-2.html#vectors"><i class="fa fa-check"></i><b>3.1.1</b> Vectors</a></li>
-<li class="chapter" data-level="3.1.2" data-path="basics-of-r-part-2.html"><a href="basics-of-r-part-2.html#missing-values"><i class="fa fa-check"></i><b>3.1.2</b> Missing values</a></li>
-<li class="chapter" data-level="3.1.3" data-path="basics-of-r-part-2.html"><a href="basics-of-r-part-2.html#data-frames"><i class="fa fa-check"></i><b>3.1.3</b> Data frames</a></li>
-<li class="chapter" data-level="3.1.4" data-path="basics-of-r-part-2.html"><a href="basics-of-r-part-2.html#external-data"><i class="fa fa-check"></i><b>3.1.4</b> External data</a></li>
-<li class="chapter" data-level="3.1.5" data-path="basics-of-r-part-2.html"><a href="basics-of-r-part-2.html#factors"><i class="fa fa-check"></i><b>3.1.5</b> Factors</a></li>
-<li class="chapter" data-level="3.1.6" data-path="basics-of-r-part-2.html"><a href="basics-of-r-part-2.html#lists"><i class="fa fa-check"></i><b>3.1.6</b> Lists</a></li>
+<li class="chapter" data-level="3.1.1" data-path="data-structures.html"><a href="data-structures.html#missing-values"><i class="fa fa-check"></i><b>3.1.1</b> Missing values</a></li>
 </ul></li>
-<li class="chapter" data-level="3.2" data-path="basics-of-r-part-2.html"><a href="basics-of-r-part-2.html#for-loops"><i class="fa fa-check"></i><b>3.2</b> For loops</a>
+<li class="chapter" data-level="3.2" data-path="data-structures.html"><a href="data-structures.html#lists"><i class="fa fa-check"></i><b>3.2</b> Lists</a></li>
+<li class="chapter" data-level="3.3" data-path="data-structures.html"><a href="data-structures.html#data-frames"><i class="fa fa-check"></i><b>3.3</b> Data frames</a>
 <ul>
-<li class="chapter" data-level="3.2.1" data-path="basics-of-r-part-2.html"><a href="basics-of-r-part-2.html#looping-over-multiple-files"><i class="fa fa-check"></i><b>3.2.1</b> Looping over multiple files</a></li>
-<li class="chapter" data-level="3.2.2" data-path="basics-of-r-part-2.html"><a href="basics-of-r-part-2.html#nested-loops-optional"><i class="fa fa-check"></i><b>3.2.2</b> Nested loops (OPTIONAL)</a></li>
+<li class="chapter" data-level="3.3.1" data-path="data-structures.html"><a href="data-structures.html#external-data"><i class="fa fa-check"></i><b>3.3.1</b> External data</a></li>
+<li class="chapter" data-level="3.3.2" data-path="data-structures.html"><a href="data-structures.html#factors"><i class="fa fa-check"></i><b>3.3.2</b> Factors</a></li>
 </ul></li>
-<li class="chapter" data-level="3.3" data-path="basics-of-r-part-2.html"><a href="basics-of-r-part-2.html#functions"><i class="fa fa-check"></i><b>3.3</b> Functions</a>
+</ul></li>
+<li class="chapter" data-level="4" data-path="loops-and-functions.html"><a href="loops-and-functions.html"><i class="fa fa-check"></i><b>4</b> Loops and Functions</a>
 <ul>
-<li class="chapter" data-level="3.3.1" data-path="basics-of-r-part-2.html"><a href="basics-of-r-part-2.html#conditionals-within-functions"><i class="fa fa-check"></i><b>3.3.1</b> Conditionals within functions</a></li>
-<li class="chapter" data-level="3.3.2" data-path="basics-of-r-part-2.html"><a href="basics-of-r-part-2.html#nested-conditionals"><i class="fa fa-check"></i><b>3.3.2</b> Nested conditionals</a></li>
-<li class="chapter" data-level="3.3.3" data-path="basics-of-r-part-2.html"><a href="basics-of-r-part-2.html#function-arguments"><i class="fa fa-check"></i><b>3.3.3</b> Function arguments</a></li>
-<li class="chapter" data-level="3.3.4" data-path="basics-of-r-part-2.html"><a href="basics-of-r-part-2.html#combining-functions"><i class="fa fa-check"></i><b>3.3.4</b> Combining functions</a></li>
+<li class="chapter" data-level="4.1" data-path="loops-and-functions.html"><a href="loops-and-functions.html#for-loops"><i class="fa fa-check"></i><b>4.1</b> For loops</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="loops-and-functions.html"><a href="loops-and-functions.html#looping-over-multiple-files"><i class="fa fa-check"></i><b>4.1.1</b> Looping over multiple files</a></li>
+<li class="chapter" data-level="4.1.2" data-path="loops-and-functions.html"><a href="loops-and-functions.html#nested-loops"><i class="fa fa-check"></i><b>4.1.2</b> Nested loops</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="loops-and-functions.html"><a href="loops-and-functions.html#functions-1"><i class="fa fa-check"></i><b>4.2</b> Functions</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="loops-and-functions.html"><a href="loops-and-functions.html#conditionals-within-functions"><i class="fa fa-check"></i><b>4.2.1</b> Conditionals within functions</a></li>
 </ul></li>
 </ul></li>
 <li class="part"><span><b>II Data Wrangling</b></span></li>
-<li class="chapter" data-level="4" data-path="more-data-frames.html"><a href="more-data-frames.html"><i class="fa fa-check"></i><b>4</b> More data frames</a>
+<li class="chapter" data-level="5" data-path="data-exploration.html"><a href="data-exploration.html"><i class="fa fa-check"></i><b>5</b> Data exploration</a>
 <ul>
-<li class="chapter" data-level="4.1" data-path="more-data-frames.html"><a href="more-data-frames.html#get-the-gapminder-data"><i class="fa fa-check"></i><b>4.1</b> Get the gapminder data</a></li>
-<li class="chapter" data-level="4.2" data-path="more-data-frames.html"><a href="more-data-frames.html#explore-gapminder"><i class="fa fa-check"></i><b>4.2</b> Explore gapminder</a>
+<li class="chapter" data-level="5.1" data-path="data-exploration.html"><a href="data-exploration.html#get-the-gapminder-data"><i class="fa fa-check"></i><b>5.1</b> Get the gapminder data</a></li>
+<li class="chapter" data-level="5.2" data-path="data-exploration.html"><a href="data-exploration.html#explore-gapminder"><i class="fa fa-check"></i><b>5.2</b> Explore gapminder</a>
 <ul>
-<li class="chapter" data-level="4.2.1" data-path="more-data-frames.html"><a href="more-data-frames.html#importing-and-exporting-data"><i class="fa fa-check"></i><b>4.2.1</b> Importing and exporting data</a></li>
-<li class="chapter" data-level="4.2.2" data-path="more-data-frames.html"><a href="more-data-frames.html#exploring-variables-in-a-data-frame"><i class="fa fa-check"></i><b>4.2.2</b> Exploring variables in a data frame</a></li>
-<li class="chapter" data-level="4.2.3" data-path="more-data-frames.html"><a href="more-data-frames.html#data-frame-summary"><i class="fa fa-check"></i><b>4.2.3</b> Data frame summary</a></li>
+<li class="chapter" data-level="5.2.1" data-path="data-exploration.html"><a href="data-exploration.html#importing-and-exporting-data"><i class="fa fa-check"></i><b>5.2.1</b> Importing and exporting data</a></li>
+<li class="chapter" data-level="5.2.2" data-path="data-exploration.html"><a href="data-exploration.html#exploring-variables-in-a-data-frame"><i class="fa fa-check"></i><b>5.2.2</b> Exploring variables in a data frame</a></li>
+<li class="chapter" data-level="5.2.3" data-path="data-exploration.html"><a href="data-exploration.html#data-frame-summary"><i class="fa fa-check"></i><b>5.2.3</b> Data frame summary</a></li>
 </ul></li>
-<li class="chapter" data-level="4.3" data-path="more-data-frames.html"><a href="more-data-frames.html#data-frames-with-dplyr"><i class="fa fa-check"></i><b>4.3</b> Data frames with dplyr</a>
+<li class="chapter" data-level="5.3" data-path="data-exploration.html"><a href="data-exploration.html#data-frames-with-dplyr"><i class="fa fa-check"></i><b>5.3</b> Data frames with dplyr</a>
 <ul>
-<li class="chapter" data-level="4.3.1" data-path="more-data-frames.html"><a href="more-data-frames.html#subsetting-data"><i class="fa fa-check"></i><b>4.3.1</b> Subsetting data</a></li>
-<li class="chapter" data-level="4.3.2" data-path="more-data-frames.html"><a href="more-data-frames.html#filter-rows-with-filter"><i class="fa fa-check"></i><b>4.3.2</b> Filter rows with <code>filter()</code></a></li>
-<li class="chapter" data-level="4.3.3" data-path="more-data-frames.html"><a href="more-data-frames.html#pipe-operator"><i class="fa fa-check"></i><b>4.3.3</b> Pipe operator <code>%&gt;%</code></a></li>
-<li class="chapter" data-level="4.3.4" data-path="more-data-frames.html"><a href="more-data-frames.html#select-columns-with-select"><i class="fa fa-check"></i><b>4.3.4</b> Select Columns with <code>select()</code></a></li>
-<li class="chapter" data-level="4.3.5" data-path="more-data-frames.html"><a href="more-data-frames.html#pure-predictable-pipeable-optional"><i class="fa fa-check"></i><b>4.3.5</b> Pure, predictable, pipeable (OPTIONAL)</a></li>
-<li class="chapter" data-level="4.3.6" data-path="more-data-frames.html"><a href="more-data-frames.html#additional-resources"><i class="fa fa-check"></i><b>4.3.6</b> Additional resources</a></li>
+<li class="chapter" data-level="5.3.1" data-path="data-exploration.html"><a href="data-exploration.html#subsetting-data"><i class="fa fa-check"></i><b>5.3.1</b> Subsetting data</a></li>
+<li class="chapter" data-level="5.3.2" data-path="data-exploration.html"><a href="data-exploration.html#filter-rows-with-filter"><i class="fa fa-check"></i><b>5.3.2</b> Filter rows with <code>filter()</code></a></li>
+<li class="chapter" data-level="5.3.3" data-path="data-exploration.html"><a href="data-exploration.html#pipe-operator"><i class="fa fa-check"></i><b>5.3.3</b> Pipe operator <code>%&gt;%</code></a></li>
+<li class="chapter" data-level="5.3.4" data-path="data-exploration.html"><a href="data-exploration.html#select-columns-with-select"><i class="fa fa-check"></i><b>5.3.4</b> Select Columns with <code>select()</code></a></li>
+<li class="chapter" data-level="5.3.5" data-path="data-exploration.html"><a href="data-exploration.html#pure-predictable-pipeable-optional"><i class="fa fa-check"></i><b>5.3.5</b> Pure, predictable, pipeable (OPTIONAL)</a></li>
+<li class="chapter" data-level="5.3.6" data-path="data-exploration.html"><a href="data-exploration.html#additional-resources"><i class="fa fa-check"></i><b>5.3.6</b> Additional resources</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="more-dplyr.html"><a href="more-dplyr.html"><i class="fa fa-check"></i><b>5</b> More dplyr</a>
+<li class="chapter" data-level="6" data-path="more-dplyr.html"><a href="more-dplyr.html"><i class="fa fa-check"></i><b>6</b> More dplyr</a>
 <ul>
-<li class="chapter" data-level="5.1" data-path="more-dplyr.html"><a href="more-dplyr.html#review-and-preparation"><i class="fa fa-check"></i><b>5.1</b> Review and preparation</a></li>
-<li class="chapter" data-level="5.2" data-path="more-dplyr.html"><a href="more-dplyr.html#use-mutate-to-add-new-variables"><i class="fa fa-check"></i><b>5.2</b> Use mutate() to add new variables</a></li>
-<li class="chapter" data-level="5.3" data-path="more-dplyr.html"><a href="more-dplyr.html#use-arrange-to-row-order-data"><i class="fa fa-check"></i><b>5.3</b> Use arrange() to row-order data</a></li>
-<li class="chapter" data-level="5.4" data-path="more-dplyr.html"><a href="more-dplyr.html#use-rename-to-rename-variables"><i class="fa fa-check"></i><b>5.4</b> Use rename() to rename variables</a>
+<li class="chapter" data-level="6.1" data-path="more-dplyr.html"><a href="more-dplyr.html#review-and-preparation"><i class="fa fa-check"></i><b>6.1</b> Review and preparation</a></li>
+<li class="chapter" data-level="6.2" data-path="more-dplyr.html"><a href="more-dplyr.html#use-mutate-to-add-new-variables"><i class="fa fa-check"></i><b>6.2</b> Use mutate() to add new variables</a></li>
+<li class="chapter" data-level="6.3" data-path="more-dplyr.html"><a href="more-dplyr.html#use-arrange-to-row-order-data"><i class="fa fa-check"></i><b>6.3</b> Use arrange() to row-order data</a></li>
+<li class="chapter" data-level="6.4" data-path="more-dplyr.html"><a href="more-dplyr.html#use-rename-to-rename-variables"><i class="fa fa-check"></i><b>6.4</b> Use rename() to rename variables</a>
 <ul>
-<li class="chapter" data-level="5.4.1" data-path="more-dplyr.html"><a href="more-dplyr.html#use-select-to-rename-and-reposition-variables"><i class="fa fa-check"></i><b>5.4.1</b> Use select() to rename and reposition variables</a></li>
+<li class="chapter" data-level="6.4.1" data-path="more-dplyr.html"><a href="more-dplyr.html#use-select-to-rename-and-reposition-variables"><i class="fa fa-check"></i><b>6.4.1</b> Use select() to rename and reposition variables</a></li>
 </ul></li>
-<li class="chapter" data-level="5.5" data-path="more-dplyr.html"><a href="more-dplyr.html#perform-tasks-on-subsets-with-group_by"><i class="fa fa-check"></i><b>5.5</b> Perform tasks on subsets with <code>group_by()</code></a>
+<li class="chapter" data-level="6.5" data-path="more-dplyr.html"><a href="more-dplyr.html#perform-tasks-on-subsets-with-group_by"><i class="fa fa-check"></i><b>6.5</b> Perform tasks on subsets with <code>group_by()</code></a>
 <ul>
-<li class="chapter" data-level="5.5.1" data-path="more-dplyr.html"><a href="more-dplyr.html#counting"><i class="fa fa-check"></i><b>5.5.1</b> Counting</a></li>
-<li class="chapter" data-level="5.5.2" data-path="more-dplyr.html"><a href="more-dplyr.html#general-summarization"><i class="fa fa-check"></i><b>5.5.2</b> General summarization</a></li>
-<li class="chapter" data-level="5.5.3" data-path="more-dplyr.html"><a href="more-dplyr.html#computing-with-group-wise-summaries"><i class="fa fa-check"></i><b>5.5.3</b> Computing with group-wise summaries</a></li>
-<li class="chapter" data-level="5.5.4" data-path="more-dplyr.html"><a href="more-dplyr.html#window-functions-optional"><i class="fa fa-check"></i><b>5.5.4</b> Window functions (OPTIONAL)</a></li>
+<li class="chapter" data-level="6.5.1" data-path="more-dplyr.html"><a href="more-dplyr.html#counting"><i class="fa fa-check"></i><b>6.5.1</b> Counting</a></li>
+<li class="chapter" data-level="6.5.2" data-path="more-dplyr.html"><a href="more-dplyr.html#general-summarization"><i class="fa fa-check"></i><b>6.5.2</b> General summarization</a></li>
+<li class="chapter" data-level="6.5.3" data-path="more-dplyr.html"><a href="more-dplyr.html#computing-with-group-wise-summaries"><i class="fa fa-check"></i><b>6.5.3</b> Computing with group-wise summaries</a></li>
+<li class="chapter" data-level="6.5.4" data-path="more-dplyr.html"><a href="more-dplyr.html#window-functions-optional"><i class="fa fa-check"></i><b>6.5.4</b> Window functions (OPTIONAL)</a></li>
 </ul></li>
-<li class="chapter" data-level="5.6" data-path="more-dplyr.html"><a href="more-dplyr.html#introduction-to-visualization-optional"><i class="fa fa-check"></i><b>5.6</b> Introduction to visualization (OPTIONAL)</a></li>
-<li class="chapter" data-level="5.7" data-path="more-dplyr.html"><a href="more-dplyr.html#comprehensive-practice"><i class="fa fa-check"></i><b>5.7</b> Comprehensive practice</a></li>
-<li class="chapter" data-level="5.8" data-path="more-dplyr.html"><a href="more-dplyr.html#data-wrangling-summary"><i class="fa fa-check"></i><b>5.8</b> Data wrangling summary</a></li>
+<li class="chapter" data-level="6.6" data-path="more-dplyr.html"><a href="more-dplyr.html#introduction-to-visualization-optional"><i class="fa fa-check"></i><b>6.6</b> Introduction to visualization (OPTIONAL)</a></li>
+<li class="chapter" data-level="6.7" data-path="more-dplyr.html"><a href="more-dplyr.html#comprehensive-practice"><i class="fa fa-check"></i><b>6.7</b> Comprehensive practice</a></li>
+<li class="chapter" data-level="6.8" data-path="more-dplyr.html"><a href="more-dplyr.html#data-wrangling-summary"><i class="fa fa-check"></i><b>6.8</b> Data wrangling summary</a></li>
 </ul></li>
 <li class="part"><span><b>III Statistics</b></span></li>
-<li class="chapter" data-level="6" data-path="central-limit-theorem.html"><a href="central-limit-theorem.html"><i class="fa fa-check"></i><b>6</b> Central limit theorem</a>
+<li class="chapter" data-level="7" data-path="central-limit-theorem.html"><a href="central-limit-theorem.html"><i class="fa fa-check"></i><b>7</b> Central limit theorem</a>
 <ul>
-<li class="chapter" data-level="6.1" data-path="central-limit-theorem.html"><a href="central-limit-theorem.html#clt-for-means"><i class="fa fa-check"></i><b>6.1</b> CLT for means</a>
+<li class="chapter" data-level="7.1" data-path="central-limit-theorem.html"><a href="central-limit-theorem.html#motivation"><i class="fa fa-check"></i><b>7.1</b> Motivation</a></li>
+<li class="chapter" data-level="7.2" data-path="central-limit-theorem.html"><a href="central-limit-theorem.html#clt-for-means"><i class="fa fa-check"></i><b>7.2</b> CLT for means</a>
 <ul>
-<li class="chapter" data-level="6.1.1" data-path="central-limit-theorem.html"><a href="central-limit-theorem.html#clt-part-1"><i class="fa fa-check"></i><b>6.1.1</b> CLT Part 1</a></li>
-<li class="chapter" data-level="6.1.2" data-path="central-limit-theorem.html"><a href="central-limit-theorem.html#clt-part-2"><i class="fa fa-check"></i><b>6.1.2</b> CLT Part 2</a></li>
+<li class="chapter" data-level="7.2.1" data-path="central-limit-theorem.html"><a href="central-limit-theorem.html#clt-part-1"><i class="fa fa-check"></i><b>7.2.1</b> CLT Part 1</a></li>
+<li class="chapter" data-level="7.2.2" data-path="central-limit-theorem.html"><a href="central-limit-theorem.html#clt-part-2"><i class="fa fa-check"></i><b>7.2.2</b> CLT Part 2</a></li>
 </ul></li>
-<li class="chapter" data-level="6.2" data-path="central-limit-theorem.html"><a href="central-limit-theorem.html#clt-for-proportions"><i class="fa fa-check"></i><b>6.2</b> CLT for proportions</a></li>
+<li class="chapter" data-level="7.3" data-path="central-limit-theorem.html"><a href="central-limit-theorem.html#clt-for-proportions"><i class="fa fa-check"></i><b>7.3</b> CLT for proportions</a></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="basic-statistical-tests.html"><a href="basic-statistical-tests.html"><i class="fa fa-check"></i><b>7</b> Basic statistical tests</a>
+<li class="chapter" data-level="8" data-path="basic-statistical-tests.html"><a href="basic-statistical-tests.html"><i class="fa fa-check"></i><b>8</b> Basic statistical tests</a>
 <ul>
-<li class="chapter" data-level="7.1" data-path="basic-statistical-tests.html"><a href="basic-statistical-tests.html#getting-ready"><i class="fa fa-check"></i><b>7.1</b> Getting ready</a></li>
-<li class="chapter" data-level="7.2" data-path="basic-statistical-tests.html"><a href="basic-statistical-tests.html#students-t-test"><i class="fa fa-check"></i><b>7.2</b> Student’s t-test</a></li>
-<li class="chapter" data-level="7.3" data-path="basic-statistical-tests.html"><a href="basic-statistical-tests.html#chi-squared-test"><i class="fa fa-check"></i><b>7.3</b> Chi-squared test</a>
+<li class="chapter" data-level="8.1" data-path="basic-statistical-tests.html"><a href="basic-statistical-tests.html#getting-ready"><i class="fa fa-check"></i><b>8.1</b> Getting ready</a></li>
+<li class="chapter" data-level="8.2" data-path="basic-statistical-tests.html"><a href="basic-statistical-tests.html#students-t-test"><i class="fa fa-check"></i><b>8.2</b> Student’s t-test</a></li>
+<li class="chapter" data-level="8.3" data-path="basic-statistical-tests.html"><a href="basic-statistical-tests.html#chi-squared-test"><i class="fa fa-check"></i><b>8.3</b> Chi-squared test</a>
 <ul>
-<li class="chapter" data-level="7.3.1" data-path="basic-statistical-tests.html"><a href="basic-statistical-tests.html#chi2-test-for-goodness-of-fit"><i class="fa fa-check"></i><b>7.3.1</b> <span class="math inline">\(\chi^2\)</span> test for goodness-of-fit</a></li>
-<li class="chapter" data-level="7.3.2" data-path="basic-statistical-tests.html"><a href="basic-statistical-tests.html#chi2-test-for-independence"><i class="fa fa-check"></i><b>7.3.2</b> <span class="math inline">\(\chi^2\)</span> test for independence</a></li>
-<li class="chapter" data-level="7.3.3" data-path="basic-statistical-tests.html"><a href="basic-statistical-tests.html#chi2-test-for-homogeneity"><i class="fa fa-check"></i><b>7.3.3</b> <span class="math inline">\(\chi^2\)</span> test for homogeneity</a></li>
-<li class="chapter" data-level="7.3.4" data-path="basic-statistical-tests.html"><a href="basic-statistical-tests.html#fishers-exact-test-optional"><i class="fa fa-check"></i><b>7.3.4</b> Fisher’s exact test (OPTIONAL)</a></li>
-<li class="chapter" data-level="7.3.5" data-path="basic-statistical-tests.html"><a href="basic-statistical-tests.html#comparison-of-proportions-optional"><i class="fa fa-check"></i><b>7.3.5</b> Comparison of proportions (OPTIONAL)</a></li>
-<li class="chapter" data-level="7.3.6" data-path="basic-statistical-tests.html"><a href="basic-statistical-tests.html#contingency-tables"><i class="fa fa-check"></i><b>7.3.6</b> Contingency tables</a></li>
+<li class="chapter" data-level="8.3.1" data-path="basic-statistical-tests.html"><a href="basic-statistical-tests.html#chi2-test-for-goodness-of-fit"><i class="fa fa-check"></i><b>8.3.1</b> <span class="math inline">\(\chi^2\)</span> test for goodness-of-fit</a></li>
+<li class="chapter" data-level="8.3.2" data-path="basic-statistical-tests.html"><a href="basic-statistical-tests.html#chi2-test-for-independence"><i class="fa fa-check"></i><b>8.3.2</b> <span class="math inline">\(\chi^2\)</span> test for independence</a></li>
+<li class="chapter" data-level="8.3.3" data-path="basic-statistical-tests.html"><a href="basic-statistical-tests.html#chi2-test-for-homogeneity"><i class="fa fa-check"></i><b>8.3.3</b> <span class="math inline">\(\chi^2\)</span> test for homogeneity</a></li>
+<li class="chapter" data-level="8.3.4" data-path="basic-statistical-tests.html"><a href="basic-statistical-tests.html#fishers-exact-test-optional"><i class="fa fa-check"></i><b>8.3.4</b> Fisher’s exact test (OPTIONAL)</a></li>
+<li class="chapter" data-level="8.3.5" data-path="basic-statistical-tests.html"><a href="basic-statistical-tests.html#comparison-of-proportions-optional"><i class="fa fa-check"></i><b>8.3.5</b> Comparison of proportions (OPTIONAL)</a></li>
+<li class="chapter" data-level="8.3.6" data-path="basic-statistical-tests.html"><a href="basic-statistical-tests.html#contingency-tables"><i class="fa fa-check"></i><b>8.3.6</b> Contingency tables</a></li>
 </ul></li>
-<li class="chapter" data-level="7.4" data-path="basic-statistical-tests.html"><a href="basic-statistical-tests.html#visualizing-data-distributions-optional"><i class="fa fa-check"></i><b>7.4</b> Visualizing data distributions (OPTIONAL)</a></li>
+<li class="chapter" data-level="8.4" data-path="basic-statistical-tests.html"><a href="basic-statistical-tests.html#visualizing-data-distributions-optional"><i class="fa fa-check"></i><b>8.4</b> Visualizing data distributions (OPTIONAL)</a></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="comparing-multiple-means.html"><a href="comparing-multiple-means.html"><i class="fa fa-check"></i><b>8</b> Comparing multiple means</a>
+<li class="chapter" data-level="9" data-path="comparing-multiple-means.html"><a href="comparing-multiple-means.html"><i class="fa fa-check"></i><b>9</b> Comparing multiple means</a>
 <ul>
-<li class="chapter" data-level="8.1" data-path="comparing-multiple-means.html"><a href="comparing-multiple-means.html#loading-packages"><i class="fa fa-check"></i><b>8.1</b> Loading packages</a></li>
-<li class="chapter" data-level="8.2" data-path="comparing-multiple-means.html"><a href="comparing-multiple-means.html#merging-datasets"><i class="fa fa-check"></i><b>8.2</b> Merging datasets</a></li>
-<li class="chapter" data-level="8.3" data-path="comparing-multiple-means.html"><a href="comparing-multiple-means.html#one-way-anova"><i class="fa fa-check"></i><b>8.3</b> One-way ANOVA</a>
+<li class="chapter" data-level="9.1" data-path="comparing-multiple-means.html"><a href="comparing-multiple-means.html#loading-packages"><i class="fa fa-check"></i><b>9.1</b> Loading packages</a></li>
+<li class="chapter" data-level="9.2" data-path="comparing-multiple-means.html"><a href="comparing-multiple-means.html#merging-datasets"><i class="fa fa-check"></i><b>9.2</b> Merging datasets</a></li>
+<li class="chapter" data-level="9.3" data-path="comparing-multiple-means.html"><a href="comparing-multiple-means.html#one-way-anova"><i class="fa fa-check"></i><b>9.3</b> One-way ANOVA</a>
 <ul>
-<li class="chapter" data-level="8.3.1" data-path="comparing-multiple-means.html"><a href="comparing-multiple-means.html#the-iris-dataset"><i class="fa fa-check"></i><b>8.3.1</b> The iris dataset</a></li>
-<li class="chapter" data-level="8.3.2" data-path="comparing-multiple-means.html"><a href="comparing-multiple-means.html#non-parametric-alternatives-to-anova"><i class="fa fa-check"></i><b>8.3.2</b> Non-parametric alternatives to ANOVA</a></li>
-<li class="chapter" data-level="8.3.3" data-path="comparing-multiple-means.html"><a href="comparing-multiple-means.html#two-way-anova"><i class="fa fa-check"></i><b>8.3.3</b> Two-way ANOVA</a></li>
+<li class="chapter" data-level="9.3.1" data-path="comparing-multiple-means.html"><a href="comparing-multiple-means.html#the-iris-dataset"><i class="fa fa-check"></i><b>9.3.1</b> The iris dataset</a></li>
+<li class="chapter" data-level="9.3.2" data-path="comparing-multiple-means.html"><a href="comparing-multiple-means.html#non-parametric-alternatives-to-anova"><i class="fa fa-check"></i><b>9.3.2</b> Non-parametric alternatives to ANOVA</a></li>
+<li class="chapter" data-level="9.3.3" data-path="comparing-multiple-means.html"><a href="comparing-multiple-means.html#two-way-anova"><i class="fa fa-check"></i><b>9.3.3</b> Two-way ANOVA</a></li>
 </ul></li>
-<li class="chapter" data-level="8.4" data-path="comparing-multiple-means.html"><a href="comparing-multiple-means.html#linear-regression"><i class="fa fa-check"></i><b>8.4</b> Linear regression</a>
+<li class="chapter" data-level="9.4" data-path="comparing-multiple-means.html"><a href="comparing-multiple-means.html#linear-regression"><i class="fa fa-check"></i><b>9.4</b> Linear regression</a>
 <ul>
-<li class="chapter" data-level="8.4.1" data-path="comparing-multiple-means.html"><a href="comparing-multiple-means.html#basic-concepts"><i class="fa fa-check"></i><b>8.4.1</b> Basic concepts</a></li>
-<li class="chapter" data-level="8.4.2" data-path="comparing-multiple-means.html"><a href="comparing-multiple-means.html#pearson-correlation"><i class="fa fa-check"></i><b>8.4.2</b> Pearson correlation</a></li>
-<li class="chapter" data-level="8.4.3" data-path="comparing-multiple-means.html"><a href="comparing-multiple-means.html#spearman-correlation"><i class="fa fa-check"></i><b>8.4.3</b> Spearman correlation</a></li>
+<li class="chapter" data-level="9.4.1" data-path="comparing-multiple-means.html"><a href="comparing-multiple-means.html#basic-concepts"><i class="fa fa-check"></i><b>9.4.1</b> Basic concepts</a></li>
+<li class="chapter" data-level="9.4.2" data-path="comparing-multiple-means.html"><a href="comparing-multiple-means.html#pearson-correlation"><i class="fa fa-check"></i><b>9.4.2</b> Pearson correlation</a></li>
+<li class="chapter" data-level="9.4.3" data-path="comparing-multiple-means.html"><a href="comparing-multiple-means.html#spearman-correlation"><i class="fa fa-check"></i><b>9.4.3</b> Spearman correlation</a></li>
 </ul></li>
 </ul></li>
 <li class="part"><span><b>IV Data Visualization</b></span></li>
-<li class="chapter" data-level="9" data-path="data-visualization-basics.html"><a href="data-visualization-basics.html"><i class="fa fa-check"></i><b>9</b> Data visualization basics</a>
+<li class="chapter" data-level="10" data-path="data-visualization-basics.html"><a href="data-visualization-basics.html"><i class="fa fa-check"></i><b>10</b> Data visualization basics</a>
 <ul>
-<li class="chapter" data-level="9.1" data-path="data-visualization-basics.html"><a href="data-visualization-basics.html#a-graphing-template"><i class="fa fa-check"></i><b>9.1</b> A graphing template</a></li>
-<li class="chapter" data-level="9.2" data-path="data-visualization-basics.html"><a href="data-visualization-basics.html#scatter-plot"><i class="fa fa-check"></i><b>9.2</b> Scatter plot</a>
+<li class="chapter" data-level="10.1" data-path="data-visualization-basics.html"><a href="data-visualization-basics.html#a-graphing-template"><i class="fa fa-check"></i><b>10.1</b> A graphing template</a></li>
+<li class="chapter" data-level="10.2" data-path="data-visualization-basics.html"><a href="data-visualization-basics.html#scatter-plot"><i class="fa fa-check"></i><b>10.2</b> Scatter plot</a>
 <ul>
-<li class="chapter" data-level="9.2.1" data-path="data-visualization-basics.html"><a href="data-visualization-basics.html#trend-lines"><i class="fa fa-check"></i><b>9.2.1</b> Trend lines</a></li>
-<li class="chapter" data-level="9.2.2" data-path="data-visualization-basics.html"><a href="data-visualization-basics.html#facets"><i class="fa fa-check"></i><b>9.2.2</b> Facets</a></li>
+<li class="chapter" data-level="10.2.1" data-path="data-visualization-basics.html"><a href="data-visualization-basics.html#trend-lines"><i class="fa fa-check"></i><b>10.2.1</b> Trend lines</a></li>
+<li class="chapter" data-level="10.2.2" data-path="data-visualization-basics.html"><a href="data-visualization-basics.html#facets"><i class="fa fa-check"></i><b>10.2.2</b> Facets</a></li>
 </ul></li>
-<li class="chapter" data-level="9.3" data-path="data-visualization-basics.html"><a href="data-visualization-basics.html#aesthetic-mappings"><i class="fa fa-check"></i><b>9.3</b> Aesthetic mappings</a></li>
+<li class="chapter" data-level="10.3" data-path="data-visualization-basics.html"><a href="data-visualization-basics.html#aesthetic-mappings"><i class="fa fa-check"></i><b>10.3</b> Aesthetic mappings</a></li>
 </ul></li>
-<li class="chapter" data-level="10" data-path="getting-publication-ready.html"><a href="getting-publication-ready.html"><i class="fa fa-check"></i><b>10</b> Getting publication-ready</a>
+<li class="chapter" data-level="11" data-path="getting-publication-ready.html"><a href="getting-publication-ready.html"><i class="fa fa-check"></i><b>11</b> Getting publication-ready</a>
 <ul>
-<li class="chapter" data-level="10.1" data-path="getting-publication-ready.html"><a href="getting-publication-ready.html#line-plot"><i class="fa fa-check"></i><b>10.1</b> Line plot</a></li>
-<li class="chapter" data-level="10.2" data-path="getting-publication-ready.html"><a href="getting-publication-ready.html#bar-plot"><i class="fa fa-check"></i><b>10.2</b> Bar plot</a>
+<li class="chapter" data-level="11.1" data-path="getting-publication-ready.html"><a href="getting-publication-ready.html#line-plot"><i class="fa fa-check"></i><b>11.1</b> Line plot</a></li>
+<li class="chapter" data-level="11.2" data-path="getting-publication-ready.html"><a href="getting-publication-ready.html#bar-plot"><i class="fa fa-check"></i><b>11.2</b> Bar plot</a>
 <ul>
-<li class="chapter" data-level="10.2.1" data-path="getting-publication-ready.html"><a href="getting-publication-ready.html#basics"><i class="fa fa-check"></i><b>10.2.1</b> Basics</a></li>
-<li class="chapter" data-level="10.2.2" data-path="getting-publication-ready.html"><a href="getting-publication-ready.html#plotting-significance-optional"><i class="fa fa-check"></i><b>10.2.2</b> Plotting significance (OPTIONAL)</a></li>
+<li class="chapter" data-level="11.2.1" data-path="getting-publication-ready.html"><a href="getting-publication-ready.html#basics"><i class="fa fa-check"></i><b>11.2.1</b> Basics</a></li>
+<li class="chapter" data-level="11.2.2" data-path="getting-publication-ready.html"><a href="getting-publication-ready.html#plotting-significance-optional"><i class="fa fa-check"></i><b>11.2.2</b> Plotting significance (OPTIONAL)</a></li>
 </ul></li>
-<li class="chapter" data-level="10.3" data-path="getting-publication-ready.html"><a href="getting-publication-ready.html#box-plot"><i class="fa fa-check"></i><b>10.3</b> Box plot</a></li>
-<li class="chapter" data-level="10.4" data-path="getting-publication-ready.html"><a href="getting-publication-ready.html#histogram-and-density-plot"><i class="fa fa-check"></i><b>10.4</b> Histogram and density plot</a></li>
-<li class="chapter" data-level="10.5" data-path="getting-publication-ready.html"><a href="getting-publication-ready.html#assembly-of-multiple-figures-optional"><i class="fa fa-check"></i><b>10.5</b> Assembly of multiple figures (OPTIONAL)</a></li>
-<li class="chapter" data-level="10.6" data-path="getting-publication-ready.html"><a href="getting-publication-ready.html#extras-optional"><i class="fa fa-check"></i><b>10.6</b> Extras (OPTIONAL)</a>
+<li class="chapter" data-level="11.3" data-path="getting-publication-ready.html"><a href="getting-publication-ready.html#box-plot"><i class="fa fa-check"></i><b>11.3</b> Box plot</a></li>
+<li class="chapter" data-level="11.4" data-path="getting-publication-ready.html"><a href="getting-publication-ready.html#histogram-and-density-plot"><i class="fa fa-check"></i><b>11.4</b> Histogram and density plot</a></li>
+<li class="chapter" data-level="11.5" data-path="getting-publication-ready.html"><a href="getting-publication-ready.html#assembly-of-multiple-figures-optional"><i class="fa fa-check"></i><b>11.5</b> Assembly of multiple figures (OPTIONAL)</a></li>
+<li class="chapter" data-level="11.6" data-path="getting-publication-ready.html"><a href="getting-publication-ready.html#extras-optional"><i class="fa fa-check"></i><b>11.6</b> Extras (OPTIONAL)</a>
 <ul>
-<li class="chapter" data-level="10.6.1" data-path="getting-publication-ready.html"><a href="getting-publication-ready.html#choropleth"><i class="fa fa-check"></i><b>10.6.1</b> Choropleth</a></li>
-<li class="chapter" data-level="10.6.2" data-path="getting-publication-ready.html"><a href="getting-publication-ready.html#animations"><i class="fa fa-check"></i><b>10.6.2</b> Animations</a></li>
+<li class="chapter" data-level="11.6.1" data-path="getting-publication-ready.html"><a href="getting-publication-ready.html#choropleth"><i class="fa fa-check"></i><b>11.6.1</b> Choropleth</a></li>
+<li class="chapter" data-level="11.6.2" data-path="getting-publication-ready.html"><a href="getting-publication-ready.html#animations"><i class="fa fa-check"></i><b>11.6.2</b> Animations</a></li>
 </ul></li>
-<li class="chapter" data-level="10.7" data-path="getting-publication-ready.html"><a href="getting-publication-ready.html#additional-resources-1"><i class="fa fa-check"></i><b>10.7</b> Additional resources</a></li>
+<li class="chapter" data-level="11.7" data-path="getting-publication-ready.html"><a href="getting-publication-ready.html#additional-resources-1"><i class="fa fa-check"></i><b>11.7</b> Additional resources</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><center>
@@ -326,141 +350,135 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="central-limit-theorem" class="section level1" number="6">
-<h1><span class="header-section-number">6</span> Central limit theorem</h1>
-<p>In this chapter, we will investigate the intuition behind the <strong>Central Limit Theorem</strong> (CLT). In short, the CLT states that if you have a bunch of samples and plotted the distribution of means (not individual observations!), the distribution would look normal regardless of the population distribution. This theorem is incredibly powerful, and we will explore how it applies to data analysis in future chapters.</p>
-<div id="clt-for-means" class="section level2" number="6.1">
-<h2><span class="header-section-number">6.1</span> CLT for means</h2>
-<div id="clt-part-1" class="section level3" number="6.1.1">
-<h3><span class="header-section-number">6.1.1</span> CLT Part 1</h3>
-<p>As always, let’s load the tidyverse.</p>
-<div class="sourceCode" id="cb339"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb339-1"><a href="central-limit-theorem.html#cb339-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code></pre></div>
-<p>Many observed quantities follow normal distribution. Imagine we have a population following normal distribution that has a mean of 10 and standard deviation of 2. If we draw samples from it, are we able to estimate its mean?</p>
-<p>In this example, we will use <code>rnorm()</code>, a random number generator for this simulation. Here, <code>rnorm()</code> returns a vector of random numbers from a normal distribution.</p>
-<div class="sourceCode" id="cb340"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb340-1"><a href="central-limit-theorem.html#cb340-1" aria-hidden="true" tabindex="-1"></a>(samp10 <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="at">n=</span><span class="dv">10</span>, <span class="at">mean=</span><span class="dv">10</span>, <span class="at">sd=</span><span class="dv">2</span>))</span></code></pre></div>
-<pre><code>##  [1]  6.704922  8.948952  6.177376 10.602435  9.354789  6.321155  9.626293
-##  [8]  7.070108 12.307223 10.527370</code></pre>
-<div class="sourceCode" id="cb342"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb342-1"><a href="central-limit-theorem.html#cb342-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(samp10)</span></code></pre></div>
-<pre><code>## [1] 8.764062</code></pre>
-<p>Apparently the mean is not 10, but it is pretty close. This should make sense; when we draw a sample to estimate the mean, we may get very close to the desired “true mean,” but we also expect some error. What if I repeat the estimation 10000 times with 10 samples?</p>
-<div class="sourceCode" id="cb344"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb344-1"><a href="central-limit-theorem.html#cb344-1" aria-hidden="true" tabindex="-1"></a>means10 <span class="ot">&lt;-</span> <span class="fu">as.vector</span>(<span class="cn">NA</span>)</span>
-<span id="cb344-2"><a href="central-limit-theorem.html#cb344-2" aria-hidden="true" tabindex="-1"></a><span class="co"># doing experiments 10,000 times</span></span>
-<span id="cb344-3"><a href="central-limit-theorem.html#cb344-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10000</span>) {</span>
-<span id="cb344-4"><a href="central-limit-theorem.html#cb344-4" aria-hidden="true" tabindex="-1"></a>  <span class="co"># each iteration, I draw a sample size of 2 from a normal distribution</span></span>
-<span id="cb344-5"><a href="central-limit-theorem.html#cb344-5" aria-hidden="true" tabindex="-1"></a>  samp10 <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">10</span>, <span class="at">mean=</span><span class="dv">10</span>, <span class="at">sd=</span><span class="dv">2</span>)</span>
-<span id="cb344-6"><a href="central-limit-theorem.html#cb344-6" aria-hidden="true" tabindex="-1"></a>  <span class="co"># I calculate the mean of these 10 numbers and record it</span></span>
-<span id="cb344-7"><a href="central-limit-theorem.html#cb344-7" aria-hidden="true" tabindex="-1"></a>  means10[i] <span class="ot">&lt;-</span> <span class="fu">mean</span>(samp10)  </span>
-<span id="cb344-8"><a href="central-limit-theorem.html#cb344-8" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb344-9"><a href="central-limit-theorem.html#cb344-9" aria-hidden="true" tabindex="-1"></a><span class="co"># let&#39;s look at the result</span></span>
-<span id="cb344-10"><a href="central-limit-theorem.html#cb344-10" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="fu">as_tibble</span>(means10), <span class="fu">aes</span>(value)) <span class="sc">+</span></span>
-<span id="cb344-11"><a href="central-limit-theorem.html#cb344-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>(<span class="at">fill=</span><span class="st">&quot;#C5EBCB&quot;</span>) <span class="sc">+</span></span>
-<span id="cb344-12"><a href="central-limit-theorem.html#cb344-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>()</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-136-1.png" width="672" /></p>
-<p>What does this figure mean? Of the 10000 estimations that we did, most estimations were very close to 10. The probability to overestimate and underestimate decreases as the estimation deviates from 10, our “true mean.”</p>
-<p>We can now conclude the following: if our population is normal, our sampling distribution is also normal. This first observation demonstrates a key part of the <strong>CLT</strong>.</p>
+<div id="central-limit-theorem" class="section level1" number="7">
+<h1><span class="header-section-number">7</span> Central limit theorem</h1>
+<p>In this chapter, we will investigate the intuition behind the <strong>Central Limit Theorem</strong> (CLT). In short, the CLT states that if you have a bunch of samples and plotted the distribution of their means (not individual observations!), the distribution would look normal regardless of the population distribution. This theorem is incredibly powerful because it lets us to make inferences using statistical tests given a sufficient sample size.</p>
+<div id="motivation" class="section level2" number="7.1">
+<h2><span class="header-section-number">7.1</span> Motivation</h2>
+<p>Imagine that we want to investigate whether Canadians recover faster than Americans from the common cold. How do we determine the probability that Canadians indeed recover faster than Americans?</p>
+<p>The CLT helps us answer these questions by telling us that a “large enough” sampling distribution will follow a normal distribution. We can then use the properties of the normal distribution to compute the exact probability given our data.</p>
 </div>
-<div id="clt-part-2" class="section level3" number="6.1.2">
-<h3><span class="header-section-number">6.1.2</span> CLT Part 2</h3>
-<p>Now, we are going to explore another aspect of the CLT: given enough sample means, our sample distribution will look normal <em>regardless of the original population distribution</em>. This time, let’s try sampling from a population that is uniformly distributed. For example, let’s create a population with 10,000 completely random numbers between 0 and 20:</p>
-<div class="sourceCode" id="cb345"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb345-1"><a href="central-limit-theorem.html#cb345-1" aria-hidden="true" tabindex="-1"></a>uniform_popn <span class="ot">&lt;-</span> <span class="fu">runif</span>(<span class="at">n=</span><span class="dv">10000</span>, <span class="at">min=</span><span class="dv">0</span>, <span class="at">max=</span><span class="dv">20</span>)</span>
-<span id="cb345-2"><a href="central-limit-theorem.html#cb345-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="fu">as_tibble</span>(uniform_popn), <span class="fu">aes</span>(value)) <span class="sc">+</span></span>
-<span id="cb345-3"><a href="central-limit-theorem.html#cb345-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>(<span class="at">fill=</span><span class="st">&quot;#C5EBCB&quot;</span>) <span class="sc">+</span></span>
-<span id="cb345-4"><a href="central-limit-theorem.html#cb345-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>()</span></code></pre></div>
+<div id="clt-for-means" class="section level2" number="7.2">
+<h2><span class="header-section-number">7.2</span> CLT for means</h2>
+<p>Before formally exploring the CLT, play around with the CLT app! In short, the app takes samples from the “Population Distribution” and plots the mean of those samples in the “Sampling Distribution” histogram.</p>
+<iframe class="interactive" id="ch7-clt-means" src="https://intro-stats.shinyapps.io/clt-means/" scrolling="no" frameborder="no">
+</iframe>
+<div id="clt-part-1" class="section level3" number="7.2.1">
+<h3><span class="header-section-number">7.2.1</span> CLT Part 1</h3>
+<hr />
+<p><strong>CLT Part 1.</strong> If our population is normal, our sampling distribution is also normal.</p>
+<hr />
+<p>As always, let’s load the tidyverse.</p>
+<div class="sourceCode" id="cb190"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb190-1"><a href="central-limit-theorem.html#cb190-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code></pre></div>
+<p>Many observed quantities follow normal distribution. Imagine that we have a population following normal distribution that has a mean of 10 and standard deviation of 2. If we draw samples from it, are we able to estimate its mean?</p>
+<p>Note that <code>rnorm()</code> generates a vector of random numbers from a normal distribution.</p>
+<div class="sourceCode" id="cb191"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb191-1"><a href="central-limit-theorem.html#cb191-1" aria-hidden="true" tabindex="-1"></a>(samp30 <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="at">n=</span><span class="dv">30</span>, <span class="at">mean=</span><span class="dv">10</span>, <span class="at">sd=</span><span class="dv">2</span>))</span></code></pre></div>
+<pre><code>##  [1]  9.632900  9.254441  9.134906  9.954274  8.551711  9.744246 10.671260
+##  [8] 10.246652 11.089101 10.361562 10.960633  8.303590 11.310301 11.193611
+## [15] 12.058933  8.514133  8.285680 10.622681  9.822327  9.979381  8.998994
+## [22] 11.728054  7.914447  7.324063  7.396107  8.665719  7.370069  7.703844
+## [29]  9.720522 12.013631</code></pre>
+<div class="sourceCode" id="cb193"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb193-1"><a href="central-limit-theorem.html#cb193-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(samp30)</span></code></pre></div>
+<pre><code>## [1] 9.617593</code></pre>
+<p>Although the mean is not 10, it is pretty close. This should make sense; when we draw a sample to estimate the mean, we may get very close to the desired “true mean,” but we also expect some error. What if I repeat the estimation 1000 times with 30 samples?</p>
+<div class="sourceCode" id="cb195"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb195-1"><a href="central-limit-theorem.html#cb195-1" aria-hidden="true" tabindex="-1"></a><span class="co"># initializing our means vector</span></span>
+<span id="cb195-2"><a href="central-limit-theorem.html#cb195-2" aria-hidden="true" tabindex="-1"></a>means10 <span class="ot">&lt;-</span> <span class="fu">as.vector</span>(<span class="cn">NA</span>)</span>
+<span id="cb195-3"><a href="central-limit-theorem.html#cb195-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb195-4"><a href="central-limit-theorem.html#cb195-4" aria-hidden="true" tabindex="-1"></a><span class="co"># taking 1000 samples</span></span>
+<span id="cb195-5"><a href="central-limit-theorem.html#cb195-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">1000</span>) {</span>
+<span id="cb195-6"><a href="central-limit-theorem.html#cb195-6" aria-hidden="true" tabindex="-1"></a>  samp10 <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">30</span>, <span class="at">mean=</span><span class="dv">10</span>, <span class="at">sd=</span><span class="dv">2</span>)  <span class="co"># taking a sample with n=30</span></span>
+<span id="cb195-7"><a href="central-limit-theorem.html#cb195-7" aria-hidden="true" tabindex="-1"></a>  means10[i] <span class="ot">&lt;-</span> <span class="fu">mean</span>(samp10)          <span class="co"># recording sample mean</span></span>
+<span id="cb195-8"><a href="central-limit-theorem.html#cb195-8" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb195-9"><a href="central-limit-theorem.html#cb195-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb195-10"><a href="central-limit-theorem.html#cb195-10" aria-hidden="true" tabindex="-1"></a><span class="co"># plotting distribution of sample means</span></span>
+<span id="cb195-11"><a href="central-limit-theorem.html#cb195-11" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="fu">as_tibble</span>(means10), <span class="fu">aes</span>(value)) <span class="sc">+</span></span>
+<span id="cb195-12"><a href="central-limit-theorem.html#cb195-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>(<span class="at">fill=</span><span class="st">&quot;#C5EBCB&quot;</span>) <span class="sc">+</span></span>
+<span id="cb195-13"><a href="central-limit-theorem.html#cb195-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>()</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-76-1.png" width="672" /></p>
+<p>What does this figure mean? Of the 1000 sample means we computed, most were very close to 10. The probability to overestimate and underestimate decreases as the estimation deviates from 10, our “true mean.” Further, the distribution of the sample means appears to follow a normal distribution.</p>
+</div>
+<div id="clt-part-2" class="section level3" number="7.2.2">
+<h3><span class="header-section-number">7.2.2</span> CLT Part 2</h3>
+<hr />
+<p><strong>CLT Part 2.</strong> Given a sufficient sample size, the sampling distribution of the means will look normal <em>regardless of the original population distribution</em>.</p>
+<hr />
+<p>Notice that the CLT part 2 is a generalized version of the CLT part 1.</p>
+<p>This time, let’s try sampling from a population that is uniformly distributed. For example, let’s create a population with 10,000 completely random numbers between 0 and 20:</p>
+<div class="sourceCode" id="cb196"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb196-1"><a href="central-limit-theorem.html#cb196-1" aria-hidden="true" tabindex="-1"></a>uniform_popn <span class="ot">&lt;-</span> <span class="fu">runif</span>(<span class="at">n=</span><span class="dv">10000</span>, <span class="at">min=</span><span class="dv">0</span>, <span class="at">max=</span><span class="dv">20</span>)  <span class="co"># our population distribution</span></span>
+<span id="cb196-2"><a href="central-limit-theorem.html#cb196-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="fu">as_tibble</span>(uniform_popn), <span class="fu">aes</span>(value)) <span class="sc">+</span></span>
+<span id="cb196-3"><a href="central-limit-theorem.html#cb196-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>(<span class="at">fill=</span><span class="st">&quot;#C5EBCB&quot;</span>) <span class="sc">+</span></span>
+<span id="cb196-4"><a href="central-limit-theorem.html#cb196-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>()</span></code></pre></div>
 <p><img src="_main_files/figure-html/uniform-popn-1.png" width="672" /></p>
 <p>Now, we are going to repeatedly sample from <code>uniform_popn</code> and use the mean of that particular sample as our entry.</p>
-<div class="sourceCode" id="cb346"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb346-1"><a href="central-limit-theorem.html#cb346-1" aria-hidden="true" tabindex="-1"></a>means10 <span class="ot">&lt;-</span> <span class="fu">as.vector</span>(<span class="cn">NA</span>)</span>
-<span id="cb346-2"><a href="central-limit-theorem.html#cb346-2" aria-hidden="true" tabindex="-1"></a>means100 <span class="ot">&lt;-</span> <span class="fu">as.vector</span>(<span class="cn">NA</span>)</span>
-<span id="cb346-3"><a href="central-limit-theorem.html#cb346-3" aria-hidden="true" tabindex="-1"></a>means1000 <span class="ot">&lt;-</span> <span class="fu">as.vector</span>(<span class="cn">NA</span>)</span>
-<span id="cb346-4"><a href="central-limit-theorem.html#cb346-4" aria-hidden="true" tabindex="-1"></a><span class="co"># doing experiments 10,000 times</span></span>
-<span id="cb346-5"><a href="central-limit-theorem.html#cb346-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10000</span>) {</span>
-<span id="cb346-6"><a href="central-limit-theorem.html#cb346-6" aria-hidden="true" tabindex="-1"></a>  <span class="co"># each iteration, I draw 10, 100, and 1000 samples from uniform_popn</span></span>
-<span id="cb346-7"><a href="central-limit-theorem.html#cb346-7" aria-hidden="true" tabindex="-1"></a>  samp10 <span class="ot">&lt;-</span> <span class="fu">sample</span>(uniform_popn, <span class="at">size =</span> <span class="dv">10</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb346-8"><a href="central-limit-theorem.html#cb346-8" aria-hidden="true" tabindex="-1"></a>  samp100 <span class="ot">&lt;-</span> <span class="fu">sample</span>(uniform_popn, <span class="at">size =</span> <span class="dv">100</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb346-9"><a href="central-limit-theorem.html#cb346-9" aria-hidden="true" tabindex="-1"></a>  samp1000 <span class="ot">&lt;-</span> <span class="fu">sample</span>(uniform_popn, <span class="at">size =</span> <span class="dv">1000</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb346-10"><a href="central-limit-theorem.html#cb346-10" aria-hidden="true" tabindex="-1"></a>  <span class="co"># getting means of each sample</span></span>
-<span id="cb346-11"><a href="central-limit-theorem.html#cb346-11" aria-hidden="true" tabindex="-1"></a>  means10[i] <span class="ot">&lt;-</span> <span class="fu">mean</span>(samp10)</span>
-<span id="cb346-12"><a href="central-limit-theorem.html#cb346-12" aria-hidden="true" tabindex="-1"></a>  means100[i] <span class="ot">&lt;-</span> <span class="fu">mean</span>(samp100)</span>
-<span id="cb346-13"><a href="central-limit-theorem.html#cb346-13" aria-hidden="true" tabindex="-1"></a>  means1000[i] <span class="ot">&lt;-</span> <span class="fu">mean</span>(samp1000)</span>
-<span id="cb346-14"><a href="central-limit-theorem.html#cb346-14" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb346-15"><a href="central-limit-theorem.html#cb346-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb346-16"><a href="central-limit-theorem.html#cb346-16" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">rbind</span>(</span>
-<span id="cb346-17"><a href="central-limit-theorem.html#cb346-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">data.frame</span>(<span class="at">means =</span> means10, <span class="at">sample_size =</span> <span class="st">&quot;10&quot;</span>),</span>
-<span id="cb346-18"><a href="central-limit-theorem.html#cb346-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">data.frame</span>(<span class="at">means =</span> means100, <span class="at">sample_size =</span> <span class="st">&quot;100&quot;</span>),</span>
-<span id="cb346-19"><a href="central-limit-theorem.html#cb346-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">data.frame</span>(<span class="at">means =</span> means1000, <span class="at">sample_size =</span> <span class="st">&quot;1000&quot;</span>)</span>
-<span id="cb346-20"><a href="central-limit-theorem.html#cb346-20" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb346-21"><a href="central-limit-theorem.html#cb346-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb346-22"><a href="central-limit-theorem.html#cb346-22" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(df, <span class="fu">aes</span>(<span class="at">x =</span> means, <span class="at">fill =</span> sample_size)) <span class="sc">+</span> </span>
-<span id="cb346-23"><a href="central-limit-theorem.html#cb346-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>(<span class="at">alpha =</span> <span class="fl">0.3</span>) <span class="sc">+</span></span>
-<span id="cb346-24"><a href="central-limit-theorem.html#cb346-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Sample means&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Density&quot;</span>, <span class="at">fill =</span> <span class="st">&quot;Sample size&quot;</span>) <span class="sc">+</span></span>
-<span id="cb346-25"><a href="central-limit-theorem.html#cb346-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>()</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-137-1.png" width="672" /></p>
+<div class="sourceCode" id="cb197"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb197-1"><a href="central-limit-theorem.html#cb197-1" aria-hidden="true" tabindex="-1"></a>means10 <span class="ot">&lt;-</span> <span class="fu">as.vector</span>(<span class="cn">NA</span>)</span>
+<span id="cb197-2"><a href="central-limit-theorem.html#cb197-2" aria-hidden="true" tabindex="-1"></a>means100 <span class="ot">&lt;-</span> <span class="fu">as.vector</span>(<span class="cn">NA</span>)</span>
+<span id="cb197-3"><a href="central-limit-theorem.html#cb197-3" aria-hidden="true" tabindex="-1"></a>means1000 <span class="ot">&lt;-</span> <span class="fu">as.vector</span>(<span class="cn">NA</span>)</span>
+<span id="cb197-4"><a href="central-limit-theorem.html#cb197-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb197-5"><a href="central-limit-theorem.html#cb197-5" aria-hidden="true" tabindex="-1"></a><span class="co"># taking 1000 samples</span></span>
+<span id="cb197-6"><a href="central-limit-theorem.html#cb197-6" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">1000</span>) {</span>
+<span id="cb197-7"><a href="central-limit-theorem.html#cb197-7" aria-hidden="true" tabindex="-1"></a>  <span class="co"># each iteration, draw 10, 100, and 1000 samples from uniform_popn</span></span>
+<span id="cb197-8"><a href="central-limit-theorem.html#cb197-8" aria-hidden="true" tabindex="-1"></a>  samp10 <span class="ot">&lt;-</span> <span class="fu">sample</span>(uniform_popn, <span class="at">size =</span> <span class="dv">10</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb197-9"><a href="central-limit-theorem.html#cb197-9" aria-hidden="true" tabindex="-1"></a>  samp100 <span class="ot">&lt;-</span> <span class="fu">sample</span>(uniform_popn, <span class="at">size =</span> <span class="dv">100</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb197-10"><a href="central-limit-theorem.html#cb197-10" aria-hidden="true" tabindex="-1"></a>  samp1000 <span class="ot">&lt;-</span> <span class="fu">sample</span>(uniform_popn, <span class="at">size =</span> <span class="dv">1000</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb197-11"><a href="central-limit-theorem.html#cb197-11" aria-hidden="true" tabindex="-1"></a>  <span class="co"># getting means of each sample</span></span>
+<span id="cb197-12"><a href="central-limit-theorem.html#cb197-12" aria-hidden="true" tabindex="-1"></a>  means10[i] <span class="ot">&lt;-</span> <span class="fu">mean</span>(samp10)</span>
+<span id="cb197-13"><a href="central-limit-theorem.html#cb197-13" aria-hidden="true" tabindex="-1"></a>  means100[i] <span class="ot">&lt;-</span> <span class="fu">mean</span>(samp100)</span>
+<span id="cb197-14"><a href="central-limit-theorem.html#cb197-14" aria-hidden="true" tabindex="-1"></a>  means1000[i] <span class="ot">&lt;-</span> <span class="fu">mean</span>(samp1000)</span>
+<span id="cb197-15"><a href="central-limit-theorem.html#cb197-15" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb197-16"><a href="central-limit-theorem.html#cb197-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb197-17"><a href="central-limit-theorem.html#cb197-17" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">rbind</span>(</span>
+<span id="cb197-18"><a href="central-limit-theorem.html#cb197-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">data.frame</span>(<span class="at">means =</span> means10, <span class="at">sample_size =</span> <span class="st">&quot;10&quot;</span>),</span>
+<span id="cb197-19"><a href="central-limit-theorem.html#cb197-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">data.frame</span>(<span class="at">means =</span> means100, <span class="at">sample_size =</span> <span class="st">&quot;100&quot;</span>),</span>
+<span id="cb197-20"><a href="central-limit-theorem.html#cb197-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">data.frame</span>(<span class="at">means =</span> means1000, <span class="at">sample_size =</span> <span class="st">&quot;1000&quot;</span>)</span>
+<span id="cb197-21"><a href="central-limit-theorem.html#cb197-21" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb197-22"><a href="central-limit-theorem.html#cb197-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb197-23"><a href="central-limit-theorem.html#cb197-23" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(df, <span class="fu">aes</span>(<span class="at">x =</span> means, <span class="at">fill =</span> sample_size)) <span class="sc">+</span> </span>
+<span id="cb197-24"><a href="central-limit-theorem.html#cb197-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>(<span class="at">alpha =</span> <span class="fl">0.3</span>) <span class="sc">+</span></span>
+<span id="cb197-25"><a href="central-limit-theorem.html#cb197-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Sample means&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Density&quot;</span>, <span class="at">fill =</span> <span class="st">&quot;Sample size&quot;</span>) <span class="sc">+</span></span>
+<span id="cb197-26"><a href="central-limit-theorem.html#cb197-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>()</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-77-1.png" width="672" /></p>
 <p>Notice two things:</p>
 <ol style="list-style-type: decimal">
 <li>With a larger sample size, your estimation for the mean will have a smaller variance.</li>
-<li>Even though our <em>original population</em> was uniform (i.e., NOT normal), our <em>sampling distribution</em> looks normal. In fact, any population distribution will look normal given enough sample means. This observation is captured by the <strong>CLT</strong>.</li>
+<li>Even though our <em>original population</em> was uniform (i.e., NOT normal), our <em>sampling distribution</em> looks normal. In fact, any population distribution will look normal given enough sample means.</li>
 </ol>
+<p>As you can see, the bigger your sample size, the less variability there is, and the more the distribution looks like a normal distribution. More precisely, the bigger your sample size, the distribution of the sample means will be normally distributed, even if the population is not normally distributed. A good rule of “sufficiently large sample size” for means is n ≥ 30.</p>
 <p>Pretty cool, right?</p>
 </div>
 </div>
-<div id="clt-for-proportions" class="section level2" number="6.2">
-<h2><span class="header-section-number">6.2</span> CLT for proportions</h2>
-<p>Now I would like to estimate the probability of getting a “head” of when I flip a coin.</p>
-<p>Each time I flip a coin, if I end up with a “head,” I record it as a 1. If I get a “tail,” I will record it as a 0. If I flip the coin for 10 times where I have 6 “heads” and 4 “tails,” the proportion of getting “heads” would be 6/10 = 0.6. If I flip the coin for a sufficiently large amount of times, we would like to expect the proportion to approach the theoretical 0.5. Is this the case?</p>
-<div class="sourceCode" id="cb347"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb347-1"><a href="central-limit-theorem.html#cb347-1" aria-hidden="true" tabindex="-1"></a>means100 <span class="ot">&lt;-</span> <span class="fu">as.vector</span>(<span class="cn">NA</span>)</span>
-<span id="cb347-2"><a href="central-limit-theorem.html#cb347-2" aria-hidden="true" tabindex="-1"></a>means1000 <span class="ot">&lt;-</span> <span class="fu">as.vector</span>(<span class="cn">NA</span>)</span>
-<span id="cb347-3"><a href="central-limit-theorem.html#cb347-3" aria-hidden="true" tabindex="-1"></a>means10000 <span class="ot">&lt;-</span> <span class="fu">as.vector</span>(<span class="cn">NA</span>)</span>
-<span id="cb347-4"><a href="central-limit-theorem.html#cb347-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb347-5"><a href="central-limit-theorem.html#cb347-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10000</span>) {</span>
-<span id="cb347-6"><a href="central-limit-theorem.html#cb347-6" aria-hidden="true" tabindex="-1"></a>  sample100 <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">0</span>), <span class="at">prob =</span> <span class="fu">c</span>(<span class="fl">0.5</span>, <span class="fl">0.5</span>), <span class="at">replace =</span> <span class="cn">TRUE</span>, <span class="at">size =</span> <span class="dv">100</span>)</span>
-<span id="cb347-7"><a href="central-limit-theorem.html#cb347-7" aria-hidden="true" tabindex="-1"></a>  means100[i] <span class="ot">&lt;-</span> <span class="fu">mean</span>(sample100)</span>
-<span id="cb347-8"><a href="central-limit-theorem.html#cb347-8" aria-hidden="true" tabindex="-1"></a>  sample1000 <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">0</span>), <span class="at">prob =</span> <span class="fu">c</span>(<span class="fl">0.5</span>, <span class="fl">0.5</span>), <span class="at">replace =</span> <span class="cn">TRUE</span>, <span class="at">size =</span> <span class="dv">1000</span>)</span>
-<span id="cb347-9"><a href="central-limit-theorem.html#cb347-9" aria-hidden="true" tabindex="-1"></a>  means1000[i] <span class="ot">&lt;-</span> <span class="fu">mean</span>(sample1000)</span>
-<span id="cb347-10"><a href="central-limit-theorem.html#cb347-10" aria-hidden="true" tabindex="-1"></a>  sample10000 <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">0</span>), <span class="at">prob =</span> <span class="fu">c</span>(<span class="fl">0.5</span>, <span class="fl">0.5</span>), <span class="at">replace =</span> <span class="cn">TRUE</span>, <span class="at">size =</span> <span class="dv">10000</span>)</span>
-<span id="cb347-11"><a href="central-limit-theorem.html#cb347-11" aria-hidden="true" tabindex="-1"></a>  means10000[i] <span class="ot">&lt;-</span> <span class="fu">mean</span>(sample10000)</span>
-<span id="cb347-12"><a href="central-limit-theorem.html#cb347-12" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb347-13"><a href="central-limit-theorem.html#cb347-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb347-14"><a href="central-limit-theorem.html#cb347-14" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">rbind</span>(</span>
-<span id="cb347-15"><a href="central-limit-theorem.html#cb347-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">data.frame</span>(<span class="at">means =</span> means100, <span class="at">sample_size =</span> <span class="st">&quot;100 flips&quot;</span>),</span>
-<span id="cb347-16"><a href="central-limit-theorem.html#cb347-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">data.frame</span>(<span class="at">means =</span> means1000, <span class="at">sample_size =</span> <span class="st">&quot;1000 flips&quot;</span>),</span>
-<span id="cb347-17"><a href="central-limit-theorem.html#cb347-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">data.frame</span>(<span class="at">means =</span> means10000, <span class="at">sample_size =</span> <span class="st">&quot;10000 flips&quot;</span>)</span>
-<span id="cb347-18"><a href="central-limit-theorem.html#cb347-18" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb347-19"><a href="central-limit-theorem.html#cb347-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb347-20"><a href="central-limit-theorem.html#cb347-20" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(df, <span class="fu">aes</span>(<span class="at">x =</span> means, <span class="at">fill =</span> sample_size)) <span class="sc">+</span> </span>
-<span id="cb347-21"><a href="central-limit-theorem.html#cb347-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>(<span class="at">alpha =</span> <span class="fl">0.3</span>) <span class="sc">+</span></span>
-<span id="cb347-22"><a href="central-limit-theorem.html#cb347-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Sample means&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Density&quot;</span>, <span class="at">fill =</span> <span class="st">&quot;Sample size&quot;</span>) <span class="sc">+</span></span>
-<span id="cb347-23"><a href="central-limit-theorem.html#cb347-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>()</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-138-1.png" width="672" /></p>
-<p>Can you explain the pattern that we observe with 100 flips? How about the height and width of other curves? What conclusions can we draw?</p>
-<p>The answers to these questions may appear intuitive: when you flip the coin many times, you will likely get “heads” 50% of the time. The more you flip the coin, the more likely you’ll get 50% heads. How about an “uneven” coin that preferably lands with a “head” with 75% chance? In this case we change the <code>prob</code> in the <code>sample()</code> function with this new probability.</p>
-<div class="sourceCode" id="cb348"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb348-1"><a href="central-limit-theorem.html#cb348-1" aria-hidden="true" tabindex="-1"></a>means100 <span class="ot">&lt;-</span> <span class="fu">as.vector</span>(<span class="cn">NA</span>)</span>
-<span id="cb348-2"><a href="central-limit-theorem.html#cb348-2" aria-hidden="true" tabindex="-1"></a>means1000 <span class="ot">&lt;-</span> <span class="fu">as.vector</span>(<span class="cn">NA</span>)</span>
-<span id="cb348-3"><a href="central-limit-theorem.html#cb348-3" aria-hidden="true" tabindex="-1"></a>means10000 <span class="ot">&lt;-</span> <span class="fu">as.vector</span>(<span class="cn">NA</span>)</span>
-<span id="cb348-4"><a href="central-limit-theorem.html#cb348-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb348-5"><a href="central-limit-theorem.html#cb348-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10000</span>) {</span>
-<span id="cb348-6"><a href="central-limit-theorem.html#cb348-6" aria-hidden="true" tabindex="-1"></a>  sample100 <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">0</span>), <span class="at">prob =</span> <span class="fu">c</span>(<span class="fl">0.75</span>, <span class="fl">0.25</span>), <span class="at">replace =</span> <span class="cn">TRUE</span>, <span class="at">size =</span> <span class="dv">100</span>)</span>
-<span id="cb348-7"><a href="central-limit-theorem.html#cb348-7" aria-hidden="true" tabindex="-1"></a>  means100[i] <span class="ot">&lt;-</span> <span class="fu">mean</span>(sample100)</span>
-<span id="cb348-8"><a href="central-limit-theorem.html#cb348-8" aria-hidden="true" tabindex="-1"></a>  sample1000 <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">0</span>), <span class="at">prob =</span> <span class="fu">c</span>(<span class="fl">0.75</span>, <span class="fl">0.25</span>), <span class="at">replace =</span> <span class="cn">TRUE</span>, <span class="at">size =</span> <span class="dv">1000</span>)</span>
-<span id="cb348-9"><a href="central-limit-theorem.html#cb348-9" aria-hidden="true" tabindex="-1"></a>  means1000[i] <span class="ot">&lt;-</span> <span class="fu">mean</span>(sample1000)</span>
-<span id="cb348-10"><a href="central-limit-theorem.html#cb348-10" aria-hidden="true" tabindex="-1"></a>  sample10000 <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">0</span>), <span class="at">prob =</span> <span class="fu">c</span>(<span class="fl">0.75</span>, <span class="fl">0.25</span>), <span class="at">replace =</span> <span class="cn">TRUE</span>, <span class="at">size =</span> <span class="dv">10000</span>)</span>
-<span id="cb348-11"><a href="central-limit-theorem.html#cb348-11" aria-hidden="true" tabindex="-1"></a>  means10000[i] <span class="ot">&lt;-</span> <span class="fu">mean</span>(sample10000)</span>
-<span id="cb348-12"><a href="central-limit-theorem.html#cb348-12" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb348-13"><a href="central-limit-theorem.html#cb348-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb348-14"><a href="central-limit-theorem.html#cb348-14" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">rbind</span>(</span>
-<span id="cb348-15"><a href="central-limit-theorem.html#cb348-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">data.frame</span>(<span class="at">means =</span> means100, <span class="at">sample_size =</span> <span class="st">&quot;100 flips&quot;</span>),</span>
-<span id="cb348-16"><a href="central-limit-theorem.html#cb348-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">data.frame</span>(<span class="at">means =</span> means1000, <span class="at">sample_size =</span> <span class="st">&quot;1000 flips&quot;</span>),</span>
-<span id="cb348-17"><a href="central-limit-theorem.html#cb348-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">data.frame</span>(<span class="at">means =</span> means10000, <span class="at">sample_size =</span> <span class="st">&quot;10000 flips&quot;</span>)</span>
-<span id="cb348-18"><a href="central-limit-theorem.html#cb348-18" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb348-19"><a href="central-limit-theorem.html#cb348-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb348-20"><a href="central-limit-theorem.html#cb348-20" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb348-21"><a href="central-limit-theorem.html#cb348-21" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(df, <span class="fu">aes</span>(<span class="at">x =</span> means, <span class="at">fill =</span> sample_size)) <span class="sc">+</span> </span>
-<span id="cb348-22"><a href="central-limit-theorem.html#cb348-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>(<span class="at">alpha =</span> <span class="fl">0.3</span>) <span class="sc">+</span></span>
-<span id="cb348-23"><a href="central-limit-theorem.html#cb348-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Sample means&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Density&quot;</span>, <span class="at">fill =</span> <span class="st">&quot;Sample size&quot;</span>) <span class="sc">+</span></span>
-<span id="cb348-24"><a href="central-limit-theorem.html#cb348-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>()</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-139-1.png" width="672" /></p>
-<p>Indeed, the peaks converged again and shifted to the new position of 0.75.</p>
-<p>As you can see, the bigger your sample size, the less variability there is, and the more the distribution looks like a normal distribution. More precisely, the bigger your sample size, the distribution of the sample means will be normally distributed, even if the population is not normally distributed. A good rule of “sufficiently large sample size” is n ≥ 30.</p>
+<div id="clt-for-proportions" class="section level2" number="7.3">
+<h2><span class="header-section-number">7.3</span> CLT for proportions</h2>
+<p>The CLT also holds for proportions.</p>
+<p>Imagine we know the probability of not having the common cold is 0.9 and having the commmon cold is 0.1. Let’s record not having the common cold as 1 and having the common cold as 0. If I have a large enough sample size, we should expect the proportion to approach 0.9. Is this the case?</p>
+<div class="sourceCode" id="cb198"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb198-1"><a href="central-limit-theorem.html#cb198-1" aria-hidden="true" tabindex="-1"></a>means100 <span class="ot">&lt;-</span> <span class="fu">as.vector</span>(<span class="cn">NA</span>)</span>
+<span id="cb198-2"><a href="central-limit-theorem.html#cb198-2" aria-hidden="true" tabindex="-1"></a>means1000 <span class="ot">&lt;-</span> <span class="fu">as.vector</span>(<span class="cn">NA</span>)</span>
+<span id="cb198-3"><a href="central-limit-theorem.html#cb198-3" aria-hidden="true" tabindex="-1"></a>means10000 <span class="ot">&lt;-</span> <span class="fu">as.vector</span>(<span class="cn">NA</span>)</span>
+<span id="cb198-4"><a href="central-limit-theorem.html#cb198-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb198-5"><a href="central-limit-theorem.html#cb198-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10000</span>) {</span>
+<span id="cb198-6"><a href="central-limit-theorem.html#cb198-6" aria-hidden="true" tabindex="-1"></a>  sample100 <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">0</span>), <span class="at">prob =</span> <span class="fu">c</span>(<span class="fl">0.9</span>, <span class="fl">0.1</span>), <span class="at">replace =</span> <span class="cn">TRUE</span>, <span class="at">size =</span> <span class="dv">100</span>)</span>
+<span id="cb198-7"><a href="central-limit-theorem.html#cb198-7" aria-hidden="true" tabindex="-1"></a>  means100[i] <span class="ot">&lt;-</span> <span class="fu">mean</span>(sample100)</span>
+<span id="cb198-8"><a href="central-limit-theorem.html#cb198-8" aria-hidden="true" tabindex="-1"></a>  sample1000 <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">0</span>), <span class="at">prob =</span> <span class="fu">c</span>(<span class="fl">0.9</span>, <span class="fl">0.1</span>), <span class="at">replace =</span> <span class="cn">TRUE</span>, <span class="at">size =</span> <span class="dv">1000</span>)</span>
+<span id="cb198-9"><a href="central-limit-theorem.html#cb198-9" aria-hidden="true" tabindex="-1"></a>  means1000[i] <span class="ot">&lt;-</span> <span class="fu">mean</span>(sample1000)</span>
+<span id="cb198-10"><a href="central-limit-theorem.html#cb198-10" aria-hidden="true" tabindex="-1"></a>  sample10000 <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">0</span>), <span class="at">prob =</span> <span class="fu">c</span>(<span class="fl">0.9</span>, <span class="fl">0.1</span>), <span class="at">replace =</span> <span class="cn">TRUE</span>, <span class="at">size =</span> <span class="dv">10000</span>)</span>
+<span id="cb198-11"><a href="central-limit-theorem.html#cb198-11" aria-hidden="true" tabindex="-1"></a>  means10000[i] <span class="ot">&lt;-</span> <span class="fu">mean</span>(sample10000)</span>
+<span id="cb198-12"><a href="central-limit-theorem.html#cb198-12" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb198-13"><a href="central-limit-theorem.html#cb198-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb198-14"><a href="central-limit-theorem.html#cb198-14" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">rbind</span>(</span>
+<span id="cb198-15"><a href="central-limit-theorem.html#cb198-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">data.frame</span>(<span class="at">means =</span> means100, <span class="at">sample_size =</span> <span class="st">&quot;100&quot;</span>),</span>
+<span id="cb198-16"><a href="central-limit-theorem.html#cb198-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">data.frame</span>(<span class="at">means =</span> means1000, <span class="at">sample_size =</span> <span class="st">&quot;1000&quot;</span>),</span>
+<span id="cb198-17"><a href="central-limit-theorem.html#cb198-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">data.frame</span>(<span class="at">means =</span> means10000, <span class="at">sample_size =</span> <span class="st">&quot;10000&quot;</span>)</span>
+<span id="cb198-18"><a href="central-limit-theorem.html#cb198-18" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb198-19"><a href="central-limit-theorem.html#cb198-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb198-20"><a href="central-limit-theorem.html#cb198-20" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(df, <span class="fu">aes</span>(<span class="at">x =</span> means, <span class="at">fill =</span> sample_size)) <span class="sc">+</span> </span>
+<span id="cb198-21"><a href="central-limit-theorem.html#cb198-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>(<span class="at">alpha =</span> <span class="fl">0.3</span>) <span class="sc">+</span></span>
+<span id="cb198-22"><a href="central-limit-theorem.html#cb198-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Sample means&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Density&quot;</span>, <span class="at">fill =</span> <span class="st">&quot;Sample size&quot;</span>) <span class="sc">+</span></span>
+<span id="cb198-23"><a href="central-limit-theorem.html#cb198-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>()</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-78-1.png" width="672" /></p>
+<p>Can you explain the pattern that we observe with 100 samples? How about the height and width of other curves? What conclusions can we draw?</p>
 <p>This example shows the power of the CLT—it allows us to predict a sampling distribution regardless of the original population.</p>
-<p><strong>NOTE:</strong> The CLT says NOTHING about the individual sample points themselves. Remember our original data data points are either 0 or 1. However, the mean is a continuous variable.</p>
+<script>
+  iFrameResize({}, ".interactive");
+</script>
 
 </div>
 </div>

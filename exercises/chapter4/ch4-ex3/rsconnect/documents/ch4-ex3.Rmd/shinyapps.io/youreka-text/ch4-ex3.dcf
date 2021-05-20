@@ -1,0 +1,13 @@
+name: ch4-ex3
+title: ch4-ex3
+username:
+account: youreka-text
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 4159815
+bundleId: 4620523
+url: https://youreka-text.shinyapps.io/ch4-ex3/
+when: 1621522119.48507
+lastSyncTime: 1621522119.48509
+asMultiple: FALSE
+asStatic: FALSE
