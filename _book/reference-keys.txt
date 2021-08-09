@@ -70,11 +70,10 @@ contingency-tables
 visualizing-data-distributions-optional
 comparing-multiple-means
 loading-packages
-merging-datasets
 one-way-anova
 the-iris-dataset
 non-parametric-alternatives-to-anova
-two-way-anova
+beyond-the-one-way-anova
 linear-regression
 basic-concepts
 pearson-correlation
@@ -97,6 +96,3 @@ extras-optional
 choropleth
 animations
 additional-resources-1
-loading-packages-1
-linear-regression-1
-beyond-the-one-way-anova

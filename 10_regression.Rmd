@@ -82,7 +82,7 @@ For our question, the relationship between life expectancy and GDP, focus on the
 
 First of all, there *is* a significant relationship between these two variables (p < 2 x 10^-16^, or, as R reports in the `Pr>(|t|)` column, p < 2e-16). The `Estimate` column of the results lists a value of `lifeExp.v.gdp$coefficients['log_GDP']`. For every 10-fold increase in per capita GDP (remember we log~10~-transformed GDP), life expectancy increases by almost 7 years.
 
-The linear model relies assumes that your data is normally distributed. We can generate a diagnostic plot in the same way as one-way ANOVA.
+The linear model assumes that your data is normally distributed for each independent observation. We can generate a diagnostic plot in the same way as one-way ANOVA.
 
 ```{r}
 plot(lifeExp.v.gdp)
