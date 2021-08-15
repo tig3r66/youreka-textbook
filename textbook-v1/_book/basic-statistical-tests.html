@@ -33,7 +33,7 @@
   
 <link rel="prev" href="central-limit-theorem.html"/>
 <link rel="next" href="comparing-multiple-means.html"/>
-<script src="libs/header-attrs-2.6/header-attrs.js"></script>
+<script src="libs/header-attrs-2.7/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -373,7 +373,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb360-4"><a href="basic-statistical-tests.html#cb360-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="fu">mean</span>(lifeExp))</span></code></pre></div>
 <pre><code>## # A tibble: 5 x 2
 ##   continent `mean(lifeExp)`
-## * &lt;fct&gt;               &lt;dbl&gt;
+##   &lt;fct&gt;               &lt;dbl&gt;
 ## 1 Africa               39.1
 ## 2 Americas             53.3
 ## 3 Asia                 46.3
@@ -496,7 +496,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb380-4"><a href="basic-statistical-tests.html#cb380-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">meanlife =</span> <span class="fu">mean</span>(lifeExp))</span></code></pre></div>
 <pre><code>## # A tibble: 5 x 2
 ##   continent meanlife
-## * &lt;fct&gt;        &lt;dbl&gt;
+##   &lt;fct&gt;        &lt;dbl&gt;
 ## 1 Africa        54.8
 ## 2 Americas      73.6
 ## 3 Asia          70.7
@@ -549,7 +549,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ##  8 Centra…   35.5   37.5   39.5   41.5   43.5   46.8   48.3   50.5   49.4   46.1
 ##  9 Chad      38.1   39.9   41.7   43.6   45.6   47.4   49.5   51.1   51.7   51.6
 ## 10 Comoros   40.7   42.5   44.5   46.5   48.9   50.9   52.9   54.9   57.9   60.7
-## # … with 42 more rows, and 2 more variables: `2002` &lt;dbl&gt;, `2007` &lt;dbl&gt;</code></pre>
+## # … with 42 more rows, and 2 more variables: 2002 &lt;dbl&gt;, 2007 &lt;dbl&gt;</code></pre>
 <p>The wide data frame is to align the data from the same country to the same row, so that they have the same index when we call different columns.</p>
 <p>Now, we can run a paired t-test. Think about what we are testing in the code below.</p>
 <div class="sourceCode" id="cb388"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb388-1"><a href="basic-statistical-tests.html#cb388-1" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(Africa.wide<span class="sc">$</span><span class="st">&#39;2007&#39;</span>, Africa.wide<span class="sc">$</span><span class="st">&#39;1952&#39;</span>, <span class="at">alternative=</span><span class="st">&quot;two.sided&quot;</span>, <span class="at">paired=</span>T)</span></code></pre></div>
@@ -857,7 +857,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb430-4"><a href="basic-statistical-tests.html#cb430-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">mean_life =</span> <span class="fu">mean</span>(lifeExp), <span class="at">sd_life =</span> <span class="fu">sd</span>(lifeExp))</span></code></pre></div>
 <pre><code>## # A tibble: 4 x 3
 ##   `as.factor(year)` mean_life sd_life
-## * &lt;fct&gt;                 &lt;dbl&gt;   &lt;dbl&gt;
+##   &lt;fct&gt;                 &lt;dbl&gt;   &lt;dbl&gt;
 ## 1 1992                   53.6    9.46
 ## 2 1997                   53.6    9.10
 ## 3 2002                   53.3    9.59

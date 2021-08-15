@@ -99,10 +99,3 @@ extras-optional
 choropleth
 animations
 additional-resources-1
-simple-linear-regression
-introduction
-least-squares-estimation
-proposition
-proof
-simple-linear-regression-optional
-heading

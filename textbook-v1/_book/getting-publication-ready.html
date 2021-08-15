@@ -33,7 +33,7 @@
   
 <link rel="prev" href="data-visualization-basics.html"/>
 
-<script src="libs/header-attrs-2.6/header-attrs.js"></script>
+<script src="libs/header-attrs-2.7/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -649,27 +649,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb600-2"><a href="getting-publication-ready.html#cb600-2" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&#39;thomasp85/gganimate&#39;</span>)</span></code></pre></div>
 <p>Next, load the package:</p>
 <div class="sourceCode" id="cb601"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb601-1"><a href="getting-publication-ready.html#cb601-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gganimate)</span></code></pre></div>
-<pre><code>## No renderer backend detected. gganimate will default to writing frames to separate files
-## Consider installing:
-## - the `gifski` package for gif output
-## - the `av` package for video output
-## and restarting the R session</code></pre>
 <p>Finally, we can create the plot! This might take a while, but I promise it will be worth the wait!</p>
-<div class="sourceCode" id="cb603"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb603-1"><a href="getting-publication-ready.html#cb603-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(gapminder, <span class="fu">aes</span>(gdpPercap, lifeExp, <span class="at">size =</span> pop, <span class="at">col =</span> country)) <span class="sc">+</span></span>
-<span id="cb603-2"><a href="getting-publication-ready.html#cb603-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.7</span>, <span class="at">show.legend =</span> F) <span class="sc">+</span></span>
-<span id="cb603-3"><a href="getting-publication-ready.html#cb603-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_colour_manual</span>(<span class="at">values =</span> country_colors) <span class="sc">+</span></span>
-<span id="cb603-4"><a href="getting-publication-ready.html#cb603-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_x_log10</span>() <span class="sc">+</span></span>
-<span id="cb603-5"><a href="getting-publication-ready.html#cb603-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_size</span>(<span class="at">range =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">12</span>)) <span class="sc">+</span></span>
-<span id="cb603-6"><a href="getting-publication-ready.html#cb603-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">facet_wrap</span>(<span class="sc">~</span>continent) <span class="sc">+</span></span>
-<span id="cb603-7"><a href="getting-publication-ready.html#cb603-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
-<span id="cb603-8"><a href="getting-publication-ready.html#cb603-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme</span>(<span class="at">panel.grid =</span> <span class="fu">element_blank</span>()) <span class="sc">+</span></span>
-<span id="cb603-9"><a href="getting-publication-ready.html#cb603-9" aria-hidden="true" tabindex="-1"></a>    <span class="co"># here is the animation code</span></span>
-<span id="cb603-10"><a href="getting-publication-ready.html#cb603-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&#39;Year: {frame_time}&#39;</span>, <span class="at">x =</span> <span class="st">&#39;GDP per capita&#39;</span>, <span class="at">y =</span> <span class="st">&#39;Life expectancy (years)&#39;</span>) <span class="sc">+</span></span>
-<span id="cb603-11"><a href="getting-publication-ready.html#cb603-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">transition_time</span>(year) <span class="sc">+</span></span>
-<span id="cb603-12"><a href="getting-publication-ready.html#cb603-12" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ease_aes</span>(<span class="st">&#39;linear&#39;</span>)</span></code></pre></div>
-<pre><code>## Warning: No renderer available. Please install the gifski, av, or magick package
-## to create animated output</code></pre>
-<pre><code>## NULL</code></pre>
+<div class="sourceCode" id="cb602"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb602-1"><a href="getting-publication-ready.html#cb602-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(gapminder, <span class="fu">aes</span>(gdpPercap, lifeExp, <span class="at">size =</span> pop, <span class="at">col =</span> country)) <span class="sc">+</span></span>
+<span id="cb602-2"><a href="getting-publication-ready.html#cb602-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.7</span>, <span class="at">show.legend =</span> F) <span class="sc">+</span></span>
+<span id="cb602-3"><a href="getting-publication-ready.html#cb602-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_colour_manual</span>(<span class="at">values =</span> country_colors) <span class="sc">+</span></span>
+<span id="cb602-4"><a href="getting-publication-ready.html#cb602-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_x_log10</span>() <span class="sc">+</span></span>
+<span id="cb602-5"><a href="getting-publication-ready.html#cb602-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_size</span>(<span class="at">range =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">12</span>)) <span class="sc">+</span></span>
+<span id="cb602-6"><a href="getting-publication-ready.html#cb602-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">facet_wrap</span>(<span class="sc">~</span>continent) <span class="sc">+</span></span>
+<span id="cb602-7"><a href="getting-publication-ready.html#cb602-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb602-8"><a href="getting-publication-ready.html#cb602-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme</span>(<span class="at">panel.grid =</span> <span class="fu">element_blank</span>()) <span class="sc">+</span></span>
+<span id="cb602-9"><a href="getting-publication-ready.html#cb602-9" aria-hidden="true" tabindex="-1"></a>    <span class="co"># here is the animation code</span></span>
+<span id="cb602-10"><a href="getting-publication-ready.html#cb602-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&#39;Year: {frame_time}&#39;</span>, <span class="at">x =</span> <span class="st">&#39;GDP per capita&#39;</span>, <span class="at">y =</span> <span class="st">&#39;Life expectancy (years)&#39;</span>) <span class="sc">+</span></span>
+<span id="cb602-11"><a href="getting-publication-ready.html#cb602-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">transition_time</span>(year) <span class="sc">+</span></span>
+<span id="cb602-12"><a href="getting-publication-ready.html#cb602-12" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ease_aes</span>(<span class="st">&#39;linear&#39;</span>)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-277-1.gif" /><!-- --></p>
 </div>
 </div>
 <div id="additional-resources-1" class="section level2" number="10.7">
