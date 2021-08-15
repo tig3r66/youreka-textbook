@@ -53,28 +53,6 @@
 
 <link href="libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
 <link href="libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/4.3.1/iframeResizer.min.js">
-</script>
-
-<script type="text/javascript">
-
-// Once page is loaded, override and disable popover "scroll into view"
-  $(document).ready(function() {
-    window.tutorial.scrollIntoView = function() {}
-  })
-
-// Add padding to LearnR body when popover shown
-  $(document).on("shown.bs.popover", function() {
-    var popoverHeight = document.querySelector(".popover").offsetHeight
-    document.body.style.paddingTop = popoverHeight + 10 + "px"
-  })
-
-// Set padding to 0 when popover hidden
-  $(document).on("hide.bs.popover", function() {
-    var popoverHeight = document.querySelector(".popover").offsetHeight
-    document.body.style.paddingTop = "0px"
-  })
-</script>
 
 
 <style type="text/css">
@@ -227,8 +205,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.3.2" data-path="data-exploration.html"><a href="data-exploration.html#filter-rows-with-filter"><i class="fa fa-check"></i><b>5.3.2</b> Filter rows with <code>filter()</code></a></li>
 <li class="chapter" data-level="5.3.3" data-path="data-exploration.html"><a href="data-exploration.html#pipe-operator"><i class="fa fa-check"></i><b>5.3.3</b> Pipe operator <code>%&gt;%</code></a></li>
 <li class="chapter" data-level="5.3.4" data-path="data-exploration.html"><a href="data-exploration.html#select-columns-with-select"><i class="fa fa-check"></i><b>5.3.4</b> Select Columns with <code>select()</code></a></li>
-<li class="chapter" data-level="5.3.5" data-path="data-exploration.html"><a href="data-exploration.html#pure-predictable-pipeable-optional"><i class="fa fa-check"></i><b>5.3.5</b> Pure, predictable, pipeable (OPTIONAL)</a></li>
-<li class="chapter" data-level="5.3.6" data-path="data-exploration.html"><a href="data-exploration.html#additional-resources"><i class="fa fa-check"></i><b>5.3.6</b> Additional resources</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="more-dplyr.html"><a href="more-dplyr.html"><i class="fa fa-check"></i><b>6</b> More dplyr</a>
@@ -245,11 +221,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6.5.1" data-path="more-dplyr.html"><a href="more-dplyr.html#counting"><i class="fa fa-check"></i><b>6.5.1</b> Counting</a></li>
 <li class="chapter" data-level="6.5.2" data-path="more-dplyr.html"><a href="more-dplyr.html#general-summarization"><i class="fa fa-check"></i><b>6.5.2</b> General summarization</a></li>
 <li class="chapter" data-level="6.5.3" data-path="more-dplyr.html"><a href="more-dplyr.html#computing-with-group-wise-summaries"><i class="fa fa-check"></i><b>6.5.3</b> Computing with group-wise summaries</a></li>
-<li class="chapter" data-level="6.5.4" data-path="more-dplyr.html"><a href="more-dplyr.html#window-functions-optional"><i class="fa fa-check"></i><b>6.5.4</b> Window functions (OPTIONAL)</a></li>
 </ul></li>
-<li class="chapter" data-level="6.6" data-path="more-dplyr.html"><a href="more-dplyr.html#introduction-to-visualization-optional"><i class="fa fa-check"></i><b>6.6</b> Introduction to visualization (OPTIONAL)</a></li>
-<li class="chapter" data-level="6.7" data-path="more-dplyr.html"><a href="more-dplyr.html#comprehensive-practice"><i class="fa fa-check"></i><b>6.7</b> Comprehensive practice</a></li>
-<li class="chapter" data-level="6.8" data-path="more-dplyr.html"><a href="more-dplyr.html#data-wrangling-summary"><i class="fa fa-check"></i><b>6.8</b> Data wrangling summary</a></li>
+<li class="chapter" data-level="6.6" data-path="more-dplyr.html"><a href="more-dplyr.html#comprehensive-practice"><i class="fa fa-check"></i><b>6.6</b> Comprehensive practice</a></li>
+<li class="chapter" data-level="6.7" data-path="more-dplyr.html"><a href="more-dplyr.html#data-wrangling-summary"><i class="fa fa-check"></i><b>6.7</b> Data wrangling summary</a></li>
 </ul></li>
 <li class="part"><span><b>III Statistics</b></span></li>
 <li class="chapter" data-level="7" data-path="central-limit-theorem.html"><a href="central-limit-theorem.html"><i class="fa fa-check"></i><b>7</b> Central limit theorem</a>
@@ -320,7 +294,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="12.6.1" data-path="getting-publication-ready.html"><a href="getting-publication-ready.html#choropleth"><i class="fa fa-check"></i><b>12.6.1</b> Choropleth</a></li>
 <li class="chapter" data-level="12.6.2" data-path="getting-publication-ready.html"><a href="getting-publication-ready.html#animations"><i class="fa fa-check"></i><b>12.6.2</b> Animations</a></li>
 </ul></li>
-<li class="chapter" data-level="12.7" data-path="getting-publication-ready.html"><a href="getting-publication-ready.html#additional-resources-1"><i class="fa fa-check"></i><b>12.7</b> Additional resources</a></li>
+<li class="chapter" data-level="12.7" data-path="getting-publication-ready.html"><a href="getting-publication-ready.html#additional-resources"><i class="fa fa-check"></i><b>12.7</b> Additional resources</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><center>
@@ -349,6 +323,29 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/4.3.1/iframeResizer.min.js">
+</script>
+
+<script type="text/javascript">
+
+// Once page is loaded, override and disable popover "scroll into view"
+  $(document).ready(function() {
+    window.tutorial.scrollIntoView = function() {}
+  })
+
+// Add padding to LearnR body when popover shown
+  $(document).on("shown.bs.popover", function() {
+    var popoverHeight = document.querySelector(".popover").offsetHeight
+    document.body.style.paddingTop = popoverHeight + 10 + "px"
+  })
+
+// Set padding to 0 when popover hidden
+  $(document).on("hide.bs.popover", function() {
+    var popoverHeight = document.querySelector(".popover").offsetHeight
+    document.body.style.paddingTop = "0px"
+  })
+
+</script>
 <div id="linear-regression" class="section level1" number="10">
 <h1><span class="header-section-number">10</span> Linear regression</h1>
 <p>Linear regression is a powerful tool that attempts to model the relationship between a dependent and independent variable by fitting a linear equation to observed data. In particular, the model attempts to minimize the distance between actual and predicted y-values, called residuals.</p>
@@ -366,12 +363,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode" id="cb315"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb315-1"><a href="linear-regression.html#cb315-1" aria-hidden="true" tabindex="-1"></a>dat<span class="fl">.2007</span> <span class="ot">&lt;-</span> gapminder <span class="sc">%&gt;%</span> <span class="fu">filter</span>(year <span class="sc">==</span> <span class="dv">2007</span>)</span>
 <span id="cb315-2"><a href="linear-regression.html#cb315-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(dat<span class="fl">.2007</span>, <span class="fu">aes</span>(<span class="at">x =</span> gdpPercap, <span class="at">y =</span> lifeExp)) <span class="sc">+</span></span>
 <span id="cb315-3"><a href="linear-regression.html#cb315-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-138-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-137-1.png" width="672" /></p>
 <p>We can see immediately that this is unlikely a linear relationship. In this case, we will need to log-transform the GDP data to obtain a linear relationship.</p>
 <div class="sourceCode" id="cb316"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb316-1"><a href="linear-regression.html#cb316-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(dat<span class="fl">.2007</span>, <span class="fu">aes</span>(<span class="at">x =</span> gdpPercap, <span class="at">y =</span> lifeExp)) <span class="sc">+</span></span>
 <span id="cb316-2"><a href="linear-regression.html#cb316-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
 <span id="cb316-3"><a href="linear-regression.html#cb316-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_log10</span>()</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-139-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-138-1.png" width="672" /></p>
 <p>Now that the data are properly transformed, we can create the linear model for the predictability of life expectancy based on gross domestic product. Before we do that let’s make it clear:</p>
 <ol style="list-style-type: decimal">
 <li><p>From the scatter plot we can identify a positive relationship – when log(GDP per capita) increases, the life expectancy also tends to be higher. The tendency of one variable going up or down <em>linearly</em> with the increase of another variable is called “correlation.” The more consistent the points are with a LINEAR trend, the higher the closer the correlation is to -1 (for negative relationships) or +1 (for positive relationships).</p></li>
@@ -424,7 +421,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>First of all, there <em>is</em> a significant relationship between these two variables (p &lt; 2 x 10<sup>-16</sup>, or, as R reports in the <code>Pr&gt;(|t|)</code> column, p &lt; 2e-16). The <code>Estimate</code> column of the results lists a value of <code>lifeExp.v.gdp$coefficients['log_GDP']</code>. For every 10-fold increase in per capita GDP (remember we log<sub>10</sub>-transformed GDP), life expectancy increases by almost 7 years.</p>
 <p>The linear model assumes that your data is normally distributed for each independent observation. We can generate a diagnostic plot in the same way as one-way ANOVA.</p>
 <div class="sourceCode" id="cb323"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb323-1"><a href="linear-regression.html#cb323-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(lifeExp.v.gdp)</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-141-1.png" width="672" /><img src="_main_files/figure-html/unnamed-chunk-141-2.png" width="672" /><img src="_main_files/figure-html/unnamed-chunk-141-3.png" width="672" /><img src="_main_files/figure-html/unnamed-chunk-141-4.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-140-1.png" width="672" /><img src="_main_files/figure-html/unnamed-chunk-140-2.png" width="672" /><img src="_main_files/figure-html/unnamed-chunk-140-3.png" width="672" /><img src="_main_files/figure-html/unnamed-chunk-140-4.png" width="672" /></p>
 <p>Q-Q plot suggested this data deviates from normality. Let’s also take a look at the residues of the linear model:</p>
 <div class="sourceCode" id="cb324"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb324-1"><a href="linear-regression.html#cb324-1" aria-hidden="true" tabindex="-1"></a>residuals_lm <span class="ot">&lt;-</span> <span class="fu">residuals</span>(<span class="at">object =</span> lifeExp.v.gdp)</span>
 <span id="cb324-2"><a href="linear-regression.html#cb324-2" aria-hidden="true" tabindex="-1"></a><span class="fu">shapiro.test</span>(<span class="at">x =</span> residuals_lm)</span></code></pre></div>

@@ -53,28 +53,6 @@
 
 <link href="libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
 <link href="libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/4.3.1/iframeResizer.min.js">
-</script>
-
-<script type="text/javascript">
-
-// Once page is loaded, override and disable popover "scroll into view"
-  $(document).ready(function() {
-    window.tutorial.scrollIntoView = function() {}
-  })
-
-// Add padding to LearnR body when popover shown
-  $(document).on("shown.bs.popover", function() {
-    var popoverHeight = document.querySelector(".popover").offsetHeight
-    document.body.style.paddingTop = popoverHeight + 10 + "px"
-  })
-
-// Set padding to 0 when popover hidden
-  $(document).on("hide.bs.popover", function() {
-    var popoverHeight = document.querySelector(".popover").offsetHeight
-    document.body.style.paddingTop = "0px"
-  })
-</script>
 
 
 <style type="text/css">
@@ -227,8 +205,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.3.2" data-path="data-exploration.html"><a href="data-exploration.html#filter-rows-with-filter"><i class="fa fa-check"></i><b>5.3.2</b> Filter rows with <code>filter()</code></a></li>
 <li class="chapter" data-level="5.3.3" data-path="data-exploration.html"><a href="data-exploration.html#pipe-operator"><i class="fa fa-check"></i><b>5.3.3</b> Pipe operator <code>%&gt;%</code></a></li>
 <li class="chapter" data-level="5.3.4" data-path="data-exploration.html"><a href="data-exploration.html#select-columns-with-select"><i class="fa fa-check"></i><b>5.3.4</b> Select Columns with <code>select()</code></a></li>
-<li class="chapter" data-level="5.3.5" data-path="data-exploration.html"><a href="data-exploration.html#pure-predictable-pipeable-optional"><i class="fa fa-check"></i><b>5.3.5</b> Pure, predictable, pipeable (OPTIONAL)</a></li>
-<li class="chapter" data-level="5.3.6" data-path="data-exploration.html"><a href="data-exploration.html#additional-resources"><i class="fa fa-check"></i><b>5.3.6</b> Additional resources</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="more-dplyr.html"><a href="more-dplyr.html"><i class="fa fa-check"></i><b>6</b> More dplyr</a>
@@ -245,11 +221,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6.5.1" data-path="more-dplyr.html"><a href="more-dplyr.html#counting"><i class="fa fa-check"></i><b>6.5.1</b> Counting</a></li>
 <li class="chapter" data-level="6.5.2" data-path="more-dplyr.html"><a href="more-dplyr.html#general-summarization"><i class="fa fa-check"></i><b>6.5.2</b> General summarization</a></li>
 <li class="chapter" data-level="6.5.3" data-path="more-dplyr.html"><a href="more-dplyr.html#computing-with-group-wise-summaries"><i class="fa fa-check"></i><b>6.5.3</b> Computing with group-wise summaries</a></li>
-<li class="chapter" data-level="6.5.4" data-path="more-dplyr.html"><a href="more-dplyr.html#window-functions-optional"><i class="fa fa-check"></i><b>6.5.4</b> Window functions (OPTIONAL)</a></li>
 </ul></li>
-<li class="chapter" data-level="6.6" data-path="more-dplyr.html"><a href="more-dplyr.html#introduction-to-visualization-optional"><i class="fa fa-check"></i><b>6.6</b> Introduction to visualization (OPTIONAL)</a></li>
-<li class="chapter" data-level="6.7" data-path="more-dplyr.html"><a href="more-dplyr.html#comprehensive-practice"><i class="fa fa-check"></i><b>6.7</b> Comprehensive practice</a></li>
-<li class="chapter" data-level="6.8" data-path="more-dplyr.html"><a href="more-dplyr.html#data-wrangling-summary"><i class="fa fa-check"></i><b>6.8</b> Data wrangling summary</a></li>
+<li class="chapter" data-level="6.6" data-path="more-dplyr.html"><a href="more-dplyr.html#comprehensive-practice"><i class="fa fa-check"></i><b>6.6</b> Comprehensive practice</a></li>
+<li class="chapter" data-level="6.7" data-path="more-dplyr.html"><a href="more-dplyr.html#data-wrangling-summary"><i class="fa fa-check"></i><b>6.7</b> Data wrangling summary</a></li>
 </ul></li>
 <li class="part"><span><b>III Statistics</b></span></li>
 <li class="chapter" data-level="7" data-path="central-limit-theorem.html"><a href="central-limit-theorem.html"><i class="fa fa-check"></i><b>7</b> Central limit theorem</a>
@@ -320,7 +294,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="12.6.1" data-path="getting-publication-ready.html"><a href="getting-publication-ready.html#choropleth"><i class="fa fa-check"></i><b>12.6.1</b> Choropleth</a></li>
 <li class="chapter" data-level="12.6.2" data-path="getting-publication-ready.html"><a href="getting-publication-ready.html#animations"><i class="fa fa-check"></i><b>12.6.2</b> Animations</a></li>
 </ul></li>
-<li class="chapter" data-level="12.7" data-path="getting-publication-ready.html"><a href="getting-publication-ready.html#additional-resources-1"><i class="fa fa-check"></i><b>12.7</b> Additional resources</a></li>
+<li class="chapter" data-level="12.7" data-path="getting-publication-ready.html"><a href="getting-publication-ready.html#additional-resources"><i class="fa fa-check"></i><b>12.7</b> Additional resources</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><center>
@@ -349,6 +323,29 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/4.3.1/iframeResizer.min.js">
+</script>
+
+<script type="text/javascript">
+
+// Once page is loaded, override and disable popover "scroll into view"
+  $(document).ready(function() {
+    window.tutorial.scrollIntoView = function() {}
+  })
+
+// Add padding to LearnR body when popover shown
+  $(document).on("shown.bs.popover", function() {
+    var popoverHeight = document.querySelector(".popover").offsetHeight
+    document.body.style.paddingTop = popoverHeight + 10 + "px"
+  })
+
+// Set padding to 0 when popover hidden
+  $(document).on("hide.bs.popover", function() {
+    var popoverHeight = document.querySelector(".popover").offsetHeight
+    document.body.style.paddingTop = "0px"
+  })
+
+</script>
 <div id="basic-statistical-tests" class="section level1" number="8">
 <h1><span class="header-section-number">8</span> Basic statistical tests</h1>
 <p>R contains extremely powerful tools for data science. These tools are either built-in or available from packages. Thoughout this section we hope to demonstrate best practices organizing, analyzing, and visualizing data in R.</p>
@@ -431,7 +428,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode" id="cb216"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb216-1"><a href="basic-statistical-tests.html#cb216-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
 <span id="cb216-2"><a href="basic-statistical-tests.html#cb216-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>(<span class="fu">aes</span>(Euro.life<span class="fl">.1952</span>)) <span class="sc">+</span></span>
 <span id="cb216-3"><a href="basic-statistical-tests.html#cb216-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="dv">65</span>)</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-85-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-84-1.png" width="672" /></p>
 <p><strong>Note 1:</strong> If you used the dplyr method, you would need to plot the specific vector in the data frame:</p>
 <div class="sourceCode" id="cb217"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb217-1"><a href="basic-statistical-tests.html#cb217-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
 <span id="cb217-2"><a href="basic-statistical-tests.html#cb217-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>(<span class="fu">aes</span>(Euro.life<span class="fl">.1952</span><span class="sc">$</span>lifeExp)) <span class="sc">+</span></span>
@@ -475,7 +472,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb222-6"><a href="basic-statistical-tests.html#cb222-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">&#39;Continent&#39;</span>, <span class="at">y=</span><span class="st">&#39;Life expectancy (yrs)&#39;</span>) <span class="sc">+</span></span>
 <span id="cb222-7"><a href="basic-statistical-tests.html#cb222-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>()</span></code></pre></div>
 <pre><code>## `stat_bindot()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
-<p><img src="_main_files/figure-html/unnamed-chunk-89-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-88-1.png" width="672" /></p>
 <p>Here we want to run a two-sample t-test. Before we do that, we’ll need to check if the 2 samples have the same variance. Recall that different t-tests assume different variances:</p>
 <ul>
 <li>If you assume equal variance, you would use Student’s t-test.</li>
@@ -545,7 +542,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb234-2"><a href="basic-statistical-tests.html#cb234-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> country)) <span class="sc">+</span></span>
 <span id="cb234-3"><a href="basic-statistical-tests.html#cb234-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">group =</span> country, <span class="at">color=</span>country))</span>
 <span id="cb234-4"><a href="basic-statistical-tests.html#cb234-4" aria-hidden="true" tabindex="-1"></a><span class="fu">show</span>(p)</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-95-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-94-1.png" width="672" /></p>
 <p>Since the life expectancy in 1952 and 2007 look interesting, let’s visualize it:</p>
 <div class="sourceCode" id="cb235"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb235-1"><a href="basic-statistical-tests.html#cb235-1" aria-hidden="true" tabindex="-1"></a><span class="co"># selecting rows with years 1952 and 2007</span></span>
 <span id="cb235-2"><a href="basic-statistical-tests.html#cb235-2" aria-hidden="true" tabindex="-1"></a>Africa.<span class="fl">1952.2007</span> <span class="ot">&lt;-</span> Africa <span class="sc">%&gt;%</span> <span class="fu">filter</span>(year <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">1952</span>, <span class="dv">2007</span>))</span>
@@ -554,7 +551,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb235-5"><a href="basic-statistical-tests.html#cb235-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color=</span>country)) <span class="sc">+</span></span>
 <span id="cb235-6"><a href="basic-statistical-tests.html#cb235-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">group =</span> country, <span class="at">color=</span>country))</span>
 <span id="cb235-7"><a href="basic-statistical-tests.html#cb235-7" aria-hidden="true" tabindex="-1"></a><span class="fu">show</span>(p)</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-96-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-95-1.png" width="672" /></p>
 <p>Most of the countries have improved, while a few have decreased life expectancy.</p>
 <p>Before testing this observation, we should reorganize our data into a nice (wide) shape.</p>
 <div class="sourceCode" id="cb236"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb236-1"><a href="basic-statistical-tests.html#cb236-1" aria-hidden="true" tabindex="-1"></a>Africa.wide <span class="ot">&lt;-</span> <span class="fu">spread</span>(Africa, year, lifeExp)</span>
@@ -872,7 +869,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb278-12"><a href="basic-statistical-tests.html#cb278-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>()</span>
 <span id="cb278-13"><a href="basic-statistical-tests.html#cb278-13" aria-hidden="true" tabindex="-1"></a><span class="fu">show</span>(p)</span></code></pre></div>
 <pre><code>## Picking joint bandwidth of 3.6</code></pre>
-<p><img src="_main_files/figure-html/unnamed-chunk-117-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-116-1.png" width="672" /></p>
 <p>Let’s take a look at the mean and standard deviation to see if your guess is correct.</p>
 <div class="sourceCode" id="cb280"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb280-1"><a href="basic-statistical-tests.html#cb280-1" aria-hidden="true" tabindex="-1"></a>Africa.all <span class="sc">%&gt;%</span> </span>
 <span id="cb280-2"><a href="basic-statistical-tests.html#cb280-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="fu">c</span>(year, lifeExp)) <span class="sc">%&gt;%</span></span>
@@ -890,18 +887,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb282-2"><a href="basic-statistical-tests.html#cb282-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_dotplot</span>(<span class="at">binaxis =</span> <span class="st">&#39;y&#39;</span>, <span class="at">stackdir =</span> <span class="st">&#39;center&#39;</span>, <span class="at">binwidth =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
 <span id="cb282-3"><a href="basic-statistical-tests.html#cb282-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">alpha=</span><span class="fl">0.3</span>)</span>
 <span id="cb282-4"><a href="basic-statistical-tests.html#cb282-4" aria-hidden="true" tabindex="-1"></a><span class="fu">show</span>(p)</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-119-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-118-1.png" width="672" /></p>
 <p>You may want to remove the gray background and decrease dot size. This is as easy as specifying the <code>dotsize</code> parameter and adding <code>theme_classic()</code>. There a lot more themes out there! Check them out <a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">here</a>.</p>
 <div class="sourceCode" id="cb283"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb283-1"><a href="basic-statistical-tests.html#cb283-1" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> Africa.all, <span class="fu">aes</span>(<span class="at">x=</span><span class="fu">as.factor</span>(year), <span class="at">y=</span>lifeExp)) <span class="sc">+</span></span>
 <span id="cb283-2"><a href="basic-statistical-tests.html#cb283-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_dotplot</span>(<span class="at">binaxis =</span> <span class="st">&#39;y&#39;</span>, <span class="at">stackdir =</span> <span class="st">&#39;center&#39;</span>, <span class="at">binwidth =</span> <span class="dv">1</span>, <span class="at">dotsize =</span> <span class="fl">0.65</span>) <span class="sc">+</span></span>
 <span id="cb283-3"><a href="basic-statistical-tests.html#cb283-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">alpha=</span><span class="fl">0.3</span>) <span class="sc">+</span> </span>
 <span id="cb283-4"><a href="basic-statistical-tests.html#cb283-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>()</span>
 <span id="cb283-5"><a href="basic-statistical-tests.html#cb283-5" aria-hidden="true" tabindex="-1"></a><span class="fu">show</span>(p)</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-120-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-119-1.png" width="672" /></p>
 <p>While we’re at it, let’s also rename the x- and y-axis. Since we’ve saved the plot already, let’s add a label layer to the plot.</p>
 <div class="sourceCode" id="cb284"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb284-1"><a href="basic-statistical-tests.html#cb284-1" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> p <span class="sc">+</span> <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&#39;Year&#39;</span>, <span class="at">y =</span> <span class="st">&#39;Life expectancy (yrs)&#39;</span>)</span>
 <span id="cb284-2"><a href="basic-statistical-tests.html#cb284-2" aria-hidden="true" tabindex="-1"></a><span class="fu">show</span>(p)</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-121-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-120-1.png" width="672" /></p>
 <p>Now this figure is publication-ready.</p>
 
 </div>

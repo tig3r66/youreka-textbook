@@ -267,7 +267,9 @@ new_var
 
 Within country, we take the difference between life expectancy in year $i$ and life expectancy in 1952. Therefore we always see zeroes for 1952 and, for most countries, a sequence of positive and increasing numbers.
 
-### Window functions (OPTIONAL)
+
+<button class="collapsible">Window functions (OPTIONAL)</button>
+<div class="collapse_content">
 
 Window functions take $n$ inputs and give back $n$ outputs. Furthermore, the output depends on all the values. So `rank()` is a window function but `sum()` is not. Here we use window functions based on ranks and offsets.
 
@@ -335,8 +337,12 @@ my_gap %>%
   top_n(1, wt = desc(lifeExp))  ## gets the min
 ```
 
+</div>
 
-## Introduction to visualization (OPTIONAL)
+<br>
+
+<button class="collapsible">Introduction to visualization (OPTIONAL)</button>
+<div class="collapse_content">
 
 Although we will get into more serious plotting in future chapters, I want to give you a taste of the excitement to come.
 
@@ -381,6 +387,8 @@ ggplot(data = dat.1952, aes(x = gdpPercap, y = lifeExp)) +
 
 Don't worry too much about figures right now. We will cover data visualization in much more depth in future lessons.
 
+</div>
+
 
 ## Comprehensive practice
 
@@ -422,3 +430,26 @@ Wow, we covered *a lot* of data wrangling! Don't wory if you don't understand ev
   3. If your statements are difficult to read, by all means break it into pieces and make some intermediate objects. Your code should be easy to read and write when you're done.
 
 The functions presented here should cover most of your basic data wrangling needs. If you ever need to do something more complicated, search it up! Although I have programmed for many years, I still need to do a quick Google search for documentation and StackOverflow solutions.
+
+
+```{=html}
+<script>
+  iFrameResize({}, ".interactive");
+  
+var coll = document.getElementsByClassName("collapsible");
+var coll_down = document.getElementsByClassName("collapse_content");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.maxHeight){
+      content.style.maxHeight = null;
+    } else {
+      content.style.maxHeight = content.scrollHeight + "px";
+    } 
+  });
+}
+</script>
+```

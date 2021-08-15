@@ -53,28 +53,6 @@
 
 <link href="libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
 <link href="libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/4.3.1/iframeResizer.min.js">
-</script>
-
-<script type="text/javascript">
-
-// Once page is loaded, override and disable popover "scroll into view"
-  $(document).ready(function() {
-    window.tutorial.scrollIntoView = function() {}
-  })
-
-// Add padding to LearnR body when popover shown
-  $(document).on("shown.bs.popover", function() {
-    var popoverHeight = document.querySelector(".popover").offsetHeight
-    document.body.style.paddingTop = popoverHeight + 10 + "px"
-  })
-
-// Set padding to 0 when popover hidden
-  $(document).on("hide.bs.popover", function() {
-    var popoverHeight = document.querySelector(".popover").offsetHeight
-    document.body.style.paddingTop = "0px"
-  })
-</script>
 
 
 <style type="text/css">
@@ -227,8 +205,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.3.2" data-path="data-exploration.html"><a href="data-exploration.html#filter-rows-with-filter"><i class="fa fa-check"></i><b>5.3.2</b> Filter rows with <code>filter()</code></a></li>
 <li class="chapter" data-level="5.3.3" data-path="data-exploration.html"><a href="data-exploration.html#pipe-operator"><i class="fa fa-check"></i><b>5.3.3</b> Pipe operator <code>%&gt;%</code></a></li>
 <li class="chapter" data-level="5.3.4" data-path="data-exploration.html"><a href="data-exploration.html#select-columns-with-select"><i class="fa fa-check"></i><b>5.3.4</b> Select Columns with <code>select()</code></a></li>
-<li class="chapter" data-level="5.3.5" data-path="data-exploration.html"><a href="data-exploration.html#pure-predictable-pipeable-optional"><i class="fa fa-check"></i><b>5.3.5</b> Pure, predictable, pipeable (OPTIONAL)</a></li>
-<li class="chapter" data-level="5.3.6" data-path="data-exploration.html"><a href="data-exploration.html#additional-resources"><i class="fa fa-check"></i><b>5.3.6</b> Additional resources</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="more-dplyr.html"><a href="more-dplyr.html"><i class="fa fa-check"></i><b>6</b> More dplyr</a>
@@ -245,11 +221,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6.5.1" data-path="more-dplyr.html"><a href="more-dplyr.html#counting"><i class="fa fa-check"></i><b>6.5.1</b> Counting</a></li>
 <li class="chapter" data-level="6.5.2" data-path="more-dplyr.html"><a href="more-dplyr.html#general-summarization"><i class="fa fa-check"></i><b>6.5.2</b> General summarization</a></li>
 <li class="chapter" data-level="6.5.3" data-path="more-dplyr.html"><a href="more-dplyr.html#computing-with-group-wise-summaries"><i class="fa fa-check"></i><b>6.5.3</b> Computing with group-wise summaries</a></li>
-<li class="chapter" data-level="6.5.4" data-path="more-dplyr.html"><a href="more-dplyr.html#window-functions-optional"><i class="fa fa-check"></i><b>6.5.4</b> Window functions (OPTIONAL)</a></li>
 </ul></li>
-<li class="chapter" data-level="6.6" data-path="more-dplyr.html"><a href="more-dplyr.html#introduction-to-visualization-optional"><i class="fa fa-check"></i><b>6.6</b> Introduction to visualization (OPTIONAL)</a></li>
-<li class="chapter" data-level="6.7" data-path="more-dplyr.html"><a href="more-dplyr.html#comprehensive-practice"><i class="fa fa-check"></i><b>6.7</b> Comprehensive practice</a></li>
-<li class="chapter" data-level="6.8" data-path="more-dplyr.html"><a href="more-dplyr.html#data-wrangling-summary"><i class="fa fa-check"></i><b>6.8</b> Data wrangling summary</a></li>
+<li class="chapter" data-level="6.6" data-path="more-dplyr.html"><a href="more-dplyr.html#comprehensive-practice"><i class="fa fa-check"></i><b>6.6</b> Comprehensive practice</a></li>
+<li class="chapter" data-level="6.7" data-path="more-dplyr.html"><a href="more-dplyr.html#data-wrangling-summary"><i class="fa fa-check"></i><b>6.7</b> Data wrangling summary</a></li>
 </ul></li>
 <li class="part"><span><b>III Statistics</b></span></li>
 <li class="chapter" data-level="7" data-path="central-limit-theorem.html"><a href="central-limit-theorem.html"><i class="fa fa-check"></i><b>7</b> Central limit theorem</a>
@@ -320,7 +294,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="12.6.1" data-path="getting-publication-ready.html"><a href="getting-publication-ready.html#choropleth"><i class="fa fa-check"></i><b>12.6.1</b> Choropleth</a></li>
 <li class="chapter" data-level="12.6.2" data-path="getting-publication-ready.html"><a href="getting-publication-ready.html#animations"><i class="fa fa-check"></i><b>12.6.2</b> Animations</a></li>
 </ul></li>
-<li class="chapter" data-level="12.7" data-path="getting-publication-ready.html"><a href="getting-publication-ready.html#additional-resources-1"><i class="fa fa-check"></i><b>12.7</b> Additional resources</a></li>
+<li class="chapter" data-level="12.7" data-path="getting-publication-ready.html"><a href="getting-publication-ready.html#additional-resources"><i class="fa fa-check"></i><b>12.7</b> Additional resources</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><center>
@@ -349,6 +323,29 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/4.3.1/iframeResizer.min.js">
+</script>
+
+<script type="text/javascript">
+
+// Once page is loaded, override and disable popover "scroll into view"
+  $(document).ready(function() {
+    window.tutorial.scrollIntoView = function() {}
+  })
+
+// Add padding to LearnR body when popover shown
+  $(document).on("shown.bs.popover", function() {
+    var popoverHeight = document.querySelector(".popover").offsetHeight
+    document.body.style.paddingTop = popoverHeight + 10 + "px"
+  })
+
+// Set padding to 0 when popover hidden
+  $(document).on("hide.bs.popover", function() {
+    var popoverHeight = document.querySelector(".popover").offsetHeight
+    document.body.style.paddingTop = "0px"
+  })
+
+</script>
 <div id="comparing-multiple-means" class="section level1" number="9">
 <h1><span class="header-section-number">9</span> Comparing multiple means</h1>
 <p>Throughout this lab, we will provide a pipeline to help you wrangle data, perform statistical analyses, and (perhaps most importantly) visualize data in R. Here, we will learn how to compare the means using parametric tests and medians using non-parametric tests of multiple groups.</p>
@@ -435,7 +432,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>The species <em>do</em> have significantly different sepal width (P &lt; 0.001). However, ANOVA does not tell us <em>which</em> species are different. We can run a <em>post hoc</em> test to assess <em>how</em> the species are different. A Tukey test comparing means would be one option. We will do the Tukey test after determining normality.</p>
 <p>Now, let’s take a look at the normality. First, we will plot the diagnostic figures.</p>
 <div class="sourceCode" id="cb297"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb297-1"><a href="comparing-multiple-means.html#cb297-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(Sepal.Width.aov)</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-128-1.png" width="672" /><img src="_main_files/figure-html/unnamed-chunk-128-2.png" width="672" /><img src="_main_files/figure-html/unnamed-chunk-128-3.png" width="672" /><img src="_main_files/figure-html/unnamed-chunk-128-4.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-127-1.png" width="672" /><img src="_main_files/figure-html/unnamed-chunk-127-2.png" width="672" /><img src="_main_files/figure-html/unnamed-chunk-127-3.png" width="672" /><img src="_main_files/figure-html/unnamed-chunk-127-4.png" width="672" /></p>
 <p>Most importantly, the residuals in Q-Q plot (upper right) should align with the line pretty well. This figure is acceptable. If the residuals deviate from the line too much, the data would not be considered normal. If you still perform the ANOVA, you should view your results critically (or ignore them, at worst).</p>
 <p>Please do not include such diagnostic figures in the main text of your manuscripts. This might qualify for a supplementary figure at most.</p>
 <p>Although we’ve also examined residuals with the QQ plot, we can also use a formal test:</p>
@@ -515,7 +512,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode" id="cb306"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb306-1"><a href="comparing-multiple-means.html#cb306-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> dat<span class="fl">.1952</span>, <span class="fu">aes</span>(<span class="at">x =</span> Income_Level_1952, <span class="at">y =</span> lifeExp)) <span class="sc">+</span></span>
 <span id="cb306-2"><a href="comparing-multiple-means.html#cb306-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
 <span id="cb306-3"><a href="comparing-multiple-means.html#cb306-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>()</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-132-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-131-1.png" width="672" /></p>
 <p>Let’s check the variance.</p>
 <div class="sourceCode" id="cb307"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb307-1"><a href="comparing-multiple-means.html#cb307-1" aria-hidden="true" tabindex="-1"></a><span class="fu">leveneTest</span>(lifeExp <span class="sc">~</span> Income_Level_1952, <span class="at">data =</span> dat<span class="fl">.1952</span>)</span></code></pre></div>
 <pre><code>## Levene&#39;s Test for Homogeneity of Variance (center = median)

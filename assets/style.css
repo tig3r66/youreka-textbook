@@ -215,3 +215,42 @@ iframe.interactive {
   min-height: 100%;
   margin: 0 auto;
 }
+
+
+/*------------- COLLAPSING SECTION --------------*/
+.collapsible {
+  background-color: #555;
+  color: white;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 18px;
+}
+
+.collapsible:active, .collapsible:hover {
+  background-color: #444;
+}
+
+.collapsible:after {
+  content: '+';
+  color: white;
+  float: right;
+}
+
+.collapsible.active:after {
+  content: '-';
+  color: white;
+  float: right;
+}
+
+.collapse_content {
+  padding: 0 15px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  border: 2px solid #555;
+  border-top: 0px;
+}

@@ -53,28 +53,6 @@
 
 <link href="libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
 <link href="libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/4.3.1/iframeResizer.min.js">
-</script>
-
-<script type="text/javascript">
-
-// Once page is loaded, override and disable popover "scroll into view"
-  $(document).ready(function() {
-    window.tutorial.scrollIntoView = function() {}
-  })
-
-// Add padding to LearnR body when popover shown
-  $(document).on("shown.bs.popover", function() {
-    var popoverHeight = document.querySelector(".popover").offsetHeight
-    document.body.style.paddingTop = popoverHeight + 10 + "px"
-  })
-
-// Set padding to 0 when popover hidden
-  $(document).on("hide.bs.popover", function() {
-    var popoverHeight = document.querySelector(".popover").offsetHeight
-    document.body.style.paddingTop = "0px"
-  })
-</script>
 
 
 <style type="text/css">
@@ -227,8 +205,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.3.2" data-path="data-exploration.html"><a href="data-exploration.html#filter-rows-with-filter"><i class="fa fa-check"></i><b>5.3.2</b> Filter rows with <code>filter()</code></a></li>
 <li class="chapter" data-level="5.3.3" data-path="data-exploration.html"><a href="data-exploration.html#pipe-operator"><i class="fa fa-check"></i><b>5.3.3</b> Pipe operator <code>%&gt;%</code></a></li>
 <li class="chapter" data-level="5.3.4" data-path="data-exploration.html"><a href="data-exploration.html#select-columns-with-select"><i class="fa fa-check"></i><b>5.3.4</b> Select Columns with <code>select()</code></a></li>
-<li class="chapter" data-level="5.3.5" data-path="data-exploration.html"><a href="data-exploration.html#pure-predictable-pipeable-optional"><i class="fa fa-check"></i><b>5.3.5</b> Pure, predictable, pipeable (OPTIONAL)</a></li>
-<li class="chapter" data-level="5.3.6" data-path="data-exploration.html"><a href="data-exploration.html#additional-resources"><i class="fa fa-check"></i><b>5.3.6</b> Additional resources</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="more-dplyr.html"><a href="more-dplyr.html"><i class="fa fa-check"></i><b>6</b> More dplyr</a>
@@ -245,11 +221,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6.5.1" data-path="more-dplyr.html"><a href="more-dplyr.html#counting"><i class="fa fa-check"></i><b>6.5.1</b> Counting</a></li>
 <li class="chapter" data-level="6.5.2" data-path="more-dplyr.html"><a href="more-dplyr.html#general-summarization"><i class="fa fa-check"></i><b>6.5.2</b> General summarization</a></li>
 <li class="chapter" data-level="6.5.3" data-path="more-dplyr.html"><a href="more-dplyr.html#computing-with-group-wise-summaries"><i class="fa fa-check"></i><b>6.5.3</b> Computing with group-wise summaries</a></li>
-<li class="chapter" data-level="6.5.4" data-path="more-dplyr.html"><a href="more-dplyr.html#window-functions-optional"><i class="fa fa-check"></i><b>6.5.4</b> Window functions (OPTIONAL)</a></li>
 </ul></li>
-<li class="chapter" data-level="6.6" data-path="more-dplyr.html"><a href="more-dplyr.html#introduction-to-visualization-optional"><i class="fa fa-check"></i><b>6.6</b> Introduction to visualization (OPTIONAL)</a></li>
-<li class="chapter" data-level="6.7" data-path="more-dplyr.html"><a href="more-dplyr.html#comprehensive-practice"><i class="fa fa-check"></i><b>6.7</b> Comprehensive practice</a></li>
-<li class="chapter" data-level="6.8" data-path="more-dplyr.html"><a href="more-dplyr.html#data-wrangling-summary"><i class="fa fa-check"></i><b>6.8</b> Data wrangling summary</a></li>
+<li class="chapter" data-level="6.6" data-path="more-dplyr.html"><a href="more-dplyr.html#comprehensive-practice"><i class="fa fa-check"></i><b>6.6</b> Comprehensive practice</a></li>
+<li class="chapter" data-level="6.7" data-path="more-dplyr.html"><a href="more-dplyr.html#data-wrangling-summary"><i class="fa fa-check"></i><b>6.7</b> Data wrangling summary</a></li>
 </ul></li>
 <li class="part"><span><b>III Statistics</b></span></li>
 <li class="chapter" data-level="7" data-path="central-limit-theorem.html"><a href="central-limit-theorem.html"><i class="fa fa-check"></i><b>7</b> Central limit theorem</a>
@@ -320,7 +294,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="12.6.1" data-path="getting-publication-ready.html"><a href="getting-publication-ready.html#choropleth"><i class="fa fa-check"></i><b>12.6.1</b> Choropleth</a></li>
 <li class="chapter" data-level="12.6.2" data-path="getting-publication-ready.html"><a href="getting-publication-ready.html#animations"><i class="fa fa-check"></i><b>12.6.2</b> Animations</a></li>
 </ul></li>
-<li class="chapter" data-level="12.7" data-path="getting-publication-ready.html"><a href="getting-publication-ready.html#additional-resources-1"><i class="fa fa-check"></i><b>12.7</b> Additional resources</a></li>
+<li class="chapter" data-level="12.7" data-path="getting-publication-ready.html"><a href="getting-publication-ready.html#additional-resources"><i class="fa fa-check"></i><b>12.7</b> Additional resources</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><center>
@@ -349,6 +323,29 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/4.3.1/iframeResizer.min.js">
+</script>
+
+<script type="text/javascript">
+
+// Once page is loaded, override and disable popover "scroll into view"
+  $(document).ready(function() {
+    window.tutorial.scrollIntoView = function() {}
+  })
+
+// Add padding to LearnR body when popover shown
+  $(document).on("shown.bs.popover", function() {
+    var popoverHeight = document.querySelector(".popover").offsetHeight
+    document.body.style.paddingTop = popoverHeight + 10 + "px"
+  })
+
+// Set padding to 0 when popover hidden
+  $(document).on("hide.bs.popover", function() {
+    var popoverHeight = document.querySelector(".popover").offsetHeight
+    document.body.style.paddingTop = "0px"
+  })
+
+</script>
 <div id="central-limit-theorem" class="section level1" number="7">
 <h1><span class="header-section-number">7</span> Central limit theorem</h1>
 <p>In this chapter, we will investigate the intuition behind the <strong>Central Limit Theorem</strong> (CLT). In short, the CLT states that if you have a bunch of samples and plotted the distribution of their means (not individual observations!), the distribution would look normal regardless of the population distribution. This theorem is incredibly powerful because it lets us to make inferences using statistical tests given a sufficient sample size.</p>
@@ -372,13 +369,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Many observed quantities follow normal distribution. Imagine that we have a population following normal distribution that has a mean of 10 and standard deviation of 2. If we draw samples from it, are we able to estimate its mean?</p>
 <p>Note that <code>rnorm()</code> generates a vector of random numbers from a normal distribution.</p>
 <div class="sourceCode" id="cb191"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb191-1"><a href="central-limit-theorem.html#cb191-1" aria-hidden="true" tabindex="-1"></a>(samp30 <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="at">n=</span><span class="dv">30</span>, <span class="at">mean=</span><span class="dv">10</span>, <span class="at">sd=</span><span class="dv">2</span>))</span></code></pre></div>
-<pre><code>##  [1] 10.351685 10.718662 11.327713  9.447861 10.378454 12.653440  4.305047
-##  [8]  9.506443  7.709824 10.118338  8.734518 11.621591  8.032809 11.817677
-## [15]  9.496069 14.131442  7.626114  9.412062  8.730248  5.529961 10.881544
-## [22] 10.984531 11.297488 13.119545  9.852387  9.826388  8.369085 11.666045
-## [29]  8.338540  3.996719</code></pre>
+<pre><code>##  [1]  8.395258 11.286495 12.717434  6.673824  9.218461 10.168055  9.547824
+##  [8] 11.924173  8.607822 12.246392 13.337441 10.164902  7.569585  9.338781
+## [15] 12.523484 11.608567 13.350419  8.845054 10.480604 11.807147 11.789376
+## [22]  8.731027 10.662177 13.240370 10.317070 10.734664  9.154941 11.564286
+## [29] 11.529026 11.538569</code></pre>
 <div class="sourceCode" id="cb193"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb193-1"><a href="central-limit-theorem.html#cb193-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(samp30)</span></code></pre></div>
-<pre><code>## [1] 9.666074</code></pre>
+<pre><code>## [1] 10.63577</code></pre>
 <p>Although the mean is not 10, it is pretty close. This should make sense; when we draw a sample to estimate the mean, we may get very close to the desired “true mean,” but we also expect some error. What if I repeat the estimation 1000 times with 30 samples?</p>
 <div class="sourceCode" id="cb195"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb195-1"><a href="central-limit-theorem.html#cb195-1" aria-hidden="true" tabindex="-1"></a><span class="co"># initializing our means vector</span></span>
 <span id="cb195-2"><a href="central-limit-theorem.html#cb195-2" aria-hidden="true" tabindex="-1"></a>means10 <span class="ot">&lt;-</span> <span class="fu">as.vector</span>(<span class="cn">NA</span>)</span>
@@ -393,7 +390,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb195-11"><a href="central-limit-theorem.html#cb195-11" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="fu">as_tibble</span>(means10), <span class="fu">aes</span>(value)) <span class="sc">+</span></span>
 <span id="cb195-12"><a href="central-limit-theorem.html#cb195-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>(<span class="at">fill=</span><span class="st">&quot;#C5EBCB&quot;</span>) <span class="sc">+</span></span>
 <span id="cb195-13"><a href="central-limit-theorem.html#cb195-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>()</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-76-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-75-1.png" width="672" /></p>
 <p>What does this figure mean? Of the 1000 sample means we computed, most were very close to 10. The probability to overestimate and underestimate decreases as the estimation deviates from 10, our “true mean.” Further, the distribution of the sample means appears to follow a normal distribution.</p>
 </div>
 <div id="clt-part-2" class="section level3" number="7.2.2">
@@ -435,7 +432,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb197-24"><a href="central-limit-theorem.html#cb197-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>(<span class="at">alpha =</span> <span class="fl">0.3</span>) <span class="sc">+</span></span>
 <span id="cb197-25"><a href="central-limit-theorem.html#cb197-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Sample means&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Density&quot;</span>, <span class="at">fill =</span> <span class="st">&quot;Sample size&quot;</span>) <span class="sc">+</span></span>
 <span id="cb197-26"><a href="central-limit-theorem.html#cb197-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>()</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-77-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-76-1.png" width="672" /></p>
 <p>Notice two things:</p>
 <ol style="list-style-type: decimal">
 <li>With a larger sample size, your estimation for the mean will have a smaller variance.</li>
@@ -472,7 +469,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb198-21"><a href="central-limit-theorem.html#cb198-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>(<span class="at">alpha =</span> <span class="fl">0.3</span>) <span class="sc">+</span></span>
 <span id="cb198-22"><a href="central-limit-theorem.html#cb198-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Sample means&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Density&quot;</span>, <span class="at">fill =</span> <span class="st">&quot;Sample size&quot;</span>) <span class="sc">+</span></span>
 <span id="cb198-23"><a href="central-limit-theorem.html#cb198-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>()</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-78-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-77-1.png" width="672" /></p>
 <p>Can you explain the pattern that we observe with 100 samples? How about the height and width of other curves? What conclusions can we draw?</p>
 <p>This example shows the power of the CLT—it allows us to predict a sampling distribution regardless of the original population.</p>
 <script>

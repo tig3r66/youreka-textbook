@@ -35,8 +35,6 @@ subsetting-data
 filter-rows-with-filter
 pipe-operator
 select-columns-with-select
-pure-predictable-pipeable-optional
-additional-resources
 more-dplyr
 review-and-preparation
 use-mutate-to-add-new-variables
@@ -47,8 +45,6 @@ perform-tasks-on-subsets-with-group_by
 counting
 general-summarization
 computing-with-group-wise-summaries
-window-functions-optional
-introduction-to-visualization-optional
 comprehensive-practice
 data-wrangling-summary
 central-limit-theorem
@@ -95,4 +91,4 @@ assembly-of-multiple-figures-optional
 extras-optional
 choropleth
 animations
-additional-resources-1
+additional-resources

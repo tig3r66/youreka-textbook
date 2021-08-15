@@ -156,8 +156,7 @@ Within a given column/variable,
 2.  `levels()` returns unique values, and
 3.  `nlevels()` returns the number of unique values.
 
-```{r}
-# change this to learnr exercise
+```{r summaries}
 table(gapminder$continent)
 levels(gapminder$continent)
 nlevels(gapminder$continent)
@@ -216,6 +215,7 @@ print(x)
 rm(x)
 # print(x)  # gives an error because x is deleted
 ```
+
 
 ### Filter rows with `filter()`
 
@@ -292,6 +292,21 @@ gapminder %>% head(3)
 
 You are probably not impressed yet, but the magic will happen soon.
 
+
+<button class="collapsible">Pure, predictable, pipeable (OPTIONAL)</button>
+<div class="collapse_content">
+
+  We've barely scratched the surface of `dplyr` but I want to point out key principles you may start to appreciate.
+  
+  dplyr's verbs, such as `filter()` and `select()`, are what's called [pure functions](http://en.wikipedia.org/wiki/Pure_function). To quote from Wickham's [Advanced R Programming book](http://adv-r.had.co.nz/Functions.html):
+
+  > The functions that are the easiest to understand and reason about are pure functions: functions that always map the same input to the same output and have no other impact on the workspace. In other words, pure functions have no side effects: they don't affect the state of the world in any way apart from the value they return.
+
+  And finally, the data is **always** the very first argument of every dplyr function.
+
+</div>
+
+
 ### Select Columns with `select()`
 
 Use `select()` to subset the data on variables or columns. Here's a conventional call:
@@ -340,39 +355,44 @@ gapminder %>%
 gapminder[gapminder$country == "Cambodia", c("year", "lifeExp")]
 ```
 
-### Pure, predictable, pipeable (OPTIONAL)
 
-We've barely scratched the surface of `dplyr` but I want to point out key principles you may start to appreciate. If you're new to R or "programming with data", feel free skip this section.
+<button class="collapsible">Additional resources and cheatsheets for dplyr</button>
+<div class="collapse_content">
 
-`dplyr`'s verbs, such as `filter()` and `select()`, are what's called [pure functions](http://en.wikipedia.org/wiki/Pure_function). To quote from Wickham's [Advanced R Programming book](http://adv-r.had.co.nz/Functions.html):
+1. Package home [on CRAN](http://cran.r-project.org/web/packages/dplyr/index.html)
+      * Note there are several vignettes, with the [introduction](http://cran.r-project.org/web/packages/dplyr/vignettes/introduction.html) being the most relevant right now.
 
-> The functions that are the easiest to understand and reason about are pure functions: functions that always map the same input to the same output and have no other impact on the workspace. In other words, pure functions have no side effects: they don't affect the state of the world in any way apart from the value they return.
+1. Development home [on GitHub](https://github.com/hadley/dplyr).
+    
+1. [RStudio Data Wrangling cheatsheet](https://www.rstudio.com/wp-content/uploads/2015/02/data-wrangling-cheatsheet.pdf), covering `dplyr` and `tidyr`. Remember you can get to these via *Help \> Cheatsheets.*
+    
+1. [Excellent slides](https://github.com/tjmahr/MadR_Pipelines) on pipelines and `dplyr` by TJ Mahr, talk given to the Madison R Users Group.
+    
+1. Blog post [Hands-on dplyr tutorial for faster data manipulation in R](http://www.dataschool.io/dplyr-tutorial-for-faster-data-manipulation-in-r/) by Data School, that includes a link to an R Markdown document and links to videos.
+    
+1. [Cheatsheet](https://rstudio.com/wp-content/uploads/2015/02/data-wrangling-cheatsheet.pdf) from R Studio for `dplyr`.
 
-And finally, the data is **always** the very first argument of every dplyr function.
+</div>
 
-### Additional resources
-
-`dplyr` official stuff
-
--   package home [on CRAN](http://cran.r-project.org/web/packages/dplyr/index.html)
-
-    -   note there are several vignettes, with the [introduction](http://cran.r-project.org/web/packages/dplyr/vignettes/introduction.html) being the most relevant right now
-    -   the [one on window functions](http://cran.rstudio.com/web/packages/dplyr/vignettes/window-functions.html) will also be interesting to you now
-
--   development home [on GitHub](https://github.com/hadley/dplyr)
-
--   [tutorial HW delivered](https://www.dropbox.com/sh/i8qnluwmuieicxc/AAAgt9tIKoIm7WZKIyK25lh6a) (note this links to a DropBox folder) at useR! 2014 conference
-
-[RStudio Data Wrangling cheatsheet](https://www.rstudio.com/wp-content/uploads/2015/02/data-wrangling-cheatsheet.pdf), covering `dplyr` and `tidyr`. Remember you can get to these via *Help \> Cheatsheets.*
-
-[Excellent slides](https://github.com/tjmahr/MadR_Pipelines) on pipelines and `dplyr` by TJ Mahr, talk given to the Madison R Users Group.
-
-Blog post [Hands-on dplyr tutorial for faster data manipulation in R](http://www.dataschool.io/dplyr-tutorial-for-faster-data-manipulation-in-r/) by Data School, that includes a link to an R Markdown document and links to videos
-
-[Cheatsheet](https://rstudio.com/wp-content/uploads/2015/02/data-wrangling-cheatsheet.pdf) from R Studio for `dplyr`.
 
 ```{=html}
 <script>
   iFrameResize({}, ".interactive");
+  
+var coll = document.getElementsByClassName("collapsible");
+var coll_down = document.getElementsByClassName("collapse_content");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.maxHeight){
+      content.style.maxHeight = null;
+    } else {
+      content.style.maxHeight = content.scrollHeight + "px";
+    } 
+  });
+}
 </script>
 ```

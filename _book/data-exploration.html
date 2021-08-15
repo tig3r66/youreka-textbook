@@ -53,28 +53,6 @@
 
 <link href="libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
 <link href="libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/4.3.1/iframeResizer.min.js">
-</script>
-
-<script type="text/javascript">
-
-// Once page is loaded, override and disable popover "scroll into view"
-  $(document).ready(function() {
-    window.tutorial.scrollIntoView = function() {}
-  })
-
-// Add padding to LearnR body when popover shown
-  $(document).on("shown.bs.popover", function() {
-    var popoverHeight = document.querySelector(".popover").offsetHeight
-    document.body.style.paddingTop = popoverHeight + 10 + "px"
-  })
-
-// Set padding to 0 when popover hidden
-  $(document).on("hide.bs.popover", function() {
-    var popoverHeight = document.querySelector(".popover").offsetHeight
-    document.body.style.paddingTop = "0px"
-  })
-</script>
 
 
 <style type="text/css">
@@ -227,8 +205,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.3.2" data-path="data-exploration.html"><a href="data-exploration.html#filter-rows-with-filter"><i class="fa fa-check"></i><b>5.3.2</b> Filter rows with <code>filter()</code></a></li>
 <li class="chapter" data-level="5.3.3" data-path="data-exploration.html"><a href="data-exploration.html#pipe-operator"><i class="fa fa-check"></i><b>5.3.3</b> Pipe operator <code>%&gt;%</code></a></li>
 <li class="chapter" data-level="5.3.4" data-path="data-exploration.html"><a href="data-exploration.html#select-columns-with-select"><i class="fa fa-check"></i><b>5.3.4</b> Select Columns with <code>select()</code></a></li>
-<li class="chapter" data-level="5.3.5" data-path="data-exploration.html"><a href="data-exploration.html#pure-predictable-pipeable-optional"><i class="fa fa-check"></i><b>5.3.5</b> Pure, predictable, pipeable (OPTIONAL)</a></li>
-<li class="chapter" data-level="5.3.6" data-path="data-exploration.html"><a href="data-exploration.html#additional-resources"><i class="fa fa-check"></i><b>5.3.6</b> Additional resources</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="more-dplyr.html"><a href="more-dplyr.html"><i class="fa fa-check"></i><b>6</b> More dplyr</a>
@@ -245,11 +221,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6.5.1" data-path="more-dplyr.html"><a href="more-dplyr.html#counting"><i class="fa fa-check"></i><b>6.5.1</b> Counting</a></li>
 <li class="chapter" data-level="6.5.2" data-path="more-dplyr.html"><a href="more-dplyr.html#general-summarization"><i class="fa fa-check"></i><b>6.5.2</b> General summarization</a></li>
 <li class="chapter" data-level="6.5.3" data-path="more-dplyr.html"><a href="more-dplyr.html#computing-with-group-wise-summaries"><i class="fa fa-check"></i><b>6.5.3</b> Computing with group-wise summaries</a></li>
-<li class="chapter" data-level="6.5.4" data-path="more-dplyr.html"><a href="more-dplyr.html#window-functions-optional"><i class="fa fa-check"></i><b>6.5.4</b> Window functions (OPTIONAL)</a></li>
 </ul></li>
-<li class="chapter" data-level="6.6" data-path="more-dplyr.html"><a href="more-dplyr.html#introduction-to-visualization-optional"><i class="fa fa-check"></i><b>6.6</b> Introduction to visualization (OPTIONAL)</a></li>
-<li class="chapter" data-level="6.7" data-path="more-dplyr.html"><a href="more-dplyr.html#comprehensive-practice"><i class="fa fa-check"></i><b>6.7</b> Comprehensive practice</a></li>
-<li class="chapter" data-level="6.8" data-path="more-dplyr.html"><a href="more-dplyr.html#data-wrangling-summary"><i class="fa fa-check"></i><b>6.8</b> Data wrangling summary</a></li>
+<li class="chapter" data-level="6.6" data-path="more-dplyr.html"><a href="more-dplyr.html#comprehensive-practice"><i class="fa fa-check"></i><b>6.6</b> Comprehensive practice</a></li>
+<li class="chapter" data-level="6.7" data-path="more-dplyr.html"><a href="more-dplyr.html#data-wrangling-summary"><i class="fa fa-check"></i><b>6.7</b> Data wrangling summary</a></li>
 </ul></li>
 <li class="part"><span><b>III Statistics</b></span></li>
 <li class="chapter" data-level="7" data-path="central-limit-theorem.html"><a href="central-limit-theorem.html"><i class="fa fa-check"></i><b>7</b> Central limit theorem</a>
@@ -320,7 +294,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="12.6.1" data-path="getting-publication-ready.html"><a href="getting-publication-ready.html#choropleth"><i class="fa fa-check"></i><b>12.6.1</b> Choropleth</a></li>
 <li class="chapter" data-level="12.6.2" data-path="getting-publication-ready.html"><a href="getting-publication-ready.html#animations"><i class="fa fa-check"></i><b>12.6.2</b> Animations</a></li>
 </ul></li>
-<li class="chapter" data-level="12.7" data-path="getting-publication-ready.html"><a href="getting-publication-ready.html#additional-resources-1"><i class="fa fa-check"></i><b>12.7</b> Additional resources</a></li>
+<li class="chapter" data-level="12.7" data-path="getting-publication-ready.html"><a href="getting-publication-ready.html#additional-resources"><i class="fa fa-check"></i><b>12.7</b> Additional resources</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><center>
@@ -349,6 +323,29 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/4.3.1/iframeResizer.min.js">
+</script>
+
+<script type="text/javascript">
+
+// Once page is loaded, override and disable popover "scroll into view"
+  $(document).ready(function() {
+    window.tutorial.scrollIntoView = function() {}
+  })
+
+// Add padding to LearnR body when popover shown
+  $(document).on("shown.bs.popover", function() {
+    var popoverHeight = document.querySelector(".popover").offsetHeight
+    document.body.style.paddingTop = popoverHeight + 10 + "px"
+  })
+
+// Set padding to 0 when popover hidden
+  $(document).on("hide.bs.popover", function() {
+    var popoverHeight = document.querySelector(".popover").offsetHeight
+    document.body.style.paddingTop = "0px"
+  })
+
+</script>
 <div id="data-exploration" class="section level1" number="5">
 <h1><span class="header-section-number">5</span> Data exploration</h1>
 <p>Whenever you have rectangular, “spreadsheetey” data, your default data structure in R should be the <strong>data frame</strong>. Data frames are awesome because</p>
@@ -489,8 +486,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><code>levels()</code> returns unique values, and</li>
 <li><code>nlevels()</code> returns the number of unique values.</li>
 </ol>
-<div class="sourceCode" id="cb89"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb89-1"><a href="data-exploration.html#cb89-1" aria-hidden="true" tabindex="-1"></a><span class="co"># change this to learnr exercise</span></span>
-<span id="cb89-2"><a href="data-exploration.html#cb89-2" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(gapminder<span class="sc">$</span>continent)</span></code></pre></div>
+<div class="sourceCode" id="cb89"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb89-1"><a href="data-exploration.html#cb89-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(gapminder<span class="sc">$</span>continent)</span></code></pre></div>
 <pre><code>## 
 ##   Africa Americas     Asia   Europe  Oceania 
 ##      624      300      396      360       24</code></pre>
@@ -593,6 +589,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 2 Afghanistan Asia       1957    30.3  9240934      821.
 ## 3 Afghanistan Asia       1962    32.0 10267083      853.</code></pre>
 <p>You are probably not impressed yet, but the magic will happen soon.</p>
+<button class="collapsible">
+Pure, predictable, pipeable (OPTIONAL)
+</button>
+<div class="collapse_content">
+<p>We’ve barely scratched the surface of <code>dplyr</code> but I want to point out key principles you may start to appreciate.</p>
+<p>dplyr’s verbs, such as <code>filter()</code> and <code>select()</code>, are what’s called <a href="http://en.wikipedia.org/wiki/Pure_function">pure functions</a>. To quote from Wickham’s <a href="http://adv-r.had.co.nz/Functions.html">Advanced R Programming book</a>:</p>
+<blockquote>
+<p>The functions that are the easiest to understand and reason about are pure functions: functions that always map the same input to the same output and have no other impact on the workspace. In other words, pure functions have no side effects: they don’t affect the state of the world in any way apart from the value they return.</p>
+</blockquote>
+<p>And finally, the data is <strong>always</strong> the very first argument of every dplyr function.</p>
+</div>
 </div>
 <div id="select-columns-with-select" class="section level3" number="5.3.4">
 <h3><span class="header-section-number">5.3.4</span> Select Columns with <code>select()</code></h3>
@@ -687,34 +694,40 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 10  1997    56.5
 ## 11  2002    56.8
 ## 12  2007    59.7</code></pre>
-</div>
-<div id="pure-predictable-pipeable-optional" class="section level3" number="5.3.5">
-<h3><span class="header-section-number">5.3.5</span> Pure, predictable, pipeable (OPTIONAL)</h3>
-<p>We’ve barely scratched the surface of <code>dplyr</code> but I want to point out key principles you may start to appreciate. If you’re new to R or “programming with data,” feel free skip this section.</p>
-<p><code>dplyr</code>’s verbs, such as <code>filter()</code> and <code>select()</code>, are what’s called <a href="http://en.wikipedia.org/wiki/Pure_function">pure functions</a>. To quote from Wickham’s <a href="http://adv-r.had.co.nz/Functions.html">Advanced R Programming book</a>:</p>
-<blockquote>
-<p>The functions that are the easiest to understand and reason about are pure functions: functions that always map the same input to the same output and have no other impact on the workspace. In other words, pure functions have no side effects: they don’t affect the state of the world in any way apart from the value they return.</p>
-</blockquote>
-<p>And finally, the data is <strong>always</strong> the very first argument of every dplyr function.</p>
-</div>
-<div id="additional-resources" class="section level3" number="5.3.6">
-<h3><span class="header-section-number">5.3.6</span> Additional resources</h3>
-<p><code>dplyr</code> official stuff</p>
+<button class="collapsible">
+Additional resources and cheatsheets for dplyr
+</button>
+<div class="collapse_content">
+<ol style="list-style-type: decimal">
+<li><p>Package home <a href="http://cran.r-project.org/web/packages/dplyr/index.html">on CRAN</a></p>
 <ul>
-<li><p>package home <a href="http://cran.r-project.org/web/packages/dplyr/index.html">on CRAN</a></p>
-<ul>
-<li>note there are several vignettes, with the <a href="http://cran.r-project.org/web/packages/dplyr/vignettes/introduction.html">introduction</a> being the most relevant right now</li>
-<li>the <a href="http://cran.rstudio.com/web/packages/dplyr/vignettes/window-functions.html">one on window functions</a> will also be interesting to you now</li>
+<li>Note there are several vignettes, with the <a href="http://cran.r-project.org/web/packages/dplyr/vignettes/introduction.html">introduction</a> being the most relevant right now.</li>
 </ul></li>
-<li><p>development home <a href="https://github.com/hadley/dplyr">on GitHub</a></p></li>
-<li><p><a href="https://www.dropbox.com/sh/i8qnluwmuieicxc/AAAgt9tIKoIm7WZKIyK25lh6a">tutorial HW delivered</a> (note this links to a DropBox folder) at useR! 2014 conference</p></li>
-</ul>
-<p><a href="https://www.rstudio.com/wp-content/uploads/2015/02/data-wrangling-cheatsheet.pdf">RStudio Data Wrangling cheatsheet</a>, covering <code>dplyr</code> and <code>tidyr</code>. Remember you can get to these via <em>Help &gt; Cheatsheets.</em></p>
-<p><a href="https://github.com/tjmahr/MadR_Pipelines">Excellent slides</a> on pipelines and <code>dplyr</code> by TJ Mahr, talk given to the Madison R Users Group.</p>
-<p>Blog post <a href="http://www.dataschool.io/dplyr-tutorial-for-faster-data-manipulation-in-r/">Hands-on dplyr tutorial for faster data manipulation in R</a> by Data School, that includes a link to an R Markdown document and links to videos</p>
-<p><a href="https://rstudio.com/wp-content/uploads/2015/02/data-wrangling-cheatsheet.pdf">Cheatsheet</a> from R Studio for <code>dplyr</code>.</p>
+<li><p>Development home <a href="https://github.com/hadley/dplyr">on GitHub</a>.</p></li>
+<li><p><a href="https://www.rstudio.com/wp-content/uploads/2015/02/data-wrangling-cheatsheet.pdf">RStudio Data Wrangling cheatsheet</a>, covering <code>dplyr</code> and <code>tidyr</code>. Remember you can get to these via <em>Help &gt; Cheatsheets.</em></p></li>
+<li><p><a href="https://github.com/tjmahr/MadR_Pipelines">Excellent slides</a> on pipelines and <code>dplyr</code> by TJ Mahr, talk given to the Madison R Users Group.</p></li>
+<li><p>Blog post <a href="http://www.dataschool.io/dplyr-tutorial-for-faster-data-manipulation-in-r/">Hands-on dplyr tutorial for faster data manipulation in R</a> by Data School, that includes a link to an R Markdown document and links to videos.</p></li>
+<li><p><a href="https://rstudio.com/wp-content/uploads/2015/02/data-wrangling-cheatsheet.pdf">Cheatsheet</a> from R Studio for <code>dplyr</code>.</p></li>
+</ol>
+</div>
 <script>
   iFrameResize({}, ".interactive");
+  
+var coll = document.getElementsByClassName("collapsible");
+var coll_down = document.getElementsByClassName("collapse_content");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.maxHeight){
+      content.style.maxHeight = null;
+    } else {
+      content.style.maxHeight = content.scrollHeight + "px";
+    } 
+  });
+}
 </script>
 
 </div>
