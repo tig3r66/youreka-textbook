@@ -21,7 +21,6 @@ factors
 loops-and-functions
 for-loops
 looping-over-multiple-files
-nested-loops
 functions-1
 conditionals-within-functions
 data-exploration
@@ -29,7 +28,6 @@ get-the-gapminder-data
 explore-gapminder
 importing-and-exporting-data
 exploring-variables-in-a-data-frame
-data-frame-summary
 data-frames-with-dplyr
 subsetting-data
 filter-rows-with-filter
@@ -44,7 +42,6 @@ use-select-to-rename-and-reposition-variables
 perform-tasks-on-subsets-with-group_by
 counting
 general-summarization
-computing-with-group-wise-summaries
 comprehensive-practice
 data-wrangling-summary
 central-limit-theorem

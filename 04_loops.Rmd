@@ -5,13 +5,17 @@ Loops are fundamental a programming concept as they get a lot of repetitive stuf
 
 ## For loops
 
-Here's what the syntax of a `for` loop looks like:
+---
+
+**For loops.** Here's what the syntax of a `for` loop looks like:
 
 ```r
 for (item in list_of_items) {
   do_something(item)
 }
 ```
+
+---
 
 And here is an example:
 
@@ -88,7 +92,8 @@ results
 ```
 
 
-### Nested loops
+<button class="collapsible">Nested loops (OPTIONAL)</button>
+<div class="collapse_content">
 
 Sometimes, we need to loop over more than a single range of numbers. For example, what if we want to select all pixels on a 2x3 rectangular screen? Here, we need to cover both the "x" and "y" pixel coodinates:
 
@@ -100,12 +105,16 @@ for (i in 1:2) {
 }
 ```
 
+</div>
+
 
 ## Functions
 
 Sometimes, we will need to create custom functions. Luckily, we can define our own functions!
 
-This is the general syntax for a function:
+---
+
+**Functions.** This is the general syntax for a function:
   
 ```{r gen-fn, eval=F}
 function_name <- function(arguments) {
@@ -113,6 +122,8 @@ function_name <- function(arguments) {
   return(output_value)
 }
 ```
+
+---
 
 Remark: every function *returns* a value. Recall from your grade-school math class that functions take an input and return an output. In R, however, a function may or may not take user-defined input. This brings us to an extremely important point: **creating a function does NOT run it. You must call the function to run it.**
 
@@ -145,6 +156,23 @@ We can use conditionals in a function for more complex tasks. As an exercise, cr
 
 Now that we've got the basics of R under our belts, we can jump into the delightful world of data science `r emo::ji("smile")`.
 
+
 <script>
   iFrameResize({}, ".interactive");
+  
+var coll = document.getElementsByClassName("collapsible");
+var coll_down = document.getElementsByClassName("collapse_content");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.maxHeight){
+      content.style.maxHeight = null;
+    } else {
+      content.style.maxHeight = content.scrollHeight + "px";
+    } 
+  });
+}
 </script>

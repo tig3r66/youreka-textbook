@@ -140,8 +140,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#how-to-use-this-textbook"><i class="fa fa-check"></i>How to use this textbook</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#contributors"><i class="fa fa-check"></i>Contributors</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#credit"><i class="fa fa-check"></i>Credit</a></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#license"><i class="fa fa-check"></i>License</a></li>
 </ul></li>
+<li class="chapter" data-level="" data-path="license.html"><a href="license.html"><i class="fa fa-check"></i>License</a></li>
 <li class="part"><span><b>I Prerequisites</b></span></li>
 <li class="chapter" data-level="1" data-path="install.html"><a href="install.html"><i class="fa fa-check"></i><b>1</b> Install R and RStudio</a>
 <ul>
@@ -182,7 +182,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.1" data-path="loops-and-functions.html"><a href="loops-and-functions.html#for-loops"><i class="fa fa-check"></i><b>4.1</b> For loops</a>
 <ul>
 <li class="chapter" data-level="4.1.1" data-path="loops-and-functions.html"><a href="loops-and-functions.html#looping-over-multiple-files"><i class="fa fa-check"></i><b>4.1.1</b> Looping over multiple files</a></li>
-<li class="chapter" data-level="4.1.2" data-path="loops-and-functions.html"><a href="loops-and-functions.html#nested-loops"><i class="fa fa-check"></i><b>4.1.2</b> Nested loops</a></li>
 </ul></li>
 <li class="chapter" data-level="4.2" data-path="loops-and-functions.html"><a href="loops-and-functions.html#functions-1"><i class="fa fa-check"></i><b>4.2</b> Functions</a>
 <ul>
@@ -197,7 +196,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="5.2.1" data-path="data-exploration.html"><a href="data-exploration.html#importing-and-exporting-data"><i class="fa fa-check"></i><b>5.2.1</b> Importing and exporting data</a></li>
 <li class="chapter" data-level="5.2.2" data-path="data-exploration.html"><a href="data-exploration.html#exploring-variables-in-a-data-frame"><i class="fa fa-check"></i><b>5.2.2</b> Exploring variables in a data frame</a></li>
-<li class="chapter" data-level="5.2.3" data-path="data-exploration.html"><a href="data-exploration.html#data-frame-summary"><i class="fa fa-check"></i><b>5.2.3</b> Data frame summary</a></li>
 </ul></li>
 <li class="chapter" data-level="5.3" data-path="data-exploration.html"><a href="data-exploration.html#data-frames-with-dplyr"><i class="fa fa-check"></i><b>5.3</b> Data frames with dplyr</a>
 <ul>
@@ -220,7 +218,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="6.5.1" data-path="more-dplyr.html"><a href="more-dplyr.html#counting"><i class="fa fa-check"></i><b>6.5.1</b> Counting</a></li>
 <li class="chapter" data-level="6.5.2" data-path="more-dplyr.html"><a href="more-dplyr.html#general-summarization"><i class="fa fa-check"></i><b>6.5.2</b> General summarization</a></li>
-<li class="chapter" data-level="6.5.3" data-path="more-dplyr.html"><a href="more-dplyr.html#computing-with-group-wise-summaries"><i class="fa fa-check"></i><b>6.5.3</b> Computing with group-wise summaries</a></li>
 </ul></li>
 <li class="chapter" data-level="6.6" data-path="more-dplyr.html"><a href="more-dplyr.html#comprehensive-practice"><i class="fa fa-check"></i><b>6.6</b> Comprehensive practice</a></li>
 <li class="chapter" data-level="6.7" data-path="more-dplyr.html"><a href="more-dplyr.html#data-wrangling-summary"><i class="fa fa-check"></i><b>6.7</b> Data wrangling summary</a></li>
@@ -351,10 +348,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Loops are fundamental a programming concept as they get a lot of repetitive stuff done in very few lines of code. Paired with custom functions, we can begin to tackle complex programming problems.</p>
 <div id="for-loops" class="section level2" number="4.1">
 <h2><span class="header-section-number">4.1</span> For loops</h2>
-<p>Here’s what the syntax of a <code>for</code> loop looks like:</p>
+<hr />
+<p><strong>For loops.</strong> Here’s what the syntax of a <code>for</code> loop looks like:</p>
 <div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb61-1"><a href="loops-and-functions.html#cb61-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (item <span class="cf">in</span> list_of_items) {</span>
 <span id="cb61-2"><a href="loops-and-functions.html#cb61-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">do_something</span>(item)</span>
 <span id="cb61-3"><a href="loops-and-functions.html#cb61-3" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<hr />
 <p>And here is an example:</p>
 <div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb62-1"><a href="loops-and-functions.html#cb62-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>) {</span>
 <span id="cb62-2"><a href="loops-and-functions.html#cb62-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(i)</span>
@@ -414,9 +413,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 3 data/04_intro-to-r/locations-2016-01-03.txt    10
 ## 4 data/04_intro-to-r/locations-2016-01-04.txt    10
 ## 5 data/04_intro-to-r/locations-2016-01-05.txt    12</code></pre>
-</div>
-<div id="nested-loops" class="section level3" number="4.1.2">
-<h3><span class="header-section-number">4.1.2</span> Nested loops</h3>
+<button class="collapsible">
+Nested loops (OPTIONAL)
+</button>
+<div class="collapse_content">
 <p>Sometimes, we need to loop over more than a single range of numbers. For example, what if we want to select all pixels on a 2x3 rectangular screen? Here, we need to cover both the “x” and “y” pixel coodinates:</p>
 <div class="sourceCode" id="cb68"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb68-1"><a href="loops-and-functions.html#cb68-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>) {</span>
 <span id="cb68-2"><a href="loops-and-functions.html#cb68-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (j <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>) {</span>
@@ -431,14 +431,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## [1] &quot;i = 2; j = 3&quot;</code></pre>
 </div>
 </div>
+</div>
 <div id="functions-1" class="section level2" number="4.2">
 <h2><span class="header-section-number">4.2</span> Functions</h2>
 <p>Sometimes, we will need to create custom functions. Luckily, we can define our own functions!</p>
-<p>This is the general syntax for a function:</p>
+<hr />
+<p><strong>Functions.</strong> This is the general syntax for a function:</p>
 <div class="sourceCode" id="cb70"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb70-1"><a href="loops-and-functions.html#cb70-1" aria-hidden="true" tabindex="-1"></a>function_name <span class="ot">&lt;-</span> <span class="cf">function</span>(arguments) {</span>
 <span id="cb70-2"><a href="loops-and-functions.html#cb70-2" aria-hidden="true" tabindex="-1"></a>  output_value <span class="ot">&lt;-</span> <span class="fu">do_something</span>(inputs)</span>
 <span id="cb70-3"><a href="loops-and-functions.html#cb70-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(output_value)</span>
 <span id="cb70-4"><a href="loops-and-functions.html#cb70-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<hr />
 <p>Remark: every function <em>returns</em> a value. Recall from your grade-school math class that functions take an input and return an output. In R, however, a function may or may not take user-defined input. This brings us to an extremely important point: <strong>creating a function does NOT run it. You must call the function to run it.</strong></p>
 <p>As an exercise, create a function called <code>calc_vol</code> that takes three parameters length, width, and height, and use those values to calculate the volume of the object. Then, call the function to calculate the volume of a 1x1x1 object and a 3x2x5 object.</p>
 <!---LEARNR EX 2-->
@@ -463,6 +466,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Now that we’ve got the basics of R under our belts, we can jump into the delightful world of data science 😄.</p>
 <script>
   iFrameResize({}, ".interactive");
+  
+var coll = document.getElementsByClassName("collapsible");
+var coll_down = document.getElementsByClassName("collapse_content");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.maxHeight){
+      content.style.maxHeight = null;
+    } else {
+      content.style.maxHeight = content.scrollHeight + "px";
+    } 
+  });
+}
 </script>
 
 </div>

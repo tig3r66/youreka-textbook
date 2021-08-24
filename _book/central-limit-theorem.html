@@ -140,8 +140,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#how-to-use-this-textbook"><i class="fa fa-check"></i>How to use this textbook</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#contributors"><i class="fa fa-check"></i>Contributors</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#credit"><i class="fa fa-check"></i>Credit</a></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#license"><i class="fa fa-check"></i>License</a></li>
 </ul></li>
+<li class="chapter" data-level="" data-path="license.html"><a href="license.html"><i class="fa fa-check"></i>License</a></li>
 <li class="part"><span><b>I Prerequisites</b></span></li>
 <li class="chapter" data-level="1" data-path="install.html"><a href="install.html"><i class="fa fa-check"></i><b>1</b> Install R and RStudio</a>
 <ul>
@@ -182,7 +182,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.1" data-path="loops-and-functions.html"><a href="loops-and-functions.html#for-loops"><i class="fa fa-check"></i><b>4.1</b> For loops</a>
 <ul>
 <li class="chapter" data-level="4.1.1" data-path="loops-and-functions.html"><a href="loops-and-functions.html#looping-over-multiple-files"><i class="fa fa-check"></i><b>4.1.1</b> Looping over multiple files</a></li>
-<li class="chapter" data-level="4.1.2" data-path="loops-and-functions.html"><a href="loops-and-functions.html#nested-loops"><i class="fa fa-check"></i><b>4.1.2</b> Nested loops</a></li>
 </ul></li>
 <li class="chapter" data-level="4.2" data-path="loops-and-functions.html"><a href="loops-and-functions.html#functions-1"><i class="fa fa-check"></i><b>4.2</b> Functions</a>
 <ul>
@@ -197,7 +196,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="5.2.1" data-path="data-exploration.html"><a href="data-exploration.html#importing-and-exporting-data"><i class="fa fa-check"></i><b>5.2.1</b> Importing and exporting data</a></li>
 <li class="chapter" data-level="5.2.2" data-path="data-exploration.html"><a href="data-exploration.html#exploring-variables-in-a-data-frame"><i class="fa fa-check"></i><b>5.2.2</b> Exploring variables in a data frame</a></li>
-<li class="chapter" data-level="5.2.3" data-path="data-exploration.html"><a href="data-exploration.html#data-frame-summary"><i class="fa fa-check"></i><b>5.2.3</b> Data frame summary</a></li>
 </ul></li>
 <li class="chapter" data-level="5.3" data-path="data-exploration.html"><a href="data-exploration.html#data-frames-with-dplyr"><i class="fa fa-check"></i><b>5.3</b> Data frames with dplyr</a>
 <ul>
@@ -220,7 +218,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="6.5.1" data-path="more-dplyr.html"><a href="more-dplyr.html#counting"><i class="fa fa-check"></i><b>6.5.1</b> Counting</a></li>
 <li class="chapter" data-level="6.5.2" data-path="more-dplyr.html"><a href="more-dplyr.html#general-summarization"><i class="fa fa-check"></i><b>6.5.2</b> General summarization</a></li>
-<li class="chapter" data-level="6.5.3" data-path="more-dplyr.html"><a href="more-dplyr.html#computing-with-group-wise-summaries"><i class="fa fa-check"></i><b>6.5.3</b> Computing with group-wise summaries</a></li>
 </ul></li>
 <li class="chapter" data-level="6.6" data-path="more-dplyr.html"><a href="more-dplyr.html#comprehensive-practice"><i class="fa fa-check"></i><b>6.6</b> Comprehensive practice</a></li>
 <li class="chapter" data-level="6.7" data-path="more-dplyr.html"><a href="more-dplyr.html#data-wrangling-summary"><i class="fa fa-check"></i><b>6.7</b> Data wrangling summary</a></li>
@@ -369,13 +366,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Many observed quantities follow normal distribution. Imagine that we have a population following normal distribution that has a mean of 10 and standard deviation of 2. If we draw samples from it, are we able to estimate its mean?</p>
 <p>Note that <code>rnorm()</code> generates a vector of random numbers from a normal distribution.</p>
 <div class="sourceCode" id="cb191"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb191-1"><a href="central-limit-theorem.html#cb191-1" aria-hidden="true" tabindex="-1"></a>(samp30 <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="at">n=</span><span class="dv">30</span>, <span class="at">mean=</span><span class="dv">10</span>, <span class="at">sd=</span><span class="dv">2</span>))</span></code></pre></div>
-<pre><code>##  [1]  8.395258 11.286495 12.717434  6.673824  9.218461 10.168055  9.547824
-##  [8] 11.924173  8.607822 12.246392 13.337441 10.164902  7.569585  9.338781
-## [15] 12.523484 11.608567 13.350419  8.845054 10.480604 11.807147 11.789376
-## [22]  8.731027 10.662177 13.240370 10.317070 10.734664  9.154941 11.564286
-## [29] 11.529026 11.538569</code></pre>
+<pre><code>##  [1] 12.244643  8.030602 11.197105  7.853651  9.855882  9.243758  9.405615
+##  [8] 10.705553  9.186231  7.230120  9.863280  8.188039 10.840276  8.727488
+## [15] 14.036367  9.308891 11.997732 10.286893 11.865236 11.944759  9.815939
+## [22] 10.255048  9.189386 11.939609  7.440036  9.151576  9.462757 12.891592
+## [29] 10.494806 12.449239</code></pre>
 <div class="sourceCode" id="cb193"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb193-1"><a href="central-limit-theorem.html#cb193-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(samp30)</span></code></pre></div>
-<pre><code>## [1] 10.63577</code></pre>
+<pre><code>## [1] 10.17007</code></pre>
 <p>Although the mean is not 10, it is pretty close. This should make sense; when we draw a sample to estimate the mean, we may get very close to the desired “true mean,” but we also expect some error. What if I repeat the estimation 1000 times with 30 samples?</p>
 <div class="sourceCode" id="cb195"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb195-1"><a href="central-limit-theorem.html#cb195-1" aria-hidden="true" tabindex="-1"></a><span class="co"># initializing our means vector</span></span>
 <span id="cb195-2"><a href="central-limit-theorem.html#cb195-2" aria-hidden="true" tabindex="-1"></a>means10 <span class="ot">&lt;-</span> <span class="fu">as.vector</span>(<span class="cn">NA</span>)</span>

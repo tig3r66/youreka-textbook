@@ -4,7 +4,11 @@ In this chapter, we will learn about data structures that will greatly aid our d
 
 ## Vectors
 
-Vectors are a sequence of values with the **same type**. We can create vectors using `c()`, which stands for "combine".
+---
+
+**Vectors.** Vectors are a sequence of values with the *same type*. We can create vectors using `c()`, which stands for "combine".
+
+---
 
 ```{r vec}
 (my_nums <- c(2.8, 3.2, 1.5, 3.8))
@@ -60,7 +64,11 @@ mean(density_ha, na.rm = TRUE)
 
 ## Lists
 
-Lists are a vector-like structure that can store other objects/data structures. You can think of it like a vector that holds other vectors.
+---
+
+**Lists.** Lists are a vector-like structure that can store elements of different typese (e.g., numbers, strings, vectors). We can create lists using the `list()` function.
+
+---
 
 ```{r list-intro}
 sites <- c("a", "b", "c")
@@ -87,9 +95,15 @@ We can also give the values names and access them using the `$` symbol--which is
 
 ## Data frames
 
-This is where things get really exciting! We will use these data structures extensively in the upcoming labs, so it's important to pay attention here.
+This is where things get really exciting! We will use these data frames extensively in the upcoming chapters, so it's important to pay attention here.
 
-A data frame is a list of equal length vectors grouped together. More importantly, a data frame can contain both categorical and numerical values, whereas a vector can only contain variables of the same type (i.e., all numerical, all categorical, etc.).
+---
+
+**Data frames.** A data frame is a table which groups equal length vectors together. You can think of data frames like a table in a spreadsheet. You can create data frames using the `data.frame()` function.
+
+---
+
+A data frame can contain both categorical and numerical values, whereas a vector can only contain variables of the same type (i.e., all numerical, all categorical, etc.).
 
 ```{R}
 sites <- c("a", "a", "b", "c")
@@ -138,7 +152,7 @@ Let's use the `str()` function to get more information about our variable `shrub
 str(shrub_data)
 ```
 
-Notice that the `shrubID` column has type `Factor`. A factor is a special data type in R for categorical data. Factors are useful for statistics, but can mess up some aspects of computation as we'll see in future chapters.
+Notice that the `shrubID` column has type `Factor`. A factor is a special data type (NOT data structure) in R for categorical data. Factors are useful for statistics, but can mess up some aspects of computation as we'll see in future chapters.
 
 ```{r}
 shrub_data <- read.csv('https://datacarpentry.org/semester-biology/data/shrub-dimensions-labeled.csv', stringsAsFactors = FALSE)
@@ -147,4 +161,20 @@ str(shrub_data)
 
 <script>
   iFrameResize({}, ".interactive");
+  
+var coll = document.getElementsByClassName("collapsible");
+var coll_down = document.getElementsByClassName("collapse_content");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.maxHeight){
+      content.style.maxHeight = null;
+    } else {
+      content.style.maxHeight = content.scrollHeight + "px";
+    } 
+  });
+}
 </script>

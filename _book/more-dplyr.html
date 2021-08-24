@@ -140,8 +140,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#how-to-use-this-textbook"><i class="fa fa-check"></i>How to use this textbook</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#contributors"><i class="fa fa-check"></i>Contributors</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#credit"><i class="fa fa-check"></i>Credit</a></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#license"><i class="fa fa-check"></i>License</a></li>
 </ul></li>
+<li class="chapter" data-level="" data-path="license.html"><a href="license.html"><i class="fa fa-check"></i>License</a></li>
 <li class="part"><span><b>I Prerequisites</b></span></li>
 <li class="chapter" data-level="1" data-path="install.html"><a href="install.html"><i class="fa fa-check"></i><b>1</b> Install R and RStudio</a>
 <ul>
@@ -182,7 +182,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.1" data-path="loops-and-functions.html"><a href="loops-and-functions.html#for-loops"><i class="fa fa-check"></i><b>4.1</b> For loops</a>
 <ul>
 <li class="chapter" data-level="4.1.1" data-path="loops-and-functions.html"><a href="loops-and-functions.html#looping-over-multiple-files"><i class="fa fa-check"></i><b>4.1.1</b> Looping over multiple files</a></li>
-<li class="chapter" data-level="4.1.2" data-path="loops-and-functions.html"><a href="loops-and-functions.html#nested-loops"><i class="fa fa-check"></i><b>4.1.2</b> Nested loops</a></li>
 </ul></li>
 <li class="chapter" data-level="4.2" data-path="loops-and-functions.html"><a href="loops-and-functions.html#functions-1"><i class="fa fa-check"></i><b>4.2</b> Functions</a>
 <ul>
@@ -197,7 +196,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="5.2.1" data-path="data-exploration.html"><a href="data-exploration.html#importing-and-exporting-data"><i class="fa fa-check"></i><b>5.2.1</b> Importing and exporting data</a></li>
 <li class="chapter" data-level="5.2.2" data-path="data-exploration.html"><a href="data-exploration.html#exploring-variables-in-a-data-frame"><i class="fa fa-check"></i><b>5.2.2</b> Exploring variables in a data frame</a></li>
-<li class="chapter" data-level="5.2.3" data-path="data-exploration.html"><a href="data-exploration.html#data-frame-summary"><i class="fa fa-check"></i><b>5.2.3</b> Data frame summary</a></li>
 </ul></li>
 <li class="chapter" data-level="5.3" data-path="data-exploration.html"><a href="data-exploration.html#data-frames-with-dplyr"><i class="fa fa-check"></i><b>5.3</b> Data frames with dplyr</a>
 <ul>
@@ -220,7 +218,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="6.5.1" data-path="more-dplyr.html"><a href="more-dplyr.html#counting"><i class="fa fa-check"></i><b>6.5.1</b> Counting</a></li>
 <li class="chapter" data-level="6.5.2" data-path="more-dplyr.html"><a href="more-dplyr.html#general-summarization"><i class="fa fa-check"></i><b>6.5.2</b> General summarization</a></li>
-<li class="chapter" data-level="6.5.3" data-path="more-dplyr.html"><a href="more-dplyr.html#computing-with-group-wise-summaries"><i class="fa fa-check"></i><b>6.5.3</b> Computing with group-wise summaries</a></li>
 </ul></li>
 <li class="chapter" data-level="6.6" data-path="more-dplyr.html"><a href="more-dplyr.html#comprehensive-practice"><i class="fa fa-check"></i><b>6.6</b> Comprehensive practice</a></li>
 <li class="chapter" data-level="6.7" data-path="more-dplyr.html"><a href="more-dplyr.html#data-wrangling-summary"><i class="fa fa-check"></i><b>6.7</b> Data wrangling summary</a></li>
@@ -348,8 +345,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </script>
 <div id="more-dplyr" class="section level1" number="6">
 <h1><span class="header-section-number">6</span> More dplyr</h1>
-<div id="review-and-preparation" class="section level2" number="6.1">
-<h2><span class="header-section-number">6.1</span> Review and preparation</h2>
 <p>In the previous chapter, we introduced three important data wrangling concepts:</p>
 <ol style="list-style-type: decimal">
 <li><code>filter()</code> for subsetting rows</li>
@@ -361,6 +356,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><code>dplyr</code> is a core package in the <a href="https://github.com/hadley/tidyverse">tidyverse</a> meta-package. Since we often make incidental usage of the others, we will load dplyr and the others via <code>library(tidyverse)</code>.</li>
 <li>The <code>tidyverse</code> embraces a special flavor of data frame, called a tibble. The <code>gapminder</code> dataset is stored as a tibble.</li>
 </ul>
+<p>In this chapter, we will introduce more data wrangling tools and consolidate or skills with a comprehensive practice question.</p>
+<div id="review-and-preparation" class="section level2" number="6.1">
+<h2><span class="header-section-number">6.1</span> Review and preparation</h2>
 <p>Let’s load the tidyverse and gapminder.</p>
 <div class="sourceCode" id="cb123"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb123-1"><a href="more-dplyr.html#cb123-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
 <span id="cb123-2"><a href="more-dplyr.html#cb123-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gapminder)</span></code></pre></div>
@@ -390,8 +388,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="use-mutate-to-add-new-variables" class="section level2" number="6.2">
 <h2><span class="header-section-number">6.2</span> Use mutate() to add new variables</h2>
-<p>Imagine we wanted to recover each country’s GDP. After all, the Gapminder data has a variable for population and GDP per capita. Let’s multiply them together to get the GDP of the whole country.</p>
-<p>The <code>mutate()</code> function defines and inserts new variables into a data frame/tibble. You can refer to existing variables by name.</p>
+<p>Imagine we wanted to recover each country’s GDP. After all, the gapminder data has a variable for population and GDP per capita. Let’s multiply them together to get the GDP of the whole country.</p>
+<p>The <code>mutate()</code> function defines and inserts new variables into a data frame. You can refer to existing variables by name.</p>
 <div class="sourceCode" id="cb128"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb128-1"><a href="more-dplyr.html#cb128-1" aria-hidden="true" tabindex="-1"></a>my_gap <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">gdp =</span> pop <span class="sc">*</span> gdpPercap)</span></code></pre></div>
 <pre><code>## # A tibble: 1,704 x 7
 ##    country     continent  year lifeExp      pop gdpPercap          gdp
@@ -478,7 +476,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="use-arrange-to-row-order-data" class="section level2" number="6.3">
 <h2><span class="header-section-number">6.3</span> Use arrange() to row-order data</h2>
-<p>The <code>arrange()</code> function reorders rows in a data frame/tibble. Imagine you wanted this data ordered by year then country, as opposed to by country then year. Remember, to save the output, you must assign it to a variable.</p>
+<hr />
+<p><strong>arrange().</strong> The <code>arrange()</code> function reorders rows in a data frame.</p>
+<hr />
+<p>Imagine you wanted <code>my_gap</code> ordered by year then country, as opposed to by country then year.</p>
 <div class="sourceCode" id="cb137"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb137-1"><a href="more-dplyr.html#cb137-1" aria-hidden="true" tabindex="-1"></a>my_gap <span class="sc">%&gt;%</span> <span class="fu">arrange</span>(year, country)</span></code></pre></div>
 <pre><code>## # A tibble: 1,704 x 7
 ##    country     continent  year lifeExp      pop gdpPercap gdpPercapRel
@@ -534,6 +535,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="use-rename-to-rename-variables" class="section level2" number="6.4">
 <h2><span class="header-section-number">6.4</span> Use rename() to rename variables</h2>
+<hr />
+<p><strong>rename().</strong> As the function name suggests, <code>rename()</code> will rename variables in your data frame.</p>
+<hr />
 <p>When I started programming, I was a <a href="http://en.wikipedia.org/wiki/CamelCase">camelCase</a> person, but now I’m all about <a href="http://en.wikipedia.org/wiki/Snake_case">snake_case</a>. Let’s rename some variables!</p>
 <div class="sourceCode" id="cb143"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb143-1"><a href="more-dplyr.html#cb143-1" aria-hidden="true" tabindex="-1"></a>my_gap <span class="sc">%&gt;%</span></span>
 <span id="cb143-2"><a href="more-dplyr.html#cb143-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">life_exp =</span> lifeExp,</span>
@@ -700,9 +704,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 11  2002        42.1        82  
 ## 12  2007        43.8        82.6</code></pre>
 <p>Of course it would be much more interesting to see <em>which</em> country contributed these extreme observations. Is the minimum (maximum) always coming from the same country?We will tackle this with window functions shortly.</p>
-</div>
-<div id="computing-with-group-wise-summaries" class="section level3" number="6.5.3">
-<h3><span class="header-section-number">6.5.3</span> Computing with group-wise summaries</h3>
+<button class="collapsible">
+Computing with group-wise summaries (OPTIONAL)
+</button>
+<div class="collapse_content">
 <p>Don’t worry too much about this section if all the data wrangling is starting to become overwhelming – it’s mainly here for the curious.</p>
 <p>Let’s make a new variable that is the years of life expectancy gained (lost) relative to 1952, for each individual country. We group by country and use <code>mutate()</code> to make a new variable. The <code>first()</code> function extracts the first value from a vector. Notice that <code>first()</code> is operating on the vector of life expectancies <em>within each country group</em>.</p>
 <div class="sourceCode" id="cb165"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb165-1"><a href="more-dplyr.html#cb165-1" aria-hidden="true" tabindex="-1"></a>new_var <span class="ot">&lt;-</span> my_gap <span class="sc">%&gt;%</span></span>
@@ -727,6 +732,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 10 Angola       1952    30.0         0   
 ## # … with 416 more rows</code></pre>
 <p>Within country, we take the difference between life expectancy in year <span class="math inline">\(i\)</span> and life expectancy in 1952. Therefore we always see zeroes for 1952 and, for most countries, a sequence of positive and increasing numbers.</p>
+</div>
+<p><br></p>
 <button class="collapsible">
 Window functions (OPTIONAL)
 </button>
@@ -832,7 +839,7 @@ Window functions (OPTIONAL)
 </div>
 <p><br></p>
 <button class="collapsible">
-Introduction to visualization (OPTIONAL)
+Introduction to data visualization (OPTIONAL)
 </button>
 <div class="collapse_content">
 <p>Although we will get into more serious plotting in future chapters, I want to give you a taste of the excitement to come.</p>
