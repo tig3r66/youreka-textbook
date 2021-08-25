@@ -131,7 +131,8 @@ p
 ```
 
 
-### Plotting significance (OPTIONAL)
+<button class="collapsible">Plotting significance (OPTIONAL)</button>
+<div class="collapse_content">
 
 Next we can run some statistical tests and add significance stars (*) to the plot. We'll compare if the life expectancy in Africa in 1977 and 2007 has changed.
 
@@ -154,6 +155,9 @@ meanLE.77.07
 There are more ways to draw the significant stars in R. For example, `ggpubr` even allows you to run the tests and plot the stars in the same line. 
 
 However, I do not encourage you to do so. Manually adding the stars might be a bit tedious (in terms of adjusting the positions and tip length), but you are not as restricted by the package in terms of the tests you can do.
+
+</div>
+
 
 
 ## Box plot
@@ -265,8 +269,10 @@ hist.07.77 <- ggplot() +
 hist.07.77
 ```
 
-
-## Assembly of multiple figures (OPTIONAL)
+  
+  
+<button class="collapsible">Assembly of multiple figures (OPTIONAL)</button>
+<div class="collapse_content">  
 
 Many figures in academic journals include multiple subfigures within a figure. 
 
@@ -327,8 +333,11 @@ for (p in aligned_plots) {
 
 That's all there is to it! If you want more customization options, read the official documentation: https://patchwork.data-imaginist.com/articles/patchwork.html.
 
-
-## Extras (OPTIONAL)
+</div>
+  
+  
+<button class="collapsible">Extras (OPTIONAL)</button>
+<div class="collapse_content">  
 
 ### Choropleth
 
@@ -411,9 +420,11 @@ ggplot(gapminder, aes(gdpPercap, lifeExp, size = pop, col = country)) +
     transition_time(year) +
     ease_aes('linear')
 ```
-
-
-## Additional resources
+</div>
+  
+  
+<button class="collapsible">Additional resources</button>
+<div class="collapse_content">
 
 I highly recommend you read through these websites:
 
@@ -428,3 +439,26 @@ I highly recommend you read through these websites:
     
 ![Data visualizations for various data types. Check out https://www.data-to-viz.com/ for an interactive version of this chart!](data/08_ggplot2/data_to_vis.png)
 
+</div>
+  
+  
+```{=html}
+<script>
+  iFrameResize({}, ".interactive");
+  
+var coll = document.getElementsByClassName("collapsible");
+var coll_down = document.getElementsByClassName("collapse_content");
+var i;
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.maxHeight){
+      content.style.maxHeight = null;
+    } else {
+      content.style.maxHeight = content.scrollHeight + "px";
+    } 
+  });
+}
+</script>
+```

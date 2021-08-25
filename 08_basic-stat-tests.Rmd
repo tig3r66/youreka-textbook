@@ -348,7 +348,10 @@ chisq.test(rem_cont)
 
 What does this result mean?
 
-### Fisher's exact test (OPTIONAL)
+
+
+<button class="collapsible">Fisher's exact test (OPTIONAL)</button>
+<div class="collapse_content">
 
 If the count in any cell of our contigency table is less than 5, the $\chi^2$ test will not be useful because of its probability distribution assumption. In this case, we will use Fisher's exact test.
 
@@ -373,8 +376,12 @@ The p-value is 0.6734. What does this result mean?
 
 The odds ratio is yet another useful measurement you will often see in medical science articles. For the sake of time, I will leave it to you if you wish to [read up](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2938757/) on it.
 
-
-### Comparison of proportions (OPTIONAL)
+</div>
+  
+  
+  
+<button class="collapsible">Comparison of proportions (OPTIONAL)</button>
+<div class="collapse_content">
 
 In the Remdesivir study, the participants were randomly assigned to each group. Thus, the groups can be treated as independent. It is also reasonable to assume independence of patients within each group.
 
@@ -432,7 +439,11 @@ By convention, $\alpha = 0.05$. The $p$-value is 0.3284, which is greater than $
 
 We conclude that there is insufficient evidence to reject the null hypothesis. Although the proportion of patients who experienced clinical improvement about 7% higher in the remdesivir group, this difference is not big enough to show that remdesivir is more effective than a placebo.
 
+</div>
+  
 
+  
+  
 ### Contingency tables
 
 Let's come back to the data of Asia and Africa in 1952. Take a look at the distribution of the life expectancy for all countries in both continents.
@@ -471,9 +482,18 @@ Given that $p < 0.05$, our null hypothesis that the two variables are independen
 
 N.B., this is only a comparison between Africa and Asia, and does not hold true for all continents.
 
+                     
+                      
+          
+<button class="collapsible">Visualizing data distributions (OPTIONAL)</button>
+<div class="collapse_content">
 
+  We've barely scratched the surface of `dplyr` but I want to point out key things you may start to appreciate.
+  
+  dplyr's verbs, such as `filter()` and `select()`, are what's called [pure functions](http://en.wikipedia.org/wiki/Pure_function). To quote from Wickham's [Advanced R Programming book](http://adv-r.had.co.nz/Functions.html):
 
-## Visualizing data distributions (OPTIONAL)
+  > The functions that are the easiest to understand and reason about are pure functions: functions that always map the same input to the same output and have no other impact on the workspace. In other words, pure functions have no side effects: they don't affect the state of the world in any way apart from the value they return.
+  And finally, the data is **always** the very first argument of every dplyr function.
 
 Knowing the properties of the normal distribution is essential in understanding the normal distribution. The position of the peak indicates the mean, whereas the spread of the curve indicates the variance.
 
@@ -537,3 +557,30 @@ show(p)
 ```
 
 Now this figure is publication-ready.
+  
+</div>
+
+
+  
+  
+  
+```{=html}
+<script>
+  iFrameResize({}, ".interactive");
+  
+var coll = document.getElementsByClassName("collapsible");
+var coll_down = document.getElementsByClassName("collapse_content");
+var i;
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.maxHeight){
+      content.style.maxHeight = null;
+    } else {
+      content.style.maxHeight = content.scrollHeight + "px";
+    } 
+  });
+}
+</script>
+```
