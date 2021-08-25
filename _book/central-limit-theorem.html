@@ -242,11 +242,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="8.3.1" data-path="basic-statistical-tests.html"><a href="basic-statistical-tests.html#chi2-test-for-goodness-of-fit"><i class="fa fa-check"></i><b>8.3.1</b> <span class="math inline">\(\chi^2\)</span> test for goodness-of-fit</a></li>
 <li class="chapter" data-level="8.3.2" data-path="basic-statistical-tests.html"><a href="basic-statistical-tests.html#chi2-test-for-independence"><i class="fa fa-check"></i><b>8.3.2</b> <span class="math inline">\(\chi^2\)</span> test for independence</a></li>
 <li class="chapter" data-level="8.3.3" data-path="basic-statistical-tests.html"><a href="basic-statistical-tests.html#chi2-test-for-homogeneity"><i class="fa fa-check"></i><b>8.3.3</b> <span class="math inline">\(\chi^2\)</span> test for homogeneity</a></li>
-<li class="chapter" data-level="8.3.4" data-path="basic-statistical-tests.html"><a href="basic-statistical-tests.html#fishers-exact-test-optional"><i class="fa fa-check"></i><b>8.3.4</b> Fisher’s exact test (OPTIONAL)</a></li>
-<li class="chapter" data-level="8.3.5" data-path="basic-statistical-tests.html"><a href="basic-statistical-tests.html#comparison-of-proportions-optional"><i class="fa fa-check"></i><b>8.3.5</b> Comparison of proportions (OPTIONAL)</a></li>
-<li class="chapter" data-level="8.3.6" data-path="basic-statistical-tests.html"><a href="basic-statistical-tests.html#contingency-tables"><i class="fa fa-check"></i><b>8.3.6</b> Contingency tables</a></li>
+<li class="chapter" data-level="8.3.4" data-path="basic-statistical-tests.html"><a href="basic-statistical-tests.html#contingency-tables"><i class="fa fa-check"></i><b>8.3.4</b> Contingency tables</a></li>
 </ul></li>
-<li class="chapter" data-level="8.4" data-path="basic-statistical-tests.html"><a href="basic-statistical-tests.html#visualizing-data-distributions-optional"><i class="fa fa-check"></i><b>8.4</b> Visualizing data distributions (OPTIONAL)</a></li>
 </ul></li>
 <li class="chapter" data-level="9" data-path="comparing-multiple-means.html"><a href="comparing-multiple-means.html"><i class="fa fa-check"></i><b>9</b> Comparing multiple means</a>
 <ul>
@@ -281,17 +278,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="12.2" data-path="getting-publication-ready.html"><a href="getting-publication-ready.html#bar-plot"><i class="fa fa-check"></i><b>12.2</b> Bar plot</a>
 <ul>
 <li class="chapter" data-level="12.2.1" data-path="getting-publication-ready.html"><a href="getting-publication-ready.html#basics"><i class="fa fa-check"></i><b>12.2.1</b> Basics</a></li>
-<li class="chapter" data-level="12.2.2" data-path="getting-publication-ready.html"><a href="getting-publication-ready.html#plotting-significance-optional"><i class="fa fa-check"></i><b>12.2.2</b> Plotting significance (OPTIONAL)</a></li>
 </ul></li>
 <li class="chapter" data-level="12.3" data-path="getting-publication-ready.html"><a href="getting-publication-ready.html#box-plot"><i class="fa fa-check"></i><b>12.3</b> Box plot</a></li>
 <li class="chapter" data-level="12.4" data-path="getting-publication-ready.html"><a href="getting-publication-ready.html#histogram-and-density-plot"><i class="fa fa-check"></i><b>12.4</b> Histogram and density plot</a></li>
-<li class="chapter" data-level="12.5" data-path="getting-publication-ready.html"><a href="getting-publication-ready.html#assembly-of-multiple-figures-optional"><i class="fa fa-check"></i><b>12.5</b> Assembly of multiple figures (OPTIONAL)</a></li>
-<li class="chapter" data-level="12.6" data-path="getting-publication-ready.html"><a href="getting-publication-ready.html#extras-optional"><i class="fa fa-check"></i><b>12.6</b> Extras (OPTIONAL)</a>
-<ul>
-<li class="chapter" data-level="12.6.1" data-path="getting-publication-ready.html"><a href="getting-publication-ready.html#choropleth"><i class="fa fa-check"></i><b>12.6.1</b> Choropleth</a></li>
-<li class="chapter" data-level="12.6.2" data-path="getting-publication-ready.html"><a href="getting-publication-ready.html#animations"><i class="fa fa-check"></i><b>12.6.2</b> Animations</a></li>
-</ul></li>
-<li class="chapter" data-level="12.7" data-path="getting-publication-ready.html"><a href="getting-publication-ready.html#additional-resources"><i class="fa fa-check"></i><b>12.7</b> Additional resources</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><center>
@@ -366,13 +355,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Many observed quantities follow normal distribution. Imagine that we have a population following normal distribution that has a mean of 10 and standard deviation of 2. If we draw samples from it, are we able to estimate its mean?</p>
 <p>Note that <code>rnorm()</code> generates a vector of random numbers from a normal distribution.</p>
 <div class="sourceCode" id="cb191"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb191-1"><a href="central-limit-theorem.html#cb191-1" aria-hidden="true" tabindex="-1"></a>(samp30 <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="at">n=</span><span class="dv">30</span>, <span class="at">mean=</span><span class="dv">10</span>, <span class="at">sd=</span><span class="dv">2</span>))</span></code></pre></div>
-<pre><code>##  [1] 12.244643  8.030602 11.197105  7.853651  9.855882  9.243758  9.405615
-##  [8] 10.705553  9.186231  7.230120  9.863280  8.188039 10.840276  8.727488
-## [15] 14.036367  9.308891 11.997732 10.286893 11.865236 11.944759  9.815939
-## [22] 10.255048  9.189386 11.939609  7.440036  9.151576  9.462757 12.891592
-## [29] 10.494806 12.449239</code></pre>
+<pre><code>##  [1] 12.905826 11.711574 11.972760 11.287463 10.002183  7.412366 14.314849
+##  [8]  7.153395  9.367826  9.208913 11.490263  6.114175  9.772914 10.964925
+## [15] 10.773917 10.892244  7.636429 10.334347 10.086125 12.280392  7.918399
+## [22]  9.261899  9.068377  8.857456  6.807770 10.137259 11.334010 10.485187
+## [29] 11.961784 10.615604</code></pre>
 <div class="sourceCode" id="cb193"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb193-1"><a href="central-limit-theorem.html#cb193-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(samp30)</span></code></pre></div>
-<pre><code>## [1] 10.17007</code></pre>
+<pre><code>## [1] 10.07102</code></pre>
 <p>Although the mean is not 10, it is pretty close. This should make sense; when we draw a sample to estimate the mean, we may get very close to the desired “true mean,” but we also expect some error. What if I repeat the estimation 1000 times with 30 samples?</p>
 <div class="sourceCode" id="cb195"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb195-1"><a href="central-limit-theorem.html#cb195-1" aria-hidden="true" tabindex="-1"></a><span class="co"># initializing our means vector</span></span>
 <span id="cb195-2"><a href="central-limit-theorem.html#cb195-2" aria-hidden="true" tabindex="-1"></a>means10 <span class="ot">&lt;-</span> <span class="fu">as.vector</span>(<span class="cn">NA</span>)</span>

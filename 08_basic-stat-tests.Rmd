@@ -16,12 +16,10 @@ Now that we've loaded our packages, let's briefly re-explore gapminder.
 When you get a new dataset, your first action as a good data scientist should be to explore it.
 
 ```{r}
-str(gapminder)
-names(gapminder)
-head(gapminder)
+gapminder  # also recall str(), head(), names()
 ```
 
-Note that we have 1,704 observations (rows). The variables `country` and `continent` are considered as "factor", which is a catagorical data. "factor" is useful in that you can deal with a finite number of discrete values. We can use `levels()` to ask what catagories there are.
+Note the variables `country` and `continent` are considered factors (`fct`), which is a catagorical data. We can use `levels()` to obsserve the catagories within a factor column.
 
 ```{r}
 # there are 142 countries, but for the sake of space, we're only checking the first 5
@@ -31,7 +29,7 @@ levels(gapminder$continent)
 
 ## Student's t-test
 
-Let's start by asking the mean life expectancy of the continents in 1952.
+Let's start by asking the mean life expectancy of the continents in 1952. Let's first summarize our data.
 
 ```{r}
 gapminder %>% 
@@ -377,8 +375,8 @@ The p-value is 0.6734. What does this result mean?
 The odds ratio is yet another useful measurement you will often see in medical science articles. For the sake of time, I will leave it to you if you wish to [read up](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2938757/) on it.
 
 </div>
-  
-  
+
+<br>
   
 <button class="collapsible">Comparison of proportions (OPTIONAL)</button>
 <div class="collapse_content">
@@ -563,8 +561,7 @@ Now this figure is publication-ready.
 
   
   
-  
-```{=html}
+
 <script>
   iFrameResize({}, ".interactive");
   
@@ -583,4 +580,3 @@ for (i = 0; i < coll.length; i++) {
   });
 }
 </script>
-```

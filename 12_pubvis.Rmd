@@ -335,6 +335,7 @@ That's all there is to it! If you want more customization options, read the offi
 
 </div>
   
+<br>
   
 <button class="collapsible">Extras (OPTIONAL)</button>
 <div class="collapse_content">  
@@ -421,7 +422,8 @@ ggplot(gapminder, aes(gdpPercap, lifeExp, size = pop, col = country)) +
     ease_aes('linear')
 ```
 </div>
-  
+
+<br>
   
 <button class="collapsible">Additional resources</button>
 <div class="collapse_content">
@@ -435,14 +437,13 @@ I highly recommend you read through these websites:
   * Caveats: https://www.data-to-viz.com/caveats.html
     - Pitfalls to avooid when creating figures.
   * The Python Graph Gallery: https://python-graph-gallery.com
-    - If you're more comfortable with Python. Includes the visualization and code to creat it.
+    - If you're more comfortable with Python. Includes the visualization and code to create it.
     
-![Data visualizations for various data types. Check out https://www.data-to-viz.com/ for an interactive version of this chart!](data/08_ggplot2/data_to_vis.png)
+![Data visualizations for various data types. Check out https://www.data-to-viz.com/ for an interactive version of this chart!](data/09_ggplot2/data_to_vis.png)
 
 </div>
   
-  
-```{=html}
+
 <script>
   iFrameResize({}, ".interactive");
   
@@ -461,4 +462,3 @@ for (i = 0; i < coll.length; i++) {
   });
 }
 </script>
-```

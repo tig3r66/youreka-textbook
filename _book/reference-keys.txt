@@ -57,10 +57,7 @@ chi-squared-test
 chi2-test-for-goodness-of-fit
 chi2-test-for-independence
 chi2-test-for-homogeneity
-fishers-exact-test-optional
-comparison-of-proportions-optional
 contingency-tables
-visualizing-data-distributions-optional
 comparing-multiple-means
 loading-packages
 one-way-anova
@@ -81,11 +78,7 @@ getting-publication-ready
 line-plot
 bar-plot
 basics
-plotting-significance-optional
 box-plot
 histogram-and-density-plot
-assembly-of-multiple-figures-optional
-extras-optional
 choropleth
 animations
-additional-resources
