@@ -1,3 +1,8 @@
+fig:inferences
+fig:central-tendency
+fig:iqr
+fig:iqr-boxplot
+fig:iqr-v2
 install
 installing-r
 installing-rstudio
@@ -44,6 +49,10 @@ counting
 general-summarization
 comprehensive-practice
 data-wrangling-summary
+introduction-to-statistics
+inferential-statistics
+measures-of-central-tendency
+measures-of-spread
 central-limit-theorem
 motivation
 clt-for-means

@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>12 Getting publication-ready | A Gentle Introduction to Data Science with R</title>
-  <meta name="description" content="12 Getting publication-ready | A Gentle Introduction to Data Science with R" />
+  <title>13 Getting publication-ready | A Gentle Introduction to Data Science with R</title>
+  <meta name="description" content="13 Getting publication-ready | A Gentle Introduction to Data Science with R" />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="12 Getting publication-ready | A Gentle Introduction to Data Science with R" />
+  <meta property="og:title" content="13 Getting publication-ready | A Gentle Introduction to Data Science with R" />
   <meta property="og:type" content="book" />
   
   <meta property="og:image" content="assets/youreka-logo.png" />
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="tig3r66/youreka-textbook" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="12 Getting publication-ready | A Gentle Introduction to Data Science with R" />
+  <meta name="twitter:title" content="13 Getting publication-ready | A Gentle Introduction to Data Science with R" />
   
   
   <meta name="twitter:image" content="assets/youreka-logo.png" />
@@ -51,6 +51,31 @@
 
 
 
+<link href="libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+<link href="libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/4.3.1/iframeResizer.min.js">
+</script>
+
+<script type="text/javascript">
+
+// Once page is loaded, override and disable popover "scroll into view"
+  $(document).ready(function() {
+    window.tutorial.scrollIntoView = function() {}
+  })
+
+// Add padding to LearnR body when popover shown
+  $(document).on("shown.bs.popover", function() {
+    var popoverHeight = document.querySelector(".popover").offsetHeight
+    document.body.style.paddingTop = popoverHeight + 10 + "px"
+  })
+
+// Set padding to 0 when popover hidden
+  $(document).on("hide.bs.popover", function() {
+    var popoverHeight = document.querySelector(".popover").offsetHeight
+    document.body.style.paddingTop = "0px"
+  })
+
+</script>
 
 
 <style type="text/css">
@@ -162,7 +187,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.6.1" data-path="intro-to-r.html"><a href="intro-to-r.html#other-important-things"><i class="fa fa-check"></i><b>2.6.1</b> Other important things</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="data-structures.html"><a href="data-structures.html"><i class="fa fa-check"></i><b>3</b> Data Structures</a>
+<li class="chapter" data-level="3" data-path="data-structures.html"><a href="data-structures.html"><i class="fa fa-check"></i><b>3</b> Data structures</a>
 <ul>
 <li class="chapter" data-level="3.1" data-path="data-structures.html"><a href="data-structures.html#vectors"><i class="fa fa-check"></i><b>3.1</b> Vectors</a>
 <ul>
@@ -175,7 +200,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.3.2" data-path="data-structures.html"><a href="data-structures.html#factors"><i class="fa fa-check"></i><b>3.3.2</b> Factors</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="loops-and-functions.html"><a href="loops-and-functions.html"><i class="fa fa-check"></i><b>4</b> Loops and Functions</a>
+<li class="chapter" data-level="4" data-path="loops-and-functions.html"><a href="loops-and-functions.html"><i class="fa fa-check"></i><b>4</b> Loops and functions</a>
 <ul>
 <li class="chapter" data-level="4.1" data-path="loops-and-functions.html"><a href="loops-and-functions.html#for-loops"><i class="fa fa-check"></i><b>4.1</b> For loops</a>
 <ul>
@@ -221,64 +246,72 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6.7" data-path="more-dplyr.html"><a href="more-dplyr.html#data-wrangling-summary"><i class="fa fa-check"></i><b>6.7</b> Data wrangling summary</a></li>
 </ul></li>
 <li class="part"><span><b>III Statistics</b></span></li>
-<li class="chapter" data-level="7" data-path="central-limit-theorem.html"><a href="central-limit-theorem.html"><i class="fa fa-check"></i><b>7</b> Central limit theorem</a>
+<li class="chapter" data-level="7" data-path="introduction-to-statistics.html"><a href="introduction-to-statistics.html"><i class="fa fa-check"></i><b>7</b> Introduction to statistics</a>
 <ul>
-<li class="chapter" data-level="7.1" data-path="central-limit-theorem.html"><a href="central-limit-theorem.html#motivation"><i class="fa fa-check"></i><b>7.1</b> Motivation</a></li>
-<li class="chapter" data-level="7.2" data-path="central-limit-theorem.html"><a href="central-limit-theorem.html#clt-for-means"><i class="fa fa-check"></i><b>7.2</b> CLT for means</a>
+<li class="chapter" data-level="7.1" data-path="introduction-to-statistics.html"><a href="introduction-to-statistics.html#inferential-statistics"><i class="fa fa-check"></i><b>7.1</b> Inferential statistics</a>
 <ul>
-<li class="chapter" data-level="7.2.1" data-path="central-limit-theorem.html"><a href="central-limit-theorem.html#clt-part-1"><i class="fa fa-check"></i><b>7.2.1</b> CLT Part 1</a></li>
-<li class="chapter" data-level="7.2.2" data-path="central-limit-theorem.html"><a href="central-limit-theorem.html#clt-part-2"><i class="fa fa-check"></i><b>7.2.2</b> CLT Part 2</a></li>
-</ul></li>
-<li class="chapter" data-level="7.3" data-path="central-limit-theorem.html"><a href="central-limit-theorem.html#clt-for-proportions"><i class="fa fa-check"></i><b>7.3</b> CLT for proportions</a></li>
-</ul></li>
-<li class="chapter" data-level="8" data-path="basic-statistical-tests.html"><a href="basic-statistical-tests.html"><i class="fa fa-check"></i><b>8</b> Basic statistical tests</a>
-<ul>
-<li class="chapter" data-level="8.1" data-path="basic-statistical-tests.html"><a href="basic-statistical-tests.html#getting-ready"><i class="fa fa-check"></i><b>8.1</b> Getting ready</a></li>
-<li class="chapter" data-level="8.2" data-path="basic-statistical-tests.html"><a href="basic-statistical-tests.html#students-t-test"><i class="fa fa-check"></i><b>8.2</b> Student’s t-test</a></li>
-<li class="chapter" data-level="8.3" data-path="basic-statistical-tests.html"><a href="basic-statistical-tests.html#chi-squared-test"><i class="fa fa-check"></i><b>8.3</b> Chi-squared test</a>
-<ul>
-<li class="chapter" data-level="8.3.1" data-path="basic-statistical-tests.html"><a href="basic-statistical-tests.html#chi2-test-for-goodness-of-fit"><i class="fa fa-check"></i><b>8.3.1</b> <span class="math inline">\(\chi^2\)</span> test for goodness-of-fit</a></li>
-<li class="chapter" data-level="8.3.2" data-path="basic-statistical-tests.html"><a href="basic-statistical-tests.html#chi2-test-for-independence"><i class="fa fa-check"></i><b>8.3.2</b> <span class="math inline">\(\chi^2\)</span> test for independence</a></li>
-<li class="chapter" data-level="8.3.3" data-path="basic-statistical-tests.html"><a href="basic-statistical-tests.html#chi2-test-for-homogeneity"><i class="fa fa-check"></i><b>8.3.3</b> <span class="math inline">\(\chi^2\)</span> test for homogeneity</a></li>
-<li class="chapter" data-level="8.3.4" data-path="basic-statistical-tests.html"><a href="basic-statistical-tests.html#contingency-tables"><i class="fa fa-check"></i><b>8.3.4</b> Contingency tables</a></li>
+<li class="chapter" data-level="7.1.1" data-path="introduction-to-statistics.html"><a href="introduction-to-statistics.html#measures-of-central-tendency"><i class="fa fa-check"></i><b>7.1.1</b> Measures of central tendency</a></li>
+<li class="chapter" data-level="7.1.2" data-path="introduction-to-statistics.html"><a href="introduction-to-statistics.html#measures-of-spread"><i class="fa fa-check"></i><b>7.1.2</b> Measures of spread</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="comparing-multiple-means.html"><a href="comparing-multiple-means.html"><i class="fa fa-check"></i><b>9</b> Comparing multiple means</a>
+<li class="chapter" data-level="8" data-path="central-limit-theorem.html"><a href="central-limit-theorem.html"><i class="fa fa-check"></i><b>8</b> Central limit theorem</a>
 <ul>
-<li class="chapter" data-level="9.1" data-path="comparing-multiple-means.html"><a href="comparing-multiple-means.html#loading-packages"><i class="fa fa-check"></i><b>9.1</b> Loading packages</a></li>
-<li class="chapter" data-level="9.2" data-path="comparing-multiple-means.html"><a href="comparing-multiple-means.html#one-way-anova"><i class="fa fa-check"></i><b>9.2</b> One-way ANOVA</a>
+<li class="chapter" data-level="8.1" data-path="central-limit-theorem.html"><a href="central-limit-theorem.html#motivation"><i class="fa fa-check"></i><b>8.1</b> Motivation</a></li>
+<li class="chapter" data-level="8.2" data-path="central-limit-theorem.html"><a href="central-limit-theorem.html#clt-for-means"><i class="fa fa-check"></i><b>8.2</b> CLT for means</a>
 <ul>
-<li class="chapter" data-level="9.2.1" data-path="comparing-multiple-means.html"><a href="comparing-multiple-means.html#the-iris-dataset"><i class="fa fa-check"></i><b>9.2.1</b> The iris dataset</a></li>
-<li class="chapter" data-level="9.2.2" data-path="comparing-multiple-means.html"><a href="comparing-multiple-means.html#non-parametric-alternatives-to-anova"><i class="fa fa-check"></i><b>9.2.2</b> Non-parametric alternatives to ANOVA</a></li>
+<li class="chapter" data-level="8.2.1" data-path="central-limit-theorem.html"><a href="central-limit-theorem.html#clt-part-1"><i class="fa fa-check"></i><b>8.2.1</b> CLT Part 1</a></li>
+<li class="chapter" data-level="8.2.2" data-path="central-limit-theorem.html"><a href="central-limit-theorem.html#clt-part-2"><i class="fa fa-check"></i><b>8.2.2</b> CLT Part 2</a></li>
 </ul></li>
-<li class="chapter" data-level="9.3" data-path="comparing-multiple-means.html"><a href="comparing-multiple-means.html#beyond-the-one-way-anova"><i class="fa fa-check"></i><b>9.3</b> Beyond the one-way ANOVA</a></li>
+<li class="chapter" data-level="8.3" data-path="central-limit-theorem.html"><a href="central-limit-theorem.html#clt-for-proportions"><i class="fa fa-check"></i><b>8.3</b> CLT for proportions</a></li>
 </ul></li>
-<li class="chapter" data-level="10" data-path="linear-regression.html"><a href="linear-regression.html"><i class="fa fa-check"></i><b>10</b> Linear regression</a>
+<li class="chapter" data-level="9" data-path="basic-statistical-tests.html"><a href="basic-statistical-tests.html"><i class="fa fa-check"></i><b>9</b> Basic statistical tests</a>
 <ul>
-<li class="chapter" data-level="10.1" data-path="linear-regression.html"><a href="linear-regression.html#basic-concepts"><i class="fa fa-check"></i><b>10.1</b> Basic concepts</a></li>
-<li class="chapter" data-level="10.2" data-path="linear-regression.html"><a href="linear-regression.html#pearson-correlation"><i class="fa fa-check"></i><b>10.2</b> Pearson correlation</a></li>
-<li class="chapter" data-level="10.3" data-path="linear-regression.html"><a href="linear-regression.html#spearman-correlation"><i class="fa fa-check"></i><b>10.3</b> Spearman correlation</a></li>
+<li class="chapter" data-level="9.1" data-path="basic-statistical-tests.html"><a href="basic-statistical-tests.html#getting-ready"><i class="fa fa-check"></i><b>9.1</b> Getting ready</a></li>
+<li class="chapter" data-level="9.2" data-path="basic-statistical-tests.html"><a href="basic-statistical-tests.html#students-t-test"><i class="fa fa-check"></i><b>9.2</b> Student’s t-test</a></li>
+<li class="chapter" data-level="9.3" data-path="basic-statistical-tests.html"><a href="basic-statistical-tests.html#chi-squared-test"><i class="fa fa-check"></i><b>9.3</b> Chi-squared test</a>
+<ul>
+<li class="chapter" data-level="9.3.1" data-path="basic-statistical-tests.html"><a href="basic-statistical-tests.html#chi2-test-for-goodness-of-fit"><i class="fa fa-check"></i><b>9.3.1</b> <span class="math inline">\(\chi^2\)</span> test for goodness-of-fit</a></li>
+<li class="chapter" data-level="9.3.2" data-path="basic-statistical-tests.html"><a href="basic-statistical-tests.html#chi2-test-for-independence"><i class="fa fa-check"></i><b>9.3.2</b> <span class="math inline">\(\chi^2\)</span> test for independence</a></li>
+<li class="chapter" data-level="9.3.3" data-path="basic-statistical-tests.html"><a href="basic-statistical-tests.html#chi2-test-for-homogeneity"><i class="fa fa-check"></i><b>9.3.3</b> <span class="math inline">\(\chi^2\)</span> test for homogeneity</a></li>
+<li class="chapter" data-level="9.3.4" data-path="basic-statistical-tests.html"><a href="basic-statistical-tests.html#contingency-tables"><i class="fa fa-check"></i><b>9.3.4</b> Contingency tables</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="comparing-multiple-means.html"><a href="comparing-multiple-means.html"><i class="fa fa-check"></i><b>10</b> Comparing multiple means</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="comparing-multiple-means.html"><a href="comparing-multiple-means.html#loading-packages"><i class="fa fa-check"></i><b>10.1</b> Loading packages</a></li>
+<li class="chapter" data-level="10.2" data-path="comparing-multiple-means.html"><a href="comparing-multiple-means.html#one-way-anova"><i class="fa fa-check"></i><b>10.2</b> One-way ANOVA</a>
+<ul>
+<li class="chapter" data-level="10.2.1" data-path="comparing-multiple-means.html"><a href="comparing-multiple-means.html#the-iris-dataset"><i class="fa fa-check"></i><b>10.2.1</b> The iris dataset</a></li>
+<li class="chapter" data-level="10.2.2" data-path="comparing-multiple-means.html"><a href="comparing-multiple-means.html#non-parametric-alternatives-to-anova"><i class="fa fa-check"></i><b>10.2.2</b> Non-parametric alternatives to ANOVA</a></li>
+</ul></li>
+<li class="chapter" data-level="10.3" data-path="comparing-multiple-means.html"><a href="comparing-multiple-means.html#beyond-the-one-way-anova"><i class="fa fa-check"></i><b>10.3</b> Beyond the one-way ANOVA</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="linear-regression.html"><a href="linear-regression.html"><i class="fa fa-check"></i><b>11</b> Linear regression</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="linear-regression.html"><a href="linear-regression.html#basic-concepts"><i class="fa fa-check"></i><b>11.1</b> Basic concepts</a></li>
+<li class="chapter" data-level="11.2" data-path="linear-regression.html"><a href="linear-regression.html#pearson-correlation"><i class="fa fa-check"></i><b>11.2</b> Pearson correlation</a></li>
+<li class="chapter" data-level="11.3" data-path="linear-regression.html"><a href="linear-regression.html#spearman-correlation"><i class="fa fa-check"></i><b>11.3</b> Spearman correlation</a></li>
 </ul></li>
 <li class="part"><span><b>IV Data Visualization</b></span></li>
-<li class="chapter" data-level="11" data-path="data-visualization-basics.html"><a href="data-visualization-basics.html"><i class="fa fa-check"></i><b>11</b> Data visualization basics</a>
+<li class="chapter" data-level="12" data-path="data-visualization-basics.html"><a href="data-visualization-basics.html"><i class="fa fa-check"></i><b>12</b> Data visualization basics</a>
 <ul>
-<li class="chapter" data-level="11.1" data-path="data-visualization-basics.html"><a href="data-visualization-basics.html#a-graphing-template"><i class="fa fa-check"></i><b>11.1</b> A graphing template</a></li>
-<li class="chapter" data-level="11.2" data-path="data-visualization-basics.html"><a href="data-visualization-basics.html#scatter-plot"><i class="fa fa-check"></i><b>11.2</b> Scatter plot</a>
+<li class="chapter" data-level="12.1" data-path="data-visualization-basics.html"><a href="data-visualization-basics.html#a-graphing-template"><i class="fa fa-check"></i><b>12.1</b> A graphing template</a></li>
+<li class="chapter" data-level="12.2" data-path="data-visualization-basics.html"><a href="data-visualization-basics.html#scatter-plot"><i class="fa fa-check"></i><b>12.2</b> Scatter plot</a>
 <ul>
-<li class="chapter" data-level="11.2.1" data-path="data-visualization-basics.html"><a href="data-visualization-basics.html#trend-lines"><i class="fa fa-check"></i><b>11.2.1</b> Trend lines</a></li>
-<li class="chapter" data-level="11.2.2" data-path="data-visualization-basics.html"><a href="data-visualization-basics.html#facets"><i class="fa fa-check"></i><b>11.2.2</b> Facets</a></li>
+<li class="chapter" data-level="12.2.1" data-path="data-visualization-basics.html"><a href="data-visualization-basics.html#trend-lines"><i class="fa fa-check"></i><b>12.2.1</b> Trend lines</a></li>
+<li class="chapter" data-level="12.2.2" data-path="data-visualization-basics.html"><a href="data-visualization-basics.html#facets"><i class="fa fa-check"></i><b>12.2.2</b> Facets</a></li>
 </ul></li>
-<li class="chapter" data-level="11.3" data-path="data-visualization-basics.html"><a href="data-visualization-basics.html#aesthetic-mappings"><i class="fa fa-check"></i><b>11.3</b> Aesthetic mappings</a></li>
+<li class="chapter" data-level="12.3" data-path="data-visualization-basics.html"><a href="data-visualization-basics.html#aesthetic-mappings"><i class="fa fa-check"></i><b>12.3</b> Aesthetic mappings</a></li>
 </ul></li>
-<li class="chapter" data-level="12" data-path="getting-publication-ready.html"><a href="getting-publication-ready.html"><i class="fa fa-check"></i><b>12</b> Getting publication-ready</a>
+<li class="chapter" data-level="13" data-path="getting-publication-ready.html"><a href="getting-publication-ready.html"><i class="fa fa-check"></i><b>13</b> Getting publication-ready</a>
 <ul>
-<li class="chapter" data-level="12.1" data-path="getting-publication-ready.html"><a href="getting-publication-ready.html#line-plot"><i class="fa fa-check"></i><b>12.1</b> Line plot</a></li>
-<li class="chapter" data-level="12.2" data-path="getting-publication-ready.html"><a href="getting-publication-ready.html#bar-plot"><i class="fa fa-check"></i><b>12.2</b> Bar plot</a>
+<li class="chapter" data-level="13.1" data-path="getting-publication-ready.html"><a href="getting-publication-ready.html#line-plot"><i class="fa fa-check"></i><b>13.1</b> Line plot</a></li>
+<li class="chapter" data-level="13.2" data-path="getting-publication-ready.html"><a href="getting-publication-ready.html#bar-plot"><i class="fa fa-check"></i><b>13.2</b> Bar plot</a>
 <ul>
-<li class="chapter" data-level="12.2.1" data-path="getting-publication-ready.html"><a href="getting-publication-ready.html#basics"><i class="fa fa-check"></i><b>12.2.1</b> Basics</a></li>
+<li class="chapter" data-level="13.2.1" data-path="getting-publication-ready.html"><a href="getting-publication-ready.html#basics"><i class="fa fa-check"></i><b>13.2.1</b> Basics</a></li>
 </ul></li>
-<li class="chapter" data-level="12.3" data-path="getting-publication-ready.html"><a href="getting-publication-ready.html#box-plot"><i class="fa fa-check"></i><b>12.3</b> Box plot</a></li>
-<li class="chapter" data-level="12.4" data-path="getting-publication-ready.html"><a href="getting-publication-ready.html#histogram-and-density-plot"><i class="fa fa-check"></i><b>12.4</b> Histogram and density plot</a></li>
+<li class="chapter" data-level="13.3" data-path="getting-publication-ready.html"><a href="getting-publication-ready.html#box-plot"><i class="fa fa-check"></i><b>13.3</b> Box plot</a></li>
+<li class="chapter" data-level="13.4" data-path="getting-publication-ready.html"><a href="getting-publication-ready.html#histogram-and-density-plot"><i class="fa fa-check"></i><b>13.4</b> Histogram and density plot</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><center>
@@ -307,36 +340,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/4.3.1/iframeResizer.min.js">
-</script>
-
-<script type="text/javascript">
-
-// Once page is loaded, override and disable popover "scroll into view"
-  $(document).ready(function() {
-    window.tutorial.scrollIntoView = function() {}
-  })
-
-// Add padding to LearnR body when popover shown
-  $(document).on("shown.bs.popover", function() {
-    var popoverHeight = document.querySelector(".popover").offsetHeight
-    document.body.style.paddingTop = popoverHeight + 10 + "px"
-  })
-
-// Set padding to 0 when popover hidden
-  $(document).on("hide.bs.popover", function() {
-    var popoverHeight = document.querySelector(".popover").offsetHeight
-    document.body.style.paddingTop = "0px"
-  })
-
-</script>
-<div id="getting-publication-ready" class="section level1" number="12">
-<h1><span class="header-section-number">12</span> Getting publication-ready</h1>
+<div id="getting-publication-ready" class="section level1" number="13">
+<h1><span class="header-section-number">13</span> Getting publication-ready</h1>
 <p>As the chapter name suggests, this chapter is all about getting publication-quality plots.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="getting-publication-ready.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb1-2"><a href="getting-publication-ready.html#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gapminder)</span></code></pre></div>
-<div id="line-plot" class="section level2" number="12.1">
-<h2><span class="header-section-number">12.1</span> Line plot</h2>
+<div class="sourceCode" id="cb355"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb355-1"><a href="getting-publication-ready.html#cb355-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb355-2"><a href="getting-publication-ready.html#cb355-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gapminder)</span></code></pre></div>
+<div id="line-plot" class="section level2" number="13.1">
+<h2><span class="header-section-number">13.1</span> Line plot</h2>
 <p>A line plot is another way to visualize continuous variables. This is particularly useful when</p>
 <ol style="list-style-type: decimal">
 <li>Your observations change over time and</li>
@@ -344,94 +354,94 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ol>
 <p>Let’s elaborate on the second point. In the previous case for life expectancy and GDP, we could only observe a correlation, but cannot conclude a causal relationship. In some case, such as carrying out a laboratory experiment or a simulation study, you can precisely manipulate certain independent variables and measure other dependent variables. This way you can argue for a better causal relationship. For example, you can change the concentration of a drug treatment and measure the inhibition effect.</p>
 <p>Let’s take a look at the life expectancy of Africa over the years. Let’s first create a scatter plot.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="getting-publication-ready.html#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> <span class="fu">subset</span>(gapminder, continent <span class="sc">==</span> <span class="st">&quot;Europe&quot;</span>),</span>
-<span id="cb2-2"><a href="getting-publication-ready.html#cb2-2" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> lifeExp)) <span class="sc">+</span></span>
-<span id="cb2-3"><a href="getting-publication-ready.html#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+<div class="sourceCode" id="cb356"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb356-1"><a href="getting-publication-ready.html#cb356-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> <span class="fu">subset</span>(gapminder, continent <span class="sc">==</span> <span class="st">&quot;Europe&quot;</span>),</span>
+<span id="cb356-2"><a href="getting-publication-ready.html#cb356-2" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> lifeExp)) <span class="sc">+</span></span>
+<span id="cb356-3"><a href="getting-publication-ready.html#cb356-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-166-1.png" width="672" /></p>
 <p>Since the points can correspond to the countries, we can connect them with lines.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="getting-publication-ready.html#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> <span class="fu">subset</span>(gapminder, continent <span class="sc">==</span> <span class="st">&quot;Europe&quot;</span>), </span>
-<span id="cb3-2"><a href="getting-publication-ready.html#cb3-2" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> lifeExp, <span class="at">colour =</span> country)) <span class="sc">+</span></span>
-<span id="cb3-3"><a href="getting-publication-ready.html#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb3-4"><a href="getting-publication-ready.html#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">group =</span> country))</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<div class="sourceCode" id="cb357"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb357-1"><a href="getting-publication-ready.html#cb357-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> <span class="fu">subset</span>(gapminder, continent <span class="sc">==</span> <span class="st">&quot;Europe&quot;</span>), </span>
+<span id="cb357-2"><a href="getting-publication-ready.html#cb357-2" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> lifeExp, <span class="at">colour =</span> country)) <span class="sc">+</span></span>
+<span id="cb357-3"><a href="getting-publication-ready.html#cb357-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb357-4"><a href="getting-publication-ready.html#cb357-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">group =</span> country))</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-167-1.png" width="672" /></p>
 <p>Here the <code>group = country</code> specifies that points with the same values for the variable <code>country</code> should be connected in a line.</p>
 <p>Oftentimes you want to show line plots with mean values and error bars. Unfortunately, ggplot2 can’t automatically draw error bars – you have to explicitly specify the values. We’re going to address this in the next example.</p>
 <p>First, calculate the mean and SEM and save it to a new data frame.</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="getting-publication-ready.html#cb4-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> gapminder <span class="sc">%&gt;%</span></span>
-<span id="cb4-2"><a href="getting-publication-ready.html#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(year, continent) <span class="sc">%&gt;%</span></span>
-<span id="cb4-3"><a href="getting-publication-ready.html#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">mean_le =</span> <span class="fu">mean</span>(lifeExp), <span class="at">sd=</span><span class="fu">sd</span>(lifeExp), <span class="at">sem =</span> <span class="fu">sd</span>(lifeExp)<span class="sc">/</span><span class="fu">sqrt</span>(<span class="fu">n</span>()))</span></code></pre></div>
+<div class="sourceCode" id="cb358"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb358-1"><a href="getting-publication-ready.html#cb358-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> gapminder <span class="sc">%&gt;%</span></span>
+<span id="cb358-2"><a href="getting-publication-ready.html#cb358-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(year, continent) <span class="sc">%&gt;%</span></span>
+<span id="cb358-3"><a href="getting-publication-ready.html#cb358-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">mean_le =</span> <span class="fu">mean</span>(lifeExp), <span class="at">sd=</span><span class="fu">sd</span>(lifeExp), <span class="at">sem =</span> <span class="fu">sd</span>(lifeExp)<span class="sc">/</span><span class="fu">sqrt</span>(<span class="fu">n</span>()))</span></code></pre></div>
 <pre><code>## `summarise()` has grouped output by &#39;year&#39;. You can override using the `.groups` argument.</code></pre>
 <p>Next, draw a line plot with this data frame. To draw error bars, we need to specify the upper and lower limits within <code>geom_errorbar()</code>.</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="getting-publication-ready.html#cb6-1" aria-hidden="true" tabindex="-1"></a>lineplot <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> df, <span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> mean_le, <span class="at">color =</span> continent)) <span class="sc">+</span></span>
-<span id="cb6-2"><a href="getting-publication-ready.html#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
-<span id="cb6-3"><a href="getting-publication-ready.html#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb6-4"><a href="getting-publication-ready.html#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_errorbar</span>(<span class="fu">aes</span>(<span class="at">ymin =</span> mean_le<span class="sc">-</span>sem, <span class="at">ymax =</span> mean_le<span class="sc">+</span>sem),</span>
-<span id="cb6-5"><a href="getting-publication-ready.html#cb6-5" aria-hidden="true" tabindex="-1"></a>                <span class="at">position =</span> <span class="fu">position_dodge</span>(<span class="fl">0.05</span>))  <span class="co"># position_dodge() sets length of error bar caps</span></span>
-<span id="cb6-6"><a href="getting-publication-ready.html#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="fu">show</span>(lineplot)</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<div class="sourceCode" id="cb360"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb360-1"><a href="getting-publication-ready.html#cb360-1" aria-hidden="true" tabindex="-1"></a>lineplot <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> df, <span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> mean_le, <span class="at">color =</span> continent)) <span class="sc">+</span></span>
+<span id="cb360-2"><a href="getting-publication-ready.html#cb360-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb360-3"><a href="getting-publication-ready.html#cb360-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb360-4"><a href="getting-publication-ready.html#cb360-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_errorbar</span>(<span class="fu">aes</span>(<span class="at">ymin =</span> mean_le<span class="sc">-</span>sem, <span class="at">ymax =</span> mean_le<span class="sc">+</span>sem),</span>
+<span id="cb360-5"><a href="getting-publication-ready.html#cb360-5" aria-hidden="true" tabindex="-1"></a>                <span class="at">position =</span> <span class="fu">position_dodge</span>(<span class="fl">0.05</span>))  <span class="co"># position_dodge() sets length of error bar caps</span></span>
+<span id="cb360-6"><a href="getting-publication-ready.html#cb360-6" aria-hidden="true" tabindex="-1"></a><span class="fu">show</span>(lineplot)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-169-1.png" width="672" /></p>
 <p>Finally, let’s format the figure nicely.</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="getting-publication-ready.html#cb7-1" aria-hidden="true" tabindex="-1"></a>lineplot <span class="ot">&lt;-</span> lineplot <span class="sc">+</span> <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Year&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Life Expectancy&quot;</span>, <span class="at">color =</span> <span class="st">&quot;Continent&quot;</span>) <span class="sc">+</span></span>
-<span id="cb7-2"><a href="getting-publication-ready.html#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>() <span class="sc">+</span>                      <span class="co"># remove the gray background</span></span>
-<span id="cb7-3"><a href="getting-publication-ready.html#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">16</span>))  <span class="co"># set font size</span></span>
-<span id="cb7-4"><a href="getting-publication-ready.html#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="fu">show</span>(lineplot)</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+<div class="sourceCode" id="cb361"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb361-1"><a href="getting-publication-ready.html#cb361-1" aria-hidden="true" tabindex="-1"></a>lineplot <span class="ot">&lt;-</span> lineplot <span class="sc">+</span> <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Year&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Life Expectancy&quot;</span>, <span class="at">color =</span> <span class="st">&quot;Continent&quot;</span>) <span class="sc">+</span></span>
+<span id="cb361-2"><a href="getting-publication-ready.html#cb361-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>() <span class="sc">+</span>                      <span class="co"># remove the gray background</span></span>
+<span id="cb361-3"><a href="getting-publication-ready.html#cb361-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">16</span>))  <span class="co"># set font size</span></span>
+<span id="cb361-4"><a href="getting-publication-ready.html#cb361-4" aria-hidden="true" tabindex="-1"></a><span class="fu">show</span>(lineplot)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-170-1.png" width="672" /></p>
 <p>For a cleaner view with offset axis:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="getting-publication-ready.html#cb8-1" aria-hidden="true" tabindex="-1"></a>lineplot <span class="ot">&lt;-</span> lineplot <span class="sc">+</span></span>
-<span id="cb8-2"><a href="getting-publication-ready.html#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.line =</span> <span class="fu">element_blank</span>(),  <span class="co"># hide the default axes</span></span>
-<span id="cb8-3"><a href="getting-publication-ready.html#cb8-3" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.ticks.length =</span> <span class="fu">unit</span>(<span class="dv">7</span>, <span class="st">&#39;pt&#39;</span>)) <span class="sc">+</span></span>
-<span id="cb8-4"><a href="getting-publication-ready.html#cb8-4" aria-hidden="true" tabindex="-1"></a>  <span class="co"># specify the breaks of y-axis</span></span>
-<span id="cb8-5"><a href="getting-publication-ready.html#cb8-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">breaks=</span><span class="fu">seq</span>(<span class="dv">40</span>,<span class="dv">80</span>,<span class="dv">20</span>), <span class="at">limits=</span><span class="fu">c</span>(<span class="dv">35</span>,<span class="dv">85</span>), <span class="at">expand=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">0</span>)) <span class="sc">+</span></span>
-<span id="cb8-6"><a href="getting-publication-ready.html#cb8-6" aria-hidden="true" tabindex="-1"></a>  <span class="co"># specify the breaks of x-axis</span></span>
-<span id="cb8-7"><a href="getting-publication-ready.html#cb8-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks=</span><span class="fu">seq</span>(<span class="dv">1950</span>, <span class="dv">2010</span>, <span class="dv">20</span>), <span class="at">limits=</span><span class="fu">c</span>(<span class="dv">1945</span>,<span class="dv">2010</span>), <span class="at">expand=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">0</span>)) <span class="sc">+</span></span>
-<span id="cb8-8"><a href="getting-publication-ready.html#cb8-8" aria-hidden="true" tabindex="-1"></a>  <span class="co"># specify the location of the new y-axis</span></span>
-<span id="cb8-9"><a href="getting-publication-ready.html#cb8-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_segment</span>(<span class="at">y=</span><span class="dv">40</span>, <span class="at">yend=</span><span class="dv">80</span>, <span class="at">x=</span><span class="dv">1945</span>, <span class="at">xend=</span><span class="dv">1945</span>, <span class="at">lwd=</span><span class="fl">0.5</span>, <span class="at">colour=</span><span class="st">&quot;black&quot;</span>, <span class="at">lineend=</span><span class="st">&quot;square&quot;</span>) <span class="sc">+</span></span>
-<span id="cb8-10"><a href="getting-publication-ready.html#cb8-10" aria-hidden="true" tabindex="-1"></a>  <span class="co"># specify the location of the new x-axis</span></span>
-<span id="cb8-11"><a href="getting-publication-ready.html#cb8-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_segment</span>(<span class="at">y=</span><span class="dv">35</span>, <span class="at">yend=</span><span class="dv">35</span>, <span class="at">x=</span><span class="dv">1950</span>, <span class="at">xend=</span><span class="dv">2010</span>, <span class="at">lwd=</span><span class="fl">0.5</span>, <span class="at">colour=</span><span class="st">&quot;black&quot;</span>, <span class="at">lineend=</span><span class="st">&quot;square&quot;</span>)</span>
-<span id="cb8-12"><a href="getting-publication-ready.html#cb8-12" aria-hidden="true" tabindex="-1"></a><span class="fu">show</span>(lineplot)</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="getting-publication-ready.html#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">&quot;data/10_pubvis/life_year.png&quot;</span>, <span class="at">plot =</span> lineplot)</span></code></pre></div>
+<div class="sourceCode" id="cb362"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb362-1"><a href="getting-publication-ready.html#cb362-1" aria-hidden="true" tabindex="-1"></a>lineplot <span class="ot">&lt;-</span> lineplot <span class="sc">+</span></span>
+<span id="cb362-2"><a href="getting-publication-ready.html#cb362-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.line =</span> <span class="fu">element_blank</span>(),  <span class="co"># hide the default axes</span></span>
+<span id="cb362-3"><a href="getting-publication-ready.html#cb362-3" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.ticks.length =</span> <span class="fu">unit</span>(<span class="dv">7</span>, <span class="st">&#39;pt&#39;</span>)) <span class="sc">+</span></span>
+<span id="cb362-4"><a href="getting-publication-ready.html#cb362-4" aria-hidden="true" tabindex="-1"></a>  <span class="co"># specify the breaks of y-axis</span></span>
+<span id="cb362-5"><a href="getting-publication-ready.html#cb362-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">breaks=</span><span class="fu">seq</span>(<span class="dv">40</span>,<span class="dv">80</span>,<span class="dv">20</span>), <span class="at">limits=</span><span class="fu">c</span>(<span class="dv">35</span>,<span class="dv">85</span>), <span class="at">expand=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">0</span>)) <span class="sc">+</span></span>
+<span id="cb362-6"><a href="getting-publication-ready.html#cb362-6" aria-hidden="true" tabindex="-1"></a>  <span class="co"># specify the breaks of x-axis</span></span>
+<span id="cb362-7"><a href="getting-publication-ready.html#cb362-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks=</span><span class="fu">seq</span>(<span class="dv">1950</span>, <span class="dv">2010</span>, <span class="dv">20</span>), <span class="at">limits=</span><span class="fu">c</span>(<span class="dv">1945</span>,<span class="dv">2010</span>), <span class="at">expand=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">0</span>)) <span class="sc">+</span></span>
+<span id="cb362-8"><a href="getting-publication-ready.html#cb362-8" aria-hidden="true" tabindex="-1"></a>  <span class="co"># specify the location of the new y-axis</span></span>
+<span id="cb362-9"><a href="getting-publication-ready.html#cb362-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_segment</span>(<span class="at">y=</span><span class="dv">40</span>, <span class="at">yend=</span><span class="dv">80</span>, <span class="at">x=</span><span class="dv">1945</span>, <span class="at">xend=</span><span class="dv">1945</span>, <span class="at">lwd=</span><span class="fl">0.5</span>, <span class="at">colour=</span><span class="st">&quot;black&quot;</span>, <span class="at">lineend=</span><span class="st">&quot;square&quot;</span>) <span class="sc">+</span></span>
+<span id="cb362-10"><a href="getting-publication-ready.html#cb362-10" aria-hidden="true" tabindex="-1"></a>  <span class="co"># specify the location of the new x-axis</span></span>
+<span id="cb362-11"><a href="getting-publication-ready.html#cb362-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_segment</span>(<span class="at">y=</span><span class="dv">35</span>, <span class="at">yend=</span><span class="dv">35</span>, <span class="at">x=</span><span class="dv">1950</span>, <span class="at">xend=</span><span class="dv">2010</span>, <span class="at">lwd=</span><span class="fl">0.5</span>, <span class="at">colour=</span><span class="st">&quot;black&quot;</span>, <span class="at">lineend=</span><span class="st">&quot;square&quot;</span>)</span>
+<span id="cb362-12"><a href="getting-publication-ready.html#cb362-12" aria-hidden="true" tabindex="-1"></a><span class="fu">show</span>(lineplot)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-171-1.png" width="672" /></p>
+<div class="sourceCode" id="cb363"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb363-1"><a href="getting-publication-ready.html#cb363-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">&quot;data/10_pubvis/life_year.png&quot;</span>, <span class="at">plot =</span> lineplot)</span></code></pre></div>
 <pre><code>## Saving 7 x 5 in image</code></pre>
 </div>
-<div id="bar-plot" class="section level2" number="12.2">
-<h2><span class="header-section-number">12.2</span> Bar plot</h2>
-<div id="basics" class="section level3" number="12.2.1">
-<h3><span class="header-section-number">12.2.1</span> Basics</h3>
+<div id="bar-plot" class="section level2" number="13.2">
+<h2><span class="header-section-number">13.2</span> Bar plot</h2>
+<div id="basics" class="section level3" number="13.2.1">
+<h3><span class="header-section-number">13.2.1</span> Basics</h3>
 <p>Let’s look at the life expectancy of all continents in 1977 using a bar plot. Notice that instead of using <code>dplyr</code>, we can simply use the base R <code>subset()</code> function. Recall <code>df</code> from the previous section.</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="getting-publication-ready.html#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> <span class="fu">subset</span>(df, year <span class="sc">==</span> <span class="dv">1977</span>), <span class="fu">aes</span>(<span class="at">x=</span>continent, <span class="at">y=</span>mean_le)) <span class="sc">+</span></span>
-<span id="cb11-2"><a href="getting-publication-ready.html#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>()</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
+<div class="sourceCode" id="cb365"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb365-1"><a href="getting-publication-ready.html#cb365-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> <span class="fu">subset</span>(df, year <span class="sc">==</span> <span class="dv">1977</span>), <span class="fu">aes</span>(<span class="at">x=</span>continent, <span class="at">y=</span>mean_le)) <span class="sc">+</span></span>
+<span id="cb365-2"><a href="getting-publication-ready.html#cb365-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>()</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-172-1.png" width="672" /></p>
 <p>Note by default, <code>geom_col</code> takes both x and y while <code>geom_bar</code> takes only x and plots the count on y. Just as before, we can add error bars:</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="getting-publication-ready.html#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> <span class="fu">subset</span>(df, year <span class="sc">==</span> <span class="dv">1977</span>), <span class="fu">aes</span>(<span class="at">x=</span>continent, <span class="at">y=</span>mean_le)) <span class="sc">+</span></span>
-<span id="cb12-2"><a href="getting-publication-ready.html#cb12-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>() <span class="sc">+</span> </span>
-<span id="cb12-3"><a href="getting-publication-ready.html#cb12-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_errorbar</span>(<span class="fu">aes</span>(<span class="at">ymin =</span> mean_le <span class="sc">-</span> sem, <span class="at">ymax =</span> mean_le <span class="sc">+</span> sem), <span class="at">width=</span><span class="fl">0.5</span>,</span>
-<span id="cb12-4"><a href="getting-publication-ready.html#cb12-4" aria-hidden="true" tabindex="-1"></a>                 <span class="at">position=</span><span class="fu">position_dodge</span>(<span class="fl">0.05</span>))</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
+<div class="sourceCode" id="cb366"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb366-1"><a href="getting-publication-ready.html#cb366-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> <span class="fu">subset</span>(df, year <span class="sc">==</span> <span class="dv">1977</span>), <span class="fu">aes</span>(<span class="at">x=</span>continent, <span class="at">y=</span>mean_le)) <span class="sc">+</span></span>
+<span id="cb366-2"><a href="getting-publication-ready.html#cb366-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>() <span class="sc">+</span> </span>
+<span id="cb366-3"><a href="getting-publication-ready.html#cb366-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_errorbar</span>(<span class="fu">aes</span>(<span class="at">ymin =</span> mean_le <span class="sc">-</span> sem, <span class="at">ymax =</span> mean_le <span class="sc">+</span> sem), <span class="at">width=</span><span class="fl">0.5</span>,</span>
+<span id="cb366-4"><a href="getting-publication-ready.html#cb366-4" aria-hidden="true" tabindex="-1"></a>                 <span class="at">position=</span><span class="fu">position_dodge</span>(<span class="fl">0.05</span>))</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-173-1.png" width="672" /></p>
 <p>We can compare 1977 and 2007 by setting<code>fill = as.factor(year)</code>.</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="getting-publication-ready.html#cb13-1" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> <span class="fu">subset</span>(df, year <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">1977</span>, <span class="dv">2007</span>)), </span>
-<span id="cb13-2"><a href="getting-publication-ready.html#cb13-2" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x=</span>continent, <span class="at">y=</span>mean_le, <span class="at">fill =</span> <span class="fu">as.factor</span>(year))) <span class="sc">+</span></span>
-<span id="cb13-3"><a href="getting-publication-ready.html#cb13-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">position =</span> <span class="fu">position_dodge</span>(), <span class="at">color =</span> <span class="st">&quot;black&quot;</span>) <span class="sc">+</span> </span>
-<span id="cb13-4"><a href="getting-publication-ready.html#cb13-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_errorbar</span>(<span class="fu">aes</span>(<span class="at">ymin =</span> mean_le <span class="sc">-</span> sem, <span class="at">ymax =</span> mean_le <span class="sc">+</span> sem), <span class="at">width=</span><span class="fl">0.5</span>,</span>
-<span id="cb13-5"><a href="getting-publication-ready.html#cb13-5" aria-hidden="true" tabindex="-1"></a>                 <span class="at">position=</span><span class="fu">position_dodge</span>(<span class="fl">0.9</span>))</span>
-<span id="cb13-6"><a href="getting-publication-ready.html#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="fu">show</span>(p)</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
+<div class="sourceCode" id="cb367"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb367-1"><a href="getting-publication-ready.html#cb367-1" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> <span class="fu">subset</span>(df, year <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">1977</span>, <span class="dv">2007</span>)), </span>
+<span id="cb367-2"><a href="getting-publication-ready.html#cb367-2" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x=</span>continent, <span class="at">y=</span>mean_le, <span class="at">fill =</span> <span class="fu">as.factor</span>(year))) <span class="sc">+</span></span>
+<span id="cb367-3"><a href="getting-publication-ready.html#cb367-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">position =</span> <span class="fu">position_dodge</span>(), <span class="at">color =</span> <span class="st">&quot;black&quot;</span>) <span class="sc">+</span> </span>
+<span id="cb367-4"><a href="getting-publication-ready.html#cb367-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_errorbar</span>(<span class="fu">aes</span>(<span class="at">ymin =</span> mean_le <span class="sc">-</span> sem, <span class="at">ymax =</span> mean_le <span class="sc">+</span> sem), <span class="at">width=</span><span class="fl">0.5</span>,</span>
+<span id="cb367-5"><a href="getting-publication-ready.html#cb367-5" aria-hidden="true" tabindex="-1"></a>                 <span class="at">position=</span><span class="fu">position_dodge</span>(<span class="fl">0.9</span>))</span>
+<span id="cb367-6"><a href="getting-publication-ready.html#cb367-6" aria-hidden="true" tabindex="-1"></a><span class="fu">show</span>(p)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-174-1.png" width="672" /></p>
 <p>Finally, let’s make this figure publication-ready:</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="getting-publication-ready.html#cb14-1" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> p <span class="sc">+</span></span>
-<span id="cb14-2"><a href="getting-publication-ready.html#cb14-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">&#39;black&#39;</span>, <span class="st">&#39;white&#39;</span>)) <span class="sc">+</span></span>
-<span id="cb14-3"><a href="getting-publication-ready.html#cb14-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&#39;Continent&#39;</span>, <span class="at">y=</span><span class="st">&#39;Mean life expectancy (years)&#39;</span>, <span class="at">fill =</span> <span class="st">&#39;Year&#39;</span>) <span class="sc">+</span></span>
-<span id="cb14-4"><a href="getting-publication-ready.html#cb14-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>() <span class="sc">+</span></span>
-<span id="cb14-5"><a href="getting-publication-ready.html#cb14-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">text =</span> <span class="fu">element_text</span>(<span class="at">size=</span><span class="dv">16</span>)) <span class="sc">+</span></span>
-<span id="cb14-6"><a href="getting-publication-ready.html#cb14-6" aria-hidden="true" tabindex="-1"></a>  <span class="co"># removes space between bottom of bars and x-axis</span></span>
-<span id="cb14-7"><a href="getting-publication-ready.html#cb14-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">expand =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">0</span>))</span>
-<span id="cb14-8"><a href="getting-publication-ready.html#cb14-8" aria-hidden="true" tabindex="-1"></a>p</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
+<div class="sourceCode" id="cb368"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb368-1"><a href="getting-publication-ready.html#cb368-1" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> p <span class="sc">+</span></span>
+<span id="cb368-2"><a href="getting-publication-ready.html#cb368-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">&#39;black&#39;</span>, <span class="st">&#39;white&#39;</span>)) <span class="sc">+</span></span>
+<span id="cb368-3"><a href="getting-publication-ready.html#cb368-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&#39;Continent&#39;</span>, <span class="at">y=</span><span class="st">&#39;Mean life expectancy (years)&#39;</span>, <span class="at">fill =</span> <span class="st">&#39;Year&#39;</span>) <span class="sc">+</span></span>
+<span id="cb368-4"><a href="getting-publication-ready.html#cb368-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>() <span class="sc">+</span></span>
+<span id="cb368-5"><a href="getting-publication-ready.html#cb368-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">text =</span> <span class="fu">element_text</span>(<span class="at">size=</span><span class="dv">16</span>)) <span class="sc">+</span></span>
+<span id="cb368-6"><a href="getting-publication-ready.html#cb368-6" aria-hidden="true" tabindex="-1"></a>  <span class="co"># removes space between bottom of bars and x-axis</span></span>
+<span id="cb368-7"><a href="getting-publication-ready.html#cb368-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">expand =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">0</span>))</span>
+<span id="cb368-8"><a href="getting-publication-ready.html#cb368-8" aria-hidden="true" tabindex="-1"></a>p</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-175-1.png" width="672" /></p>
 <button class="collapsible">
 Plotting significance (OPTIONAL)
 </button>
 <div class="collapse_content">
 <p>Next we can run some statistical tests and add significance stars (*) to the plot. We’ll compare if the life expectancy in Africa in 1977 and 2007 has changed.</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="getting-publication-ready.html#cb15-1" aria-hidden="true" tabindex="-1"></a>africa.<span class="fl">1977.</span>lifeExp <span class="ot">&lt;-</span> gapminder <span class="sc">%&gt;%</span> <span class="fu">filter</span>(continent <span class="sc">==</span> <span class="st">&#39;Africa&#39;</span>, year <span class="sc">==</span> <span class="dv">1977</span>) <span class="sc">%&gt;%</span> <span class="fu">select</span>(lifeExp)</span>
-<span id="cb15-2"><a href="getting-publication-ready.html#cb15-2" aria-hidden="true" tabindex="-1"></a>africa.<span class="fl">2007.</span>lifeExp <span class="ot">&lt;-</span> gapminder <span class="sc">%&gt;%</span> <span class="fu">filter</span>(continent <span class="sc">==</span> <span class="st">&#39;Africa&#39;</span>, year <span class="sc">==</span> <span class="dv">2007</span>) <span class="sc">%&gt;%</span> <span class="fu">select</span>(lifeExp)</span>
-<span id="cb15-3"><a href="getting-publication-ready.html#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(africa.<span class="fl">1977.</span>lifeExp, africa.<span class="fl">2007.</span>lifeExp)</span></code></pre></div>
+<div class="sourceCode" id="cb369"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb369-1"><a href="getting-publication-ready.html#cb369-1" aria-hidden="true" tabindex="-1"></a>africa.<span class="fl">1977.</span>lifeExp <span class="ot">&lt;-</span> gapminder <span class="sc">%&gt;%</span> <span class="fu">filter</span>(continent <span class="sc">==</span> <span class="st">&#39;Africa&#39;</span>, year <span class="sc">==</span> <span class="dv">1977</span>) <span class="sc">%&gt;%</span> <span class="fu">select</span>(lifeExp)</span>
+<span id="cb369-2"><a href="getting-publication-ready.html#cb369-2" aria-hidden="true" tabindex="-1"></a>africa.<span class="fl">2007.</span>lifeExp <span class="ot">&lt;-</span> gapminder <span class="sc">%&gt;%</span> <span class="fu">filter</span>(continent <span class="sc">==</span> <span class="st">&#39;Africa&#39;</span>, year <span class="sc">==</span> <span class="dv">2007</span>) <span class="sc">%&gt;%</span> <span class="fu">select</span>(lifeExp)</span>
+<span id="cb369-3"><a href="getting-publication-ready.html#cb369-3" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(africa.<span class="fl">1977.</span>lifeExp, africa.<span class="fl">2007.</span>lifeExp)</span></code></pre></div>
 <pre><code>## 
 ##  Welch Two Sample t-test
 ## 
@@ -444,109 +454,109 @@ Plotting significance (OPTIONAL)
 ## mean of x mean of y 
 ##  49.58042  54.80604</code></pre>
 <p>The p-value is 0.001917. Here are common ranges for different p-values: 0 **** 0.0001 *** 0.001 ** 0.01 * 0.05 ns 1. We should use ** in this case. To draw the significance stars, we need the <code>ggsignif</code> package.</p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="getting-publication-ready.html#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages(&quot;ggsignif&quot;)</span></span>
-<span id="cb17-2"><a href="getting-publication-ready.html#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggsignif)</span>
-<span id="cb17-3"><a href="getting-publication-ready.html#cb17-3" aria-hidden="true" tabindex="-1"></a>meanLE.<span class="fl">77.07</span> <span class="ot">&lt;-</span> p <span class="sc">+</span> <span class="fu">geom_signif</span>(<span class="at">y_position =</span> <span class="dv">60</span>, <span class="at">xmin =</span> <span class="fl">0.75</span>, <span class="at">xmax =</span> <span class="fl">1.25</span>, <span class="co"># position of the stars</span></span>
-<span id="cb17-4"><a href="getting-publication-ready.html#cb17-4" aria-hidden="true" tabindex="-1"></a>              <span class="at">annotations =</span> <span class="st">&quot;**&quot;</span>, <span class="at">tip_length =</span> <span class="fl">0.05</span>)</span>
-<span id="cb17-5"><a href="getting-publication-ready.html#cb17-5" aria-hidden="true" tabindex="-1"></a>meanLE.<span class="fl">77.07</span></span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
+<div class="sourceCode" id="cb371"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb371-1"><a href="getting-publication-ready.html#cb371-1" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages(&quot;ggsignif&quot;)</span></span>
+<span id="cb371-2"><a href="getting-publication-ready.html#cb371-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggsignif)</span>
+<span id="cb371-3"><a href="getting-publication-ready.html#cb371-3" aria-hidden="true" tabindex="-1"></a>meanLE.<span class="fl">77.07</span> <span class="ot">&lt;-</span> p <span class="sc">+</span> <span class="fu">geom_signif</span>(<span class="at">y_position =</span> <span class="dv">60</span>, <span class="at">xmin =</span> <span class="fl">0.75</span>, <span class="at">xmax =</span> <span class="fl">1.25</span>, <span class="co"># position of the stars</span></span>
+<span id="cb371-4"><a href="getting-publication-ready.html#cb371-4" aria-hidden="true" tabindex="-1"></a>              <span class="at">annotations =</span> <span class="st">&quot;**&quot;</span>, <span class="at">tip_length =</span> <span class="fl">0.05</span>)</span>
+<span id="cb371-5"><a href="getting-publication-ready.html#cb371-5" aria-hidden="true" tabindex="-1"></a>meanLE.<span class="fl">77.07</span></span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-177-1.png" width="672" /></p>
 <p>There are more ways to draw the significant stars in R. For example, <code>ggpubr</code> even allows you to run the tests and plot the stars in the same line.</p>
 <p>However, I do not encourage you to do so. Manually adding the stars might be a bit tedious (in terms of adjusting the positions and tip length), but you are not as restricted by the package in terms of the tests you can do.</p>
 </div>
 </div>
 </div>
-<div id="box-plot" class="section level2" number="12.3">
-<h2><span class="header-section-number">12.3</span> Box plot</h2>
+<div id="box-plot" class="section level2" number="13.3">
+<h2><span class="header-section-number">13.3</span> Box plot</h2>
 <p>Box plots are extremely versatile. Here are 2 reasons:</p>
 <ol style="list-style-type: decimal">
 <li>You don’t need to calculate the mean and error for box plots (remember we used <code>df</code> for bar plots).</li>
 <li>Many high-profile journals ask authors to submit graphs that shows not only the statistical description (mean and error), but also the dots for the raw data. Box plots are well suited for this purpose.</li>
 </ol>
-<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="getting-publication-ready.html#cb18-1" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> <span class="fu">subset</span>(gapminder, year <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">1977</span>, <span class="dv">2007</span>)), </span>
-<span id="cb18-2"><a href="getting-publication-ready.html#cb18-2" aria-hidden="true" tabindex="-1"></a>            <span class="fu">aes</span>(<span class="at">x =</span> continent, <span class="at">y =</span> lifeExp, <span class="at">color =</span> <span class="fu">as.factor</span>(year))) <span class="sc">+</span></span>
-<span id="cb18-3"><a href="getting-publication-ready.html#cb18-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">position =</span> <span class="fu">position_dodge</span>(<span class="fl">0.8</span>))</span>
-<span id="cb18-4"><a href="getting-publication-ready.html#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="fu">show</span>(p)</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-14-1.png" width="672" /></p>
+<div class="sourceCode" id="cb372"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb372-1"><a href="getting-publication-ready.html#cb372-1" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> <span class="fu">subset</span>(gapminder, year <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">1977</span>, <span class="dv">2007</span>)), </span>
+<span id="cb372-2"><a href="getting-publication-ready.html#cb372-2" aria-hidden="true" tabindex="-1"></a>            <span class="fu">aes</span>(<span class="at">x =</span> continent, <span class="at">y =</span> lifeExp, <span class="at">color =</span> <span class="fu">as.factor</span>(year))) <span class="sc">+</span></span>
+<span id="cb372-3"><a href="getting-publication-ready.html#cb372-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">position =</span> <span class="fu">position_dodge</span>(<span class="fl">0.8</span>))</span>
+<span id="cb372-4"><a href="getting-publication-ready.html#cb372-4" aria-hidden="true" tabindex="-1"></a><span class="fu">show</span>(p)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-178-1.png" width="672" /></p>
 <p>Let’s add the data points. Here I use <code>geom_jitter</code> to avoid overlapping. Please note that <code>position_jitterdodge</code> introduces random noise to the x position of the points to make it easier to read. But since we are plotting against a categorical variable, the exact x position doesn’t matter.</p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="getting-publication-ready.html#cb19-1" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> p <span class="sc">+</span> <span class="fu">geom_point</span>(<span class="at">position =</span> <span class="fu">position_jitterdodge</span>(<span class="fl">0.4</span>), <span class="at">alpha =</span> <span class="fl">0.65</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb373"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb373-1"><a href="getting-publication-ready.html#cb373-1" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> p <span class="sc">+</span> <span class="fu">geom_point</span>(<span class="at">position =</span> <span class="fu">position_jitterdodge</span>(<span class="fl">0.4</span>), <span class="at">alpha =</span> <span class="fl">0.65</span>)</span></code></pre></div>
 <p>Use <code>stat_summary</code> show data points and statistics together.</p>
-<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="getting-publication-ready.html#cb20-1" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> <span class="fu">subset</span>(gapminder, year <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">1977</span>, <span class="dv">2007</span>)), </span>
-<span id="cb20-2"><a href="getting-publication-ready.html#cb20-2" aria-hidden="true" tabindex="-1"></a>            <span class="fu">aes</span>(<span class="at">x =</span> continent, <span class="at">y =</span> lifeExp, <span class="at">color =</span> <span class="fu">as.factor</span>(year))) <span class="sc">+</span></span>
-<span id="cb20-3"><a href="getting-publication-ready.html#cb20-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">position =</span> <span class="fu">position_jitterdodge</span>(<span class="fl">0.4</span>), <span class="at">alpha =</span> <span class="fl">0.65</span>) <span class="sc">+</span></span>
-<span id="cb20-4"><a href="getting-publication-ready.html#cb20-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>() <span class="sc">+</span></span>
-<span id="cb20-5"><a href="getting-publication-ready.html#cb20-5" aria-hidden="true" tabindex="-1"></a>  <span class="co"># adds error bar</span></span>
-<span id="cb20-6"><a href="getting-publication-ready.html#cb20-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_summary</span>(<span class="at">fun.data=</span>mean_sdl, <span class="at">fun.args =</span> <span class="fu">list</span>(<span class="at">mult=</span><span class="dv">1</span>),</span>
-<span id="cb20-7"><a href="getting-publication-ready.html#cb20-7" aria-hidden="true" tabindex="-1"></a>        <span class="at">geom=</span><span class="st">&quot;errorbar&quot;</span>, <span class="at">width=</span><span class="fl">0.3</span>, <span class="at">position =</span> <span class="fu">position_dodge</span>(<span class="fl">0.7</span>), <span class="at">size =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
-<span id="cb20-8"><a href="getting-publication-ready.html#cb20-8" aria-hidden="true" tabindex="-1"></a>  <span class="co"># adds mean pooint to the error bar</span></span>
-<span id="cb20-9"><a href="getting-publication-ready.html#cb20-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_summary</span>(<span class="at">fun=</span>mean, <span class="at">geom=</span><span class="st">&quot;point&quot;</span>, <span class="at">position =</span> <span class="fu">position_dodge</span>(<span class="fl">0.7</span>), <span class="at">size =</span> <span class="dv">3</span>)</span>
-<span id="cb20-10"><a href="getting-publication-ready.html#cb20-10" aria-hidden="true" tabindex="-1"></a><span class="fu">show</span>(p)</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-16-1.png" width="672" /></p>
+<div class="sourceCode" id="cb374"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb374-1"><a href="getting-publication-ready.html#cb374-1" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> <span class="fu">subset</span>(gapminder, year <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">1977</span>, <span class="dv">2007</span>)), </span>
+<span id="cb374-2"><a href="getting-publication-ready.html#cb374-2" aria-hidden="true" tabindex="-1"></a>            <span class="fu">aes</span>(<span class="at">x =</span> continent, <span class="at">y =</span> lifeExp, <span class="at">color =</span> <span class="fu">as.factor</span>(year))) <span class="sc">+</span></span>
+<span id="cb374-3"><a href="getting-publication-ready.html#cb374-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">position =</span> <span class="fu">position_jitterdodge</span>(<span class="fl">0.4</span>), <span class="at">alpha =</span> <span class="fl">0.65</span>) <span class="sc">+</span></span>
+<span id="cb374-4"><a href="getting-publication-ready.html#cb374-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>() <span class="sc">+</span></span>
+<span id="cb374-5"><a href="getting-publication-ready.html#cb374-5" aria-hidden="true" tabindex="-1"></a>  <span class="co"># adds error bar</span></span>
+<span id="cb374-6"><a href="getting-publication-ready.html#cb374-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_summary</span>(<span class="at">fun.data=</span>mean_sdl, <span class="at">fun.args =</span> <span class="fu">list</span>(<span class="at">mult=</span><span class="dv">1</span>),</span>
+<span id="cb374-7"><a href="getting-publication-ready.html#cb374-7" aria-hidden="true" tabindex="-1"></a>        <span class="at">geom=</span><span class="st">&quot;errorbar&quot;</span>, <span class="at">width=</span><span class="fl">0.3</span>, <span class="at">position =</span> <span class="fu">position_dodge</span>(<span class="fl">0.7</span>), <span class="at">size =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb374-8"><a href="getting-publication-ready.html#cb374-8" aria-hidden="true" tabindex="-1"></a>  <span class="co"># adds mean pooint to the error bar</span></span>
+<span id="cb374-9"><a href="getting-publication-ready.html#cb374-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_summary</span>(<span class="at">fun=</span>mean, <span class="at">geom=</span><span class="st">&quot;point&quot;</span>, <span class="at">position =</span> <span class="fu">position_dodge</span>(<span class="fl">0.7</span>), <span class="at">size =</span> <span class="dv">3</span>)</span>
+<span id="cb374-10"><a href="getting-publication-ready.html#cb374-10" aria-hidden="true" tabindex="-1"></a><span class="fu">show</span>(p)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-180-1.png" width="672" /></p>
 <p>Add asterisks and format the plot.</p>
-<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="getting-publication-ready.html#cb21-1" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> p <span class="sc">+</span></span>
-<span id="cb21-2"><a href="getting-publication-ready.html#cb21-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_signif</span>(<span class="at">y_position =</span> <span class="dv">85</span>, <span class="at">xmin =</span> <span class="fl">0.75</span>, <span class="at">xmax =</span> <span class="fl">1.25</span>, <span class="at">annotations =</span> <span class="st">&quot;**&quot;</span>, <span class="at">tip_length =</span> <span class="fl">0.02</span>, <span class="at">color =</span> <span class="st">&quot;black&quot;</span>) <span class="sc">+</span></span>
-<span id="cb21-3"><a href="getting-publication-ready.html#cb21-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Continents&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Life Expectancy (years)&quot;</span>, <span class="at">color =</span> <span class="st">&quot;Year&quot;</span>) <span class="sc">+</span></span>
-<span id="cb21-4"><a href="getting-publication-ready.html#cb21-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">16</span>))  <span class="co"># make text larger</span></span>
-<span id="cb21-5"><a href="getting-publication-ready.html#cb21-5" aria-hidden="true" tabindex="-1"></a><span class="fu">show</span>(p)</span></code></pre></div>
+<div class="sourceCode" id="cb375"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb375-1"><a href="getting-publication-ready.html#cb375-1" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> p <span class="sc">+</span></span>
+<span id="cb375-2"><a href="getting-publication-ready.html#cb375-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_signif</span>(<span class="at">y_position =</span> <span class="dv">85</span>, <span class="at">xmin =</span> <span class="fl">0.75</span>, <span class="at">xmax =</span> <span class="fl">1.25</span>, <span class="at">annotations =</span> <span class="st">&quot;**&quot;</span>, <span class="at">tip_length =</span> <span class="fl">0.02</span>, <span class="at">color =</span> <span class="st">&quot;black&quot;</span>) <span class="sc">+</span></span>
+<span id="cb375-3"><a href="getting-publication-ready.html#cb375-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Continents&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Life Expectancy (years)&quot;</span>, <span class="at">color =</span> <span class="st">&quot;Year&quot;</span>) <span class="sc">+</span></span>
+<span id="cb375-4"><a href="getting-publication-ready.html#cb375-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">16</span>))  <span class="co"># make text larger</span></span>
+<span id="cb375-5"><a href="getting-publication-ready.html#cb375-5" aria-hidden="true" tabindex="-1"></a><span class="fu">show</span>(p)</span></code></pre></div>
 <pre><code>## Warning: Computation failed in `stat_summary()`:
 ## Hmisc package required for this function</code></pre>
-<p><img src="_main_files/figure-html/unnamed-chunk-17-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-181-1.png" width="672" /></p>
 <p>We can again offset the axes.</p>
-<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="getting-publication-ready.html#cb23-1" aria-hidden="true" tabindex="-1"></a>offset_box <span class="ot">&lt;-</span> p <span class="sc">+</span></span>
-<span id="cb23-2"><a href="getting-publication-ready.html#cb23-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.line =</span> <span class="fu">element_blank</span>(),  <span class="co"># hide the default axes</span></span>
-<span id="cb23-3"><a href="getting-publication-ready.html#cb23-3" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.ticks.length =</span> <span class="fu">unit</span>(<span class="dv">7</span>, <span class="st">&#39;pt&#39;</span>)) <span class="sc">+</span></span>
-<span id="cb23-4"><a href="getting-publication-ready.html#cb23-4" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Specify the breaks of y-axis</span></span>
-<span id="cb23-5"><a href="getting-publication-ready.html#cb23-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">breaks=</span><span class="fu">seq</span>(<span class="dv">30</span>,<span class="dv">90</span>,<span class="dv">30</span>), <span class="at">limits=</span><span class="fu">c</span>(<span class="dv">25</span>,<span class="dv">95</span>), <span class="at">expand=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">0</span>)) <span class="sc">+</span></span>
-<span id="cb23-6"><a href="getting-publication-ready.html#cb23-6" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Specify location of x-axis</span></span>
-<span id="cb23-7"><a href="getting-publication-ready.html#cb23-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_segment</span>(<span class="at">y=</span><span class="dv">30</span>, <span class="at">yend=</span><span class="dv">90</span>, <span class="at">x=</span><span class="fl">0.4</span>, <span class="at">xend=</span><span class="fl">0.4</span>, <span class="at">lwd=</span><span class="fl">0.5</span>, <span class="at">colour=</span><span class="st">&quot;black&quot;</span>, <span class="at">lineend=</span><span class="st">&quot;square&quot;</span>) <span class="sc">+</span></span>
-<span id="cb23-8"><a href="getting-publication-ready.html#cb23-8" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Specify location of y-axis</span></span>
-<span id="cb23-9"><a href="getting-publication-ready.html#cb23-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_segment</span>(<span class="at">y=</span><span class="dv">25</span>, <span class="at">yend=</span><span class="dv">25</span>, <span class="at">x=</span><span class="dv">1</span>, <span class="at">xend=</span><span class="dv">5</span>, <span class="at">lwd=</span><span class="fl">0.5</span>, <span class="at">colour=</span><span class="st">&quot;black&quot;</span>, <span class="at">lineend=</span><span class="st">&quot;square&quot;</span>)</span>
-<span id="cb23-10"><a href="getting-publication-ready.html#cb23-10" aria-hidden="true" tabindex="-1"></a><span class="fu">show</span>(offset_box)</span></code></pre></div>
+<div class="sourceCode" id="cb377"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb377-1"><a href="getting-publication-ready.html#cb377-1" aria-hidden="true" tabindex="-1"></a>offset_box <span class="ot">&lt;-</span> p <span class="sc">+</span></span>
+<span id="cb377-2"><a href="getting-publication-ready.html#cb377-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.line =</span> <span class="fu">element_blank</span>(),  <span class="co"># hide the default axes</span></span>
+<span id="cb377-3"><a href="getting-publication-ready.html#cb377-3" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.ticks.length =</span> <span class="fu">unit</span>(<span class="dv">7</span>, <span class="st">&#39;pt&#39;</span>)) <span class="sc">+</span></span>
+<span id="cb377-4"><a href="getting-publication-ready.html#cb377-4" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Specify the breaks of y-axis</span></span>
+<span id="cb377-5"><a href="getting-publication-ready.html#cb377-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">breaks=</span><span class="fu">seq</span>(<span class="dv">30</span>,<span class="dv">90</span>,<span class="dv">30</span>), <span class="at">limits=</span><span class="fu">c</span>(<span class="dv">25</span>,<span class="dv">95</span>), <span class="at">expand=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">0</span>)) <span class="sc">+</span></span>
+<span id="cb377-6"><a href="getting-publication-ready.html#cb377-6" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Specify location of x-axis</span></span>
+<span id="cb377-7"><a href="getting-publication-ready.html#cb377-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_segment</span>(<span class="at">y=</span><span class="dv">30</span>, <span class="at">yend=</span><span class="dv">90</span>, <span class="at">x=</span><span class="fl">0.4</span>, <span class="at">xend=</span><span class="fl">0.4</span>, <span class="at">lwd=</span><span class="fl">0.5</span>, <span class="at">colour=</span><span class="st">&quot;black&quot;</span>, <span class="at">lineend=</span><span class="st">&quot;square&quot;</span>) <span class="sc">+</span></span>
+<span id="cb377-8"><a href="getting-publication-ready.html#cb377-8" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Specify location of y-axis</span></span>
+<span id="cb377-9"><a href="getting-publication-ready.html#cb377-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_segment</span>(<span class="at">y=</span><span class="dv">25</span>, <span class="at">yend=</span><span class="dv">25</span>, <span class="at">x=</span><span class="dv">1</span>, <span class="at">xend=</span><span class="dv">5</span>, <span class="at">lwd=</span><span class="fl">0.5</span>, <span class="at">colour=</span><span class="st">&quot;black&quot;</span>, <span class="at">lineend=</span><span class="st">&quot;square&quot;</span>)</span>
+<span id="cb377-10"><a href="getting-publication-ready.html#cb377-10" aria-hidden="true" tabindex="-1"></a><span class="fu">show</span>(offset_box)</span></code></pre></div>
 <pre><code>## Warning: Computation failed in `stat_summary()`:
 ## Hmisc package required for this function</code></pre>
-<p><img src="_main_files/figure-html/unnamed-chunk-18-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-182-1.png" width="672" /></p>
 <p>Now we can save this publication-ready figure.</p>
-<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="getting-publication-ready.html#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">&#39;data/10_pubvis/life_year_jitter.png&#39;</span>, <span class="at">plot =</span> offset_box)</span></code></pre></div>
+<div class="sourceCode" id="cb379"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb379-1"><a href="getting-publication-ready.html#cb379-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">&#39;data/10_pubvis/life_year_jitter.png&#39;</span>, <span class="at">plot =</span> offset_box)</span></code></pre></div>
 <pre><code>## Saving 7 x 5 in image</code></pre>
 <pre><code>## Warning: Computation failed in `stat_summary()`:
 ## Hmisc package required for this function</code></pre>
 </div>
-<div id="histogram-and-density-plot" class="section level2" number="12.4">
-<h2><span class="header-section-number">12.4</span> Histogram and density plot</h2>
+<div id="histogram-and-density-plot" class="section level2" number="13.4">
+<h2><span class="header-section-number">13.4</span> Histogram and density plot</h2>
 <p>Since these have been covered extensively in previous labs, I’m going to go through this section rather quickly. The histogram and density plot are great tools for looking at distributions of a single variable:</p>
-<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="getting-publication-ready.html#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> <span class="fu">subset</span>(gapminder, year <span class="sc">==</span> <span class="dv">2007</span>), <span class="fu">aes</span>(<span class="at">x =</span> lifeExp)) <span class="sc">+</span></span>
-<span id="cb28-2"><a href="getting-publication-ready.html#cb28-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">fill =</span> <span class="st">&#39;#69B3A2&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb382"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb382-1"><a href="getting-publication-ready.html#cb382-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> <span class="fu">subset</span>(gapminder, year <span class="sc">==</span> <span class="dv">2007</span>), <span class="fu">aes</span>(<span class="at">x =</span> lifeExp)) <span class="sc">+</span></span>
+<span id="cb382-2"><a href="getting-publication-ready.html#cb382-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">fill =</span> <span class="st">&#39;#69B3A2&#39;</span>)</span></code></pre></div>
 <pre><code>## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
-<p><img src="_main_files/figure-html/unnamed-chunk-20-1.png" width="672" /></p>
-<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="getting-publication-ready.html#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> <span class="fu">subset</span>(gapminder, year <span class="sc">==</span> <span class="dv">2007</span>), <span class="fu">aes</span>(<span class="at">x =</span> lifeExp)) <span class="sc">+</span></span>
-<span id="cb30-2"><a href="getting-publication-ready.html#cb30-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>(<span class="at">fill =</span> <span class="st">&#39;#69B3A2&#39;</span>)</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-20-2.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-184-1.png" width="672" /></p>
+<div class="sourceCode" id="cb384"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb384-1"><a href="getting-publication-ready.html#cb384-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> <span class="fu">subset</span>(gapminder, year <span class="sc">==</span> <span class="dv">2007</span>), <span class="fu">aes</span>(<span class="at">x =</span> lifeExp)) <span class="sc">+</span></span>
+<span id="cb384-2"><a href="getting-publication-ready.html#cb384-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>(<span class="at">fill =</span> <span class="st">&#39;#69B3A2&#39;</span>)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-184-2.png" width="672" /></p>
 <p>We can also use these plots to compare distributions.</p>
-<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="getting-publication-ready.html#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb31-2"><a href="getting-publication-ready.html#cb31-2" aria-hidden="true" tabindex="-1"></a>  <span class="co"># 2007 data and label</span></span>
-<span id="cb31-3"><a href="getting-publication-ready.html#cb31-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>(<span class="at">data =</span> <span class="fu">subset</span>(gapminder, year <span class="sc">==</span> <span class="dv">2007</span>),</span>
-<span id="cb31-4"><a href="getting-publication-ready.html#cb31-4" aria-hidden="true" tabindex="-1"></a>               <span class="fu">aes</span>(<span class="at">x =</span> lifeExp, <span class="at">y =</span> ..density..), <span class="at">fill =</span> <span class="st">&#39;#69B3A2&#39;</span>) <span class="sc">+</span></span>
-<span id="cb31-5"><a href="getting-publication-ready.html#cb31-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_label</span>(<span class="fu">aes</span>(<span class="at">x=</span><span class="dv">40</span>, <span class="at">y=</span><span class="fl">0.03</span>, <span class="at">label=</span><span class="st">&#39;2007&#39;</span>), <span class="at">colour =</span> <span class="st">&#39;#69B3A2&#39;</span>) <span class="sc">+</span></span>
-<span id="cb31-6"><a href="getting-publication-ready.html#cb31-6" aria-hidden="true" tabindex="-1"></a>  <span class="co"># 1977 data and label</span></span>
-<span id="cb31-7"><a href="getting-publication-ready.html#cb31-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>(<span class="at">data =</span> <span class="fu">subset</span>(gapminder, year <span class="sc">==</span> <span class="dv">1977</span>),</span>
-<span id="cb31-8"><a href="getting-publication-ready.html#cb31-8" aria-hidden="true" tabindex="-1"></a>               <span class="fu">aes</span>(<span class="at">x =</span> lifeExp, <span class="at">y =</span> <span class="sc">-</span>..density..), <span class="at">fill =</span> <span class="st">&#39;#404080&#39;</span>) <span class="sc">+</span></span>
-<span id="cb31-9"><a href="getting-publication-ready.html#cb31-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_label</span>(<span class="fu">aes</span>(<span class="at">x=</span><span class="dv">40</span>, <span class="at">y=</span><span class="sc">-</span><span class="fl">0.03</span>, <span class="at">label=</span><span class="st">&#39;1977&#39;</span>), <span class="at">colour =</span> <span class="st">&#39;#404080&#39;</span>) <span class="sc">+</span></span>
-<span id="cb31-10"><a href="getting-publication-ready.html#cb31-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-21-1.png" width="672" /></p>
+<div class="sourceCode" id="cb385"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb385-1"><a href="getting-publication-ready.html#cb385-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb385-2"><a href="getting-publication-ready.html#cb385-2" aria-hidden="true" tabindex="-1"></a>  <span class="co"># 2007 data and label</span></span>
+<span id="cb385-3"><a href="getting-publication-ready.html#cb385-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>(<span class="at">data =</span> <span class="fu">subset</span>(gapminder, year <span class="sc">==</span> <span class="dv">2007</span>),</span>
+<span id="cb385-4"><a href="getting-publication-ready.html#cb385-4" aria-hidden="true" tabindex="-1"></a>               <span class="fu">aes</span>(<span class="at">x =</span> lifeExp, <span class="at">y =</span> ..density..), <span class="at">fill =</span> <span class="st">&#39;#69B3A2&#39;</span>) <span class="sc">+</span></span>
+<span id="cb385-5"><a href="getting-publication-ready.html#cb385-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_label</span>(<span class="fu">aes</span>(<span class="at">x=</span><span class="dv">40</span>, <span class="at">y=</span><span class="fl">0.03</span>, <span class="at">label=</span><span class="st">&#39;2007&#39;</span>), <span class="at">colour =</span> <span class="st">&#39;#69B3A2&#39;</span>) <span class="sc">+</span></span>
+<span id="cb385-6"><a href="getting-publication-ready.html#cb385-6" aria-hidden="true" tabindex="-1"></a>  <span class="co"># 1977 data and label</span></span>
+<span id="cb385-7"><a href="getting-publication-ready.html#cb385-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>(<span class="at">data =</span> <span class="fu">subset</span>(gapminder, year <span class="sc">==</span> <span class="dv">1977</span>),</span>
+<span id="cb385-8"><a href="getting-publication-ready.html#cb385-8" aria-hidden="true" tabindex="-1"></a>               <span class="fu">aes</span>(<span class="at">x =</span> lifeExp, <span class="at">y =</span> <span class="sc">-</span>..density..), <span class="at">fill =</span> <span class="st">&#39;#404080&#39;</span>) <span class="sc">+</span></span>
+<span id="cb385-9"><a href="getting-publication-ready.html#cb385-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_label</span>(<span class="fu">aes</span>(<span class="at">x=</span><span class="dv">40</span>, <span class="at">y=</span><span class="sc">-</span><span class="fl">0.03</span>, <span class="at">label=</span><span class="st">&#39;1977&#39;</span>), <span class="at">colour =</span> <span class="st">&#39;#404080&#39;</span>) <span class="sc">+</span></span>
+<span id="cb385-10"><a href="getting-publication-ready.html#cb385-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-185-1.png" width="672" /></p>
 <p>Perhaps a histogram would be better for our purposes.</p>
-<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="getting-publication-ready.html#cb32-1" aria-hidden="true" tabindex="-1"></a>hist.<span class="fl">07.77</span> <span class="ot">&lt;-</span> <span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb32-2"><a href="getting-publication-ready.html#cb32-2" aria-hidden="true" tabindex="-1"></a>  <span class="co"># 2007 data and label</span></span>
-<span id="cb32-3"><a href="getting-publication-ready.html#cb32-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">data =</span> <span class="fu">subset</span>(gapminder, year <span class="sc">==</span> <span class="dv">2007</span>),</span>
-<span id="cb32-4"><a href="getting-publication-ready.html#cb32-4" aria-hidden="true" tabindex="-1"></a>                 <span class="fu">aes</span>(<span class="at">x =</span> lifeExp, <span class="at">y =</span> ..density..), <span class="at">fill =</span> <span class="st">&#39;#69B3A2&#39;</span>) <span class="sc">+</span></span>
-<span id="cb32-5"><a href="getting-publication-ready.html#cb32-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_label</span>(<span class="fu">aes</span>(<span class="at">x=</span><span class="dv">40</span>, <span class="at">y=</span><span class="fl">0.03</span>, <span class="at">label=</span><span class="st">&#39;2007&#39;</span>), <span class="at">colour =</span> <span class="st">&#39;#69B3A2&#39;</span>) <span class="sc">+</span></span>
-<span id="cb32-6"><a href="getting-publication-ready.html#cb32-6" aria-hidden="true" tabindex="-1"></a>  <span class="co"># 1977 data and label</span></span>
-<span id="cb32-7"><a href="getting-publication-ready.html#cb32-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">data =</span> <span class="fu">subset</span>(gapminder, year <span class="sc">==</span> <span class="dv">1977</span>),</span>
-<span id="cb32-8"><a href="getting-publication-ready.html#cb32-8" aria-hidden="true" tabindex="-1"></a>                 <span class="fu">aes</span>(<span class="at">x =</span> lifeExp, <span class="at">y =</span> <span class="sc">-</span>..density..), <span class="at">fill =</span> <span class="st">&#39;#404080&#39;</span>) <span class="sc">+</span></span>
-<span id="cb32-9"><a href="getting-publication-ready.html#cb32-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_label</span>(<span class="fu">aes</span>(<span class="at">x=</span><span class="dv">40</span>, <span class="at">y=</span><span class="sc">-</span><span class="fl">0.03</span>, <span class="at">label=</span><span class="st">&#39;1977&#39;</span>), <span class="at">colour =</span> <span class="st">&#39;#404080&#39;</span>) <span class="sc">+</span></span>
-<span id="cb32-10"><a href="getting-publication-ready.html#cb32-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span>
-<span id="cb32-11"><a href="getting-publication-ready.html#cb32-11" aria-hidden="true" tabindex="-1"></a>hist.<span class="fl">07.77</span></span></code></pre></div>
+<div class="sourceCode" id="cb386"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb386-1"><a href="getting-publication-ready.html#cb386-1" aria-hidden="true" tabindex="-1"></a>hist.<span class="fl">07.77</span> <span class="ot">&lt;-</span> <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb386-2"><a href="getting-publication-ready.html#cb386-2" aria-hidden="true" tabindex="-1"></a>  <span class="co"># 2007 data and label</span></span>
+<span id="cb386-3"><a href="getting-publication-ready.html#cb386-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">data =</span> <span class="fu">subset</span>(gapminder, year <span class="sc">==</span> <span class="dv">2007</span>),</span>
+<span id="cb386-4"><a href="getting-publication-ready.html#cb386-4" aria-hidden="true" tabindex="-1"></a>                 <span class="fu">aes</span>(<span class="at">x =</span> lifeExp, <span class="at">y =</span> ..density..), <span class="at">fill =</span> <span class="st">&#39;#69B3A2&#39;</span>) <span class="sc">+</span></span>
+<span id="cb386-5"><a href="getting-publication-ready.html#cb386-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_label</span>(<span class="fu">aes</span>(<span class="at">x=</span><span class="dv">40</span>, <span class="at">y=</span><span class="fl">0.03</span>, <span class="at">label=</span><span class="st">&#39;2007&#39;</span>), <span class="at">colour =</span> <span class="st">&#39;#69B3A2&#39;</span>) <span class="sc">+</span></span>
+<span id="cb386-6"><a href="getting-publication-ready.html#cb386-6" aria-hidden="true" tabindex="-1"></a>  <span class="co"># 1977 data and label</span></span>
+<span id="cb386-7"><a href="getting-publication-ready.html#cb386-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">data =</span> <span class="fu">subset</span>(gapminder, year <span class="sc">==</span> <span class="dv">1977</span>),</span>
+<span id="cb386-8"><a href="getting-publication-ready.html#cb386-8" aria-hidden="true" tabindex="-1"></a>                 <span class="fu">aes</span>(<span class="at">x =</span> lifeExp, <span class="at">y =</span> <span class="sc">-</span>..density..), <span class="at">fill =</span> <span class="st">&#39;#404080&#39;</span>) <span class="sc">+</span></span>
+<span id="cb386-9"><a href="getting-publication-ready.html#cb386-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_label</span>(<span class="fu">aes</span>(<span class="at">x=</span><span class="dv">40</span>, <span class="at">y=</span><span class="sc">-</span><span class="fl">0.03</span>, <span class="at">label=</span><span class="st">&#39;1977&#39;</span>), <span class="at">colour =</span> <span class="st">&#39;#404080&#39;</span>) <span class="sc">+</span></span>
+<span id="cb386-10"><a href="getting-publication-ready.html#cb386-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span>
+<span id="cb386-11"><a href="getting-publication-ready.html#cb386-11" aria-hidden="true" tabindex="-1"></a>hist.<span class="fl">07.77</span></span></code></pre></div>
 <pre><code>## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
 ## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
-<p><img src="_main_files/figure-html/unnamed-chunk-22-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-186-1.png" width="672" /></p>
 <button class="collapsible">
 Assembly of multiple figures (OPTIONAL)
 </button>
@@ -555,33 +565,33 @@ Assembly of multiple figures (OPTIONAL)
 <p>To assemble many graphs into one figure, usually we use a graphical design software such as Illustrator, Inkscape or even PowerPoint.</p>
 <p>If you are able to generate all subfigures within one single R script (so that all the <code>ggplot2</code> objects are present together), you could go on to use R package <code>patchwork</code> to assemble them into a big figure.</p>
 <p>(Please note that this could be a very rare scenario when conducting serious research - Each subfigures may require intense computation and modelling work that are performed with several scripts. They may even come from different people - your teammates and collaborators. You don’t always have access to all te subfigures within one workspace. Most of the time you would still find yourself using graphical design softwares to assemble the figures.)</p>
-<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="getting-publication-ready.html#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages(&#39;patchwork&#39;)</span></span>
-<span id="cb34-2"><a href="getting-publication-ready.html#cb34-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(patchwork)</span></code></pre></div>
+<div class="sourceCode" id="cb388"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb388-1"><a href="getting-publication-ready.html#cb388-1" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages(&#39;patchwork&#39;)</span></span>
+<span id="cb388-2"><a href="getting-publication-ready.html#cb388-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(patchwork)</span></code></pre></div>
 <p>Here is a super simple example: just add the plots together! Recall that these variables were saved throughout our lab.</p>
-<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="getting-publication-ready.html#cb35-1" aria-hidden="true" tabindex="-1"></a>hist.<span class="fl">07.77</span> <span class="sc">+</span> lineplot</span></code></pre></div>
+<div class="sourceCode" id="cb389"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb389-1"><a href="getting-publication-ready.html#cb389-1" aria-hidden="true" tabindex="-1"></a>hist.<span class="fl">07.77</span> <span class="sc">+</span> lineplot</span></code></pre></div>
 <pre><code>## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
 ## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
-<p><img src="_main_files/figure-html/unnamed-chunk-24-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-188-1.png" width="672" /></p>
 <p>We can also do something a bit more complicated:</p>
-<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="getting-publication-ready.html#cb37-1" aria-hidden="true" tabindex="-1"></a>(hist.<span class="fl">07.77</span> <span class="sc">+</span> lineplot) <span class="sc">/</span> offset_box</span></code></pre></div>
+<div class="sourceCode" id="cb391"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb391-1"><a href="getting-publication-ready.html#cb391-1" aria-hidden="true" tabindex="-1"></a>(hist.<span class="fl">07.77</span> <span class="sc">+</span> lineplot) <span class="sc">/</span> offset_box</span></code></pre></div>
 <pre><code>## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
 ## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
 <pre><code>## Warning: Computation failed in `stat_summary()`:
 ## Hmisc package required for this function</code></pre>
-<p><img src="_main_files/figure-html/unnamed-chunk-25-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-189-1.png" width="672" /></p>
 <p>We can also add spacing between plots:</p>
-<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="getting-publication-ready.html#cb40-1" aria-hidden="true" tabindex="-1"></a>patch <span class="ot">&lt;-</span> (hist.<span class="fl">07.77</span> <span class="sc">+</span> <span class="fu">plot_spacer</span>() <span class="sc">+</span> lineplot) <span class="sc">/</span></span>
-<span id="cb40-2"><a href="getting-publication-ready.html#cb40-2" aria-hidden="true" tabindex="-1"></a>  (meanLE.<span class="fl">77.07</span> <span class="sc">+</span> <span class="fu">theme</span>(<span class="at">text=</span><span class="fu">element_text</span>(<span class="at">size=</span><span class="dv">12</span>)))</span>
-<span id="cb40-3"><a href="getting-publication-ready.html#cb40-3" aria-hidden="true" tabindex="-1"></a>patch</span></code></pre></div>
+<div class="sourceCode" id="cb394"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb394-1"><a href="getting-publication-ready.html#cb394-1" aria-hidden="true" tabindex="-1"></a>patch <span class="ot">&lt;-</span> (hist.<span class="fl">07.77</span> <span class="sc">+</span> <span class="fu">plot_spacer</span>() <span class="sc">+</span> lineplot) <span class="sc">/</span></span>
+<span id="cb394-2"><a href="getting-publication-ready.html#cb394-2" aria-hidden="true" tabindex="-1"></a>  (meanLE.<span class="fl">77.07</span> <span class="sc">+</span> <span class="fu">theme</span>(<span class="at">text=</span><span class="fu">element_text</span>(<span class="at">size=</span><span class="dv">12</span>)))</span>
+<span id="cb394-3"><a href="getting-publication-ready.html#cb394-3" aria-hidden="true" tabindex="-1"></a>patch</span></code></pre></div>
 <pre><code>## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
 ## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
-<p><img src="_main_files/figure-html/unnamed-chunk-26-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-190-1.png" width="672" /></p>
 <p>Most figures in papers are annotated. In most cases, plots are combined using a photoshop tool. Labels are usually also added with a photoshop tool. For whatever reason you wish to programmatically add labels, here’s howyou do it:</p>
-<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="getting-publication-ready.html#cb42-1" aria-hidden="true" tabindex="-1"></a>(hist.<span class="fl">07.77</span> <span class="sc">+</span> lineplot) <span class="sc">/</span> (meanLE.<span class="fl">77.07</span> <span class="sc">+</span> <span class="fu">theme</span>(<span class="at">text=</span><span class="fu">element_text</span>(<span class="at">size=</span><span class="dv">12</span>))) <span class="sc">+</span></span>
-<span id="cb42-2"><a href="getting-publication-ready.html#cb42-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot_annotation</span>(<span class="at">tag_levels =</span> <span class="st">&#39;A&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb396"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb396-1"><a href="getting-publication-ready.html#cb396-1" aria-hidden="true" tabindex="-1"></a>(hist.<span class="fl">07.77</span> <span class="sc">+</span> lineplot) <span class="sc">/</span> (meanLE.<span class="fl">77.07</span> <span class="sc">+</span> <span class="fu">theme</span>(<span class="at">text=</span><span class="fu">element_text</span>(<span class="at">size=</span><span class="dv">12</span>))) <span class="sc">+</span></span>
+<span id="cb396-2"><a href="getting-publication-ready.html#cb396-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot_annotation</span>(<span class="at">tag_levels =</span> <span class="st">&#39;A&#39;</span>)</span></code></pre></div>
 <pre><code>## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
 ## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
-<p><img src="_main_files/figure-html/unnamed-chunk-27-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-191-1.png" width="672" /></p>
 <p>Note that <code>tag_levels</code> takes:</p>
 <ol style="list-style-type: decimal">
 <li>‘1’ for Arabic numerals,</li>
@@ -591,10 +601,10 @@ Assembly of multiple figures (OPTIONAL)
 <li>‘i’ for lowercase Roman numerals.</li>
 </ol>
 <p>More often than not, we want all of our figures to have the same dimensions. <code>patchwork</code> makes it easy for us to do so:</p>
-<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="getting-publication-ready.html#cb44-1" aria-hidden="true" tabindex="-1"></a>aligned_plots <span class="ot">&lt;-</span> <span class="fu">align_patches</span>(lineplot, scatter_trend, meanLE.<span class="fl">77.07</span>, offset_box)</span>
-<span id="cb44-2"><a href="getting-publication-ready.html#cb44-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (p <span class="cf">in</span> aligned_plots) {</span>
-<span id="cb44-3"><a href="getting-publication-ready.html#cb44-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot</span>(p)</span>
-<span id="cb44-4"><a href="getting-publication-ready.html#cb44-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb398"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb398-1"><a href="getting-publication-ready.html#cb398-1" aria-hidden="true" tabindex="-1"></a>aligned_plots <span class="ot">&lt;-</span> <span class="fu">align_patches</span>(lineplot, scatter_trend, meanLE.<span class="fl">77.07</span>, offset_box)</span>
+<span id="cb398-2"><a href="getting-publication-ready.html#cb398-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (p <span class="cf">in</span> aligned_plots) {</span>
+<span id="cb398-3"><a href="getting-publication-ready.html#cb398-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot</span>(p)</span>
+<span id="cb398-4"><a href="getting-publication-ready.html#cb398-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 <p>That’s all there is to it! If you want more customization options, read the official documentation: <a href="https://patchwork.data-imaginist.com/articles/patchwork.html" class="uri">https://patchwork.data-imaginist.com/articles/patchwork.html</a>.</p>
 </div>
 <p><br></p>
@@ -602,20 +612,20 @@ Assembly of multiple figures (OPTIONAL)
 Extras (OPTIONAL)
 </button>
 <div class="collapse_content">
-<div id="choropleth" class="section level3" number="12.4.1">
-<h3><span class="header-section-number">12.4.1</span> Choropleth</h3>
+<div id="choropleth" class="section level3" number="13.4.1">
+<h3><span class="header-section-number">13.4.1</span> Choropleth</h3>
 <blockquote>
 <p>“The greatest value of a picture is when it forces us to notice what we never expected to see.” –John Tukey</p>
 </blockquote>
 <p><a href="https://datavizcatalogue.com/methods/choropleth.html">The choropleth</a> is used to display differences in geographical regions using different colours/shades/patterns. To use map data, we need to install <code>maps</code> package.</p>
-<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="getting-publication-ready.html#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;maps&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb399"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb399-1"><a href="getting-publication-ready.html#cb399-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;maps&quot;</span>)</span></code></pre></div>
 <p>First, let’s load <code>maps</code> and retrieve all of the data from the year 2007.</p>
-<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="getting-publication-ready.html#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(maps)</span>
-<span id="cb46-2"><a href="getting-publication-ready.html#cb46-2" aria-hidden="true" tabindex="-1"></a>dat2007 <span class="ot">&lt;-</span> gapminder <span class="sc">%&gt;%</span> <span class="fu">filter</span>(year <span class="sc">==</span> <span class="dv">2007</span>)</span>
-<span id="cb46-3"><a href="getting-publication-ready.html#cb46-3" aria-hidden="true" tabindex="-1"></a>dat2007 <span class="ot">&lt;-</span> dat2007 <span class="sc">%&gt;%</span> <span class="fu">rename</span>(<span class="st">&#39;region&#39;</span> <span class="ot">=</span> <span class="st">&#39;country&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb400"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb400-1"><a href="getting-publication-ready.html#cb400-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(maps)</span>
+<span id="cb400-2"><a href="getting-publication-ready.html#cb400-2" aria-hidden="true" tabindex="-1"></a>dat2007 <span class="ot">&lt;-</span> gapminder <span class="sc">%&gt;%</span> <span class="fu">filter</span>(year <span class="sc">==</span> <span class="dv">2007</span>)</span>
+<span id="cb400-3"><a href="getting-publication-ready.html#cb400-3" aria-hidden="true" tabindex="-1"></a>dat2007 <span class="ot">&lt;-</span> dat2007 <span class="sc">%&gt;%</span> <span class="fu">rename</span>(<span class="st">&#39;region&#39;</span> <span class="ot">=</span> <span class="st">&#39;country&#39;</span>)</span></code></pre></div>
 <p>Now let’s get the world map data. This is necessary because it contains the longitude and latitudes we need to draw the map</p>
-<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="getting-publication-ready.html#cb47-1" aria-hidden="true" tabindex="-1"></a>world_map <span class="ot">&lt;-</span> <span class="fu">map_data</span>(<span class="st">&quot;world&quot;</span>)</span>
-<span id="cb47-2"><a href="getting-publication-ready.html#cb47-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(world_map)</span></code></pre></div>
+<div class="sourceCode" id="cb401"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb401-1"><a href="getting-publication-ready.html#cb401-1" aria-hidden="true" tabindex="-1"></a>world_map <span class="ot">&lt;-</span> <span class="fu">map_data</span>(<span class="st">&quot;world&quot;</span>)</span>
+<span id="cb401-2"><a href="getting-publication-ready.html#cb401-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(world_map)</span></code></pre></div>
 <pre><code>##        long      lat group order region subregion
 ## 1 -69.89912 12.45200     1     1  Aruba      &lt;NA&gt;
 ## 2 -69.89571 12.42300     1     2  Aruba      &lt;NA&gt;
@@ -624,12 +634,12 @@ Extras (OPTIONAL)
 ## 5 -70.06612 12.54697     1     5  Aruba      &lt;NA&gt;
 ## 6 -70.05088 12.59707     1     6  Aruba      &lt;NA&gt;</code></pre>
 <p>Whereas <code>gapminder</code> names USA and UK ‘United States’ and ‘United Kingdom’ respectively, <code>world_map</code> names them by their abbreviations. Let’s rename the <code>gapminder</code> data.</p>
-<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="getting-publication-ready.html#cb49-1" aria-hidden="true" tabindex="-1"></a>dat2007 <span class="ot">&lt;-</span> dat2007 <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">region =</span> <span class="fu">fct_recode</span>(region,</span>
-<span id="cb49-2"><a href="getting-publication-ready.html#cb49-2" aria-hidden="true" tabindex="-1"></a>                             <span class="st">&#39;USA&#39;</span> <span class="ot">=</span> <span class="st">&#39;United States&#39;</span>,</span>
-<span id="cb49-3"><a href="getting-publication-ready.html#cb49-3" aria-hidden="true" tabindex="-1"></a>                             <span class="st">&#39;UK&#39;</span> <span class="ot">=</span> <span class="st">&#39;United Kingdom&#39;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb403"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb403-1"><a href="getting-publication-ready.html#cb403-1" aria-hidden="true" tabindex="-1"></a>dat2007 <span class="ot">&lt;-</span> dat2007 <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">region =</span> <span class="fu">fct_recode</span>(region,</span>
+<span id="cb403-2"><a href="getting-publication-ready.html#cb403-2" aria-hidden="true" tabindex="-1"></a>                             <span class="st">&#39;USA&#39;</span> <span class="ot">=</span> <span class="st">&#39;United States&#39;</span>,</span>
+<span id="cb403-3"><a href="getting-publication-ready.html#cb403-3" aria-hidden="true" tabindex="-1"></a>                             <span class="st">&#39;UK&#39;</span> <span class="ot">=</span> <span class="st">&#39;United Kingdom&#39;</span>))</span></code></pre></div>
 <p>We’re almost there! Now, we need to merge the data.</p>
-<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="getting-publication-ready.html#cb50-1" aria-hidden="true" tabindex="-1"></a>life.exp.map <span class="ot">&lt;-</span> <span class="fu">left_join</span>(world_map, dat2007, <span class="at">by =</span> <span class="st">&quot;region&quot;</span>)</span>
-<span id="cb50-2"><a href="getting-publication-ready.html#cb50-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(life.exp.map)</span></code></pre></div>
+<div class="sourceCode" id="cb404"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb404-1"><a href="getting-publication-ready.html#cb404-1" aria-hidden="true" tabindex="-1"></a>life.exp.map <span class="ot">&lt;-</span> <span class="fu">left_join</span>(world_map, dat2007, <span class="at">by =</span> <span class="st">&quot;region&quot;</span>)</span>
+<span id="cb404-2"><a href="getting-publication-ready.html#cb404-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(life.exp.map)</span></code></pre></div>
 <pre><code>##        long      lat group order region subregion continent year lifeExp pop
 ## 1 -69.89912 12.45200     1     1  Aruba      &lt;NA&gt;      &lt;NA&gt;   NA      NA  NA
 ## 2 -69.89571 12.42300     1     2  Aruba      &lt;NA&gt;      &lt;NA&gt;   NA      NA  NA
@@ -645,34 +655,34 @@ Extras (OPTIONAL)
 ## 5        NA
 ## 6        NA</code></pre>
 <p>Finally, we can plot the data. We specify <code>group</code> to draw each country individually.</p>
-<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="getting-publication-ready.html#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="co"># grey means no gapminder data</span></span>
-<span id="cb52-2"><a href="getting-publication-ready.html#cb52-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(life.exp.map, <span class="fu">aes</span>(<span class="at">x=</span>long, <span class="at">y=</span>lat, <span class="at">group =</span> group)) <span class="sc">+</span></span>
-<span id="cb52-3"><a href="getting-publication-ready.html#cb52-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_polygon</span>(<span class="fu">aes</span>(<span class="at">fill =</span> lifeExp), <span class="at">color =</span> <span class="st">&quot;white&quot;</span>) <span class="sc">+</span></span>
-<span id="cb52-4"><a href="getting-publication-ready.html#cb52-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_viridis_b</span>(<span class="at">option=</span><span class="st">&#39;D&#39;</span>) <span class="sc">+</span></span>
-<span id="cb52-5"><a href="getting-publication-ready.html#cb52-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-34-1.png" width="672" /></p>
+<div class="sourceCode" id="cb406"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb406-1"><a href="getting-publication-ready.html#cb406-1" aria-hidden="true" tabindex="-1"></a><span class="co"># grey means no gapminder data</span></span>
+<span id="cb406-2"><a href="getting-publication-ready.html#cb406-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(life.exp.map, <span class="fu">aes</span>(<span class="at">x=</span>long, <span class="at">y=</span>lat, <span class="at">group =</span> group)) <span class="sc">+</span></span>
+<span id="cb406-3"><a href="getting-publication-ready.html#cb406-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_polygon</span>(<span class="fu">aes</span>(<span class="at">fill =</span> lifeExp), <span class="at">color =</span> <span class="st">&quot;white&quot;</span>) <span class="sc">+</span></span>
+<span id="cb406-4"><a href="getting-publication-ready.html#cb406-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_viridis_b</span>(<span class="at">option=</span><span class="st">&#39;D&#39;</span>) <span class="sc">+</span></span>
+<span id="cb406-5"><a href="getting-publication-ready.html#cb406-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-198-1.png" width="672" /></p>
 </div>
-<div id="animations" class="section level3" number="12.4.2">
-<h3><span class="header-section-number">12.4.2</span> Animations</h3>
+<div id="animations" class="section level3" number="13.4.2">
+<h3><span class="header-section-number">13.4.2</span> Animations</h3>
 <p>While we covered the most relevant data visualizations for your project, we’ve barely scratched the surface of what R can do. For example, you can create animations. Let’s install the <code>gganimate</code> package.</p>
-<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="getting-publication-ready.html#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&#39;devtools&#39;</span>)</span>
-<span id="cb53-2"><a href="getting-publication-ready.html#cb53-2" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&#39;thomasp85/gganimate&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb407"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb407-1"><a href="getting-publication-ready.html#cb407-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&#39;devtools&#39;</span>)</span>
+<span id="cb407-2"><a href="getting-publication-ready.html#cb407-2" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&#39;thomasp85/gganimate&#39;</span>)</span></code></pre></div>
 <p>Next, load the package:</p>
-<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb54-1"><a href="getting-publication-ready.html#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gganimate)</span></code></pre></div>
+<div class="sourceCode" id="cb408"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb408-1"><a href="getting-publication-ready.html#cb408-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gganimate)</span></code></pre></div>
 <p>Finally, we can create the plot! This might take a while, but I promise it will be worth the wait!</p>
-<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="getting-publication-ready.html#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(gapminder, <span class="fu">aes</span>(gdpPercap, lifeExp, <span class="at">size =</span> pop, <span class="at">col =</span> country)) <span class="sc">+</span></span>
-<span id="cb55-2"><a href="getting-publication-ready.html#cb55-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.7</span>, <span class="at">show.legend =</span> F) <span class="sc">+</span></span>
-<span id="cb55-3"><a href="getting-publication-ready.html#cb55-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_colour_manual</span>(<span class="at">values =</span> country_colors) <span class="sc">+</span></span>
-<span id="cb55-4"><a href="getting-publication-ready.html#cb55-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_x_log10</span>() <span class="sc">+</span></span>
-<span id="cb55-5"><a href="getting-publication-ready.html#cb55-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_size</span>(<span class="at">range =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">12</span>)) <span class="sc">+</span></span>
-<span id="cb55-6"><a href="getting-publication-ready.html#cb55-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">facet_wrap</span>(<span class="sc">~</span>continent) <span class="sc">+</span></span>
-<span id="cb55-7"><a href="getting-publication-ready.html#cb55-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
-<span id="cb55-8"><a href="getting-publication-ready.html#cb55-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme</span>(<span class="at">panel.grid =</span> <span class="fu">element_blank</span>()) <span class="sc">+</span></span>
-<span id="cb55-9"><a href="getting-publication-ready.html#cb55-9" aria-hidden="true" tabindex="-1"></a>    <span class="co"># here is the animation code</span></span>
-<span id="cb55-10"><a href="getting-publication-ready.html#cb55-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&#39;Year: {frame_time}&#39;</span>, <span class="at">x =</span> <span class="st">&#39;GDP per capita&#39;</span>, <span class="at">y =</span> <span class="st">&#39;Life expectancy (years)&#39;</span>) <span class="sc">+</span></span>
-<span id="cb55-11"><a href="getting-publication-ready.html#cb55-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">transition_time</span>(year) <span class="sc">+</span></span>
-<span id="cb55-12"><a href="getting-publication-ready.html#cb55-12" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ease_aes</span>(<span class="st">&#39;linear&#39;</span>)</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-37-1.gif" /><!-- --></p>
+<div class="sourceCode" id="cb409"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb409-1"><a href="getting-publication-ready.html#cb409-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(gapminder, <span class="fu">aes</span>(gdpPercap, lifeExp, <span class="at">size =</span> pop, <span class="at">col =</span> country)) <span class="sc">+</span></span>
+<span id="cb409-2"><a href="getting-publication-ready.html#cb409-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.7</span>, <span class="at">show.legend =</span> F) <span class="sc">+</span></span>
+<span id="cb409-3"><a href="getting-publication-ready.html#cb409-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_colour_manual</span>(<span class="at">values =</span> country_colors) <span class="sc">+</span></span>
+<span id="cb409-4"><a href="getting-publication-ready.html#cb409-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_x_log10</span>() <span class="sc">+</span></span>
+<span id="cb409-5"><a href="getting-publication-ready.html#cb409-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_size</span>(<span class="at">range =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">12</span>)) <span class="sc">+</span></span>
+<span id="cb409-6"><a href="getting-publication-ready.html#cb409-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">facet_wrap</span>(<span class="sc">~</span>continent) <span class="sc">+</span></span>
+<span id="cb409-7"><a href="getting-publication-ready.html#cb409-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb409-8"><a href="getting-publication-ready.html#cb409-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme</span>(<span class="at">panel.grid =</span> <span class="fu">element_blank</span>()) <span class="sc">+</span></span>
+<span id="cb409-9"><a href="getting-publication-ready.html#cb409-9" aria-hidden="true" tabindex="-1"></a>    <span class="co"># here is the animation code</span></span>
+<span id="cb409-10"><a href="getting-publication-ready.html#cb409-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&#39;Year: {frame_time}&#39;</span>, <span class="at">x =</span> <span class="st">&#39;GDP per capita&#39;</span>, <span class="at">y =</span> <span class="st">&#39;Life expectancy (years)&#39;</span>) <span class="sc">+</span></span>
+<span id="cb409-11"><a href="getting-publication-ready.html#cb409-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">transition_time</span>(year) <span class="sc">+</span></span>
+<span id="cb409-12"><a href="getting-publication-ready.html#cb409-12" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ease_aes</span>(<span class="st">&#39;linear&#39;</span>)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-201-1.gif" /><!-- --></p>
 </div>
 </div>
 <p><br></p>

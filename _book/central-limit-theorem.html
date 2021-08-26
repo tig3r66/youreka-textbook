@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>7 Central limit theorem | A Gentle Introduction to Data Science with R</title>
-  <meta name="description" content="7 Central limit theorem | A Gentle Introduction to Data Science with R" />
+  <title>8 Central limit theorem | A Gentle Introduction to Data Science with R</title>
+  <meta name="description" content="8 Central limit theorem | A Gentle Introduction to Data Science with R" />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="7 Central limit theorem | A Gentle Introduction to Data Science with R" />
+  <meta property="og:title" content="8 Central limit theorem | A Gentle Introduction to Data Science with R" />
   <meta property="og:type" content="book" />
   
   <meta property="og:image" content="assets/youreka-logo.png" />
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="tig3r66/youreka-textbook" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="7 Central limit theorem | A Gentle Introduction to Data Science with R" />
+  <meta name="twitter:title" content="8 Central limit theorem | A Gentle Introduction to Data Science with R" />
   
   
   <meta name="twitter:image" content="assets/youreka-logo.png" />
@@ -31,7 +31,7 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="more-dplyr.html"/>
+<link rel="prev" href="introduction-to-statistics.html"/>
 <link rel="next" href="basic-statistical-tests.html"/>
 <script src="libs/header-attrs-2.7/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
@@ -53,6 +53,29 @@
 
 <link href="libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
 <link href="libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/4.3.1/iframeResizer.min.js">
+</script>
+
+<script type="text/javascript">
+
+// Once page is loaded, override and disable popover "scroll into view"
+  $(document).ready(function() {
+    window.tutorial.scrollIntoView = function() {}
+  })
+
+// Add padding to LearnR body when popover shown
+  $(document).on("shown.bs.popover", function() {
+    var popoverHeight = document.querySelector(".popover").offsetHeight
+    document.body.style.paddingTop = popoverHeight + 10 + "px"
+  })
+
+// Set padding to 0 when popover hidden
+  $(document).on("hide.bs.popover", function() {
+    var popoverHeight = document.querySelector(".popover").offsetHeight
+    document.body.style.paddingTop = "0px"
+  })
+
+</script>
 
 
 <style type="text/css">
@@ -164,7 +187,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.6.1" data-path="intro-to-r.html"><a href="intro-to-r.html#other-important-things"><i class="fa fa-check"></i><b>2.6.1</b> Other important things</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="data-structures.html"><a href="data-structures.html"><i class="fa fa-check"></i><b>3</b> Data Structures</a>
+<li class="chapter" data-level="3" data-path="data-structures.html"><a href="data-structures.html"><i class="fa fa-check"></i><b>3</b> Data structures</a>
 <ul>
 <li class="chapter" data-level="3.1" data-path="data-structures.html"><a href="data-structures.html#vectors"><i class="fa fa-check"></i><b>3.1</b> Vectors</a>
 <ul>
@@ -177,7 +200,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.3.2" data-path="data-structures.html"><a href="data-structures.html#factors"><i class="fa fa-check"></i><b>3.3.2</b> Factors</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="loops-and-functions.html"><a href="loops-and-functions.html"><i class="fa fa-check"></i><b>4</b> Loops and Functions</a>
+<li class="chapter" data-level="4" data-path="loops-and-functions.html"><a href="loops-and-functions.html"><i class="fa fa-check"></i><b>4</b> Loops and functions</a>
 <ul>
 <li class="chapter" data-level="4.1" data-path="loops-and-functions.html"><a href="loops-and-functions.html#for-loops"><i class="fa fa-check"></i><b>4.1</b> For loops</a>
 <ul>
@@ -223,64 +246,72 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6.7" data-path="more-dplyr.html"><a href="more-dplyr.html#data-wrangling-summary"><i class="fa fa-check"></i><b>6.7</b> Data wrangling summary</a></li>
 </ul></li>
 <li class="part"><span><b>III Statistics</b></span></li>
-<li class="chapter" data-level="7" data-path="central-limit-theorem.html"><a href="central-limit-theorem.html"><i class="fa fa-check"></i><b>7</b> Central limit theorem</a>
+<li class="chapter" data-level="7" data-path="introduction-to-statistics.html"><a href="introduction-to-statistics.html"><i class="fa fa-check"></i><b>7</b> Introduction to statistics</a>
 <ul>
-<li class="chapter" data-level="7.1" data-path="central-limit-theorem.html"><a href="central-limit-theorem.html#motivation"><i class="fa fa-check"></i><b>7.1</b> Motivation</a></li>
-<li class="chapter" data-level="7.2" data-path="central-limit-theorem.html"><a href="central-limit-theorem.html#clt-for-means"><i class="fa fa-check"></i><b>7.2</b> CLT for means</a>
+<li class="chapter" data-level="7.1" data-path="introduction-to-statistics.html"><a href="introduction-to-statistics.html#inferential-statistics"><i class="fa fa-check"></i><b>7.1</b> Inferential statistics</a>
 <ul>
-<li class="chapter" data-level="7.2.1" data-path="central-limit-theorem.html"><a href="central-limit-theorem.html#clt-part-1"><i class="fa fa-check"></i><b>7.2.1</b> CLT Part 1</a></li>
-<li class="chapter" data-level="7.2.2" data-path="central-limit-theorem.html"><a href="central-limit-theorem.html#clt-part-2"><i class="fa fa-check"></i><b>7.2.2</b> CLT Part 2</a></li>
-</ul></li>
-<li class="chapter" data-level="7.3" data-path="central-limit-theorem.html"><a href="central-limit-theorem.html#clt-for-proportions"><i class="fa fa-check"></i><b>7.3</b> CLT for proportions</a></li>
-</ul></li>
-<li class="chapter" data-level="8" data-path="basic-statistical-tests.html"><a href="basic-statistical-tests.html"><i class="fa fa-check"></i><b>8</b> Basic statistical tests</a>
-<ul>
-<li class="chapter" data-level="8.1" data-path="basic-statistical-tests.html"><a href="basic-statistical-tests.html#getting-ready"><i class="fa fa-check"></i><b>8.1</b> Getting ready</a></li>
-<li class="chapter" data-level="8.2" data-path="basic-statistical-tests.html"><a href="basic-statistical-tests.html#students-t-test"><i class="fa fa-check"></i><b>8.2</b> Student’s t-test</a></li>
-<li class="chapter" data-level="8.3" data-path="basic-statistical-tests.html"><a href="basic-statistical-tests.html#chi-squared-test"><i class="fa fa-check"></i><b>8.3</b> Chi-squared test</a>
-<ul>
-<li class="chapter" data-level="8.3.1" data-path="basic-statistical-tests.html"><a href="basic-statistical-tests.html#chi2-test-for-goodness-of-fit"><i class="fa fa-check"></i><b>8.3.1</b> <span class="math inline">\(\chi^2\)</span> test for goodness-of-fit</a></li>
-<li class="chapter" data-level="8.3.2" data-path="basic-statistical-tests.html"><a href="basic-statistical-tests.html#chi2-test-for-independence"><i class="fa fa-check"></i><b>8.3.2</b> <span class="math inline">\(\chi^2\)</span> test for independence</a></li>
-<li class="chapter" data-level="8.3.3" data-path="basic-statistical-tests.html"><a href="basic-statistical-tests.html#chi2-test-for-homogeneity"><i class="fa fa-check"></i><b>8.3.3</b> <span class="math inline">\(\chi^2\)</span> test for homogeneity</a></li>
-<li class="chapter" data-level="8.3.4" data-path="basic-statistical-tests.html"><a href="basic-statistical-tests.html#contingency-tables"><i class="fa fa-check"></i><b>8.3.4</b> Contingency tables</a></li>
+<li class="chapter" data-level="7.1.1" data-path="introduction-to-statistics.html"><a href="introduction-to-statistics.html#measures-of-central-tendency"><i class="fa fa-check"></i><b>7.1.1</b> Measures of central tendency</a></li>
+<li class="chapter" data-level="7.1.2" data-path="introduction-to-statistics.html"><a href="introduction-to-statistics.html#measures-of-spread"><i class="fa fa-check"></i><b>7.1.2</b> Measures of spread</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="comparing-multiple-means.html"><a href="comparing-multiple-means.html"><i class="fa fa-check"></i><b>9</b> Comparing multiple means</a>
+<li class="chapter" data-level="8" data-path="central-limit-theorem.html"><a href="central-limit-theorem.html"><i class="fa fa-check"></i><b>8</b> Central limit theorem</a>
 <ul>
-<li class="chapter" data-level="9.1" data-path="comparing-multiple-means.html"><a href="comparing-multiple-means.html#loading-packages"><i class="fa fa-check"></i><b>9.1</b> Loading packages</a></li>
-<li class="chapter" data-level="9.2" data-path="comparing-multiple-means.html"><a href="comparing-multiple-means.html#one-way-anova"><i class="fa fa-check"></i><b>9.2</b> One-way ANOVA</a>
+<li class="chapter" data-level="8.1" data-path="central-limit-theorem.html"><a href="central-limit-theorem.html#motivation"><i class="fa fa-check"></i><b>8.1</b> Motivation</a></li>
+<li class="chapter" data-level="8.2" data-path="central-limit-theorem.html"><a href="central-limit-theorem.html#clt-for-means"><i class="fa fa-check"></i><b>8.2</b> CLT for means</a>
 <ul>
-<li class="chapter" data-level="9.2.1" data-path="comparing-multiple-means.html"><a href="comparing-multiple-means.html#the-iris-dataset"><i class="fa fa-check"></i><b>9.2.1</b> The iris dataset</a></li>
-<li class="chapter" data-level="9.2.2" data-path="comparing-multiple-means.html"><a href="comparing-multiple-means.html#non-parametric-alternatives-to-anova"><i class="fa fa-check"></i><b>9.2.2</b> Non-parametric alternatives to ANOVA</a></li>
+<li class="chapter" data-level="8.2.1" data-path="central-limit-theorem.html"><a href="central-limit-theorem.html#clt-part-1"><i class="fa fa-check"></i><b>8.2.1</b> CLT Part 1</a></li>
+<li class="chapter" data-level="8.2.2" data-path="central-limit-theorem.html"><a href="central-limit-theorem.html#clt-part-2"><i class="fa fa-check"></i><b>8.2.2</b> CLT Part 2</a></li>
 </ul></li>
-<li class="chapter" data-level="9.3" data-path="comparing-multiple-means.html"><a href="comparing-multiple-means.html#beyond-the-one-way-anova"><i class="fa fa-check"></i><b>9.3</b> Beyond the one-way ANOVA</a></li>
+<li class="chapter" data-level="8.3" data-path="central-limit-theorem.html"><a href="central-limit-theorem.html#clt-for-proportions"><i class="fa fa-check"></i><b>8.3</b> CLT for proportions</a></li>
 </ul></li>
-<li class="chapter" data-level="10" data-path="linear-regression.html"><a href="linear-regression.html"><i class="fa fa-check"></i><b>10</b> Linear regression</a>
+<li class="chapter" data-level="9" data-path="basic-statistical-tests.html"><a href="basic-statistical-tests.html"><i class="fa fa-check"></i><b>9</b> Basic statistical tests</a>
 <ul>
-<li class="chapter" data-level="10.1" data-path="linear-regression.html"><a href="linear-regression.html#basic-concepts"><i class="fa fa-check"></i><b>10.1</b> Basic concepts</a></li>
-<li class="chapter" data-level="10.2" data-path="linear-regression.html"><a href="linear-regression.html#pearson-correlation"><i class="fa fa-check"></i><b>10.2</b> Pearson correlation</a></li>
-<li class="chapter" data-level="10.3" data-path="linear-regression.html"><a href="linear-regression.html#spearman-correlation"><i class="fa fa-check"></i><b>10.3</b> Spearman correlation</a></li>
+<li class="chapter" data-level="9.1" data-path="basic-statistical-tests.html"><a href="basic-statistical-tests.html#getting-ready"><i class="fa fa-check"></i><b>9.1</b> Getting ready</a></li>
+<li class="chapter" data-level="9.2" data-path="basic-statistical-tests.html"><a href="basic-statistical-tests.html#students-t-test"><i class="fa fa-check"></i><b>9.2</b> Student’s t-test</a></li>
+<li class="chapter" data-level="9.3" data-path="basic-statistical-tests.html"><a href="basic-statistical-tests.html#chi-squared-test"><i class="fa fa-check"></i><b>9.3</b> Chi-squared test</a>
+<ul>
+<li class="chapter" data-level="9.3.1" data-path="basic-statistical-tests.html"><a href="basic-statistical-tests.html#chi2-test-for-goodness-of-fit"><i class="fa fa-check"></i><b>9.3.1</b> <span class="math inline">\(\chi^2\)</span> test for goodness-of-fit</a></li>
+<li class="chapter" data-level="9.3.2" data-path="basic-statistical-tests.html"><a href="basic-statistical-tests.html#chi2-test-for-independence"><i class="fa fa-check"></i><b>9.3.2</b> <span class="math inline">\(\chi^2\)</span> test for independence</a></li>
+<li class="chapter" data-level="9.3.3" data-path="basic-statistical-tests.html"><a href="basic-statistical-tests.html#chi2-test-for-homogeneity"><i class="fa fa-check"></i><b>9.3.3</b> <span class="math inline">\(\chi^2\)</span> test for homogeneity</a></li>
+<li class="chapter" data-level="9.3.4" data-path="basic-statistical-tests.html"><a href="basic-statistical-tests.html#contingency-tables"><i class="fa fa-check"></i><b>9.3.4</b> Contingency tables</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="comparing-multiple-means.html"><a href="comparing-multiple-means.html"><i class="fa fa-check"></i><b>10</b> Comparing multiple means</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="comparing-multiple-means.html"><a href="comparing-multiple-means.html#loading-packages"><i class="fa fa-check"></i><b>10.1</b> Loading packages</a></li>
+<li class="chapter" data-level="10.2" data-path="comparing-multiple-means.html"><a href="comparing-multiple-means.html#one-way-anova"><i class="fa fa-check"></i><b>10.2</b> One-way ANOVA</a>
+<ul>
+<li class="chapter" data-level="10.2.1" data-path="comparing-multiple-means.html"><a href="comparing-multiple-means.html#the-iris-dataset"><i class="fa fa-check"></i><b>10.2.1</b> The iris dataset</a></li>
+<li class="chapter" data-level="10.2.2" data-path="comparing-multiple-means.html"><a href="comparing-multiple-means.html#non-parametric-alternatives-to-anova"><i class="fa fa-check"></i><b>10.2.2</b> Non-parametric alternatives to ANOVA</a></li>
+</ul></li>
+<li class="chapter" data-level="10.3" data-path="comparing-multiple-means.html"><a href="comparing-multiple-means.html#beyond-the-one-way-anova"><i class="fa fa-check"></i><b>10.3</b> Beyond the one-way ANOVA</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="linear-regression.html"><a href="linear-regression.html"><i class="fa fa-check"></i><b>11</b> Linear regression</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="linear-regression.html"><a href="linear-regression.html#basic-concepts"><i class="fa fa-check"></i><b>11.1</b> Basic concepts</a></li>
+<li class="chapter" data-level="11.2" data-path="linear-regression.html"><a href="linear-regression.html#pearson-correlation"><i class="fa fa-check"></i><b>11.2</b> Pearson correlation</a></li>
+<li class="chapter" data-level="11.3" data-path="linear-regression.html"><a href="linear-regression.html#spearman-correlation"><i class="fa fa-check"></i><b>11.3</b> Spearman correlation</a></li>
 </ul></li>
 <li class="part"><span><b>IV Data Visualization</b></span></li>
-<li class="chapter" data-level="11" data-path="data-visualization-basics.html"><a href="data-visualization-basics.html"><i class="fa fa-check"></i><b>11</b> Data visualization basics</a>
+<li class="chapter" data-level="12" data-path="data-visualization-basics.html"><a href="data-visualization-basics.html"><i class="fa fa-check"></i><b>12</b> Data visualization basics</a>
 <ul>
-<li class="chapter" data-level="11.1" data-path="data-visualization-basics.html"><a href="data-visualization-basics.html#a-graphing-template"><i class="fa fa-check"></i><b>11.1</b> A graphing template</a></li>
-<li class="chapter" data-level="11.2" data-path="data-visualization-basics.html"><a href="data-visualization-basics.html#scatter-plot"><i class="fa fa-check"></i><b>11.2</b> Scatter plot</a>
+<li class="chapter" data-level="12.1" data-path="data-visualization-basics.html"><a href="data-visualization-basics.html#a-graphing-template"><i class="fa fa-check"></i><b>12.1</b> A graphing template</a></li>
+<li class="chapter" data-level="12.2" data-path="data-visualization-basics.html"><a href="data-visualization-basics.html#scatter-plot"><i class="fa fa-check"></i><b>12.2</b> Scatter plot</a>
 <ul>
-<li class="chapter" data-level="11.2.1" data-path="data-visualization-basics.html"><a href="data-visualization-basics.html#trend-lines"><i class="fa fa-check"></i><b>11.2.1</b> Trend lines</a></li>
-<li class="chapter" data-level="11.2.2" data-path="data-visualization-basics.html"><a href="data-visualization-basics.html#facets"><i class="fa fa-check"></i><b>11.2.2</b> Facets</a></li>
+<li class="chapter" data-level="12.2.1" data-path="data-visualization-basics.html"><a href="data-visualization-basics.html#trend-lines"><i class="fa fa-check"></i><b>12.2.1</b> Trend lines</a></li>
+<li class="chapter" data-level="12.2.2" data-path="data-visualization-basics.html"><a href="data-visualization-basics.html#facets"><i class="fa fa-check"></i><b>12.2.2</b> Facets</a></li>
 </ul></li>
-<li class="chapter" data-level="11.3" data-path="data-visualization-basics.html"><a href="data-visualization-basics.html#aesthetic-mappings"><i class="fa fa-check"></i><b>11.3</b> Aesthetic mappings</a></li>
+<li class="chapter" data-level="12.3" data-path="data-visualization-basics.html"><a href="data-visualization-basics.html#aesthetic-mappings"><i class="fa fa-check"></i><b>12.3</b> Aesthetic mappings</a></li>
 </ul></li>
-<li class="chapter" data-level="12" data-path="getting-publication-ready.html"><a href="getting-publication-ready.html"><i class="fa fa-check"></i><b>12</b> Getting publication-ready</a>
+<li class="chapter" data-level="13" data-path="getting-publication-ready.html"><a href="getting-publication-ready.html"><i class="fa fa-check"></i><b>13</b> Getting publication-ready</a>
 <ul>
-<li class="chapter" data-level="12.1" data-path="getting-publication-ready.html"><a href="getting-publication-ready.html#line-plot"><i class="fa fa-check"></i><b>12.1</b> Line plot</a></li>
-<li class="chapter" data-level="12.2" data-path="getting-publication-ready.html"><a href="getting-publication-ready.html#bar-plot"><i class="fa fa-check"></i><b>12.2</b> Bar plot</a>
+<li class="chapter" data-level="13.1" data-path="getting-publication-ready.html"><a href="getting-publication-ready.html#line-plot"><i class="fa fa-check"></i><b>13.1</b> Line plot</a></li>
+<li class="chapter" data-level="13.2" data-path="getting-publication-ready.html"><a href="getting-publication-ready.html#bar-plot"><i class="fa fa-check"></i><b>13.2</b> Bar plot</a>
 <ul>
-<li class="chapter" data-level="12.2.1" data-path="getting-publication-ready.html"><a href="getting-publication-ready.html#basics"><i class="fa fa-check"></i><b>12.2.1</b> Basics</a></li>
+<li class="chapter" data-level="13.2.1" data-path="getting-publication-ready.html"><a href="getting-publication-ready.html#basics"><i class="fa fa-check"></i><b>13.2.1</b> Basics</a></li>
 </ul></li>
-<li class="chapter" data-level="12.3" data-path="getting-publication-ready.html"><a href="getting-publication-ready.html#box-plot"><i class="fa fa-check"></i><b>12.3</b> Box plot</a></li>
-<li class="chapter" data-level="12.4" data-path="getting-publication-ready.html"><a href="getting-publication-ready.html#histogram-and-density-plot"><i class="fa fa-check"></i><b>12.4</b> Histogram and density plot</a></li>
+<li class="chapter" data-level="13.3" data-path="getting-publication-ready.html"><a href="getting-publication-ready.html#box-plot"><i class="fa fa-check"></i><b>13.3</b> Box plot</a></li>
+<li class="chapter" data-level="13.4" data-path="getting-publication-ready.html"><a href="getting-publication-ready.html#histogram-and-density-plot"><i class="fa fa-check"></i><b>13.4</b> Histogram and density plot</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><center>
@@ -309,44 +340,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/4.3.1/iframeResizer.min.js">
-</script>
-
-<script type="text/javascript">
-
-// Once page is loaded, override and disable popover "scroll into view"
-  $(document).ready(function() {
-    window.tutorial.scrollIntoView = function() {}
-  })
-
-// Add padding to LearnR body when popover shown
-  $(document).on("shown.bs.popover", function() {
-    var popoverHeight = document.querySelector(".popover").offsetHeight
-    document.body.style.paddingTop = popoverHeight + 10 + "px"
-  })
-
-// Set padding to 0 when popover hidden
-  $(document).on("hide.bs.popover", function() {
-    var popoverHeight = document.querySelector(".popover").offsetHeight
-    document.body.style.paddingTop = "0px"
-  })
-
-</script>
-<div id="central-limit-theorem" class="section level1" number="7">
-<h1><span class="header-section-number">7</span> Central limit theorem</h1>
+<div id="central-limit-theorem" class="section level1" number="8">
+<h1><span class="header-section-number">8</span> Central limit theorem</h1>
 <p>In this chapter, we will investigate the intuition behind the <strong>Central Limit Theorem</strong> (CLT). In short, the CLT states that if you have a bunch of samples and plotted the distribution of their means (not individual observations!), the distribution would look normal regardless of the population distribution. This theorem is incredibly powerful because it lets us to make inferences using statistical tests given a sufficient sample size.</p>
-<div id="motivation" class="section level2" number="7.1">
-<h2><span class="header-section-number">7.1</span> Motivation</h2>
+<div id="motivation" class="section level2" number="8.1">
+<h2><span class="header-section-number">8.1</span> Motivation</h2>
 <p>Imagine that we want to investigate whether Canadians recover faster than Americans from the common cold. How do we determine the probability that Canadians indeed recover faster than Americans?</p>
 <p>The CLT helps us answer these questions by telling us that a “large enough” sampling distribution will follow a normal distribution. We can then use the properties of the normal distribution to compute the exact probability given our data.</p>
 </div>
-<div id="clt-for-means" class="section level2" number="7.2">
-<h2><span class="header-section-number">7.2</span> CLT for means</h2>
+<div id="clt-for-means" class="section level2" number="8.2">
+<h2><span class="header-section-number">8.2</span> CLT for means</h2>
 <p>Before formally exploring the CLT, play around with the CLT app! In short, the app takes samples from the “Population Distribution” and plots the mean of those samples in the “Sampling Distribution” histogram.</p>
 <iframe class="interactive" id="ch7-clt-means" src="https://intro-stats.shinyapps.io/clt-means/" scrolling="no" frameborder="no">
 </iframe>
-<div id="clt-part-1" class="section level3" number="7.2.1">
-<h3><span class="header-section-number">7.2.1</span> CLT Part 1</h3>
+<div id="clt-part-1" class="section level3" number="8.2.1">
+<h3><span class="header-section-number">8.2.1</span> CLT Part 1</h3>
 <hr />
 <p><strong>CLT Part 1.</strong> If our population is normal, our sampling distribution is also normal.</p>
 <hr />
@@ -355,13 +363,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Many observed quantities follow normal distribution. Imagine that we have a population following normal distribution that has a mean of 10 and standard deviation of 2. If we draw samples from it, are we able to estimate its mean?</p>
 <p>Note that <code>rnorm()</code> generates a vector of random numbers from a normal distribution.</p>
 <div class="sourceCode" id="cb191"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb191-1"><a href="central-limit-theorem.html#cb191-1" aria-hidden="true" tabindex="-1"></a>(samp30 <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="at">n=</span><span class="dv">30</span>, <span class="at">mean=</span><span class="dv">10</span>, <span class="at">sd=</span><span class="dv">2</span>))</span></code></pre></div>
-<pre><code>##  [1] 12.905826 11.711574 11.972760 11.287463 10.002183  7.412366 14.314849
-##  [8]  7.153395  9.367826  9.208913 11.490263  6.114175  9.772914 10.964925
-## [15] 10.773917 10.892244  7.636429 10.334347 10.086125 12.280392  7.918399
-## [22]  9.261899  9.068377  8.857456  6.807770 10.137259 11.334010 10.485187
-## [29] 11.961784 10.615604</code></pre>
+<pre><code>##  [1] 10.817348  9.527976 10.871179  8.281020 10.538601 11.189171  8.728603
+##  [8] 10.017532  9.797777 11.067865 10.926460  6.571194  8.843825 10.045617
+## [15] 10.584301  9.518055 13.258005 11.788993  8.228671  6.730651  9.514294
+## [22] 10.452682 11.365804 10.436303  9.672497 10.690999 11.093937  8.849414
+## [29] 11.258520 10.105156</code></pre>
 <div class="sourceCode" id="cb193"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb193-1"><a href="central-limit-theorem.html#cb193-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(samp30)</span></code></pre></div>
-<pre><code>## [1] 10.07102</code></pre>
+<pre><code>## [1] 10.02575</code></pre>
 <p>Although the mean is not 10, it is pretty close. This should make sense; when we draw a sample to estimate the mean, we may get very close to the desired “true mean,” but we also expect some error. What if I repeat the estimation 1000 times with 30 samples?</p>
 <div class="sourceCode" id="cb195"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb195-1"><a href="central-limit-theorem.html#cb195-1" aria-hidden="true" tabindex="-1"></a><span class="co"># initializing our means vector</span></span>
 <span id="cb195-2"><a href="central-limit-theorem.html#cb195-2" aria-hidden="true" tabindex="-1"></a>means10 <span class="ot">&lt;-</span> <span class="fu">as.vector</span>(<span class="cn">NA</span>)</span>
@@ -379,8 +387,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><img src="_main_files/figure-html/unnamed-chunk-75-1.png" width="672" /></p>
 <p>What does this figure mean? Of the 1000 sample means we computed, most were very close to 10. The probability to overestimate and underestimate decreases as the estimation deviates from 10, our “true mean.” Further, the distribution of the sample means appears to follow a normal distribution.</p>
 </div>
-<div id="clt-part-2" class="section level3" number="7.2.2">
-<h3><span class="header-section-number">7.2.2</span> CLT Part 2</h3>
+<div id="clt-part-2" class="section level3" number="8.2.2">
+<h3><span class="header-section-number">8.2.2</span> CLT Part 2</h3>
 <hr />
 <p><strong>CLT Part 2.</strong> Given a sufficient sample size, the sampling distribution of the means will look normal <em>regardless of the original population distribution</em>.</p>
 <hr />
@@ -428,8 +436,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Pretty cool, right?</p>
 </div>
 </div>
-<div id="clt-for-proportions" class="section level2" number="7.3">
-<h2><span class="header-section-number">7.3</span> CLT for proportions</h2>
+<div id="clt-for-proportions" class="section level2" number="8.3">
+<h2><span class="header-section-number">8.3</span> CLT for proportions</h2>
 <p>The CLT also holds for proportions.</p>
 <p>Imagine we know the probability of not having the common cold is 0.9 and having the commmon cold is 0.1. Let’s record not having the common cold as 1 and having the common cold as 0. If I have a large enough sample size, we should expect the proportion to approach 0.9. Is this the case?</p>
 <div class="sourceCode" id="cb198"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb198-1"><a href="central-limit-theorem.html#cb198-1" aria-hidden="true" tabindex="-1"></a>means100 <span class="ot">&lt;-</span> <span class="fu">as.vector</span>(<span class="cn">NA</span>)</span>
@@ -469,7 +477,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-<a href="more-dplyr.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="introduction-to-statistics.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 <a href="basic-statistical-tests.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>

@@ -1,4 +1,4 @@
-# Loops and Functions
+# Loops and functions
 
 Loops are fundamental a programming concept as they get a lot of repetitive stuff done in very few lines of code. Paired with custom functions, we can begin to tackle complex programming problems.
 

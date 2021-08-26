@@ -1,4 +1,4 @@
-# Data Structures
+# Data structures
 
 In this chapter, we will learn about data structures that will greatly aid our data science workflow.
 

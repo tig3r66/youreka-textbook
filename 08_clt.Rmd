@@ -1,5 +1,3 @@
-# (PART) Statistics {-}
-
 # Central limit theorem
 
 In this chapter, we will investigate the intuition behind the **Central Limit Theorem** (CLT). In short, the CLT states that if you have a bunch of samples and plotted the distribution of their means (not individual observations!), the distribution would look normal regardless of the population distribution. This theorem is incredibly powerful because it lets us to make inferences using statistical tests given a sufficient sample size.

@@ -9,10 +9,7 @@ cover-image: assets/youreka-logo.png
 bibliography: [book.bib]
 biblio-style: apalike
 link-citations: yes
-output:
-  bookdown::gitbook:
-    includes:
-      before_body: header.html
+output: bookdown::gitbook
 site: bookdown::bookdown_site
 ---
 
