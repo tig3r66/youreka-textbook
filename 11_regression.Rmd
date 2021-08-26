@@ -6,6 +6,7 @@ To get an intuition for linear regression, try playing around with the applicati
 
 <iframe class="interactive" id="ch10-slreg" src="https://gallery.shinyapps.io/simple_regression/" scrolling="no" frameborder="no"></iframe>
 
+
 ## Basic concepts
 
 Let's load the usual packages.
@@ -64,7 +65,7 @@ You can also customize the colour and thickness of the line. Use the `?` operato
 
 Here is another interactive app showing how different data affects the regression model.
 
-<iframe class="interactive" id="ch10-slreg" src="https://openintro.shinyapps.io/slr_diag/" scrolling="no" frameborder="no"></iframe>
+<iframe class="interactive" id="ch10-slreg2" src="https://openintro.shinyapps.io/slr_diag/" scrolling="no" frameborder="no"></iframe>
 
 
 ## Pearson correlation
