@@ -120,13 +120,13 @@ The final measure of spread we will cover is something called standard error.
 
 ---
 
-**Standard error.** Standard error (SE or SEM) maesurese the amount of spread of *sample means* from their true population mean.
+**Standard error.** Standard error (SE or SEM) measures the amount of spread of *sample means* from their true population mean.
 
 \begin{equation}
   SE = \frac{\sigma}{\sqrt{n}}
 \end{equation}
 
-We will use SE extensively when we cover statistical tsts. Here is an [excellent article](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3487226/) on the different use cases between SD and SEM.
+We will use SE extensively when we cover statistical tests. Here is an [excellent article](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3487226/) on the different use cases between SD and SEM.
 
 ---
 
