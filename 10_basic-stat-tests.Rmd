@@ -2,8 +2,6 @@
 
 R contains extremely powerful tools for data science. These tools are either built-in or available from packages. Thoughout this section we hope to demonstrate best practices organizing, analyzing, and visualizing data in R.
 
-## Getting ready
-
 We will again work with the gapminder dataset. Let's load the usual packages.
 
 ```{r, message = F, warning = F}
@@ -11,21 +9,18 @@ library(gapminder)
 library(tidyverse)
 ```
 
-Now that we've loaded our packages, let's briefly re-explore gapminder.
-
-When you get a new dataset, your first action as a good data scientist should be to explore it.
+When you get a new dataset, your first instinct as a good data scientist should be to explore it.
 
 ```{r}
 gapminder  # also recall str(), head(), names()
 ```
 
-Note the variables `country` and `continent` are considered factors (`fct`), which is a catagorical data. We can use `levels()` to obsserve the catagories within a factor column.
+Note the variables `country` and `continent` are considered factors (`fct`), which is a catagorical data. We can use `levels()` to observe the catagories within a factor column.
 
 ```{r}
-# there are 142 countries, but for the sake of space, we're only checking the first 5
-head(levels(gapminder$country))
 levels(gapminder$continent)
 ```
+
 
 ## Student's t-test
 
@@ -38,62 +33,77 @@ gapminder %>%
   summarise(mean(lifeExp))
 ```
 
-The life expectancy of Europe is about 64.4 years. It seems close to 65, the standard age often associated with retirement in Canada (and when full pension benefits become available!). Is this statistically significantly different from 65 years?
+The life expectancy of Europe is about 64.4 years. It seems close to 65, the standard age often associated with retirement in Canada (and when full pension benefits become available!). Is this life expectancy significantly different from 65 years?
 
-To answer this question, we can use a one-sample t-test. We will test the sample (life expectancy measured in Europe in 1952) against our null hypothesis that there is no significant difference between the life expectancy in Europe (64.4 years) and 65 years.
+
+### Example 1: One sample t-test
+
+To answer this question, we can use a one sample t-test. We will test the sample (life expectancy measured in Europe in 1952) to see if there is a significant difference between the life expectancy in Europe (64.4 years) and 65 years. Can you set up the appropriate hypotheses to test?
+
+<button class="collapsible">Solution</button>
+<div class="collapse_content">
+Let $\mu$ be the average life expectancy of people in Europe in 1952. Then,
+
+- H$_0: \mu = 65$
+- H$_a: \mu \neq 65$
+</div>
+
+<br>
 
 ```{r}
-# selection method 1: base R
-method1 <- gapminder$lifeExp[gapminder$continent=='Europe' & gapminder$year==1952]
-# selection method 2: use dplyr
-method2 <- gapminder %>% filter(continent == 'Europe', year == 1952) %>% select(lifeExp)
-# checking if these two methods give identical outputs
-identical(method1, method2$lifeExp)
-```
-
-**CAUTION:** `method2` is a data frame whereas `method1` is a vector. To use `method2` with the `t.test()` function, you need to specify the variable inside the data frame (e.g., `method2$lifeExp`).
-
-```{r}
-# let's rename the variable for interpretability
-Euro.life.1952 <- method1
+Euro.life.1952 <- gapminder %>%
+  filter(continent == 'Europe', year == 1952) %>%
+  select(lifeExp)
 t.test(Euro.life.1952, mu = 65, alternative = "two.sided")
 ```
 
-Notice that p-value is 0.6144. Usually, we choose the alpha ($\alpha$) to be 0.05. Since p < $\alpha$, we conclude that the life expectancy of Europeans in 1952 doesn't give us evidence indicating a difference in life expectancy from 65.
+Notice that p-value is 0.6144. Usually, we choose the significance threshold ($\alpha$) to be 0.05. Since p < $\alpha$, we conclude that the life expectancy of Europeans in 1952 doesn't give us evidence indicating a difference in life expectancy from 65.
 
 We can also plot this:
 
 ```{r}
 ggplot() +
-  geom_density(aes(Euro.life.1952)) +
-  geom_vline(xintercept = 65)
+  geom_histogram(aes(Euro.life.1952$lifeExp), bins=10) +
+  geom_vline(xintercept = 65, col="red") +
+  labs(x = "European life expectancy in 1952 (years)", y = "Count")
 ```
 
-**Note 1:** If you used the dplyr method, you would need to plot the specific vector in the data frame:
+**Note:** This is NOT a figure you would include in an academic paper as the quality is quite low. We're visualizing this just so we have a better idea of what's going on with the data.
 
-```{r eval=FALSE}
-ggplot() +
-  geom_density(aes(Euro.life.1952$lifeExp)) +
-  geom_vline(xintercept = 65)
-```
 
-**Note 2:** This is NOT a figure you would include in an academic paper as the quality is quite low. We're visualizing this just so we have a better idea of what's going on with the data.
+<button class="collapsible">Wilcoxon signed-rank test</button>
+<div class="collapse_content">
 
-The non-parametric test alternative to one-sample t-test is Wilcoxon signed-rank test.
+The non-parametric test equivalent to one sample t-test is Wilcoxon signed-rank test.
 
 ```{r}
-wilcox.test(Euro.life.1952, mu=65)
+wilcox.test(Euro.life.1952$lifeExp, mu=65)
 ```
 
 The non-parametric test gave us the same conclusion.
 
-**CAUTION:** although we obtained the same results with both the parametric t-test and non-parametric signed-rank test, their use cases are VERY different. We prefer to use parametric tests because they give us more statistical power. Only use non-parametric tests with sample sizes less than 30 and if the data is not normally distributed.
+**CAUTION:** Although we obtained the same results with both the parametric t-test and non-parametric signed-rank test, their use cases are VERY different. We prefer to use parametric tests because they give us more statistical power. Only use non-parametric tests with sample sizes less than 30 and if the data is not normally distributed.
 
-Does Asia and Africa differ in life expectancy in 1952? To compare two groups of data, we need a two-sample t-test.
+</div>
+
+
+### Example 2: Two sample t-test
+
+Does Asia and Africa differ in life expectancy in 1952? To compare two groups of data, we need a two sample t-test. Can you set up the hypotheses?
+
+<button class="collapsible">Solution</button>
+<div class="collapse_content">
+Let $\mu_1$ be the average life expectancy of people in Asia in 1952. Let $\mu_2$ be the average life expectancy of people in Africa in 1952. Then,
+
+- H$_0: \mu_1 - \mu_2 = 0$
+- H$_a: \mu_1 - \mu_2 \neq 65$
+</div>
+
+<br>
 
 ```{r}
 As.Af <- gapminder %>% 
-  filter(year==1952) %>% 
+  filter(year == 1952) %>% 
   filter(continent %in% c("Africa", "Asia"))
 As.Af
 ```
@@ -101,16 +111,13 @@ As.Af
 We can plot this:
 
 ```{r}
-# you don't need to explicitly declare data = As.Af and aes(x=continent, y=lifeExp)
-# just make sure your variables are in the correct order
 ggplot(As.Af, aes(continent, lifeExp)) +
   geom_dotplot(binaxis = 'y', stackdir = 'center', dotsize=0.65) +
   geom_boxplot(alpha=0.3) +
-  labs(x='Continent', y='Life expectancy (yrs)') +
-  theme_classic()
+  labs(x='Continent', y='Life expectancy (yrs)')
 ```
 
-Here we want to run a two-sample t-test. Before we do that, we'll need to check if the 2 samples have the same variance. Recall that different t-tests assume different variances:
+Here we want to run a two sample t-test. Before we do that, we'll need to check if the 2 samples have the same variance. Recall that different t-tests assume different variances:
 
   * If you assume equal variance, you would use Student's t-test.
   * If variances are unequal, use Welch's t-test.
@@ -130,11 +137,19 @@ Because we have different variances, we need to use Welch's t-test. By default, 
 t.test(lifeExp ~ continent, As.Af, alternative = "two.sided")
 ```
 
-The non-parametric test in this case would be the independent 2-group Mann-Whitney U Test.
+<button class="collapsible">Mann-Whitney U test</button>
+<div class="collapse_content">
+
+The non-parametric test equivalent to the two sample t-test in this case would be the Mann-Whitney U test.
 
 ```{r}
 wilcox.test(lifeExp ~ continent, As.Af)
 ```
+
+</div>
+
+
+### Example 3: Paired t-test
 
 Next, let's take a look at life expectancy in 2007:
 
@@ -145,7 +160,7 @@ gapminder %>%
   summarise(meanlife = mean(lifeExp))
 ```
 
-Has the life expectancy in Africa changed to that in 1952? We can answer this question with a two-sample t-test. This time, we would like to match the countries.
+Has the life expectancy in Africa changed to that in 1952? We can answer this question with a two sample t-test. This time, we would like to match the countries.
 
 First, let's generate a long data frame.
 
@@ -165,21 +180,9 @@ p <- ggplot(data = Africa, aes(x = year, y = lifeExp)) +
 show(p)
 ```
 
-Since the life expectancy in 1952 and 2007 look interesting, let's visualize it:
+The change in life expectancy between 1952 and 2007 look interesting. Most of the countries have improved, while a few have decreased life expectancy.
 
-```{r}
-# selecting rows with years 1952 and 2007
-Africa.1952.2007 <- Africa %>% filter(year %in% c(1952, 2007))
-# plotting
-p <- ggplot(data = Africa.1952.2007, aes(x=as.factor(year), y=lifeExp)) +
-  geom_point(aes(color=country)) +
-  geom_line(aes(group = country, color=country))
-show(p)
-```
-
-Most of the countries have improved, while a few have decreased life expectancy.
-
-Before testing this observation, we should reorganize our data into a nice (wide) shape.
+Before testing this observation, let's reorganize our data into a nice (wide) shape.
 
 ```{r}
 Africa.wide <- spread(Africa, year, lifeExp)
@@ -188,13 +191,13 @@ Africa.wide
 
 The wide data frame is to align the data from the same country to the same row, so that they have the same index when we call different columns.
 
-Now, we can run a paired t-test. Think about what we are testing in the code below.
+We can now run a paired t-test. Think about what we are testing in the code below.
 
 ```{r}
 t.test(Africa.wide$'2007', Africa.wide$'1952', alternative="two.sided", paired=T)
 ```
 
-Note in this process we didn't check the variance. Is this a problem? Why or why not? Recall that the paired t-test is actually a one-sample t-test on paired differences.
+Note in this process we didn't check the variance. Is this a problem? Why or why not? Recall that the paired t-test is actually a one sample t-test on paired differences.
 
 Similarly, we could again call `wilcox.test` to run the paired version.
 
@@ -202,11 +205,18 @@ Similarly, we could again call `wilcox.test` to run the paired version.
 wilcox.test(Africa.wide$'2007', Africa.wide$'1952', paired=T)
 ```
 
+
 ## Chi-squared test
 
 ### $\chi^2$ test for goodness-of-fit
 
-This section requires basic of knowledge of [Mendelian genetics](https://www.nature.com/scitable/topicpage/gregor-mendel-and-the-principles-of-inheritance-593/) regarding dominant and recessive alleles. Recall that crossing two heterozygotes (Aa x Aa) produces offspring with dominant and recessive phenotypes with an expected ratio of 3:1.
+Let's analyze the data in Mendel's original paper: [Mendel, Gregor. 1866. Versuche über Plflanzenhybriden. Verhandlungen des naturforschenden Vereines in Brünn, Bd. IV für das Jahr
+1865, Abhandlungen, 3–47.](http://www.mendelweb.org/)
+
+<button class="collapsible">Crash course on Mendelian genetics</button>
+<div class="collapse_content">
+
+Let's (briefly) learn about [Mendelian genetics](https://www.nature.com/scitable/topicpage/gregor-mendel-and-the-principles-of-inheritance-593/) regarding dominant and recessive alleles! Recall that crossing two heterozygotes (Aa x Aa) produces offspring with dominant and recessive phenotypes with an expected ratio of 3:1.
 
 $$\begin{array}{c|cc}
   & \mathbf{A} & \mathbf{a} \\
@@ -226,12 +236,13 @@ $$\begin{array}{c|cccc}
   \mathbf{ab} & AaBb & Aabb & aaBb & aabb
 \end{array}$$
 
-Now, let's focus on Mendel's data from his original paper: [Mendel, Gregor. 1866. Versuche über Plflanzenhybriden. Verhandlungen des naturforschenden Vereines in Brünn, Bd. IV für das Jahr
-1865, Abhandlungen, 3–47.](http://www.mendelweb.org/)
+</div>
 
-In his experiment for seed color, the F2 generation produced 6022 yellow, and 2001 green seeds. Thus, the ratio of yellow:green was 3.01:1. Obviously, this ratio is not the exact theoretical ratio of 3:1. A meaningful question would be this: Is the discrepancy appeared because of random fluctuation, or is the observed ratio significantly different from 3:1?
+<br>
 
-To examine whether the observed count **fits a theoretical ratio**, we will uses the $\chi^2$ test for goodness-of-fit.
+In his experiment for seed color, the F2 generation produced 6022 yellow, and 2001 green seeds. Thus, the ratio of yellow:green was 3.01:1. This ratio is not the exact theoretical ratio of 3:1. A meaningful question would be this: Is the discrepancy appeared because of random fluctuation, or is the observed ratio significantly different from 3:1?
+
+To examine whether the observed count fits a theoretical ratio, we will use the goodness-of-fit test.
 
 ```{r}
 chisq.test(x = c(6022, 2001),  # the observed data
@@ -262,6 +273,49 @@ In another experiment, Mendel looked at two pairs of phenotypes of the F2 genera
 Before we examine the 9:3:3:1 ratio, we want to ask if the two loci are independent of each other. That is, will being yellow increase or decrease the chance of being round (and vice versa)?
 
 To run the $\chi^2$ test for independence, we will first need a contingency table. This time we will manually build a data frame for this purpose.
+
+<button class="collapsible"> Contingency tables</button>
+<div class="collapse_content">
+
+Let's come back to the data of Asia and Africa in 1952. Take a look at the distribution of the life expectancy for all countries in both continents.
+
+```{r}
+summary(As.Af)
+```
+
+Notice that the median of life expectancy is 40.54. That is, half of the countries had life expectancy greater than 40.54, and the other half less than 40.54.
+
+Let's define a catagorical variable: the countries with life expectancy > 40.54 years are "longer_lived", and the others are "shorter_lived".
+
+```{r}
+As.Af["long_short"] <- NA
+As.Af$long_short[As.Af$lifeExp > 40.54] <- "longer_lived"
+As.Af$long_short[is.na(As.Af$long_short)] <- "shorter_lived"
+```
+
+Now let's see if the longer lived or shorter lived variable is independent of the continent variable. We realize that both variables are categorical. In this case, we will use chi-squared test.
+
+First, we will make a contingency table of the two variables.
+
+```{r}
+As.Af <- droplevels(As.Af)
+cont <- table(As.Af$continent, As.Af$long_short)
+cont
+```
+
+Here, our null hypothesis is that countries **are independent** of the continent it's a part of. Likewise, our alternative hypothesis is that countries **are dependent** (not independent) of the continent it's a part of.
+
+```{r}
+chisq.test(cont)
+```
+
+Given that $p < 0.05$, our null hypothesis that the two variables are independent is rejected. Whether a country is longer lived or shorter lived is dependent on the continent it is located in.
+
+N.B., this is only a comparison between Africa and Asia, and does not hold true for all continents.
+
+</div>
+
+<br>
 
 ```{r}
 Mendel2loci <- data.frame(
@@ -347,6 +401,8 @@ chisq.test(rem_cont)
 What does this result mean?
 
 
+
+## Additional resources
 
 <button class="collapsible">Fisher's exact test (OPTIONAL)</button>
 <div class="collapse_content">
@@ -439,50 +495,8 @@ We conclude that there is insufficient evidence to reject the null hypothesis. A
 
 </div>
   
+<br>
 
-  
-  
-### Contingency tables
-
-Let's come back to the data of Asia and Africa in 1952. Take a look at the distribution of the life expectancy for all countries in both continents.
-
-```{r}
-summary(As.Af)
-```
-
-Notice that the median of life expectancy is 40.54. That is, half of the countries had life expectancy greater than 40.54, and the other half less than 40.54.
-
-Let's define a catagorical variable: the countries with life expectancy > 40.54 years are "longer_lived", and the others are "shorter_lived".
-
-```{r}
-As.Af["long_short"] <- NA
-As.Af$long_short[As.Af$lifeExp > 40.54] <- "longer_lived"
-As.Af$long_short[is.na(As.Af$long_short)] <- "shorter_lived"
-```
-
-Now let's see if the longer lived or shorter lived variable is independent of the continent variable. We realize that both variables are categorical. In this case, we will use chi-squared test.
-
-First, we will make a contingency table of the two variables.
-
-```{r}
-As.Af <- droplevels(As.Af)
-cont <- table(As.Af$continent, As.Af$long_short)
-cont
-```
-
-Here, our null hypothesis is that countries **are independent** of the continent it's a part of. Likewise, our alternative hypothesis is that countries **are dependent** (not independent) of the continent it's a part of.
-
-```{r}
-chisq.test(cont)
-```
-
-Given that $p < 0.05$, our null hypothesis that the two variables are independent is rejected. Whether a country is longer lived or shorter lived is dependent on the continent it is located in.
-
-N.B., this is only a comparison between Africa and Asia, and does not hold true for all continents.
-
-                     
-                      
-          
 <button class="collapsible">Visualizing data distributions (OPTIONAL)</button>
 <div class="collapse_content">
 
@@ -559,7 +573,7 @@ Now this figure is publication-ready.
 </div>
 
 
-  
+
   
 
 <script>

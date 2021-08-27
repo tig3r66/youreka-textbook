@@ -2,9 +2,6 @@
 
 Throughout this lab, we will provide a pipeline to help you wrangle data, perform statistical analyses, and (perhaps most importantly) visualize data in R. Here, we will learn how to compare the means using parametric tests and medians using non-parametric tests of multiple groups.
 
-
-## Loading packages
-
 Let's load the usual packages, and one new package called `car` (Companion to Applied Regression).
 
 ```{r, message=F, warning=F}
@@ -239,3 +236,8 @@ games.howell(grp = dat.1952$Income_Level_1952,  # groups, the categorical variab
 As seen in the previous example, a one-way ANOVA is a great tool for comparing multiple groups on one categorical variable such as income level. But what if we wanted to examine if life expectancy differs across the years 1952, 1972, and 2007 in addition to income level? In this case, we will need a two-way ANOVA.
 
 Although we won't cover a two-way ANOVA in this text, you can learn more about it in [this article](http://www.sthda.com/english/wiki/two-way-anova-test-in-r).
+
+
+<script>
+  iFrameResize({}, ".interactive");
+</script>
