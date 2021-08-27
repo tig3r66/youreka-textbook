@@ -219,10 +219,11 @@ iframe.interactive {
 
 /*------------- COLLAPSING SECTION --------------*/
 .collapsible {
+  margin-top: 10px;
   background-color: #555;
   color: white;
   cursor: pointer;
-  padding: 18px;
+  padding: 20px;
   width: 100%;
   border: none;
   text-align: left;

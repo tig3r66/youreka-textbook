@@ -414,7 +414,7 @@ evenOthersUseCamelCase</code></pre>
 <pre><code>##  [1]  1  2  3  4  5  6  7  8  9 10</code></pre>
 <p>Not all functions have (or require) arguments:</p>
 <div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="intro-to-r.html#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">date</span>()</span></code></pre></div>
-<pre><code>## [1] &quot;Thu Aug 26 18:10:05 2021&quot;</code></pre>
+<pre><code>## [1] &quot;Thu Aug 26 19:58:39 2021&quot;</code></pre>
 <p>If you’ve been following along in RStudio, look at your workspace (in the upper right pane.) The workspace is where user-defined objects accumulate. You can also get a listing of these objects with commands:</p>
 <div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="intro-to-r.html#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">objects</span>()</span>
 <span id="cb14-2"><a href="intro-to-r.html#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span>()</span></code></pre></div>
@@ -539,19 +539,22 @@ evenOthersUseCamelCase</code></pre>
 <p>Avoid using your mouse for your workflow. Firstly, using the keyboard is faster. Secondly, writing code instead of clicking helps with reproducibility. That is, it will be much easier to retrospectively determine how a numerical table or PDF was actually produced.</p>
 <p>Many experienced users never save the workspace, never save <code>.RData</code> files (I’m one of them), and never save or consult the history. Once/if you get to that point, there are options available in RStudio to disable the loading of <code>.RData</code> and permanently suppress the prompt on exit to save the workspace (go to <em>Tools &gt; Options &gt; General</em>).</p>
 <script>
-  iFrameResize({}, ".interactive");
+iFrameResize({}, ".interactive");
   
 var coll = document.getElementsByClassName("collapsible");
-var coll_down = document.getElementsByClassName("collapse_content");
-var i;
-
-for (i = 0; i < coll.length; i++) {
+for (var i = 0; i < coll.length; i++) {
   coll[i].addEventListener("click", function() {
     this.classList.toggle("active");
     var content = this.nextElementSibling;
     if (content.style.maxHeight){
       content.style.maxHeight = null;
+      setTimeout(function() {
+        content.style.paddingTop = "0";
+        content.style.paddingBottom = "0";
+      }, 250)
     } else {
+      content.style.paddingTop = "15px";
+      content.style.paddingBottom = "10px";
       content.style.maxHeight = content.scrollHeight + "px";
     } 
   });

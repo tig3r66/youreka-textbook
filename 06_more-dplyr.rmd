@@ -455,24 +455,25 @@ Wow, we covered *a lot* of data wrangling! Don't wory if you don't understand ev
 The functions presented here should cover most of your basic data wrangling needs. If you ever need to do something more complicated, search it up! Although I have programmed for many years, I still need to do a quick Google search for documentation and StackOverflow solutions.
 
 
-```{=html}
 <script>
-  iFrameResize({}, ".interactive");
+iFrameResize({}, ".interactive");
   
 var coll = document.getElementsByClassName("collapsible");
-var coll_down = document.getElementsByClassName("collapse_content");
-var i;
-
-for (i = 0; i < coll.length; i++) {
+for (var i = 0; i < coll.length; i++) {
   coll[i].addEventListener("click", function() {
     this.classList.toggle("active");
     var content = this.nextElementSibling;
     if (content.style.maxHeight){
       content.style.maxHeight = null;
+      setTimeout(function() {
+        content.style.paddingTop = "0";
+        content.style.paddingBottom = "0";
+      }, 250)
     } else {
+      content.style.paddingTop = "15px";
+      content.style.paddingBottom = "10px";
       content.style.maxHeight = content.scrollHeight + "px";
     } 
   });
 }
 </script>
-```

@@ -10,9 +10,9 @@ knitr::include_graphics("data/08_inferences/data_decisions.png")
 
 We often want to test our hypotheses in statistics. For example, we might create an experiment to test if a vaccine is effective at preventing COVID-19. If your results are not consistent, no one would want to use your vaccine. Here are some examples of hypotheses:
 
-- If I (*increase the concentration of this drug*) then (*the viral particles will decrease tenfold*).
+- If (*I increase the concentration of this drug*) then (*the viral particles will decrease tenfold*).
 - If (*I counsel patients instead of medication*) then (*their overall mental health score will increase by 5 points*).
-- If (*&independent variable*) then (*dependent variable*).
+- If (*independent variable*) then (*dependent variable*).
 
 In statistics, we have two types of hypotheses: the null hypothesis and the alternative hypothesis.
 
@@ -42,7 +42,7 @@ If the observed average recovery times is 1 week for patients who receive a vacc
 
 ---
 
-Take a the following sleep experiment as an example. In this experiment, people try to memorize as many words as possible. Then, they are split into two groups that either sleeps 4 hours or 8 hours. The next day, people try to recall as many words as possible. The following figure shows the rsults:
+Take a the following sleep experiment as an example. In this experiment, people try to memorize as many words as possible. Then, they are split into two groups that will either sleep 4 hours or 8 hours that night. The next day, the people try to recall as many words as possible. The following figure shows the results:
 
 ```{r p-value-sleep, out.width="50%", fig.align="center", fig.cap="Figure retrieved from [Prob(a)bilistic World](https://www.probabilisticworld.com/intuitive-explanation-p-values/).", echo=FALSE}
 knitr::include_graphics("data/08_inferences/p_ex.png")
@@ -78,7 +78,7 @@ Check out [this article](https://towardsdatascience.com/p-values-explained-by-da
 
 ---
 
-**Significance levels.** Suppose we set a significance threshold, $\alpha$. If p ≤ $\alpha$, then we can reject the null hypothesis. Otherwise, we do not reject the null hypothesis. Further, if p ≤ $\alpha$, our results are considered "statistically significant."
+**Significance thresholds.** Suppose we set a significance threshold, $\alpha$. If p ≤ $\alpha$, then we can reject the null hypothesis. Otherwise, we do not reject the null hypothesis. Further, if p ≤ $\alpha$, our results are considered "statistically significant."
 
 ---
 
@@ -104,21 +104,24 @@ knitr::include_graphics("data/08_inferences/pmorpheus.jpg")
 
 
 <script>
-  iFrameResize({}, ".interactive");
+iFrameResize({}, ".interactive");
   
 var coll = document.getElementsByClassName("collapsible");
-var coll_down = document.getElementsByClassName("collapse_content");
-var i;
-for (i = 0; i < coll.length; i++) {
+for (var i = 0; i < coll.length; i++) {
   coll[i].addEventListener("click", function() {
     this.classList.toggle("active");
     var content = this.nextElementSibling;
     if (content.style.maxHeight){
       content.style.maxHeight = null;
+      setTimeout(function() {
+        content.style.paddingTop = "0";
+        content.style.paddingBottom = "0";
+      }, 250)
     } else {
+      content.style.paddingTop = "15px";
+      content.style.paddingBottom = "10px";
       content.style.maxHeight = content.scrollHeight + "px";
     } 
   });
 }
 </script>
-

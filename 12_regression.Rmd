@@ -112,5 +112,24 @@ cor.test(dat.2007$lifeExp, dat.2007$log_GDP, method = "spearman")
 
 
 <script>
-  iFrameResize({}, ".interactive");
+iFrameResize({}, ".interactive");
+  
+var coll = document.getElementsByClassName("collapsible");
+for (var i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.maxHeight){
+      content.style.maxHeight = null;
+      setTimeout(function() {
+        content.style.paddingTop = "0";
+        content.style.paddingBottom = "0";
+      }, 250)
+    } else {
+      content.style.paddingTop = "15px";
+      content.style.paddingBottom = "10px";
+      content.style.maxHeight = content.scrollHeight + "px";
+    } 
+  });
+}
 </script>

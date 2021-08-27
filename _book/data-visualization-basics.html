@@ -524,6 +524,28 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><img src="_main_files/figure-html/unnamed-chunk-161-1.png" width="672" /></p>
 <div class="sourceCode" id="cb347"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb347-1"><a href="data-visualization-basics.html#cb347-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">&quot;data/09_ggplot2/Life_GDP.png&quot;</span>, <span class="at">plot =</span> p)</span></code></pre></div>
 <pre><code>## Saving 7 x 5 in image</code></pre>
+<script>
+iFrameResize({}, ".interactive");
+  
+var coll = document.getElementsByClassName("collapsible");
+for (var i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.maxHeight){
+      content.style.maxHeight = null;
+      setTimeout(function() {
+        content.style.paddingTop = "0";
+        content.style.paddingBottom = "0";
+      }, 250)
+    } else {
+      content.style.paddingTop = "15px";
+      content.style.paddingBottom = "10px";
+      content.style.maxHeight = content.scrollHeight + "px";
+    } 
+  });
+}
+</script>
 
 </div>
 </div>

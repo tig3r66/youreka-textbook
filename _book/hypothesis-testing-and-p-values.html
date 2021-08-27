@@ -360,9 +360,9 @@ Figure 9.1: A pipeline for data-driven decisions.
 <h2><span class="header-section-number">9.1</span> Hypothesis testing</h2>
 <p>We often want to test our hypotheses in statistics. For example, we might create an experiment to test if a vaccine is effective at preventing COVID-19. If your results are not consistent, no one would want to use your vaccine. Here are some examples of hypotheses:</p>
 <ul>
-<li>If I (<em>increase the concentration of this drug</em>) then (<em>the viral particles will decrease tenfold</em>).</li>
+<li>If (<em>I increase the concentration of this drug</em>) then (<em>the viral particles will decrease tenfold</em>).</li>
 <li>If (<em>I counsel patients instead of medication</em>) then (<em>their overall mental health score will increase by 5 points</em>).</li>
-<li>If (<em>&amp;independent variable</em>) then (<em>dependent variable</em>).</li>
+<li>If (<em>independent variable</em>) then (<em>dependent variable</em>).</li>
 </ul>
 <p>In statistics, we have two types of hypotheses: the null hypothesis and the alternative hypothesis.</p>
 <hr />
@@ -382,7 +382,7 @@ Figure 9.1: A pipeline for data-driven decisions.
 <p><strong>P-values (informal definition).</strong> A p-value, or probability value, is the probability of the data being as extreme as it is. We use p-values to determine if our results are statistically significant. Since p-valuese are probabilities, p must be between 0 and 1 inclusive.</p>
 <p><strong>P-value (formal definition).</strong> The p-value is the probability of observing a sample as extreme or more extreme than the one observed, given that the null hypothesis is true.</p>
 <hr />
-<p>Take a the following sleep experiment as an example. In this experiment, people try to memorize as many words as possible. Then, they are split into two groups that either sleeps 4 hours or 8 hours. The next day, people try to recall as many words as possible. The following figure shows the rsults:</p>
+<p>Take a the following sleep experiment as an example. In this experiment, people try to memorize as many words as possible. Then, they are split into two groups that will either sleep 4 hours or 8 hours that night. The next day, the people try to recall as many words as possible. The following figure shows the results:</p>
 <div class="figure" style="text-align: center"><span id="fig:p-value-sleep"></span>
 <img src="data/08_inferences/p_ex.png" alt="Figure retrieved from [Prob(a)bilistic World](https://www.probabilisticworld.com/intuitive-explanation-p-values/)." width="50%" />
 <p class="caption">
@@ -414,7 +414,7 @@ Solution
 <p><strong>Question:</strong> What is a “high” and “low” p-value? That is, how do we determine whether something is statistically significant?</p>
 <p><strong>Answer:</strong> You get to choose when a p-value is “low enough!”</p>
 <hr />
-<p><strong>Significance levels.</strong> Suppose we set a significance threshold, <span class="math inline">\(\alpha\)</span>. If p ≤ <span class="math inline">\(\alpha\)</span>, then we can reject the null hypothesis. Otherwise, we do not reject the null hypothesis. Further, if p ≤ <span class="math inline">\(\alpha\)</span>, our results are considered “statistically significant.”</p>
+<p><strong>Significance thresholds.</strong> Suppose we set a significance threshold, <span class="math inline">\(\alpha\)</span>. If p ≤ <span class="math inline">\(\alpha\)</span>, then we can reject the null hypothesis. Otherwise, we do not reject the null hypothesis. Further, if p ≤ <span class="math inline">\(\alpha\)</span>, our results are considered “statistically significant.”</p>
 <hr />
 <p>Remarks:</p>
 <ul>
@@ -439,18 +439,22 @@ Figure 9.3: Figure retrieved from <a href="https://imgflip.com/i/vtnlk">imgflip<
 </p>
 </div>
 <script>
-  iFrameResize({}, ".interactive");
+iFrameResize({}, ".interactive");
   
 var coll = document.getElementsByClassName("collapsible");
-var coll_down = document.getElementsByClassName("collapse_content");
-var i;
-for (i = 0; i < coll.length; i++) {
+for (var i = 0; i < coll.length; i++) {
   coll[i].addEventListener("click", function() {
     this.classList.toggle("active");
     var content = this.nextElementSibling;
     if (content.style.maxHeight){
       content.style.maxHeight = null;
+      setTimeout(function() {
+        content.style.paddingTop = "0";
+        content.style.paddingBottom = "0";
+      }, 250)
     } else {
+      content.style.paddingTop = "15px";
+      content.style.paddingBottom = "10px";
       content.style.maxHeight = content.scrollHeight + "px";
     } 
   });

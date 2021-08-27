@@ -607,7 +607,26 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>As seen in the previous example, a one-way ANOVA is a great tool for comparing multiple groups on one categorical variable such as income level. But what if we wanted to examine if life expectancy differs across the years 1952, 1972, and 2007 in addition to income level? In this case, we will need a two-way ANOVA.</p>
 <p>Although we won’t cover a two-way ANOVA in this text, you can learn more about it in <a href="http://www.sthda.com/english/wiki/two-way-anova-test-in-r">this article</a>.</p>
 <script>
-  iFrameResize({}, ".interactive");
+iFrameResize({}, ".interactive");
+  
+var coll = document.getElementsByClassName("collapsible");
+for (var i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.maxHeight){
+      content.style.maxHeight = null;
+      setTimeout(function() {
+        content.style.paddingTop = "0";
+        content.style.paddingBottom = "0";
+      }, 250)
+    } else {
+      content.style.paddingTop = "15px";
+      content.style.paddingBottom = "10px";
+      content.style.maxHeight = content.scrollHeight + "px";
+    } 
+  });
+}
 </script>
 
 </div>

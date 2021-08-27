@@ -375,19 +375,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="install.html#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&#39;tidyverse&#39;</span>, <span class="at">dependencies =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
 <p>By including <code>dependencies = TRUE</code>, we are including any additional packages our target package requires. Please also install <a href="https://www.rdocumentation.org/packages/gapminder/">gapminder</a>, <a href="https://www.rdocumentation.org/packages/ggsignif/">ggsignif</a>, and <a href="https://www.rdocumentation.org/packages/ggpubr/">ggpubr</a>. Without further ado, let’s jump into our adventure with R!</p>
 <script>
-  iFrameResize({}, ".interactive");
+iFrameResize({}, ".interactive");
   
 var coll = document.getElementsByClassName("collapsible");
-var coll_down = document.getElementsByClassName("collapse_content");
-var i;
-
-for (i = 0; i < coll.length; i++) {
+for (var i = 0; i < coll.length; i++) {
   coll[i].addEventListener("click", function() {
     this.classList.toggle("active");
     var content = this.nextElementSibling;
     if (content.style.maxHeight){
       content.style.maxHeight = null;
+      setTimeout(function() {
+        content.style.paddingTop = "0";
+        content.style.paddingBottom = "0";
+      }, 250)
     } else {
+      content.style.paddingTop = "15px";
+      content.style.paddingBottom = "10px";
       content.style.maxHeight = content.scrollHeight + "px";
     } 
   });
