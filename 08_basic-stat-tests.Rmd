@@ -31,6 +31,12 @@ levels(gapminder$continent)
 
 ## Student's t-test
 
+---
+
+**Student's t-test.** A t-test is used to determine if there is a significant difference between the means of two groups.
+
+---
+
 Let's start by asking the mean life expectancy of the continents in 1952.
 
 ```{r}
@@ -206,6 +212,12 @@ wilcox.test(Africa.wide$'2007', Africa.wide$'1952', paired=T)
 
 ## Chi-squared test
 
+---
+
+**Chi-squared test.** A chi-squared test determines if there is a significant difference between expected and observed data.
+
+---
+
 ### $\chi^2$ test for goodness-of-fit
 
 This section requires basic of knowledge of [Mendelian genetics](https://www.nature.com/scitable/topicpage/gregor-mendel-and-the-principles-of-inheritance-593/) regarding dominant and recessive alleles. Recall that crossing two heterozygotes (Aa x Aa) produces offspring with dominant and recessive phenotypes with an expected ratio of 3:1.
@@ -378,7 +390,7 @@ The odds ratio is yet another useful measurement you will often see in medical s
 
 </div>
   
-  
+<br/>
   
 <button class="collapsible">Comparison of proportions (OPTIONAL)</button>
 <div class="collapse_content">
