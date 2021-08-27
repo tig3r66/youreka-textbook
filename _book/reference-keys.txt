@@ -97,5 +97,3 @@ bar-plot
 basics
 box-plot
 histogram-and-density-plot
-choropleth
-animations

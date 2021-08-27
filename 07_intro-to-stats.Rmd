@@ -126,9 +126,9 @@ The final measure of spread we will cover is something called standard error.
   SE = \frac{\sigma}{\sqrt{n}}
 \end{equation}
 
-We will use SE extensively when we cover statistical tests. Here is an [excellent article](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3487226/) on the different use cases between SD and SEM.
-
 ---
+
+We will use SE extensively when we cover statistical tests. Here is an [excellent article](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3487226/) on the different use cases between SD and SEM.
 
 
 <script>
@@ -153,4 +153,3 @@ for (var i = 0; i < coll.length; i++) {
   });
 }
 </script>
-

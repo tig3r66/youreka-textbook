@@ -340,7 +340,7 @@ That's all there is to it! If you want more customization options, read the offi
 <button class="collapsible">Extras (OPTIONAL)</button>
 <div class="collapse_content">  
 
-### Choropleth
+**Choropleth**
 
 > “The greatest value of a picture is when it forces us to notice what we never expected to see.” --John Tukey
 
@@ -390,7 +390,7 @@ ggplot(life.exp.map, aes(x=long, y=lat, group = group)) +
   theme_bw()
 ```
 
-### Animations
+**Animations**
 
 While we covered the most relevant data visualizations for your project, we've barely scratched the surface of what R can do. For example, you can create animations. Let's install the `gganimate` package.
 

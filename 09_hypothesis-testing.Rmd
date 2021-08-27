@@ -97,7 +97,7 @@ At timese, determining significance feels arbitrary. In a sense, it is! As scien
 
 In academia, a common significance threshold is $\alpha = 0.05$. Please keep in mind that there is nothing magical about having $p < 0.05$. All it means is that there is a low probability that our observed data is less than our null hypothesis. Here is a meme I've curated for you to reinforce this concept:
 
-```{r p-memes, out.width="50%", fig.align="center", fig.cap="Figure retrieved from [imgflip](https://imgflip.com/i/vtnlk).", echo=FALSE}
+```{r p-memes, out.width="75%", fig.align="center", fig.cap="Figure retrieved from [imgflip](https://imgflip.com/i/vtnlk).", echo=FALSE}
 knitr::include_graphics("data/08_inferences/pmorpheus.jpg")
 ```
 
