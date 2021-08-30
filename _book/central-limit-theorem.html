@@ -371,13 +371,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Many observed quantities follow normal distribution. Imagine that we have a population following normal distribution that has a mean of 10 and standard deviation of 2. If we draw samples from it, are we able to estimate its mean?</p>
 <p>Note that <code>rnorm()</code> generates a vector of random numbers from a normal distribution.</p>
 <div class="sourceCode" id="cb191"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb191-1"><a href="central-limit-theorem.html#cb191-1" aria-hidden="true" tabindex="-1"></a>(samp30 <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="at">n=</span><span class="dv">30</span>, <span class="at">mean=</span><span class="dv">10</span>, <span class="at">sd=</span><span class="dv">2</span>))</span></code></pre></div>
-<pre><code>##  [1] 11.775031 12.144685 10.987163 11.843868 12.302173 12.242269 12.105298
-##  [8] 10.764447  9.971284  9.536231 11.774108 14.307949 11.864817 14.252699
-## [15] 10.163445  7.701635 10.222661 11.733353  8.342238 13.053483  9.593271
-## [22]  8.476184 10.886651  8.641773 11.698663  9.843966 10.332431  8.814018
-## [29] 11.393987  6.705807</code></pre>
+<pre><code>##  [1]  9.773220  8.592498  8.960351  8.653605  7.184561 11.044067  9.449741
+##  [8]  8.617484  8.145507 10.896649  9.136342 13.091666 10.556932  9.508235
+## [15] 10.084295 10.948029 10.644889 10.976264  8.080546 11.956279  9.594241
+## [22]  8.736028  8.786457  9.257833  7.279906  9.331967  9.230616  8.229151
+## [29]  8.094748 10.026282</code></pre>
 <div class="sourceCode" id="cb193"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb193-1"><a href="central-limit-theorem.html#cb193-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(samp30)</span></code></pre></div>
-<pre><code>## [1] 10.78252</code></pre>
+<pre><code>## [1] 9.495613</code></pre>
 <p>Although the mean is not 10, it is pretty close. This should make sense; when we draw a sample to estimate the mean, we may get very close to the desired “true mean,” but we also expect some error. What if I repeat the estimation 1000 times with 30 samples?</p>
 <div class="sourceCode" id="cb195"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb195-1"><a href="central-limit-theorem.html#cb195-1" aria-hidden="true" tabindex="-1"></a><span class="co"># initializing our means vector</span></span>
 <span id="cb195-2"><a href="central-limit-theorem.html#cb195-2" aria-hidden="true" tabindex="-1"></a>means10 <span class="ot">&lt;-</span> <span class="fu">as.vector</span>(<span class="cn">NA</span>)</span>

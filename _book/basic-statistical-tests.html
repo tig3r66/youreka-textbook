@@ -375,7 +375,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <pre><code>## [1] &quot;Africa&quot;   &quot;Americas&quot; &quot;Asia&quot;     &quot;Europe&quot;   &quot;Oceania&quot;</code></pre>
 <div id="students-t-test" class="section level2" number="10.1">
 <h2><span class="header-section-number">10.1</span> Student’s t-test</h2>
-<p>Let’s start by asking the mean life expectancy of the continents in 1952. Let’s first summarize our data.</p>
+<p>Let’s start by asking the mean life expectancy of the continents in 1952. First, we’ll summarize our data.</p>
+<hr />
+<p><strong>Student’s t-test.</strong> A t-test is used to determine if there is a significant difference between the means of two groups.</p>
+<hr />
+<p>Let’s start by asking the mean life expectancy of the continents in 1952.</p>
 <div class="sourceCode" id="cb204"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb204-1"><a href="basic-statistical-tests.html#cb204-1" aria-hidden="true" tabindex="-1"></a>gapminder <span class="sc">%&gt;%</span> </span>
 <span id="cb204-2"><a href="basic-statistical-tests.html#cb204-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(year <span class="sc">==</span> <span class="dv">1952</span>) <span class="sc">%&gt;%</span> </span>
 <span id="cb204-3"><a href="basic-statistical-tests.html#cb204-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(continent) <span class="sc">%&gt;%</span></span>
@@ -604,6 +608,9 @@ Mann-Whitney U test
 </div>
 <div id="chi-squared-test" class="section level2" number="10.2">
 <h2><span class="header-section-number">10.2</span> Chi-squared test</h2>
+<hr />
+<p><strong>Chi-squared test.</strong> A chi-squared test determines if there is a significant difference between expected and observed data.</p>
+<hr />
 <div id="chi2-test-for-goodness-of-fit" class="section level3" number="10.2.1">
 <h3><span class="header-section-number">10.2.1</span> <span class="math inline">\(\chi^2\)</span> test for goodness-of-fit</h3>
 <p>Let’s analyze the data in Mendel’s original paper: <a href="http://www.mendelweb.org/">Mendel, Gregor. 1866. Versuche über Plflanzenhybriden. Verhandlungen des naturforschenden Vereines in Brünn, Bd. IV für das Jahr
@@ -841,18 +848,18 @@ Comparison of proportions (OPTIONAL)
 <span id="cb257-3"><a href="basic-statistical-tests.html#cb257-3" aria-hidden="true" tabindex="-1"></a>p.hat.vector <span class="ot">=</span> x<span class="sc">/</span>n</span>
 <span id="cb257-4"><a href="basic-statistical-tests.html#cb257-4" aria-hidden="true" tabindex="-1"></a>p.hat.vector</span></code></pre></div>
 <pre><code>## [1] 0.6518987 0.5769231</code></pre>
-<div class="sourceCode" id="cb259"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb259-1"><a href="basic-statistical-tests.html#cb259-1" aria-hidden="true" tabindex="-1"></a><span class="co">#use r as a calculator</span></span>
+<div class="sourceCode" id="cb259"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb259-1"><a href="basic-statistical-tests.html#cb259-1" aria-hidden="true" tabindex="-1"></a><span class="co"># use r as a calculator</span></span>
 <span id="cb259-2"><a href="basic-statistical-tests.html#cb259-2" aria-hidden="true" tabindex="-1"></a>p.hat.pooled <span class="ot">=</span> <span class="fu">sum</span>(x)<span class="sc">/</span><span class="fu">sum</span>(n)</span>
 <span id="cb259-3"><a href="basic-statistical-tests.html#cb259-3" aria-hidden="true" tabindex="-1"></a>p.hat.pooled</span></code></pre></div>
 <pre><code>## [1] 0.6271186</code></pre>
 <p>Next we will check the success-failure condition, which is, <span class="math inline">\(\hat{p}n_1\)</span> and <span class="math inline">\(\hat{p}n_2\)</span> are both <span class="math inline">\(\geq 10\)</span>.</p>
-<div class="sourceCode" id="cb261"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb261-1"><a href="basic-statistical-tests.html#cb261-1" aria-hidden="true" tabindex="-1"></a><span class="co">#check success-failure</span></span>
+<div class="sourceCode" id="cb261"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb261-1"><a href="basic-statistical-tests.html#cb261-1" aria-hidden="true" tabindex="-1"></a><span class="co"># check success-failure</span></span>
 <span id="cb261-2"><a href="basic-statistical-tests.html#cb261-2" aria-hidden="true" tabindex="-1"></a>n<span class="sc">*</span>p.hat.pooled</span></code></pre></div>
 <pre><code>## [1] 99.08475 48.91525</code></pre>
 <div class="sourceCode" id="cb263"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb263-1"><a href="basic-statistical-tests.html#cb263-1" aria-hidden="true" tabindex="-1"></a>n<span class="sc">*</span>(<span class="dv">1</span> <span class="sc">-</span> p.hat.pooled)</span></code></pre></div>
 <pre><code>## [1] 58.91525 29.08475</code></pre>
 <p>The success-failure condition is met; the expected number of successes and failures are all larger than 10.</p>
-<div class="sourceCode" id="cb265"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb265-1"><a href="basic-statistical-tests.html#cb265-1" aria-hidden="true" tabindex="-1"></a><span class="co">#conduct inference</span></span>
+<div class="sourceCode" id="cb265"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb265-1"><a href="basic-statistical-tests.html#cb265-1" aria-hidden="true" tabindex="-1"></a><span class="co"># conduct inference</span></span>
 <span id="cb265-2"><a href="basic-statistical-tests.html#cb265-2" aria-hidden="true" tabindex="-1"></a><span class="fu">prop.test</span>(<span class="at">x =</span> x, <span class="at">n =</span> n)</span></code></pre></div>
 <pre><code>## 
 ##  2-sample test for equality of proportions with continuity correction
