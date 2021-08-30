@@ -24,7 +24,17 @@ levels(gapminder$continent)
 
 ## Student's t-test
 
+<<<<<<< HEAD:10_basic-stat-tests.Rmd
 Let's start by asking the mean life expectancy of the continents in 1952. Let's first summarize our data.
+=======
+---
+
+**Student's t-test.** A t-test is used to determine if there is a significant difference between the means of two groups.
+
+---
+
+Let's start by asking the mean life expectancy of the continents in 1952.
+>>>>>>> Ben:08_basic-stat-tests.Rmd
 
 ```{r}
 gapminder %>% 
@@ -207,6 +217,12 @@ wilcox.test(Africa.wide$'2007', Africa.wide$'1952', paired=T)
 
 
 ## Chi-squared test
+
+---
+
+**Chi-squared test.** A chi-squared test determines if there is a significant difference between expected and observed data.
+
+---
 
 ### $\chi^2$ test for goodness-of-fit
 
@@ -431,8 +447,13 @@ The p-value is 0.6734. What does this result mean?
 The odds ratio is yet another useful measurement you will often see in medical science articles. For the sake of time, I will leave it to you if you wish to [read up](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2938757/) on it.
 
 </div>
+<<<<<<< HEAD:10_basic-stat-tests.Rmd
 
 <br>
+=======
+  
+<br/>
+>>>>>>> Ben:08_basic-stat-tests.Rmd
   
 <button class="collapsible">Comparison of proportions (OPTIONAL)</button>
 <div class="collapse_content">
