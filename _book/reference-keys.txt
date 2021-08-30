@@ -77,8 +77,9 @@ chi2-test-for-independence
 chi2-test-for-homogeneity
 additional-resources
 comparing-multiple-means
+anova-in-a-nutshell
 one-way-anova
-the-iris-dataset
+the-iris-example
 non-parametric-alternatives-to-anova
 beyond-the-one-way-anova
 linear-regression

@@ -88,7 +88,7 @@ First of all, there *is* a significant relationship between these two variables 
 
 The linear model assumes that your data is normally distributed for each independent observation. We can generate a diagnostic plot in the same way as one-way ANOVA.
 
-```{r}
+```{r, fig.show="hold", out.width="50%"}
 plot(lifeExp.v.gdp)
 ```
 

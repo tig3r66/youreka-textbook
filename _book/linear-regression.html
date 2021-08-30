@@ -286,12 +286,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="11" data-path="comparing-multiple-means.html"><a href="comparing-multiple-means.html"><i class="fa fa-check"></i><b>11</b> Comparing multiple means</a>
 <ul>
-<li class="chapter" data-level="11.1" data-path="comparing-multiple-means.html"><a href="comparing-multiple-means.html#one-way-anova"><i class="fa fa-check"></i><b>11.1</b> One-way ANOVA</a>
+<li class="chapter" data-level="11.1" data-path="comparing-multiple-means.html"><a href="comparing-multiple-means.html#anova-in-a-nutshell"><i class="fa fa-check"></i><b>11.1</b> ANOVA in a nutshell</a></li>
+<li class="chapter" data-level="11.2" data-path="comparing-multiple-means.html"><a href="comparing-multiple-means.html#one-way-anova"><i class="fa fa-check"></i><b>11.2</b> One-way ANOVA</a>
 <ul>
-<li class="chapter" data-level="11.1.1" data-path="comparing-multiple-means.html"><a href="comparing-multiple-means.html#the-iris-dataset"><i class="fa fa-check"></i><b>11.1.1</b> The iris dataset</a></li>
-<li class="chapter" data-level="11.1.2" data-path="comparing-multiple-means.html"><a href="comparing-multiple-means.html#non-parametric-alternatives-to-anova"><i class="fa fa-check"></i><b>11.1.2</b> Non-parametric alternatives to ANOVA</a></li>
+<li class="chapter" data-level="11.2.1" data-path="comparing-multiple-means.html"><a href="comparing-multiple-means.html#the-iris-example"><i class="fa fa-check"></i><b>11.2.1</b> The iris example</a></li>
+<li class="chapter" data-level="11.2.2" data-path="comparing-multiple-means.html"><a href="comparing-multiple-means.html#non-parametric-alternatives-to-anova"><i class="fa fa-check"></i><b>11.2.2</b> Non-parametric alternatives to ANOVA</a></li>
 </ul></li>
-<li class="chapter" data-level="11.2" data-path="comparing-multiple-means.html"><a href="comparing-multiple-means.html#beyond-the-one-way-anova"><i class="fa fa-check"></i><b>11.2</b> Beyond the one-way ANOVA</a></li>
+<li class="chapter" data-level="11.3" data-path="comparing-multiple-means.html"><a href="comparing-multiple-means.html#beyond-the-one-way-anova"><i class="fa fa-check"></i><b>11.3</b> Beyond the one-way ANOVA</a></li>
 </ul></li>
 <li class="chapter" data-level="12" data-path="linear-regression.html"><a href="linear-regression.html"><i class="fa fa-check"></i><b>12</b> Linear regression</a>
 <ul>
@@ -356,19 +357,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="basic-concepts" class="section level2" number="12.1">
 <h2><span class="header-section-number">12.1</span> Basic concepts</h2>
 <p>Let’s load the usual packages.</p>
-<div class="sourceCode" id="cb304"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb304-1"><a href="linear-regression.html#cb304-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gapminder)</span>
-<span id="cb304-2"><a href="linear-regression.html#cb304-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb304-3"><a href="linear-regression.html#cb304-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(car)       <span class="co"># car stands for Companion to Applied Regression</span></span></code></pre></div>
+<div class="sourceCode" id="cb303"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb303-1"><a href="linear-regression.html#cb303-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gapminder)</span>
+<span id="cb303-2"><a href="linear-regression.html#cb303-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb303-3"><a href="linear-regression.html#cb303-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(car)       <span class="co"># car stands for Companion to Applied Regression</span></span></code></pre></div>
 <p>In this section, we will test for a relationship between life expectancy and per capita <a href="https://en.wikipedia.org/wiki/Gross_domestic_product">gross domestic product</a> (GDP).</p>
 <p>As with all statistical tests, it is a good idea to visualize our data when possible. Let’s create a scatterplot of the two columns of interest, <code>lifeExp</code> and <code>gdpPercap</code>.</p>
-<div class="sourceCode" id="cb305"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb305-1"><a href="linear-regression.html#cb305-1" aria-hidden="true" tabindex="-1"></a>dat<span class="fl">.2007</span> <span class="ot">&lt;-</span> gapminder <span class="sc">%&gt;%</span> <span class="fu">filter</span>(year <span class="sc">==</span> <span class="dv">2007</span>)</span>
-<span id="cb305-2"><a href="linear-regression.html#cb305-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(dat<span class="fl">.2007</span>, <span class="fu">aes</span>(<span class="at">x =</span> gdpPercap, <span class="at">y =</span> lifeExp)) <span class="sc">+</span></span>
-<span id="cb305-3"><a href="linear-regression.html#cb305-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb304"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb304-1"><a href="linear-regression.html#cb304-1" aria-hidden="true" tabindex="-1"></a>dat<span class="fl">.2007</span> <span class="ot">&lt;-</span> gapminder <span class="sc">%&gt;%</span> <span class="fu">filter</span>(year <span class="sc">==</span> <span class="dv">2007</span>)</span>
+<span id="cb304-2"><a href="linear-regression.html#cb304-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(dat<span class="fl">.2007</span>, <span class="fu">aes</span>(<span class="at">x =</span> gdpPercap, <span class="at">y =</span> lifeExp)) <span class="sc">+</span></span>
+<span id="cb304-3"><a href="linear-regression.html#cb304-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code></pre></div>
 <p><img src="_main_files/figure-html/unnamed-chunk-134-1.png" width="672" /></p>
 <p>We can see immediately that this is unlikely a linear relationship. In this case, we will need to log-transform the GDP data to obtain a linear relationship.</p>
-<div class="sourceCode" id="cb306"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb306-1"><a href="linear-regression.html#cb306-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(dat<span class="fl">.2007</span>, <span class="fu">aes</span>(<span class="at">x =</span> gdpPercap, <span class="at">y =</span> lifeExp)) <span class="sc">+</span></span>
-<span id="cb306-2"><a href="linear-regression.html#cb306-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb306-3"><a href="linear-regression.html#cb306-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_log10</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb305"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb305-1"><a href="linear-regression.html#cb305-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(dat<span class="fl">.2007</span>, <span class="fu">aes</span>(<span class="at">x =</span> gdpPercap, <span class="at">y =</span> lifeExp)) <span class="sc">+</span></span>
+<span id="cb305-2"><a href="linear-regression.html#cb305-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb305-3"><a href="linear-regression.html#cb305-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_log10</span>()</span></code></pre></div>
 <p><img src="_main_files/figure-html/unnamed-chunk-135-1.png" width="672" /></p>
 <p>Now that the data are properly transformed, we can create the linear model for the predictability of life expectancy based on gross domestic product. Before we do that let’s make it clear:</p>
 <ol style="list-style-type: decimal">
@@ -377,17 +378,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><p>We can only discuss strength of correlation with these linear regression, but NOT the causation. That is, correlation does NOT imply causation.</p></li>
 </ol>
 <p>We can plot the linear model easily:</p>
-<div class="sourceCode" id="cb307"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb307-1"><a href="linear-regression.html#cb307-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> dat<span class="fl">.2007</span>, <span class="fu">aes</span>(<span class="at">x =</span> gdpPercap, <span class="at">y =</span> lifeExp)) <span class="sc">+</span></span>
-<span id="cb307-2"><a href="linear-regression.html#cb307-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb307-3"><a href="linear-regression.html#cb307-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_log10</span>() <span class="sc">+</span></span>
-<span id="cb307-4"><a href="linear-regression.html#cb307-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">&quot;lm&quot;</span>)  <span class="co"># lm = linear model</span></span></code></pre></div>
+<div class="sourceCode" id="cb306"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb306-1"><a href="linear-regression.html#cb306-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> dat<span class="fl">.2007</span>, <span class="fu">aes</span>(<span class="at">x =</span> gdpPercap, <span class="at">y =</span> lifeExp)) <span class="sc">+</span></span>
+<span id="cb306-2"><a href="linear-regression.html#cb306-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb306-3"><a href="linear-regression.html#cb306-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_log10</span>() <span class="sc">+</span></span>
+<span id="cb306-4"><a href="linear-regression.html#cb306-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">&quot;lm&quot;</span>)  <span class="co"># lm = linear model</span></span></code></pre></div>
 <pre><code>## `geom_smooth()` using formula &#39;y ~ x&#39;</code></pre>
 <p><img src="_main_files/figure-html/lm-method-1.png" width="672" /></p>
 <p>To get rid of the confidence band around the line, pass <code>se = FALSE</code> into <code>geom_smooth()</code>.</p>
-<div class="sourceCode" id="cb309"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb309-1"><a href="linear-regression.html#cb309-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> dat<span class="fl">.2007</span>, <span class="fu">aes</span>(<span class="at">x =</span> gdpPercap, <span class="at">y =</span> lifeExp)) <span class="sc">+</span></span>
-<span id="cb309-2"><a href="linear-regression.html#cb309-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb309-3"><a href="linear-regression.html#cb309-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_log10</span>() <span class="sc">+</span></span>
-<span id="cb309-4"><a href="linear-regression.html#cb309-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">&quot;lm&quot;</span>, <span class="at">se =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb308"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb308-1"><a href="linear-regression.html#cb308-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> dat<span class="fl">.2007</span>, <span class="fu">aes</span>(<span class="at">x =</span> gdpPercap, <span class="at">y =</span> lifeExp)) <span class="sc">+</span></span>
+<span id="cb308-2"><a href="linear-regression.html#cb308-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb308-3"><a href="linear-regression.html#cb308-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_log10</span>() <span class="sc">+</span></span>
+<span id="cb308-4"><a href="linear-regression.html#cb308-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">&quot;lm&quot;</span>, <span class="at">se =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
 <p>You can also customize the colour and thickness of the line. Use the <code>?</code> operator or read the documentation to see additional options.</p>
 <p>Here is another interactive app showing how different data affects the regression model.</p>
 <iframe class="interactive" id="ch10-slreg2" src="https://openintro.shinyapps.io/slr_diag/" scrolling="no" frameborder="no">
@@ -396,9 +397,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="pearson-correlation" class="section level2" number="12.2">
 <h2><span class="header-section-number">12.2</span> Pearson correlation</h2>
 <p>Let’s look at the correlation. For normal distributed data, we calculate the Pearson correlation for the log-transformed variable.</p>
-<div class="sourceCode" id="cb310"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb310-1"><a href="linear-regression.html#cb310-1" aria-hidden="true" tabindex="-1"></a>dat<span class="fl">.2007</span><span class="sc">$</span>log_GDP <span class="ot">&lt;-</span> <span class="fu">log</span>(dat<span class="fl">.2007</span><span class="sc">$</span>gdpPercap)  <span class="co"># add a new variable</span></span>
-<span id="cb310-2"><a href="linear-regression.html#cb310-2" aria-hidden="true" tabindex="-1"></a>lifeExp.v.gdp <span class="ot">&lt;-</span> <span class="fu">lm</span>(<span class="at">formula =</span> lifeExp <span class="sc">~</span> log_GDP, <span class="at">data =</span> dat<span class="fl">.2007</span>)</span>
-<span id="cb310-3"><a href="linear-regression.html#cb310-3" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(lifeExp.v.gdp)</span></code></pre></div>
+<div class="sourceCode" id="cb309"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb309-1"><a href="linear-regression.html#cb309-1" aria-hidden="true" tabindex="-1"></a>dat<span class="fl">.2007</span><span class="sc">$</span>log_GDP <span class="ot">&lt;-</span> <span class="fu">log</span>(dat<span class="fl">.2007</span><span class="sc">$</span>gdpPercap)  <span class="co"># add a new variable</span></span>
+<span id="cb309-2"><a href="linear-regression.html#cb309-2" aria-hidden="true" tabindex="-1"></a>lifeExp.v.gdp <span class="ot">&lt;-</span> <span class="fu">lm</span>(<span class="at">formula =</span> lifeExp <span class="sc">~</span> log_GDP, <span class="at">data =</span> dat<span class="fl">.2007</span>)</span>
+<span id="cb309-3"><a href="linear-regression.html#cb309-3" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(lifeExp.v.gdp)</span></code></pre></div>
 <pre><code>## 
 ## Call:
 ## lm(formula = lifeExp ~ log_GDP, data = dat.2007)
@@ -422,11 +423,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>For our question, the relationship between life expectancy and GDP, focus on the <em>coefficients</em> section, specifically the line for <code>log_GDP</code>.</p>
 <p>First of all, there <em>is</em> a significant relationship between these two variables (p &lt; 2 x 10<sup>-16</sup>, or, as R reports in the <code>Pr&gt;(|t|)</code> column, p &lt; 2e-16). The <code>Estimate</code> column of the results lists a value of <code>lifeExp.v.gdp$coefficients['log_GDP']</code>. For every 10-fold increase in per capita GDP (remember we log<sub>10</sub>-transformed GDP), life expectancy increases by almost 7 years.</p>
 <p>The linear model assumes that your data is normally distributed for each independent observation. We can generate a diagnostic plot in the same way as one-way ANOVA.</p>
-<div class="sourceCode" id="cb312"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb312-1"><a href="linear-regression.html#cb312-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(lifeExp.v.gdp)</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-137-1.png" width="672" /><img src="_main_files/figure-html/unnamed-chunk-137-2.png" width="672" /><img src="_main_files/figure-html/unnamed-chunk-137-3.png" width="672" /><img src="_main_files/figure-html/unnamed-chunk-137-4.png" width="672" /></p>
+<div class="sourceCode" id="cb311"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb311-1"><a href="linear-regression.html#cb311-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(lifeExp.v.gdp)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-137-1.png" width="50%" /><img src="_main_files/figure-html/unnamed-chunk-137-2.png" width="50%" /><img src="_main_files/figure-html/unnamed-chunk-137-3.png" width="50%" /><img src="_main_files/figure-html/unnamed-chunk-137-4.png" width="50%" /></p>
 <p>Q-Q plot suggested this data deviates from normality. Let’s also take a look at the residues of the linear model:</p>
-<div class="sourceCode" id="cb313"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb313-1"><a href="linear-regression.html#cb313-1" aria-hidden="true" tabindex="-1"></a>residuals_lm <span class="ot">&lt;-</span> <span class="fu">residuals</span>(<span class="at">object =</span> lifeExp.v.gdp)</span>
-<span id="cb313-2"><a href="linear-regression.html#cb313-2" aria-hidden="true" tabindex="-1"></a><span class="fu">shapiro.test</span>(<span class="at">x =</span> residuals_lm)</span></code></pre></div>
+<div class="sourceCode" id="cb312"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb312-1"><a href="linear-regression.html#cb312-1" aria-hidden="true" tabindex="-1"></a>residuals_lm <span class="ot">&lt;-</span> <span class="fu">residuals</span>(<span class="at">object =</span> lifeExp.v.gdp)</span>
+<span id="cb312-2"><a href="linear-regression.html#cb312-2" aria-hidden="true" tabindex="-1"></a><span class="fu">shapiro.test</span>(<span class="at">x =</span> residuals_lm)</span></code></pre></div>
 <pre><code>## 
 ##  Shapiro-Wilk normality test
 ## 
@@ -437,7 +438,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="spearman-correlation" class="section level2" number="12.3">
 <h2><span class="header-section-number">12.3</span> Spearman correlation</h2>
 <p>If your variables are not normally distributed, you can use the non-parametric Spearman correlation as alternative. Instead of Pearson’s R, the Spearman test outputs rho (<span class="math inline">\(\rho\)</span>),</p>
-<div class="sourceCode" id="cb315"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb315-1"><a href="linear-regression.html#cb315-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cor.test</span>(dat<span class="fl">.2007</span><span class="sc">$</span>lifeExp, dat<span class="fl">.2007</span><span class="sc">$</span>log_GDP, <span class="at">method =</span> <span class="st">&quot;spearman&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb314"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb314-1"><a href="linear-regression.html#cb314-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cor.test</span>(dat<span class="fl">.2007</span><span class="sc">$</span>lifeExp, dat<span class="fl">.2007</span><span class="sc">$</span>log_GDP, <span class="at">method =</span> <span class="st">&quot;spearman&quot;</span>)</span></code></pre></div>
 <pre><code>## 
 ##  Spearman&#39;s rank correlation rho
 ## 

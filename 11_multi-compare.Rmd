@@ -1,6 +1,6 @@
 # Comparing multiple means
 
-Throughout this lab, we will provide a pipeline to help you wrangle data, perform statistical analyses, and (perhaps most importantly) visualize data in R. Here, we will learn how to compare the means using parametric tests and medians using non-parametric tests of multiple groups.
+Throughout this chapter, we will provide a pipeline to help you wrangle data, perform statistical analyses, and (perhaps most importantly) visualize data in R.
 
 Let's load the usual packages, and one new package called `car` (Companion to Applied Regression).
 
@@ -10,46 +10,107 @@ library(tidyverse)
 library(car)  # for Levene's test
 ```
 
+## ANOVA in a nutshell
+
+---
+
+**Analysis of variance (ANOVA).** ANOVA tells us whether multiple groups are significantly different from each other. We can write our general hypotheses as this:
+
+- H$_0$: there is no difference between the groups.
+- H$_a$: there is a difference between the groups.
+
+Like how the t-test used the t statistic, ANOVA uses the F statistic. In general:
+
+- A small F means there likely is not a difference between the groups (H0).
+- A large F means there likely is a difference between the groups (Ha).
+
+ANOVA assumes that
+
+1. All groups have equal variance, and
+1. All groups have a normal distribution.
+
+---
+
+To check the assumptions, first **visualize your data!** This will provide a sanity check for the results from statistical tests. Now for the tests:
+
+- You can use `var.test()` or `leveneTest()` to check for equal variance.
+- You can use `shapiro.test()` to check for a normal distribution.
+
+An important remark is that ANOVA does not tell you *which* groups are significantly different, only *whether* there are significant differences between your groups. Here is a pipeline for running ANOVA:
+
+1. Visualize your data. Side-by-side boxplots are a good bet.
+1. Check for equal variance and normality.
+1. Run the ANOVA.
+    - If results are not significant, conclude that there there are no significant difference between your groups.
+    - If results are significant, use a **post-hoc test** to see which groups are significantly different (more on this later).
+
 
 ## One-way ANOVA
 
-### The iris dataset
+### The iris example
 
-The iris dataset contains information about three species of flowers: setosa, veriscolor, and virginia. Iris is a built-in dataset, meaning we can call it without reading it in.
+The iris dataset contains information about three species of flowers: setosa, veriscolor, and virginia. Iris is a built-in dataset in R, meaning we can call it without reading it in.
 
 + `iris$Species` refers to one column in `iris`. That is, the column with the name of the species (setosa, versicolor, or virginica).
 + We can see how many rows and columns are in a `data.frame` with the `dim` command. `dim(iris)` prints out the number of rows (`r nrow(iris)`) and the number of columns (`r ncol(iris)`):
 
 ```{r}
 head(iris)
-summary(iris)
 ```
 
 Analysis of Variance (ANOVA) allows us to test whether there are differences in the mean between multiple samples. The question we will address is:
 
 **Are there differences in average sepal width among the three species?**
 
+As good data scientists, we should first visualize our data.
+
+```{r sepal-length}
+ggplot(iris, aes(Sepal.Length, col=Species)) +
+  geom_boxplot() +
+  theme_classic()
+```
+
 To run an ANOVA, we need to check if
 
   1. The variance is is equal for *each group*, and
   2. The data distributes normally within *each group*.
 
-Let's address the first point.
+Let's address the first point. Before doing a test, let us look at the figure above. The variance in each group looks relatively equal. Keep this in mind as we interpret Levene's test for equal variances.
 
 ```{r}
 leveneTest(Sepal.Width ~ Species, data = iris)
 ```
 
-A p-value of 0.5555 suggested that the variances are not significantly different. This means we should proceed with a parametric test like ANOVA (otherwise, use the Kruskal-Wallis test). Keep in mind we haven't yet checked the normality. We will do it after running ANOVA.
+What does the p-value suggest?
 
-We start by building an analysis of variance model with the `aov()` function:
+<button class="collapsible">Solution</button>
+<div class="collapse_content">
 
-In this case, we pass _two_ arguments to the `aov()` function:
+A p-value of 0.5555 suggested that the variances are not significantly different. With this assumption checked, we will proceed with ANOVA. Keep in mind we haven't yet checked the normality. We will do it after running ANOVA.
 
-1. For the `formula` parameter, we pass `Sepal.Width ~ Species`. This format is used throughout R for describing relationships we are testing. The format is `y ~ x`, where the response variables (e.g. `y`) are to the left of the tilde (~) and the predictor variables (e.g. `x`) are to the right of the tilde. In this example, we are asking if petal length is significantly different among the three species.
-2. We also need to tell R where to find the `Sepal.Width` and `Species` data, so we pass the variable name of the `iris data.frame` to the `data` parameter.  
+</div>
+<br>
 
-But we want to store the model, not just print it to the screen, so we use the assignment operator `<-` to store the product of the `aov` function in a variable of our choice
+We start by building an ANOVA model with the `aov()` function.
+
+---
+
+**ANOVA.** To run ANOVA in R, we need to  pass _two_ arguments to the `aov()` function. In general, this is what an ANOVA call looks like:
+
+```{r eval=FALSE}
+aov(y ~ x, data)
+```
+
+
+1. For the `formula` parameter, the format is `y ~ x`, where the response variable (y) is to the left of the tilde (~), and the predictor variable (x) is to the right of the tilde.
+
+1. For the `data` parameter, we place the naame of the dataset we want to analyze.
+
+---
+
+In this example, we are asking if petal length is significantly different among the three species. We also need to tell R where to find the `Sepal.Width` and `Species` data, so we pass the variable name of the `iris data.frame` to the `data` parameter.
+
+Let's build the model:
 
 ```{r}
 Sepal.Width.aov <- aov(formula = Sepal.Width ~ Species, data = iris)
@@ -64,46 +125,64 @@ Sepal.Width.aov
 To see the results of the ANOVA, we call the `summary()` function:
 
 ```{r}
-summary(object = Sepal.Width.aov)
+summary(Sepal.Width.aov)
 ```
 
-The species _do_ have significantly different sepal width (P < 0.001). However, ANOVA does not tell us _which_ species are different. We can run a _post hoc_ test to assess _how_ the species are different. A Tukey test comparing means would be one option. We will do the Tukey test after determining normality.
+**Answer to our question part 1:** The species *do* have significantly different sepal width (P < 0.001).
 
-Now, let's take a look at the normality. First, we will plot the diagnostic figures.
+However, ANOVA does not tell us *which* species are different. We can run a *post hoc* test to assess which species are different. A Tukey test comparing means would be one option. We will run the Tukey test after determining normality.
 
-```{r}
+<button class="collapsible">Evaluating normality</button>
+<div class="collapse_content">
+
+Now, let's take a look at the normality. Once again, let's visualize our data before running a test:
+
+```{r histo}
+ggplot(iris, aes(Sepal.Length, fill=Species)) +
+  geom_density(alpha=0.3) +
+  theme_classic()
+```
+
+From the visualization alone, each species' distribution of sepal lengths looks normal.
+
+Now, we will plot the diagnostic figures.
+
+```{r diagnostics, fig.show="hold", out.width="50%"}
 plot(Sepal.Width.aov)
 ```
 
-Most importantly, the residuals in Q-Q plot (upper right) should align with the line pretty well. This figure is acceptable. If the residuals deviate from the line too much, the data would not be considered normal. If you still perform the ANOVA, you should view your results critically (or ignore them, at worst).
+Most importantly, the residuals in Q-Q plot (upper right) should align with the line pretty well. If the residuals were to deviate from the line too much, the data would not be considered normal. If you still perform the ANOVA, you should view your results critically (or ignore them, at worst).
 
-Please do not include such diagnostic figures in the main text of your manuscripts. This might qualify for a supplementary figure at most.
+Recall that a residual is an "error" in result. More specifically, a residual is the difference of a given data point from the mean ($x - \mu$).
 
-Although we've also examined residuals with the QQ plot, we can also use a formal test:
+Please do not include diagnostic figures in the main text of your manuscripts. This might qualify for a supplementary figure at most.
+
+Although we've also examined residuals with the Q-Q plot, we can also use a formal test:
 
 ```{r}
 residuals_Sepal_Width <- residuals(object = Sepal.Width.aov)
 shapiro.test(x = residuals_Sepal_Width)
 ```
 
-A p-value of 0.323 suggested that the assumption of normality is reasonable.
+ A p-value of 0.323 suggested that the assumption of normality is reasonable.
 
-Recall that a residual is an "error" in result. More specifically, a residual is the difference of a given data point from the mean ($r = x - \mu$).
+</div>
+<br>
 
 So far, we have demonstrated
 
-  1. Normality in distribution.
-  2. Homogeneity variance, and
+  1. Normality in distribution and
+  2. Homogeneity in variance.
 
-These two justified our choice for one-way ANOVA. The result of ANOVA also indicated that at least one species of the 3 has significantly different sepal width from others. Which one?
+These two justified our choice for one-way ANOVA. The result of ANOVA also indicated that at least one species of the 3 has significantly different sepal width from others. Which ones are significantly different?
 
-To do this, we need to run "Post-Hoc" test. Let's do Tukey Honest Significant Differences (HSD). The nice thing is that `TukeyHSD()` can directly take the result of ANOVA as the argument.
+To do this, we need to run post-hoc test. Let's do Tukey Honest Significant Differences (HSD) test. The nice thing is that `TukeyHSD()` can directly take the result of ANOVA as the argument.
 
 ```{r}
 TukeyHSD(Sepal.Width.aov)
 ```
 
-The difference between every pair are significant ($p < 0.05$).
+**Answer to our question part 2:** The difference between every species of flower is significant at $\alpha = 0.05$.
 
 
 ### Non-parametric alternatives to ANOVA
@@ -112,16 +191,14 @@ In reality, your data usually will not fulfill every assumption for an ANOVA.
 
 In case of a non-normal sample, there are two ways to address the problem:
 
-  1. Apply appropriate [data transformations techniques](https://fmwww.bc.edu/repec/bocode/t/transint.html), or
-  2. Use a non-parametric test
+  1. Apply appropriate [data transformation techniques](https://fmwww.bc.edu/repec/bocode/t/transint.html), or
+  2. Use a non-parametric test.
 
-I highly recommend you to explore the tricks of data transformation. If you can rescue it back to normal distribution, parametric tests usually can allow you to do more powerful analysis.
+I highly recommend you to explore data transformation. If you can rescue your data back to normal distribution, parametric tests usually allow you to do more powerful analysis. If you have exhausted your attempts to data transformation, you may then use non-parametric tests.
 
-If you have exhausted your attempts to data transformation, you may then use non-parametric tests. A note for [Kruskal-Wallis test](http://www.biostathandbook.com/kruskalwallis.html).
+When your data doesn't satisfy the normality or equal variance assumption, ANOVA is not the best test to use. The Kruskal-Wallis test doesn't assume normality, but it does assume same distribution across groups (equal variance). If your data do not meet either assumption, you would want to use Welch's one-way test. Now, let's get back to gapminder data.
 
-When your data doesn't satisfy the normality or equal variance assumption, ANOVA does not strictly apply. However, the one-way ANOVA is not very sensitive to deviations from normality. Kruskal-Wallis doesn't assume normality, but it does assume same distribution across groups (equal variance). If your data do not meet either assumption, you would want to use Welch's One-way test. Now, let's get back to gapminder data.
-
-Let's add another categorical variable calle `Income_Level`. This time we will split by the quartiles.
+First, add another categorical variable calle `Income_Level`. This time we will split by the quartiles.
 
 ```{r}
 dat.1952 <- gapminder %>% filter(year == 1952)
@@ -129,7 +206,6 @@ border_1952 <- quantile(dat.1952$gdpPercap, c(.25, .50, .75))
 dat.1952$Income_Level_1952 <- cut(dat.1952$gdpPercap,
                                   c(0, border_1952[1], border_1952[2], border_1952[3], Inf),
                                   c('Low', 'Low Middle', 'High Middle', 'High'))
-head(dat.1952)
 
 dat.2007 <- gapminder %>% filter(year == 2007)
 border_2007 <- quantile(dat.2007$gdpPercap, c(.25, .50, .75))
@@ -137,10 +213,10 @@ dat.2007$Income_Level_2007 <- cut(dat.2007$gdpPercap,
                                   c(0, border_2007[1],
                                     border_2007[2], border_2007[3], Inf),
                                   c('Low', 'Low Middle', 'High Middle', 'High'))
-head(dat.2007)
+head(dat.1952)
 ```
 
-For now, let's focus on the data of in 1952.
+For now, let's focus on the data for the year 1952.
 
 ```{r}
 ggplot(data = dat.1952, aes(x = Income_Level_1952, y = lifeExp)) +
@@ -161,15 +237,25 @@ result <- oneway.test(lifeExp ~ Income_Level_1952, data = dat.1952)
 result
 ```
 
-A p-value of 2.2e-16 suggested that at least one category of `Income_Level_1952` had values of `lifeExp` that are significantly different from others. Let's run a Post-Hoc test to find out.
+What does the p-value mean?
+
+<button class="collapsible">Solution</button>
+<div class="collapse_content">
+
+A p-value of 2.2e-16 suggested that at least one category of `Income_Level_1952` had values of `lifeExp` that are significantly different from others. Let's run a post-hoc test to find out which categories are significant.
+</div>
+<br>
 
 Since we are running a non-parametric test, an appropriate test would be Games-Howell post-hoc test. Unfortunately, R does not have a built-in function for Games-Howell. Let's define a function to do this task.
+
+<button class="collapsible">Games-Howell test</button>
+<div class="collapse_content">
 
 **Note**: you don't need to know how the code below works.
 
 ```{r}
 games.howell <- function(grp, obs) {
-  #Create combinations
+  # Create combinations
   combs <- combn(unique(grp), 2)
   
   # Statistics that will be used throughout the calculations:
@@ -223,12 +309,18 @@ games.howell <- function(grp, obs) {
 }
 ```
 
+</div>
+
+<br>
+
 After defining the function, we can use it. If you decide to use the Games-Howell function, you can simply copy-and-paste it.
 
 ```{r}
 games.howell(grp = dat.1952$Income_Level_1952,  # groups, the categorical variable
              obs = dat.1952$lifeExp)            # observations, the continuous variable
 ```
+
+If you're interested in learning more, check out [this article on the Kruskal-Wallis test](http://www.biostathandbook.com/kruskalwallis.html).
 
 
 ## Beyond the one-way ANOVA
