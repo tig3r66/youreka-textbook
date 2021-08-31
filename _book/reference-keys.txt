@@ -78,7 +78,7 @@ chi2-test-for-independence
 chi2-test-for-homogeneity
 chi2-test-assumptions
 additional-resources
-comparing-multiple-means
+analysis-of-variance
 anova-in-a-nutshell
 one-way-anova
 the-iris-example

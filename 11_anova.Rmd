@@ -1,4 +1,4 @@
-# Comparing multiple means
+# Analysis of variance
 
 Throughout this chapter, we will provide a pipeline to help you wrangle data, perform statistical analyses, and (perhaps most importantly) visualize data in R.
 
@@ -41,7 +41,7 @@ An important remark is that ANOVA does not tell you *which* groups are significa
 1. Visualize your data. Side-by-side boxplots are a good bet.
 1. Check for equal variance and normality.
 1. Run the ANOVA.
-    - If results are not significant, conclude that there there are no significant difference between your groups.
+    - If results are not significant, conclude that there there are no significant differences between your groups.
     - If results are significant, use a **post-hoc test** to see which groups are significantly different (more on this later).
 
 
