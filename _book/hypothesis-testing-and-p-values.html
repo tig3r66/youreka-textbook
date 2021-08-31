@@ -6,12 +6,12 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>9 Hypothesis testing and p-values | A Gentle Introduction to Data Science with R</title>
   <meta name="description" content="9 Hypothesis testing and p-values | A Gentle Introduction to Data Science with R" />
-  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.23 and GitBook 2.6.7" />
 
   <meta property="og:title" content="9 Hypothesis testing and p-values | A Gentle Introduction to Data Science with R" />
   <meta property="og:type" content="book" />
   
-  <meta property="og:image" content="assets/youreka-logo.png" />
+  <meta property="og:image" content="/assets/youreka-logo.png" />
   
   <meta name="github-repo" content="tig3r66/youreka-textbook" />
 
@@ -19,7 +19,7 @@
   <meta name="twitter:title" content="9 Hypothesis testing and p-values | A Gentle Introduction to Data Science with R" />
   
   
-  <meta name="twitter:image" content="assets/youreka-logo.png" />
+  <meta name="twitter:image" content="/assets/youreka-logo.png" />
 
 <meta name="author" content="Eddie Guo" />
 <meta name="author" content="Youreka Canada Programs Team" />
@@ -33,8 +33,7 @@
   
 <link rel="prev" href="central-limit-theorem.html"/>
 <link rel="next" href="basic-statistical-tests.html"/>
-<script src="libs/header-attrs-2.7/header-attrs.js"></script>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<script src="libs/jquery-3.5.1/jquery-3.5.1.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -51,8 +50,9 @@
 
 
 
-<link href="libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
-<link href="libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/4.3.1/iframeResizer.min.js">
 </script>
 
@@ -78,69 +78,7 @@
 </script>
 
 
-<style type="text/css">
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-    color: #aaaaaa;
-  }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-</style>
+
 
 <link rel="stylesheet" href="assets/style.css" type="text/css" />
 </head>
@@ -158,87 +96,70 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="toc-logo"><a href="./index.html"><img src="assets/youreka-logo.png" ></a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Welcome to Youreka Canada</a>
-<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Welcome to Youreka Canada</a><ul>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#how-to-use-this-textbook"><i class="fa fa-check"></i>How to use this textbook</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#contributors"><i class="fa fa-check"></i>Contributors</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#credit"><i class="fa fa-check"></i>Credit</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="license.html"><a href="license.html"><i class="fa fa-check"></i>License</a></li>
 <li class="part"><span><b>I Prerequisites</b></span></li>
-<li class="chapter" data-level="1" data-path="install.html"><a href="install.html"><i class="fa fa-check"></i><b>1</b> Install R and RStudio</a>
-<ul>
+<li class="chapter" data-level="1" data-path="install.html"><a href="install.html"><i class="fa fa-check"></i><b>1</b> Install R and RStudio</a><ul>
 <li class="chapter" data-level="1.1" data-path="install.html"><a href="install.html#installing-r"><i class="fa fa-check"></i><b>1.1</b> Installing R</a></li>
 <li class="chapter" data-level="1.2" data-path="install.html"><a href="install.html#installing-rstudio"><i class="fa fa-check"></i><b>1.2</b> Installing RStudio</a></li>
 <li class="chapter" data-level="1.3" data-path="install.html"><a href="install.html#add-on-packages"><i class="fa fa-check"></i><b>1.3</b> Add-on packages</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="intro-to-r.html"><a href="intro-to-r.html"><i class="fa fa-check"></i><b>2</b> Intro to R</a>
-<ul>
+<li class="chapter" data-level="2" data-path="intro-to-r.html"><a href="intro-to-r.html"><i class="fa fa-check"></i><b>2</b> Intro to R</a><ul>
 <li class="chapter" data-level="2.1" data-path="intro-to-r.html"><a href="intro-to-r.html#using-interactive-windows"><i class="fa fa-check"></i><b>2.1</b> Using interactive windows</a></li>
 <li class="chapter" data-level="2.2" data-path="intro-to-r.html"><a href="intro-to-r.html#objects"><i class="fa fa-check"></i><b>2.2</b> Objects</a></li>
 <li class="chapter" data-level="2.3" data-path="intro-to-r.html"><a href="intro-to-r.html#functions"><i class="fa fa-check"></i><b>2.3</b> Functions</a></li>
 <li class="chapter" data-level="2.4" data-path="intro-to-r.html"><a href="intro-to-r.html#math-operators"><i class="fa fa-check"></i><b>2.4</b> Math operators</a></li>
-<li class="chapter" data-level="2.5" data-path="intro-to-r.html"><a href="intro-to-r.html#conditionals"><i class="fa fa-check"></i><b>2.5</b> Conditionals</a>
-<ul>
+<li class="chapter" data-level="2.5" data-path="intro-to-r.html"><a href="intro-to-r.html#conditionals"><i class="fa fa-check"></i><b>2.5</b> Conditionals</a><ul>
 <li class="chapter" data-level="2.5.1" data-path="intro-to-r.html"><a href="intro-to-r.html#if-statements"><i class="fa fa-check"></i><b>2.5.1</b> If statements</a></li>
 </ul></li>
-<li class="chapter" data-level="2.6" data-path="intro-to-r.html"><a href="intro-to-r.html#working-directory"><i class="fa fa-check"></i><b>2.6</b> Working directory</a>
-<ul>
+<li class="chapter" data-level="2.6" data-path="intro-to-r.html"><a href="intro-to-r.html#working-directory"><i class="fa fa-check"></i><b>2.6</b> Working directory</a><ul>
 <li class="chapter" data-level="2.6.1" data-path="intro-to-r.html"><a href="intro-to-r.html#other-important-things"><i class="fa fa-check"></i><b>2.6.1</b> Other important things</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="data-structures.html"><a href="data-structures.html"><i class="fa fa-check"></i><b>3</b> Data structures</a>
-<ul>
-<li class="chapter" data-level="3.1" data-path="data-structures.html"><a href="data-structures.html#vectors"><i class="fa fa-check"></i><b>3.1</b> Vectors</a>
-<ul>
+<li class="chapter" data-level="3" data-path="data-structures.html"><a href="data-structures.html"><i class="fa fa-check"></i><b>3</b> Data structures</a><ul>
+<li class="chapter" data-level="3.1" data-path="data-structures.html"><a href="data-structures.html#vectors"><i class="fa fa-check"></i><b>3.1</b> Vectors</a><ul>
 <li class="chapter" data-level="3.1.1" data-path="data-structures.html"><a href="data-structures.html#missing-values"><i class="fa fa-check"></i><b>3.1.1</b> Missing values</a></li>
 </ul></li>
 <li class="chapter" data-level="3.2" data-path="data-structures.html"><a href="data-structures.html#lists"><i class="fa fa-check"></i><b>3.2</b> Lists</a></li>
-<li class="chapter" data-level="3.3" data-path="data-structures.html"><a href="data-structures.html#data-frames"><i class="fa fa-check"></i><b>3.3</b> Data frames</a>
-<ul>
+<li class="chapter" data-level="3.3" data-path="data-structures.html"><a href="data-structures.html#data-frames"><i class="fa fa-check"></i><b>3.3</b> Data frames</a><ul>
 <li class="chapter" data-level="3.3.1" data-path="data-structures.html"><a href="data-structures.html#external-data"><i class="fa fa-check"></i><b>3.3.1</b> External data</a></li>
 <li class="chapter" data-level="3.3.2" data-path="data-structures.html"><a href="data-structures.html#factors"><i class="fa fa-check"></i><b>3.3.2</b> Factors</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="loops-and-functions.html"><a href="loops-and-functions.html"><i class="fa fa-check"></i><b>4</b> Loops and functions</a>
-<ul>
-<li class="chapter" data-level="4.1" data-path="loops-and-functions.html"><a href="loops-and-functions.html#for-loops"><i class="fa fa-check"></i><b>4.1</b> For loops</a>
-<ul>
+<li class="chapter" data-level="4" data-path="loops-and-functions.html"><a href="loops-and-functions.html"><i class="fa fa-check"></i><b>4</b> Loops and functions</a><ul>
+<li class="chapter" data-level="4.1" data-path="loops-and-functions.html"><a href="loops-and-functions.html#for-loops"><i class="fa fa-check"></i><b>4.1</b> For loops</a><ul>
 <li class="chapter" data-level="4.1.1" data-path="loops-and-functions.html"><a href="loops-and-functions.html#looping-over-multiple-files"><i class="fa fa-check"></i><b>4.1.1</b> Looping over multiple files</a></li>
 </ul></li>
-<li class="chapter" data-level="4.2" data-path="loops-and-functions.html"><a href="loops-and-functions.html#functions-1"><i class="fa fa-check"></i><b>4.2</b> Functions</a>
-<ul>
+<li class="chapter" data-level="4.2" data-path="loops-and-functions.html"><a href="loops-and-functions.html#functions-1"><i class="fa fa-check"></i><b>4.2</b> Functions</a><ul>
 <li class="chapter" data-level="4.2.1" data-path="loops-and-functions.html"><a href="loops-and-functions.html#conditionals-within-functions"><i class="fa fa-check"></i><b>4.2.1</b> Conditionals within functions</a></li>
 </ul></li>
 </ul></li>
 <li class="part"><span><b>II Data Wrangling</b></span></li>
-<li class="chapter" data-level="5" data-path="data-exploration.html"><a href="data-exploration.html"><i class="fa fa-check"></i><b>5</b> Data exploration</a>
-<ul>
+<li class="chapter" data-level="5" data-path="data-exploration.html"><a href="data-exploration.html"><i class="fa fa-check"></i><b>5</b> Data exploration</a><ul>
 <li class="chapter" data-level="5.1" data-path="data-exploration.html"><a href="data-exploration.html#get-the-gapminder-data"><i class="fa fa-check"></i><b>5.1</b> Get the gapminder data</a></li>
-<li class="chapter" data-level="5.2" data-path="data-exploration.html"><a href="data-exploration.html#explore-gapminder"><i class="fa fa-check"></i><b>5.2</b> Explore gapminder</a>
-<ul>
+<li class="chapter" data-level="5.2" data-path="data-exploration.html"><a href="data-exploration.html#explore-gapminder"><i class="fa fa-check"></i><b>5.2</b> Explore gapminder</a><ul>
 <li class="chapter" data-level="5.2.1" data-path="data-exploration.html"><a href="data-exploration.html#importing-and-exporting-data"><i class="fa fa-check"></i><b>5.2.1</b> Importing and exporting data</a></li>
 <li class="chapter" data-level="5.2.2" data-path="data-exploration.html"><a href="data-exploration.html#exploring-variables-in-a-data-frame"><i class="fa fa-check"></i><b>5.2.2</b> Exploring variables in a data frame</a></li>
 </ul></li>
-<li class="chapter" data-level="5.3" data-path="data-exploration.html"><a href="data-exploration.html#data-frames-with-dplyr"><i class="fa fa-check"></i><b>5.3</b> Data frames with dplyr</a>
-<ul>
+<li class="chapter" data-level="5.3" data-path="data-exploration.html"><a href="data-exploration.html#data-frames-with-dplyr"><i class="fa fa-check"></i><b>5.3</b> Data frames with dplyr</a><ul>
 <li class="chapter" data-level="5.3.1" data-path="data-exploration.html"><a href="data-exploration.html#subsetting-data"><i class="fa fa-check"></i><b>5.3.1</b> Subsetting data</a></li>
 <li class="chapter" data-level="5.3.2" data-path="data-exploration.html"><a href="data-exploration.html#filter-rows-with-filter"><i class="fa fa-check"></i><b>5.3.2</b> Filter rows with <code>filter()</code></a></li>
 <li class="chapter" data-level="5.3.3" data-path="data-exploration.html"><a href="data-exploration.html#pipe-operator"><i class="fa fa-check"></i><b>5.3.3</b> Pipe operator <code>%&gt;%</code></a></li>
 <li class="chapter" data-level="5.3.4" data-path="data-exploration.html"><a href="data-exploration.html#select-columns-with-select"><i class="fa fa-check"></i><b>5.3.4</b> Select Columns with <code>select()</code></a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="more-dplyr.html"><a href="more-dplyr.html"><i class="fa fa-check"></i><b>6</b> More dplyr</a>
-<ul>
+<li class="chapter" data-level="6" data-path="more-dplyr.html"><a href="more-dplyr.html"><i class="fa fa-check"></i><b>6</b> More dplyr</a><ul>
 <li class="chapter" data-level="6.1" data-path="more-dplyr.html"><a href="more-dplyr.html#review-and-preparation"><i class="fa fa-check"></i><b>6.1</b> Review and preparation</a></li>
 <li class="chapter" data-level="6.2" data-path="more-dplyr.html"><a href="more-dplyr.html#use-mutate-to-add-new-variables"><i class="fa fa-check"></i><b>6.2</b> Use mutate() to add new variables</a></li>
 <li class="chapter" data-level="6.3" data-path="more-dplyr.html"><a href="more-dplyr.html#use-arrange-to-row-order-data"><i class="fa fa-check"></i><b>6.3</b> Use arrange() to row-order data</a></li>
-<li class="chapter" data-level="6.4" data-path="more-dplyr.html"><a href="more-dplyr.html#use-rename-to-rename-variables"><i class="fa fa-check"></i><b>6.4</b> Use rename() to rename variables</a>
-<ul>
+<li class="chapter" data-level="6.4" data-path="more-dplyr.html"><a href="more-dplyr.html#use-rename-to-rename-variables"><i class="fa fa-check"></i><b>6.4</b> Use rename() to rename variables</a><ul>
 <li class="chapter" data-level="6.4.1" data-path="more-dplyr.html"><a href="more-dplyr.html#use-select-to-rename-and-reposition-variables"><i class="fa fa-check"></i><b>6.4.1</b> Use select() to rename and reposition variables</a></li>
 </ul></li>
-<li class="chapter" data-level="6.5" data-path="more-dplyr.html"><a href="more-dplyr.html#perform-tasks-on-subsets-with-group_by"><i class="fa fa-check"></i><b>6.5</b> Perform tasks on subsets with <code>group_by()</code></a>
-<ul>
+<li class="chapter" data-level="6.5" data-path="more-dplyr.html"><a href="more-dplyr.html#perform-tasks-on-subsets-with-group_by"><i class="fa fa-check"></i><b>6.5</b> Perform tasks on subsets with <code>group_by()</code></a><ul>
 <li class="chapter" data-level="6.5.1" data-path="more-dplyr.html"><a href="more-dplyr.html#counting"><i class="fa fa-check"></i><b>6.5.1</b> Counting</a></li>
 <li class="chapter" data-level="6.5.2" data-path="more-dplyr.html"><a href="more-dplyr.html#general-summarization"><i class="fa fa-check"></i><b>6.5.2</b> General summarization</a></li>
 </ul></li>
@@ -246,76 +167,64 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6.7" data-path="more-dplyr.html"><a href="more-dplyr.html#data-wrangling-summary"><i class="fa fa-check"></i><b>6.7</b> Data wrangling summary</a></li>
 </ul></li>
 <li class="part"><span><b>III Statistics</b></span></li>
-<li class="chapter" data-level="7" data-path="introduction-to-statistics.html"><a href="introduction-to-statistics.html"><i class="fa fa-check"></i><b>7</b> Introduction to statistics</a>
-<ul>
+<li class="chapter" data-level="7" data-path="introduction-to-statistics.html"><a href="introduction-to-statistics.html"><i class="fa fa-check"></i><b>7</b> Introduction to statistics</a><ul>
 <li class="chapter" data-level="7.1" data-path="introduction-to-statistics.html"><a href="introduction-to-statistics.html#inferential-statistics"><i class="fa fa-check"></i><b>7.1</b> Inferential statistics</a></li>
 <li class="chapter" data-level="7.2" data-path="introduction-to-statistics.html"><a href="introduction-to-statistics.html#measures-of-central-tendency"><i class="fa fa-check"></i><b>7.2</b> Measures of central tendency</a></li>
 <li class="chapter" data-level="7.3" data-path="introduction-to-statistics.html"><a href="introduction-to-statistics.html#measures-of-spread"><i class="fa fa-check"></i><b>7.3</b> Measures of spread</a></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="central-limit-theorem.html"><a href="central-limit-theorem.html"><i class="fa fa-check"></i><b>8</b> Central limit theorem</a>
-<ul>
+<li class="chapter" data-level="8" data-path="central-limit-theorem.html"><a href="central-limit-theorem.html"><i class="fa fa-check"></i><b>8</b> Central limit theorem</a><ul>
 <li class="chapter" data-level="8.1" data-path="central-limit-theorem.html"><a href="central-limit-theorem.html#motivation"><i class="fa fa-check"></i><b>8.1</b> Motivation</a></li>
-<li class="chapter" data-level="8.2" data-path="central-limit-theorem.html"><a href="central-limit-theorem.html#clt-for-means"><i class="fa fa-check"></i><b>8.2</b> CLT for means</a>
-<ul>
+<li class="chapter" data-level="8.2" data-path="central-limit-theorem.html"><a href="central-limit-theorem.html#clt-for-means"><i class="fa fa-check"></i><b>8.2</b> CLT for means</a><ul>
 <li class="chapter" data-level="8.2.1" data-path="central-limit-theorem.html"><a href="central-limit-theorem.html#clt-part-1"><i class="fa fa-check"></i><b>8.2.1</b> CLT Part 1</a></li>
 <li class="chapter" data-level="8.2.2" data-path="central-limit-theorem.html"><a href="central-limit-theorem.html#clt-part-2"><i class="fa fa-check"></i><b>8.2.2</b> CLT Part 2</a></li>
 </ul></li>
 <li class="chapter" data-level="8.3" data-path="central-limit-theorem.html"><a href="central-limit-theorem.html#clt-for-proportions"><i class="fa fa-check"></i><b>8.3</b> CLT for proportions</a></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="hypothesis-testing-and-p-values.html"><a href="hypothesis-testing-and-p-values.html"><i class="fa fa-check"></i><b>9</b> Hypothesis testing and p-values</a>
-<ul>
+<li class="chapter" data-level="9" data-path="hypothesis-testing-and-p-values.html"><a href="hypothesis-testing-and-p-values.html"><i class="fa fa-check"></i><b>9</b> Hypothesis testing and p-values</a><ul>
 <li class="chapter" data-level="9.1" data-path="hypothesis-testing-and-p-values.html"><a href="hypothesis-testing-and-p-values.html#hypothesis-testing"><i class="fa fa-check"></i><b>9.1</b> Hypothesis testing</a></li>
 <li class="chapter" data-level="9.2" data-path="hypothesis-testing-and-p-values.html"><a href="hypothesis-testing-and-p-values.html#p-values"><i class="fa fa-check"></i><b>9.2</b> P-values</a></li>
 <li class="chapter" data-level="9.3" data-path="hypothesis-testing-and-p-values.html"><a href="hypothesis-testing-and-p-values.html#significance-thresholds"><i class="fa fa-check"></i><b>9.3</b> Significance thresholds</a></li>
 </ul></li>
-<li class="chapter" data-level="10" data-path="basic-statistical-tests.html"><a href="basic-statistical-tests.html"><i class="fa fa-check"></i><b>10</b> Basic statistical tests</a>
-<ul>
-<li class="chapter" data-level="10.1" data-path="basic-statistical-tests.html"><a href="basic-statistical-tests.html#students-t-test"><i class="fa fa-check"></i><b>10.1</b> Student’s t-test</a>
-<ul>
+<li class="chapter" data-level="10" data-path="basic-statistical-tests.html"><a href="basic-statistical-tests.html"><i class="fa fa-check"></i><b>10</b> Basic statistical tests</a><ul>
+<li class="chapter" data-level="10.1" data-path="basic-statistical-tests.html"><a href="basic-statistical-tests.html#students-t-test"><i class="fa fa-check"></i><b>10.1</b> Student’s t-test</a><ul>
 <li class="chapter" data-level="10.1.1" data-path="basic-statistical-tests.html"><a href="basic-statistical-tests.html#example-1-one-sample-t-test"><i class="fa fa-check"></i><b>10.1.1</b> Example 1: One sample t-test</a></li>
 <li class="chapter" data-level="10.1.2" data-path="basic-statistical-tests.html"><a href="basic-statistical-tests.html#example-2-two-sample-t-test"><i class="fa fa-check"></i><b>10.1.2</b> Example 2: Two sample t-test</a></li>
 <li class="chapter" data-level="10.1.3" data-path="basic-statistical-tests.html"><a href="basic-statistical-tests.html#example-3-paired-t-test"><i class="fa fa-check"></i><b>10.1.3</b> Example 3: Paired t-test</a></li>
+<li class="chapter" data-level="10.1.4" data-path="basic-statistical-tests.html"><a href="basic-statistical-tests.html#t-test-assumptions"><i class="fa fa-check"></i><b>10.1.4</b> T-test Assumptions</a></li>
 </ul></li>
-<li class="chapter" data-level="10.2" data-path="basic-statistical-tests.html"><a href="basic-statistical-tests.html#chi-squared-test"><i class="fa fa-check"></i><b>10.2</b> Chi-squared test</a>
-<ul>
+<li class="chapter" data-level="10.2" data-path="basic-statistical-tests.html"><a href="basic-statistical-tests.html#chi-squared-test"><i class="fa fa-check"></i><b>10.2</b> Chi-squared test</a><ul>
 <li class="chapter" data-level="10.2.1" data-path="basic-statistical-tests.html"><a href="basic-statistical-tests.html#chi2-test-for-goodness-of-fit"><i class="fa fa-check"></i><b>10.2.1</b> <span class="math inline">\(\chi^2\)</span> test for goodness-of-fit</a></li>
 <li class="chapter" data-level="10.2.2" data-path="basic-statistical-tests.html"><a href="basic-statistical-tests.html#chi2-test-for-independence"><i class="fa fa-check"></i><b>10.2.2</b> <span class="math inline">\(\chi^2\)</span> test for independence</a></li>
 <li class="chapter" data-level="10.2.3" data-path="basic-statistical-tests.html"><a href="basic-statistical-tests.html#chi2-test-for-homogeneity"><i class="fa fa-check"></i><b>10.2.3</b> <span class="math inline">\(\chi^2\)</span> test for homogeneity</a></li>
+<li class="chapter" data-level="10.2.4" data-path="basic-statistical-tests.html"><a href="basic-statistical-tests.html#chi2-test-assumptions"><i class="fa fa-check"></i><b>10.2.4</b> <span class="math inline">\(\chi^2\)</span> test assumptions</a></li>
 </ul></li>
 <li class="chapter" data-level="10.3" data-path="basic-statistical-tests.html"><a href="basic-statistical-tests.html#additional-resources"><i class="fa fa-check"></i><b>10.3</b> Additional resources</a></li>
 </ul></li>
-<li class="chapter" data-level="11" data-path="comparing-multiple-means.html"><a href="comparing-multiple-means.html"><i class="fa fa-check"></i><b>11</b> Comparing multiple means</a>
-<ul>
+<li class="chapter" data-level="11" data-path="comparing-multiple-means.html"><a href="comparing-multiple-means.html"><i class="fa fa-check"></i><b>11</b> Comparing multiple means</a><ul>
 <li class="chapter" data-level="11.1" data-path="comparing-multiple-means.html"><a href="comparing-multiple-means.html#anova-in-a-nutshell"><i class="fa fa-check"></i><b>11.1</b> ANOVA in a nutshell</a></li>
-<li class="chapter" data-level="11.2" data-path="comparing-multiple-means.html"><a href="comparing-multiple-means.html#one-way-anova"><i class="fa fa-check"></i><b>11.2</b> One-way ANOVA</a>
-<ul>
+<li class="chapter" data-level="11.2" data-path="comparing-multiple-means.html"><a href="comparing-multiple-means.html#one-way-anova"><i class="fa fa-check"></i><b>11.2</b> One-way ANOVA</a><ul>
 <li class="chapter" data-level="11.2.1" data-path="comparing-multiple-means.html"><a href="comparing-multiple-means.html#the-iris-example"><i class="fa fa-check"></i><b>11.2.1</b> The iris example</a></li>
 <li class="chapter" data-level="11.2.2" data-path="comparing-multiple-means.html"><a href="comparing-multiple-means.html#non-parametric-alternatives-to-anova"><i class="fa fa-check"></i><b>11.2.2</b> Non-parametric alternatives to ANOVA</a></li>
 </ul></li>
 <li class="chapter" data-level="11.3" data-path="comparing-multiple-means.html"><a href="comparing-multiple-means.html#beyond-the-one-way-anova"><i class="fa fa-check"></i><b>11.3</b> Beyond the one-way ANOVA</a></li>
 </ul></li>
-<li class="chapter" data-level="12" data-path="linear-regression.html"><a href="linear-regression.html"><i class="fa fa-check"></i><b>12</b> Linear regression</a>
-<ul>
+<li class="chapter" data-level="12" data-path="linear-regression.html"><a href="linear-regression.html"><i class="fa fa-check"></i><b>12</b> Linear regression</a><ul>
 <li class="chapter" data-level="12.1" data-path="linear-regression.html"><a href="linear-regression.html#basic-concepts"><i class="fa fa-check"></i><b>12.1</b> Basic concepts</a></li>
 <li class="chapter" data-level="12.2" data-path="linear-regression.html"><a href="linear-regression.html#pearson-correlation"><i class="fa fa-check"></i><b>12.2</b> Pearson correlation</a></li>
 <li class="chapter" data-level="12.3" data-path="linear-regression.html"><a href="linear-regression.html#spearman-correlation"><i class="fa fa-check"></i><b>12.3</b> Spearman correlation</a></li>
 </ul></li>
 <li class="part"><span><b>IV Data Visualization</b></span></li>
-<li class="chapter" data-level="13" data-path="data-visualization-basics.html"><a href="data-visualization-basics.html"><i class="fa fa-check"></i><b>13</b> Data visualization basics</a>
-<ul>
+<li class="chapter" data-level="13" data-path="data-visualization-basics.html"><a href="data-visualization-basics.html"><i class="fa fa-check"></i><b>13</b> Data visualization basics</a><ul>
 <li class="chapter" data-level="13.1" data-path="data-visualization-basics.html"><a href="data-visualization-basics.html#a-graphing-template"><i class="fa fa-check"></i><b>13.1</b> A graphing template</a></li>
-<li class="chapter" data-level="13.2" data-path="data-visualization-basics.html"><a href="data-visualization-basics.html#scatter-plot"><i class="fa fa-check"></i><b>13.2</b> Scatter plot</a>
-<ul>
+<li class="chapter" data-level="13.2" data-path="data-visualization-basics.html"><a href="data-visualization-basics.html#scatter-plot"><i class="fa fa-check"></i><b>13.2</b> Scatter plot</a><ul>
 <li class="chapter" data-level="13.2.1" data-path="data-visualization-basics.html"><a href="data-visualization-basics.html#trend-lines"><i class="fa fa-check"></i><b>13.2.1</b> Trend lines</a></li>
 <li class="chapter" data-level="13.2.2" data-path="data-visualization-basics.html"><a href="data-visualization-basics.html#facets"><i class="fa fa-check"></i><b>13.2.2</b> Facets</a></li>
 </ul></li>
 <li class="chapter" data-level="13.3" data-path="data-visualization-basics.html"><a href="data-visualization-basics.html#aesthetic-mappings"><i class="fa fa-check"></i><b>13.3</b> Aesthetic mappings</a></li>
 </ul></li>
-<li class="chapter" data-level="14" data-path="getting-publication-ready.html"><a href="getting-publication-ready.html"><i class="fa fa-check"></i><b>14</b> Getting publication-ready</a>
-<ul>
+<li class="chapter" data-level="14" data-path="getting-publication-ready.html"><a href="getting-publication-ready.html"><i class="fa fa-check"></i><b>14</b> Getting publication-ready</a><ul>
 <li class="chapter" data-level="14.1" data-path="getting-publication-ready.html"><a href="getting-publication-ready.html#line-plot"><i class="fa fa-check"></i><b>14.1</b> Line plot</a></li>
-<li class="chapter" data-level="14.2" data-path="getting-publication-ready.html"><a href="getting-publication-ready.html#bar-plot"><i class="fa fa-check"></i><b>14.2</b> Bar plot</a>
-<ul>
+<li class="chapter" data-level="14.2" data-path="getting-publication-ready.html"><a href="getting-publication-ready.html#bar-plot"><i class="fa fa-check"></i><b>14.2</b> Bar plot</a><ul>
 <li class="chapter" data-level="14.2.1" data-path="getting-publication-ready.html"><a href="getting-publication-ready.html#basics"><i class="fa fa-check"></i><b>14.2.1</b> Basics</a></li>
 </ul></li>
 <li class="chapter" data-level="14.3" data-path="getting-publication-ready.html"><a href="getting-publication-ready.html#box-plot"><i class="fa fa-check"></i><b>14.3</b> Box plot</a></li>
@@ -348,16 +257,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="hypothesis-testing-and-p-values" class="section level1" number="9">
+<div id="hypothesis-testing-and-p-values" class="section level1">
 <h1><span class="header-section-number">9</span> Hypothesis testing and p-values</h1>
 <p>Before diving into statistical tests, let’s take a moment to appreciate the bigger picture.</p>
-<div class="figure" style="text-align: center"><span id="fig:data-decisions"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:data-decisions"></span>
 <img src="data/08_inferences/data_decisions.png" alt="A pipeline for data-driven decisions." width="65%" />
 <p class="caption">
 Figure 9.1: A pipeline for data-driven decisions.
 </p>
 </div>
-<div id="hypothesis-testing" class="section level2" number="9.1">
+<div id="hypothesis-testing" class="section level2">
 <h2><span class="header-section-number">9.1</span> Hypothesis testing</h2>
 <p>We often want to test our hypotheses in statistics. For example, we might create an experiment to test if a vaccine is effective at preventing COVID-19. If your results are not consistent, no one would want to use your vaccine. Here are some examples of hypotheses:</p>
 <ul>
@@ -377,14 +286,14 @@ Figure 9.1: A pipeline for data-driven decisions.
 </ul>
 <p>If the observed average recovery times is 1 week for patients who receive a vaccine for 100 patients, then we will likely reject H<span class="math inline">\(_0\)</span>. Otherwise, we do not reject H<span class="math inline">\(_0\)</span>. We NEVER accept H<span class="math inline">\(_0\)</span>. However, this example raises the question of when we should reject H<span class="math inline">\(_0\)</span>. This is where p-values come in handy.</p>
 </div>
-<div id="p-values" class="section level2" number="9.2">
+<div id="p-values" class="section level2">
 <h2><span class="header-section-number">9.2</span> P-values</h2>
 <hr />
 <p><strong>P-values (informal definition).</strong> A p-value, or probability value, is the probability of the data being as extreme as it is. We use p-values to determine if our results are statistically significant. Since p-valuese are probabilities, p must be between 0 and 1 inclusive.</p>
 <p><strong>P-value (formal definition).</strong> The p-value is the probability of observing a sample as extreme or more extreme than the one observed, given that the null hypothesis is true.</p>
 <hr />
 <p>Take a the following sleep experiment as an example. In this experiment, people try to memorize as many words as possible. Then, they are split into two groups that will either sleep 4 hours or 8 hours that night. The next day, the people try to recall as many words as possible. The following figure shows the results:</p>
-<div class="figure" style="text-align: center"><span id="fig:p-value-sleep"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:p-value-sleep"></span>
 <img src="data/08_inferences/p_ex.png" alt="Figure retrieved from [Prob(a)bilistic World](https://www.probabilisticworld.com/intuitive-explanation-p-values/)." width="50%" />
 <p class="caption">
 Figure 9.2: Figure retrieved from <a href="https://www.probabilisticworld.com/intuitive-explanation-p-values/">Prob(a)bilistic World</a>.
@@ -409,8 +318,25 @@ Solution
 <li>A low p-value indicates that your observations are NOT likely to be observed.</li>
 </ul>
 <p>Check out <a href="https://towardsdatascience.com/p-values-explained-by-data-scientist-f40a746cfc8">this article</a> if you want to read more about p-values.</p>
+<button class="collapsible">
+One-tailed and two-tailed tests
+</button>
+<div class="collapse_content">
+<p>Statistical tests can be either 1-tailed or 2-tailed depending on your question. 1-tailed
+tests have 2 possibilities (having a right tail or a left tail) whereas 2-tailed tests have 1 possibility (both right and left tail).</p>
+<div class="figure">
+<img src="assets/Images/Tailed%20T%20tests.png" alt="" />
+<p class="caption">One-tailed vs Two-tailed Tests.</p>
 </div>
-<div id="significance-thresholds" class="section level2" number="9.3">
+<p><strong>One-tailed tests:</strong> If you know that life expectancy increases over time, then you would
+use a 1-tailed t-test to test if life expectancy is greater in 2005 as compared to 1996.</p>
+<p><strong>Two-tailed tests:</strong> Use this if you don’t know how means should look. For example, is
+the life expectancy in South Korea equal to the life expectancy in Canada?</p>
+<p>If in doubt, use a two-tailed test. This is because significance in a two-tailed test is
+“more significant” than that of the one-tailed test.</p>
+</div>
+</div>
+<div id="significance-thresholds" class="section level2">
 <h2><span class="header-section-number">9.3</span> Significance thresholds</h2>
 <p><strong>Question:</strong> What is a “high” and “low” p-value? That is, how do we determine whether something is statistically significant?</p>
 <p><strong>Answer:</strong> You get to choose when a p-value is “low enough!”</p>
@@ -423,7 +349,7 @@ Solution
 <li>To beat a dead horse, let’s reiterate the following: we NEVER accept the null hypothesis.</li>
 <li>A confidence level is defined as $1 - <span class="math inline">\(\alpha\)</span>, which tells us how uncertain we are about the true mean or median in a population.
 <ul>
-<li>For example, an <a href="https://www.rasmussenreports.com/public_content/politics/current_events/healthcare/health_care_law_aug07">election article</a> “38% of likely U.S. Voters now say their health insurance coverage has changed because of Obamacare.” If you scroll down to the bottom of the article, you’ll see this line: “The margin of sampling error is +/- 3 percentage points with a 95% level of confidence.”</li>
+<li>For example, an <a href="https://www.rasmussenreports.com/public_content/politics/current_events/healthcare/health_care_law_aug07">election article</a> “38% of likely U.S. Voters now say their health insurance coverage has changed because of Obamacare”. If you scroll down to the bottom of the article, you’ll see this line: “The margin of sampling error is +/- 3 percentage points with a 95% level of confidence.”</li>
 </ul></li>
 </ul>
 <p>At timese, determining significance feels arbitrary. In a sense, it is! As scientists, we have to compare our p-value against a significance threshold that we set. For example, if our p-value is 0.08:</p>
@@ -433,7 +359,7 @@ Solution
 <li>If <span class="math inline">\(\alpha\)</span> = 0.08, the result is significant.</li>
 </ul>
 <p>In academia, a common significance threshold is <span class="math inline">\(\alpha = 0.05\)</span>. Please keep in mind that there is nothing magical about having <span class="math inline">\(p &lt; 0.05\)</span>. All it means is that there is a low probability that our observed data is less than our null hypothesis. Here is a meme I’ve curated for you to reinforce this concept:</p>
-<div class="figure" style="text-align: center"><span id="fig:p-memes"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:p-memes"></span>
 <img src="data/08_inferences/pmorpheus.jpg" alt="Figure retrieved from [imgflip](https://imgflip.com/i/vtnlk)." width="75%" />
 <p class="caption">
 Figure 9.3: Figure retrieved from <a href="https://imgflip.com/i/vtnlk">imgflip</a>.
@@ -493,6 +419,7 @@ gitbook.start({
 "weibo": false,
 "instapaper": false,
 "vk": false,
+"whatsapp": false,
 "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {
@@ -513,6 +440,10 @@ gitbook.start({
 "text": null
 },
 "download": null,
+"search": {
+"engine": "lunr",
+"options": null
+},
 "toc": {
 "collapse": "section"
 }

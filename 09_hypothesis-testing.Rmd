@@ -70,6 +70,26 @@ What did w learn from this example?
 Check out [this article](https://towardsdatascience.com/p-values-explained-by-data-scientist-f40a746cfc8) if you want to read more about p-values.
 
 
+<button class="collapsible">One-tailed and two-tailed tests</button>
+<div class="collapse_content">
+
+Statistical tests can be either 1-tailed or 2-tailed depending on your question. 1-tailed
+tests have 2 possibilities (having a right tail or a left tail) whereas 2-tailed tests have 1 possibility (both right and left tail).
+
+![One-tailed vs Two-tailed Tests.](assets/Images/Tailed T tests.png)
+
+**One-tailed tests:** If you know that life expectancy increases over time, then you would
+use a 1-tailed t-test to test if life expectancy is greater in 2005 as compared to 1996.
+
+**Two-tailed tests:** Use this if you don’t know how means should look. For example, is
+the life expectancy in South Korea equal to the life expectancy in Canada?
+
+If in doubt, use a two-tailed test. This is because significance in a two-tailed test is
+“more significant” than that of the one-tailed test.
+
+</div>
+
+
 ## Significance thresholds
 
 **Question:** What is a “high” and “low” p-value? That is, how do we determine whether something is statistically significant?
@@ -100,7 +120,6 @@ In academia, a common significance threshold is $\alpha = 0.05$. Please keep in 
 ```{r p-memes, out.width="75%", fig.align="center", fig.cap="Figure retrieved from [imgflip](https://imgflip.com/i/vtnlk).", echo=FALSE}
 knitr::include_graphics("data/08_inferences/pmorpheus.jpg")
 ```
-
 
 
 <script>
