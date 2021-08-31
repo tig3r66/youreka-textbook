@@ -24,15 +24,27 @@ levels(gapminder$continent)
 
 ## Student's t-test
 
-Let's start by asking the mean life expectancy of the continents in 1952. First, we'll summarize our data.
-
 ---
 
 **Student's t-test.** A t-test is used to determine if there is a significant difference between the means of two groups.
 
 ---
 
-Let's start by asking the mean life expectancy of the continents in 1952.
+We use t-tests to compare means between two samples:
+
+Given two sample means  ̄y0,  ̄y1:
+
+**Null hypothesis (H0):** sample means are equal OR the difference between sample
+means is equal to some value d0 (i.e.,  ̄y0 -  ̄y1 = d0).
+
+**Alternative hypothesis (Ha):** sample means are not equal OR the difference between
+sample means is not equal to some value d0.
+There are four main “flavours” to the t-test (one-sample, equal variance, unequal
+variance, pooled).
+
+
+
+Let's start by asking the mean life expectancy of the continents in 1952. First, we'll summarize our data.
 
 ```{r}
 gapminder %>% 
@@ -212,6 +224,59 @@ Similarly, we could again call `wilcox.test` to run the paired version.
 ```{r}
 wilcox.test(Africa.wide$'2007', Africa.wide$'1952', paired=T)
 ```
+
+<button class="collapsible">One-tailed and two-tailed tests</button>
+<div class="collapse_content">
+
+Statistical tests can be either 1-tailed or 2-tailed depending on your question. 1-tailed
+tests have 2 possibilities (having a right tail or a left tail) whereas 2-tailed tests have 1 possibility (both right and left tail).
+
+![One-tailed vs Two-tailed Tests.](assets/Images/Tailed T tests.png)
+
+**One-tailed tests:** If you know that life expectancy increases over time, then you would
+use a 1-tailed t-test to test if life expectancy is greater in 2005 as compared to 1996.
+
+**Two-tailed tests:** Use this if you don’t know how means should look. For example, is
+the life expectancy in South Korea equal to the life expectancy in Canada?
+
+If in doubt, use a two-tailed test. This is because significance in a two-tailed test is
+“more significant” than that of the one-tailed test.
+
+</div>
+
+
+### T-test Assumptions
+
+Since the t-test relies on a normal-like distribution, it has some assumptions.
+
+**1. Independence assumption:** the data values should be independent.
+(a) Satisfied if the data are from randomly sampled data.
+
+**2. Normal population assumption:** the data follows a normal distribution.
+(a) If n < 30, use a histogram to check that the data is unimodal and symmetric.
+(b) If n ≥ 30, this assumption is fulfilled by the CLT.
+
+**3. 10% condition:** when a sample is drawn without replacement, the sample should
+be no more than 10% of the population.
+• This is usually assumed to be true.
+
+If any of these conditions are not fulfilled, consider using a non-parametric test
+equivalent.
+
+<button class="collapsible">Example Questions</button>
+<div class="collapse_content">
+
+**Question 1:** How long can car crash patients jog before and after
+physiotherapy?
+
+**Question 2:** Is the mean life expectancy in Argentina different before and
+after 1980?
+
+Here is the equation to get the test statistic:
+![test statistic.](assets/Images/Test Statistic.png)
+
+(don’t worry too much about this)
+</div>
 
 
 ## Chi-squared test
@@ -414,6 +479,39 @@ chisq.test(rem_cont)
 
 What does this result mean?
 
+
+###  $\chi^2$ test assumptions
+
+All statistical tests have assumptions for them to accurately represent the data. Here
+are the assumptions you need to fulfill to use the chi-squared test:
+
+**1. Counted data condition:** all data must be “counts” for the categorical variable.
+
+**2. Independence assumption:** the counts in the cells should be independent of
+each other.
+(a) Satisfied if the data are from randomly sampled data.
+
+**3. Sample size assumption:** we should expect to see at least 5 individuals in each
+cell (recall CLT).
+(a) If this isn’t satisfied, take your χ2 results with a grain of salt.
+
+
+<button class="collapsible">Example Questions</button>
+<div class="collapse_content">
+
+**Question 1:** A study was conducted and gave the table below. We notice a trend within the data,
+but how do we quantify it? Note that the numbers are counts.
+![Table 1: Contingency table of heart disease and continent. This data is fictional.](assets/Images/Chi example question Figure 1.png)
+
+Question: Is the proportion of having heart disease the same for North Americans as
+it is for Africans?
+
+**Question 2:** Is there evidence that the longevity of an individual is independent of the
+continent from which the individual comes from? Let’s define long-lived as those who’s
+life expectancy is greater than 40.54 and short-lived as those less than 40.54.
+![Table 2: Table of counts from the gapminder dataset.](assets/Images/Chi example question Table 2.png)
+
+</div>
 
 
 ## Additional resources

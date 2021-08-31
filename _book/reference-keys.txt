@@ -98,3 +98,5 @@ bar-plot
 basics
 box-plot
 histogram-and-density-plot
+t-test-assumptions
+chi2-test-assumptions
