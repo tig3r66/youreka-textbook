@@ -71,10 +71,12 @@ students-t-test
 example-1-one-sample-t-test
 example-2-two-sample-t-test
 example-3-paired-t-test
+t-test-assumptions
 chi-squared-test
 chi2-test-for-goodness-of-fit
 chi2-test-for-independence
 chi2-test-for-homogeneity
+chi2-test-assumptions
 additional-resources
 comparing-multiple-means
 anova-in-a-nutshell
@@ -98,5 +100,3 @@ bar-plot
 basics
 box-plot
 histogram-and-density-plot
-t-test-assumptions
-chi2-test-assumptions

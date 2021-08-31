@@ -275,12 +275,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="10.1.1" data-path="basic-statistical-tests.html"><a href="basic-statistical-tests.html#example-1-one-sample-t-test"><i class="fa fa-check"></i><b>10.1.1</b> Example 1: One sample t-test</a></li>
 <li class="chapter" data-level="10.1.2" data-path="basic-statistical-tests.html"><a href="basic-statistical-tests.html#example-2-two-sample-t-test"><i class="fa fa-check"></i><b>10.1.2</b> Example 2: Two sample t-test</a></li>
 <li class="chapter" data-level="10.1.3" data-path="basic-statistical-tests.html"><a href="basic-statistical-tests.html#example-3-paired-t-test"><i class="fa fa-check"></i><b>10.1.3</b> Example 3: Paired t-test</a></li>
+<li class="chapter" data-level="10.1.4" data-path="basic-statistical-tests.html"><a href="basic-statistical-tests.html#t-test-assumptions"><i class="fa fa-check"></i><b>10.1.4</b> T-test Assumptions</a></li>
 </ul></li>
 <li class="chapter" data-level="10.2" data-path="basic-statistical-tests.html"><a href="basic-statistical-tests.html#chi-squared-test"><i class="fa fa-check"></i><b>10.2</b> Chi-squared test</a>
 <ul>
 <li class="chapter" data-level="10.2.1" data-path="basic-statistical-tests.html"><a href="basic-statistical-tests.html#chi2-test-for-goodness-of-fit"><i class="fa fa-check"></i><b>10.2.1</b> <span class="math inline">\(\chi^2\)</span> test for goodness-of-fit</a></li>
 <li class="chapter" data-level="10.2.2" data-path="basic-statistical-tests.html"><a href="basic-statistical-tests.html#chi2-test-for-independence"><i class="fa fa-check"></i><b>10.2.2</b> <span class="math inline">\(\chi^2\)</span> test for independence</a></li>
 <li class="chapter" data-level="10.2.3" data-path="basic-statistical-tests.html"><a href="basic-statistical-tests.html#chi2-test-for-homogeneity"><i class="fa fa-check"></i><b>10.2.3</b> <span class="math inline">\(\chi^2\)</span> test for homogeneity</a></li>
+<li class="chapter" data-level="10.2.4" data-path="basic-statistical-tests.html"><a href="basic-statistical-tests.html#chi2-test-assumptions"><i class="fa fa-check"></i><b>10.2.4</b> <span class="math inline">\(\chi^2\)</span> test assumptions</a></li>
 </ul></li>
 <li class="chapter" data-level="10.3" data-path="basic-statistical-tests.html"><a href="basic-statistical-tests.html#additional-resources"><i class="fa fa-check"></i><b>10.3</b> Additional resources</a></li>
 </ul></li>
@@ -371,13 +373,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Many observed quantities follow normal distribution. Imagine that we have a population following normal distribution that has a mean of 10 and standard deviation of 2. If we draw samples from it, are we able to estimate its mean?</p>
 <p>Note that <code>rnorm()</code> generates a vector of random numbers from a normal distribution.</p>
 <div class="sourceCode" id="cb191"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb191-1"><a href="central-limit-theorem.html#cb191-1" aria-hidden="true" tabindex="-1"></a>(samp30 <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="at">n=</span><span class="dv">30</span>, <span class="at">mean=</span><span class="dv">10</span>, <span class="at">sd=</span><span class="dv">2</span>))</span></code></pre></div>
-<pre><code>##  [1]  9.773220  8.592498  8.960351  8.653605  7.184561 11.044067  9.449741
-##  [8]  8.617484  8.145507 10.896649  9.136342 13.091666 10.556932  9.508235
-## [15] 10.084295 10.948029 10.644889 10.976264  8.080546 11.956279  9.594241
-## [22]  8.736028  8.786457  9.257833  7.279906  9.331967  9.230616  8.229151
-## [29]  8.094748 10.026282</code></pre>
+<pre><code>##  [1] 11.206082 11.343455  9.172219 10.391625  6.981954 11.955095 10.559952
+##  [8]  9.674684  8.708230  9.987635 10.646180 11.334216  9.851867 10.321440
+## [15]  9.700381 13.144596  7.329367 10.722894  9.634687 14.217537 12.226628
+## [22] 10.262999  8.908421  9.393388  9.313759  8.116165  5.496599 10.273037
+## [29] 13.960707  8.650610</code></pre>
 <div class="sourceCode" id="cb193"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb193-1"><a href="central-limit-theorem.html#cb193-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(samp30)</span></code></pre></div>
-<pre><code>## [1] 9.495613</code></pre>
+<pre><code>## [1] 10.11621</code></pre>
 <p>Although the mean is not 10, it is pretty close. This should make sense; when we draw a sample to estimate the mean, we may get very close to the desired “true mean,” but we also expect some error. What if I repeat the estimation 1000 times with 30 samples?</p>
 <div class="sourceCode" id="cb195"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb195-1"><a href="central-limit-theorem.html#cb195-1" aria-hidden="true" tabindex="-1"></a><span class="co"># initializing our means vector</span></span>
 <span id="cb195-2"><a href="central-limit-theorem.html#cb195-2" aria-hidden="true" tabindex="-1"></a>means10 <span class="ot">&lt;-</span> <span class="fu">as.vector</span>(<span class="cn">NA</span>)</span>
