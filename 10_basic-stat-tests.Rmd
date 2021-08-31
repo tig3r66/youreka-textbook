@@ -116,7 +116,7 @@ Does Asia and Africa differ in life expectancy in 1952? To compare two groups of
 Let $\mu_1$ be the average life expectancy of people in Asia in 1952. Let $\mu_2$ be the average life expectancy of people in Africa in 1952. Then,
 
 - H$_0: \mu_1 - \mu_2 = 0$
-- H$_a: \mu_1 - \mu_2 \neq 65$
+- H$_a: \mu_1 - \mu_2 \neq 0$
 </div>
 
 <br>
