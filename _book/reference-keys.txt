@@ -6,6 +6,7 @@ fig:iqr-v2
 fig:data-decisions
 fig:p-value-sleep
 fig:p-memes
+fig:one-two-tailed
 install
 installing-r
 installing-rstudio

@@ -251,7 +251,7 @@ Since we are running a non-parametric test, an appropriate test would be Games-H
 <button class="collapsible">Games-Howell test</button>
 <div class="collapse_content">
 
-**Note**: you don't need to know how the code below works.
+**Note**: You don't need to know how the code below works.
 
 ```{r}
 games.howell <- function(grp, obs) {

@@ -231,7 +231,9 @@ wilcox.test(Africa.wide$'2007', Africa.wide$'1952', paired=T)
 Statistical tests can be either 1-tailed or 2-tailed depending on your question. 1-tailed
 tests have 2 possibilities (having a right tail or a left tail) whereas 2-tailed tests have 1 possibility (both right and left tail).
 
-![One-tailed vs Two-tailed Tests.](assets/Images/Tailed T tests.png)
+```{r one-two-tailed, out.width="100%", fig.align="center", fig.cap="One-tailed vs two-tailed tests. Figure retrieved from [Science Direct](https://www.sciencedirect.com/topics/mathematics/tailed-test).", echo=FALSE}
+knitr::include_graphics("assets/Images/Tailed T tests.png")
+```
 
 **One-tailed tests:** If you know that life expectancy increases over time, then you would
 use a 1-tailed t-test to test if life expectancy is greater in 2005 as compared to 1996.
@@ -273,9 +275,14 @@ physiotherapy?
 after 1980?
 
 Here is the equation to get the test statistic:
-![test statistic.](assets/Images/Test Statistic.png)
 
-(don’t worry too much about this)
+\begin{equation}
+  t = \frac{x_{d_0} - \mu_0}{s_{d_0} / \sqrt{n}}, \quad \text{with df = n-1}
+\end{equation}
+
+where df stands for "degrees of freedom".
+
+(don't worry too much about this)
 </div>
 
 
