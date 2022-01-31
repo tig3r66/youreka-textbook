@@ -516,7 +516,17 @@ it is for Africans?
 **Question 2:** Is there evidence that the longevity of an individual is independent of the
 continent from which the individual comes from? Let’s define long-lived as those who’s
 life expectancy is greater than 40.54 and short-lived as those less than 40.54.
-![Table 2: Table of counts from the gapminder dataset.](assets/Images/Chi example question Table 2.png)
+
+$$\begin{array}{l r r}
+            \hline
+             & \text{Long-lived} & \text{Short-lived}\\
+            \hline
+            \text{Africa} & 21 & 31\\
+            \text{Asia} & 22 & 11\\
+            \hline
+\end{array}$$
+
+Table of counts from the gapminder dataset
 
 </div>
 

@@ -86,10 +86,10 @@ Remarks:
 
 - A high p-value does NOT mean your null hypothesis is true. Rather, it suggests the probability of observing your measurement is high.
 - To beat a dead horse, let's reiterate the following: we NEVER accept the null hypothesis.
-- A confidence level is defined as $1 - $\alpha$, which tells us how uncertain we are about the true mean or median in a population.
+- A confidence level is defined as $1 - \alpha$, which tells us how uncertain we are about the true mean or median in a population.
   - For example, an [election article](https://www.rasmussenreports.com/public_content/politics/current_events/healthcare/health_care_law_aug07) “38% of likely U.S. Voters now say their health insurance coverage has changed because of Obamacare”. If you scroll down to the bottom of the article, you’ll see this line: "The margin of sampling error is +/- 3 percentage points with a 95% level of confidence."
 
-At timese, determining significance feels arbitrary. In a sense, it is! As scientists, we have to compare our p-value against a significance threshold that we set. For example, if our p-value is 0.08:
+At times, determining significance feels arbitrary. In a sense, it is! As scientists, we have to compare our p-value against a significance threshold that we set. For example, if our p-value is 0.08:
 
 - If $\alpha$ = 0.05, the result is not significant.
 - If $\alpha$ = 0.10, the result is significant.
