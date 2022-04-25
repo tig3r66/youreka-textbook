@@ -62,7 +62,7 @@ Let $\mu_1$ and $\mu_2$ be the average words the 4 hour of sleep group and 8 hou
 
 Is this performance difference significant? If p = 0.01, it is likely significant. If p = 0.85, the difference is likely not significant. To compute the p-value, we will need to learn some statistical tests, which we will learn in the next chapter.
 
-What did w learn from this example?
+What did we learn from this example?
 
 - A high p-value indicates a higher probability that your observations are likely to be observed.
 - A low p-value indicates that your observations are NOT likely to be observed.
